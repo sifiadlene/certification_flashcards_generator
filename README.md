@@ -12,6 +12,8 @@ All flashcard files are located in the [`flashcards/`](flashcards/) directory:
 - **AZ-305**: Designing Microsoft Azure Infrastructure Solutions
 - **GH-300**: GitHub Foundations
 
+> 💡 **Want more flashcards?** See [Generating New Flashcards](#-generating-new-flashcards) to learn how to generate additional flashcards for these or other Azure/GitHub certifications.
+
 ## ✨ Features
 
 - **Exam-Realistic Questions**: Scenario-based questions that mirror actual certification exams
