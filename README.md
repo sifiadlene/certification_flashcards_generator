@@ -11,6 +11,7 @@ All flashcard files are located in the [`flashcards/`](flashcards/) directory:
 - **AZ-104**: Microsoft Azure Administrator
 - **AZ-204**: Developing Solutions for Microsoft Azure
 - **AZ-305**: Designing Microsoft Azure Infrastructure Solutions
+- **AZ-500**: Microsoft Azure Security Technologies
 - **GH-300**: GitHub Foundations
 
 > 💡 **Want more flashcards?** See [Generating New Flashcards](#-generating-new-flashcards) to learn how to generate additional flashcards for these or other Azure/GitHub certifications.
