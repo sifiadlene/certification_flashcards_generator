@@ -7,6 +7,7 @@ High-quality, exam-realistic flashcards for Azure and GitHub certifications, des
 All flashcard files are located in the [`flashcards/`](flashcards/) directory:
 
 - **AI-102**: Microsoft Azure AI Engineer Associate
+- **AI-900**: Microsoft Azure AI Fundamentals
 - **AZ-104**: Microsoft Azure Administrator
 - **AZ-204**: Developing Solutions for Microsoft Azure
 - **AZ-305**: Designing Microsoft Azure Infrastructure Solutions
