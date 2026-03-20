@@ -119,7 +119,7 @@ After generating the flashcards, provide clear import instructions:
 3. **Select the CSV file**: Navigate to and select the generated CSV file
 
 4. **Configure import settings**:
-   - **Type**: Choose "Basic" or create a custom note type with Front/Back/Extra fields
+   - **Type**: Choose "Basic (and reverse card)" or create a custom note type with Front/Back/Extra fields
    - **Deck**: Select your target deck
    - **Fields separated by**: Comma
    - **Field mapping**:
