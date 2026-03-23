@@ -1,0 +1,1542 @@
+{
+  "exam": {
+    "slug": "gh300",
+    "code": "GH-300",
+    "title": "GitHub Foundations",
+    "sourceFile": "gh300_flashcards_2026-02-06.csv",
+    "updatedOn": "2026-02-06",
+    "questionCount": 49,
+    "domains": [
+      "Administration",
+      "Analytics",
+      "Authentication",
+      "Automation",
+      "CICD",
+      "Compliance",
+      "DataManagement",
+      "Governance",
+      "Integration",
+      "Migration",
+      "Security"
+    ],
+    "topics": [
+      "AccessManagement",
+      "ActionDevelopment",
+      "AuditLogging",
+      "Auditing",
+      "Authentication",
+      "Automation",
+      "BackupRecovery",
+      "BranchProtection",
+      "CICD",
+      "ChangeManagement",
+      "CloudIntegration",
+      "CloudMigration",
+      "CodeQL",
+      "CodeReview",
+      "CommitSigning",
+      "ContainerSecurity",
+      "DataImport",
+      "DataRetention",
+      "DependencyManagement",
+      "DeploymentStrategy",
+      "Development",
+      "DevelopmentEnvironments",
+      "GitHubActions",
+      "HighAvailability",
+      "IdentityManagement",
+      "InfrastructureAsCode",
+      "Kubernetes",
+      "LargeFiles",
+      "Metrics",
+      "NetworkSecurity",
+      "OpenSource",
+      "Optimization",
+      "Orchestration",
+      "Performance",
+      "PolicyAsCode",
+      "PolicyManagement",
+      "ProjectManagement",
+      "RepositoryManagement",
+      "SecretScanning",
+      "SecretsManagement",
+      "Security",
+      "SupplyChain",
+      "TeamManagement",
+      "Testing",
+      "WorkflowManagement"
+    ]
+  },
+  "questions": [
+    {
+      "id": "gh300-25b81feb1418",
+      "examSlug": "gh300",
+      "domain": "Security",
+      "topic": "CodeQL",
+      "tags": [
+        "GH-300",
+        "Security",
+        "CodeQL"
+      ],
+      "promptHtml": "Your organization needs to enforce that all code must pass CodeQL security scanning before merging to main branch, with automatic remediation for low-severity findings and manual review for high-severity issues.",
+      "options": [
+        {
+          "key": "A",
+          "label": "GitHub Advanced Security with branch protection rules and CodeQL actions"
+        },
+        {
+          "key": "B",
+          "label": "Third-party SAST tool with webhook integration"
+        },
+        {
+          "key": "C",
+          "label": "GitHub Actions with custom security scripts"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "GitHub Advanced Security with branch protection rules and CodeQL actions",
+      "rationaleHtml": "",
+      "extraHtml": "GHAS CodeQL provides native security scanning with branch protection integration, automatic PR checks, and configurable severity thresholds. Third-party tools lack GitHub's native integration. Custom scripts don't provide the vulnerability database and automated analysis that CodeQL delivers."
+    },
+    {
+      "id": "gh300-a2897f4ecdbc",
+      "examSlug": "gh300",
+      "domain": "Administration",
+      "topic": "HighAvailability",
+      "tags": [
+        "GH-300",
+        "Administration",
+        "HighAvailability"
+      ],
+      "promptHtml": "A GitHub Enterprise Server instance must support 5,000 developers with high-availability requirements: 99.9% uptime, automated failover within 5 minutes, and geographic redundancy.",
+      "options": [
+        {
+          "key": "A",
+          "label": "GitHub Enterprise Server with high-availability replica in different datacenter"
+        },
+        {
+          "key": "B",
+          "label": "Multiple standalone GHES instances with load balancer"
+        },
+        {
+          "key": "C",
+          "label": "GitHub Enterprise Cloud with custom domain"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "GitHub Enterprise Server with high-availability replica in different datacenter",
+      "rationaleHtml": "",
+      "extraHtml": "GHES HA replica provides active-passive failover with continuous replication, automatic failover, and geographic separation. Load-balanced standalone instances don't share data. Enterprise Cloud is a different product (hosted by GitHub). HA replica is the supported enterprise resilience pattern."
+    },
+    {
+      "id": "gh300-bff19288ebb5",
+      "examSlug": "gh300",
+      "domain": "Authentication",
+      "topic": "IdentityManagement",
+      "tags": [
+        "GH-300",
+        "Authentication",
+        "IdentityManagement"
+      ],
+      "promptHtml": "Your company requires all GitHub users authenticate via corporate Active Directory with SAML SSO, automatic user provisioning/deprovisioning via SCIM, and enforce multi-factor authentication.",
+      "options": [
+        {
+          "key": "A",
+          "label": "GitHub Enterprise with SAML SSO and SCIM provisioning via identity provider"
+        },
+        {
+          "key": "B",
+          "label": "GitHub Enterprise with LDAP Sync"
+        },
+        {
+          "key": "C",
+          "label": "GitHub OAuth applications with custom provisioning scripts"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "GitHub Enterprise with SAML SSO and SCIM provisioning via identity provider",
+      "rationaleHtml": "",
+      "extraHtml": "SAML SSO provides federated authentication, SCIM automates user lifecycle management, and IdP enforces MFA. LDAP Sync is one-way and doesn't handle deprovisioning as cleanly. OAuth apps don't provide enterprise SSO. SAML+SCIM is the recommended enterprise authentication architecture."
+    },
+    {
+      "id": "gh300-057613a76057",
+      "examSlug": "gh300",
+      "domain": "CICD",
+      "topic": "GitHubActions",
+      "tags": [
+        "GH-300",
+        "CICD",
+        "GitHubActions"
+      ],
+      "promptHtml": "A CI/CD pipeline must deploy to multiple cloud providers (Azure, AWS, GCP) with environment-specific secrets, approval gates for production deployments, and deployment logs retained for audit compliance.",
+      "options": [
+        {
+          "key": "A",
+          "label": "GitHub Actions with environment secrets, required reviewers, and deployment protection rules"
+        },
+        {
+          "key": "B",
+          "label": "Self-hosted runners with external CI tool integration"
+        },
+        {
+          "key": "C",
+          "label": "GitHub Actions with organization-level secrets only"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "GitHub Actions with environment secrets, required reviewers, and deployment protection rules",
+      "rationaleHtml": "",
+      "extraHtml": "GitHub Environments provide environment-specific secrets, required reviewers for approval gates, deployment history for audit. Organization secrets apply globally (not environment-specific). External CI tools duplicate GitHub's native capabilities. Environments are purpose-built for multi-stage deployment scenarios."
+    },
+    {
+      "id": "gh300-694bb7ddb199",
+      "examSlug": "gh300",
+      "domain": "Security",
+      "topic": "SecretScanning",
+      "tags": [
+        "GH-300",
+        "Security",
+        "SecretScanning"
+      ],
+      "promptHtml": "Your organization needs to prevent secrets (API keys, tokens, passwords) from being committed to repositories, with automatic revocation notifications to security teams when secrets are detected.",
+      "options": [
+        {
+          "key": "A",
+          "label": "GitHub Advanced Security secret scanning with push protection and partner patterns"
+        },
+        {
+          "key": "B",
+          "label": "Pre-commit hooks on developer workstations"
+        },
+        {
+          "key": "C",
+          "label": "Periodic repository scans with custom regex patterns"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "GitHub Advanced Security secret scanning with push protection and partner patterns",
+      "rationaleHtml": "",
+      "extraHtml": "GHAS secret scanning prevents secret commits (push protection), scans history for existing secrets, and notifies partners (e.g., AWS) for automatic revocation. Pre-commit hooks are client-side only (bypassable). Custom scanning lacks partner integration. Push protection is the proactive security layer."
+    },
+    {
+      "id": "gh300-d09622a5c395",
+      "examSlug": "gh300",
+      "domain": "CICD",
+      "topic": "Optimization",
+      "tags": [
+        "GH-300",
+        "CICD",
+        "Optimization"
+      ],
+      "promptHtml": "A monorepo contains 50 microservices. CI/CD workflows must only trigger when files related to specific services change, minimizing unnecessary builds and deployment costs.",
+      "options": [
+        {
+          "key": "A",
+          "label": "GitHub Actions with path filters and job conditionals"
+        },
+        {
+          "key": "B",
+          "label": "Separate repositories for each microservice"
+        },
+        {
+          "key": "C",
+          "label": "Manual workflow dispatch only"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "GitHub Actions with path filters and job conditionals",
+      "rationaleHtml": "",
+      "extraHtml": "Path filters (on.push.paths) trigger workflows only for relevant file changes, conditional job execution prevents unnecessary steps. Splitting repos fragments the codebase unnecessarily. Manual dispatch doesn't scale. Path-based triggering optimizes monorepo CI/CD efficiency."
+    },
+    {
+      "id": "gh300-48719437bd85",
+      "examSlug": "gh300",
+      "domain": "Governance",
+      "topic": "CodeReview",
+      "tags": [
+        "GH-300",
+        "Governance",
+        "CodeReview"
+      ],
+      "promptHtml": "Your company requires that all pull requests in production repositories must have at least 2 code reviews from CODEOWNERS, pass status checks, and be up-to-date with the base branch before merging.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Branch protection rules with required reviews, CODEOWNERS, status checks, and strict status checks"
+        },
+        {
+          "key": "B",
+          "label": "GitHub Actions workflow with manual approval steps"
+        },
+        {
+          "key": "C",
+          "label": "Repository settings with merge commit restrictions only"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Branch protection rules with required reviews, CODEOWNERS, status checks, and strict status checks",
+      "rationaleHtml": "",
+      "extraHtml": "Branch protection enforces review count, CODEOWNERS approval, status checks, and branch freshness policies at the repository level. Actions workflows don't prevent direct merges. Merge restrictions don't enforce reviews or checks. Branch protection is the comprehensive merge policy enforcement mechanism."
+    },
+    {
+      "id": "gh300-c35aa2ad3a15",
+      "examSlug": "gh300",
+      "domain": "Compliance",
+      "topic": "AuditLogging",
+      "tags": [
+        "GH-300",
+        "Compliance",
+        "AuditLogging"
+      ],
+      "promptHtml": "A GitHub Enterprise deployment must collect all audit logs for security analysis in a SIEM tool, including repository access, permission changes, and organizational events.",
+      "options": [
+        {
+          "key": "A",
+          "label": "GitHub Enterprise audit log streaming to SIEM via webhook or API"
+        },
+        {
+          "key": "B",
+          "label": "Periodic manual export of audit logs"
+        },
+        {
+          "key": "C",
+          "label": "Enable debug logging on GitHub Enterprise Server"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "GitHub Enterprise audit log streaming to SIEM via webhook or API",
+      "rationaleHtml": "",
+      "extraHtml": "Audit log streaming provides real-time event delivery to SIEM tools via webhooks or API polling. Manual exports aren't real-time and don't scale. Debug logging is for troubleshooting not security auditing. Streaming is the enterprise pattern for security operations integration."
+    },
+    {
+      "id": "gh300-2baa3cd75809",
+      "examSlug": "gh300",
+      "domain": "Migration",
+      "topic": "DataImport",
+      "tags": [
+        "GH-300",
+        "Migration",
+        "DataImport"
+      ],
+      "promptHtml": "A large-scale migration from GitLab to GitHub Enterprise must preserve commit history, branch structure, merge requests as pull requests, and CI/CD pipeline definitions.",
+      "options": [
+        {
+          "key": "A",
+          "label": "GitHub Enterprise Importer (GEI) with GitLab import support"
+        },
+        {
+          "key": "B",
+          "label": "Git clone and push with manual PR recreation"
+        },
+        {
+          "key": "C",
+          "label": "Export/import via archive files"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "GitHub Enterprise Importer (GEI) with GitLab import support",
+      "rationaleHtml": "",
+      "extraHtml": "GEI preserves commit history, converts merge requests to PRs, migrates branches, and provides migration reports. Manual clone/push loses PRs and metadata. Archive exports don't preserve GitHub-compatible structures. GEI is purpose-built for enterprise migrations with fidelity preservation."
+    },
+    {
+      "id": "gh300-c496c029c79a",
+      "examSlug": "gh300",
+      "domain": "Security",
+      "topic": "DependencyManagement",
+      "tags": [
+        "GH-300",
+        "Security",
+        "DependencyManagement"
+      ],
+      "promptHtml": "Your organization needs to scan all repository dependencies for known vulnerabilities, automatically create pull requests for security updates, and enforce policies blocking vulnerable dependencies in production.",
+      "options": [
+        {
+          "key": "A",
+          "label": "GitHub Dependabot alerts with security updates and dependency review action"
+        },
+        {
+          "key": "B",
+          "label": "Third-party dependency scanning with manual PR creation"
+        },
+        {
+          "key": "C",
+          "label": "Weekly npm audit script in GitHub Actions"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "GitHub Dependabot alerts with security updates and dependency review action",
+      "rationaleHtml": "",
+      "extraHtml": "Dependabot alerts identify vulnerabilities, security updates create automated PRs with upgrades, dependency review action enforces policies on PRs. Third-party tools lack native GitHub integration. Manual scripts don't provide the vulnerability database and automated remediation Dependabot offers."
+    },
+    {
+      "id": "gh300-89bb9948b0a3",
+      "examSlug": "gh300",
+      "domain": "CICD",
+      "topic": "Security",
+      "tags": [
+        "GH-300",
+        "CICD",
+        "Security"
+      ],
+      "promptHtml": "A GitHub Actions workflow processes sensitive data and must run in an isolated environment with no internet access, custom network policies, and dedicated compute resources.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Self-hosted runners in isolated network with firewall rules"
+        },
+        {
+          "key": "B",
+          "label": "GitHub-hosted runners with IP restrictions"
+        },
+        {
+          "key": "C",
+          "label": "GitHub Actions containers with network restrictions"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Self-hosted runners in isolated network with firewall rules",
+      "rationaleHtml": "",
+      "extraHtml": "Self-hosted runners allow full environment control: network isolation, custom security policies, and dedicated resources. GitHub-hosted runners have internet access by design. Container network restrictions don't provide datacenter-level isolation. Self-hosted runners are required for airgapped environments."
+    },
+    {
+      "id": "gh300-09327ef17d37",
+      "examSlug": "gh300",
+      "domain": "Governance",
+      "topic": "RepositoryManagement",
+      "tags": [
+        "GH-300",
+        "Governance",
+        "RepositoryManagement"
+      ],
+      "promptHtml": "Your company requires repository templates for new projects that include branch protection, required reviewers, issue templates, and standardized CI/CD workflows across 100+ development teams.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Repository templates with .github folder structure and Organization-level settings"
+        },
+        {
+          "key": "B",
+          "label": "Manual repository creation with documentation"
+        },
+        {
+          "key": "C",
+          "label": "Clone starter template for each new repository"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Repository templates with .github folder structure and Organization-level settings",
+      "rationaleHtml": "",
+      "extraHtml": "Repository templates propagate .github configurations (workflows, issue templates), combined with organization-level default settings for branch protection. Manual processes don't scale. Simple cloning loses the template relationship. Templates + org settings provide scalable, standardized repository bootstrapping."
+    },
+    {
+      "id": "gh300-986e7d7d32cc",
+      "examSlug": "gh300",
+      "domain": "CICD",
+      "topic": "Orchestration",
+      "tags": [
+        "GH-300",
+        "CICD",
+        "Orchestration"
+      ],
+      "promptHtml": "A monolithic application CI/CD pipeline must build, test, and deploy in parallel across 10 independent modules with a final integration deployment only if all module pipelines succeed.",
+      "options": [
+        {
+          "key": "A",
+          "label": "GitHub Actions matrix strategy with dependent deployment job"
+        },
+        {
+          "key": "B",
+          "label": "Sequential jobs for each module"
+        },
+        {
+          "key": "C",
+          "label": "Separate workflows triggered manually"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "GitHub Actions matrix strategy with dependent deployment job",
+      "rationaleHtml": "",
+      "extraHtml": "Matrix strategy runs parallel jobs for each module, needs: syntax creates job dependencies, final deployment job depends on all module jobs. Sequential execution is slow. Separate workflows lack coordination. Matrix + dependencies provide parallel execution with orchestrated rollup."
+    },
+    {
+      "id": "gh300-deabdd996fe8",
+      "examSlug": "gh300",
+      "domain": "Security",
+      "topic": "CommitSigning",
+      "tags": [
+        "GH-300",
+        "Security",
+        "CommitSigning"
+      ],
+      "promptHtml": "Your organization must enforce that all commits are signed with GPG keys, with vigilant mode enabled to show signature status on all commits.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Branch protection requiring signed commits with vigilant mode in organization settings"
+        },
+        {
+          "key": "B",
+          "label": "Pre-commit hooks on developer workstations"
+        },
+        {
+          "key": "C",
+          "label": "GitHub Actions workflow validating commit signatures"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Branch protection requiring signed commits with vigilant mode in organization settings",
+      "rationaleHtml": "",
+      "extraHtml": "Branch protection enforces signed commits at push time, vigilant mode displays signature verification status. Pre-commit hooks are client-side only (bypassable). Actions workflows run after push (too late). Signed commit enforcement + vigilant mode provides commit authenticity verification."
+    },
+    {
+      "id": "gh300-f367e0d7ca98",
+      "examSlug": "gh300",
+      "domain": "Administration",
+      "topic": "Performance",
+      "tags": [
+        "GH-300",
+        "Administration",
+        "Performance"
+      ],
+      "promptHtml": "A GitHub Enterprise Server deployment serves 10,000 users and experiences slow repository clones and pushes. The solution must improve Git protocol performance without requiring client-side changes.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Enable Git protocol v2 and repository network caching"
+        },
+        {
+          "key": "B",
+          "label": "Increase server CPU and memory allocation only"
+        },
+        {
+          "key": "C",
+          "label": "Migrate to GitHub Enterprise Cloud"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Enable Git protocol v2 and repository network caching",
+      "rationaleHtml": "",
+      "extraHtml": "Git Protocol v2 reduces data transfer and improves performance transparently. Repository network caching speeds up transfers. Hardware scaling alone doesn't optimize protocol efficiency. Cloud migration is unnecessary before optimization. Protocol optimization + caching are targeted performance improvements."
+    },
+    {
+      "id": "gh300-e3451c30f4b1",
+      "examSlug": "gh300",
+      "domain": "Automation",
+      "topic": "ProjectManagement",
+      "tags": [
+        "GH-300",
+        "Automation",
+        "ProjectManagement"
+      ],
+      "promptHtml": "Your company needs to automate project board card movements based on PR status, issue labels, and release cycles without manual intervention.",
+      "options": [
+        {
+          "key": "A",
+          "label": "GitHub Actions workflows with project automation actions and GraphQL API"
+        },
+        {
+          "key": "B",
+          "label": "Manual project board management"
+        },
+        {
+          "key": "C",
+          "label": "Third-party project management tool integration"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "GitHub Actions workflows with project automation actions and GraphQL API",
+      "rationaleHtml": "",
+      "extraHtml": "GitHub Actions can automate project boards via GraphQL API, triggered by PR events, label changes, and releases. Manual management doesn't scale. Third-party tools lose native GitHub integration. Actions + GraphQL provide event-driven project automation within GitHub's native project management."
+    },
+    {
+      "id": "gh300-e8f5b593b889",
+      "examSlug": "gh300",
+      "domain": "Compliance",
+      "topic": "ChangeManagement",
+      "tags": [
+        "GH-300",
+        "Compliance",
+        "ChangeManagement"
+      ],
+      "promptHtml": "A compliance requirement mandates that all production deployments must be traceable to approved change tickets in Jira, with automated enforcement preventing deployments without ticket references.",
+      "options": [
+        {
+          "key": "A",
+          "label": "GitHub Actions with deployment gates validating Jira ticket in commit messages or PR body"
+        },
+        {
+          "key": "B",
+          "label": "Manual review of deployments"
+        },
+        {
+          "key": "C",
+          "label": "Post-deployment audit reports"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "GitHub Actions with deployment gates validating Jira ticket in commit messages or PR body",
+      "rationaleHtml": "",
+      "extraHtml": "Deployment gates in GitHub Actions can validate Jira ticket references via API, blocking deployments without valid tickets. Manual review doesn't scale and is error-prone. Post-deployment audits are reactive. Pre-deployment validation enforces compliance proactively."
+    },
+    {
+      "id": "gh300-668f4603a181",
+      "examSlug": "gh300",
+      "domain": "Security",
+      "topic": "NetworkSecurity",
+      "tags": [
+        "GH-300",
+        "Security",
+        "NetworkSecurity"
+      ],
+      "promptHtml": "Your organization requires that sensitive repositories be accessible only from corporate networks, with VPN or approved IP ranges, while public repositories remain accessible globally.",
+      "options": [
+        {
+          "key": "A",
+          "label": "IP allow lists on GitHub Enterprise with repository visibility controls"
+        },
+        {
+          "key": "B",
+          "label": "Firewall rules blocking GitHub entirely"
+        },
+        {
+          "key": "C",
+          "label": "GitHub Enterprise Server on-premises only"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "IP allow lists on GitHub Enterprise with repository visibility controls",
+      "rationaleHtml": "",
+      "extraHtml": "IP allow lists restrict access to private repositories by IP range, public repos remain accessible. Blocking GitHub entirely defeats collaboration. On-premises GHES limits external collaboration unnecessarily. IP allow lists provide granular network-based access control for sensitive repositories."
+    },
+    {
+      "id": "gh300-c8f4e40e70ee",
+      "examSlug": "gh300",
+      "domain": "CICD",
+      "topic": "InfrastructureAsCode",
+      "tags": [
+        "GH-300",
+        "CICD",
+        "InfrastructureAsCode"
+      ],
+      "promptHtml": "A GitHub Actions workflow must deploy infrastructure using Terraform with state locking, environment-specific variables, and approval gates for production changes.",
+      "options": [
+        {
+          "key": "A",
+          "label": "GitHub Actions with Terraform, environment variables, remote state in Azure/AWS, and required reviewers"
+        },
+        {
+          "key": "B",
+          "label": "Local Terraform execution with manual deployment"
+        },
+        {
+          "key": "C",
+          "label": "GitHub Actions with Terraform local state files"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "GitHub Actions with Terraform, environment variables, remote state in Azure/AWS, and required reviewers",
+      "rationaleHtml": "",
+      "extraHtml": "GitHub Environments provide environment variables, required reviewers for approvals, remote state ensures locking and team collaboration. Local execution doesn't provide audit trail. Local state files cause conflicts in team environments. Environment secrets + remote state + reviewers = secure IaC pipeline."
+    },
+    {
+      "id": "gh300-c9f8a92f197b",
+      "examSlug": "gh300",
+      "domain": "Analytics",
+      "topic": "Metrics",
+      "tags": [
+        "GH-300",
+        "Analytics",
+        "Metrics"
+      ],
+      "promptHtml": "Your company needs to measure developer productivity metrics: PR cycle time, review time, deployment frequency, and change failure rate across all repositories.",
+      "options": [
+        {
+          "key": "A",
+          "label": "GitHub Insights API with custom analytics dashboard"
+        },
+        {
+          "key": "B",
+          "label": "Manual tracking in spreadsheets"
+        },
+        {
+          "key": "C",
+          "label": "Third-party analytics tool without GitHub integration"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "GitHub Insights API with custom analytics dashboard",
+      "rationaleHtml": "",
+      "extraHtml": "GitHub Insights API provides DORA metrics, PR analytics, and contributor stats for custom dashboards. Manual tracking doesn't scale and lacks real-time data. Third-party tools without integration miss GitHub-specific context. Insights API + visualization tools deliver data-driven productivity measurement."
+    },
+    {
+      "id": "gh300-544d58717238",
+      "examSlug": "gh300",
+      "domain": "CICD",
+      "topic": "WorkflowManagement",
+      "tags": [
+        "GH-300",
+        "CICD",
+        "WorkflowManagement"
+      ],
+      "promptHtml": "A microservices architecture requires each service to use its own GitHub Actions reusable workflow for standardized build/test/deploy, with service-specific configuration parameters.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Create reusable workflows in central repository, call with inputs from service repositories"
+        },
+        {
+          "key": "B",
+          "label": "Copy-paste workflow YAML to each repository"
+        },
+        {
+          "key": "C",
+          "label": "Use organization-level required workflows only"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Create reusable workflows in central repository, call with inputs from service repositories",
+      "rationaleHtml": "",
+      "extraHtml": "Reusable workflows centralize CI/CD logic, accept inputs for customization, enable version control of pipeline definitions. Copy-paste creates maintenance nightmares. Required workflows can't be parameterized per-service. Reusable workflows provide DRY principle for CI/CD at scale."
+    },
+    {
+      "id": "gh300-88caa51aec3f",
+      "examSlug": "gh300",
+      "domain": "Governance",
+      "topic": "BranchProtection",
+      "tags": [
+        "GH-300",
+        "Governance",
+        "BranchProtection"
+      ],
+      "promptHtml": "Your organization must prevent force-pushes, branch deletions, and history rewrites on protected branches while allowing repository administrators to override in emergency situations.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Branch protection rules with force push/deletion restrictions and admin bypass option"
+        },
+        {
+          "key": "B",
+          "label": "Repository read-only mode"
+        },
+        {
+          "key": "C",
+          "label": "Remove write permissions from all users"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Branch protection rules with force push/deletion restrictions and admin bypass option",
+      "rationaleHtml": "",
+      "extraHtml": "Branch protection prevents force-push/deletion while allowing admin override for emergencies. Read-only mode is too restrictive. Removing write permissions prevents normal development. Branch protection with admin bypass balances safety with operational flexibility."
+    },
+    {
+      "id": "gh300-020b942753a1",
+      "examSlug": "gh300",
+      "domain": "Administration",
+      "topic": "BackupRecovery",
+      "tags": [
+        "GH-300",
+        "Administration",
+        "BackupRecovery"
+      ],
+      "promptHtml": "A GitHub Enterprise Server backup strategy must provide point-in-time recovery within 4 hours, retain backups for 90 days, and include all repositories, wikis, user data, and configuration.",
+      "options": [
+        {
+          "key": "A",
+          "label": "GitHub Enterprise Server Backup Utilities with automated scheduling and offsite storage"
+        },
+        {
+          "key": "B",
+          "label": "Git clone of all repositories only"
+        },
+        {
+          "key": "C",
+          "label": "Virtual machine snapshots"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "GitHub Enterprise Server Backup Utilities with automated scheduling and offsite storage",
+      "rationaleHtml": "",
+      "extraHtml": "Backup Utilities capture complete appliance state: repos, wikis, users, configuration, with incremental backups and restoration procedures. Git clones miss wikis, users, and config. VM snapshots are large and slower to restore. Backup Utilities are purpose-built for GHES backup/recovery."
+    },
+    {
+      "id": "gh300-9e6d63a0d7c6",
+      "examSlug": "gh300",
+      "domain": "CICD",
+      "topic": "DeploymentStrategy",
+      "tags": [
+        "GH-300",
+        "CICD",
+        "DeploymentStrategy"
+      ],
+      "promptHtml": "Your company needs to gradually roll out a new feature by deploying to 10% of users, then 50%, then 100% based on success metrics, with automatic rollback on error rate threshold.",
+      "options": [
+        {
+          "key": "A",
+          "label": "GitHub Actions with environment deployments, progressive delivery, and custom health checks"
+        },
+        {
+          "key": "B",
+          "label": "Manual deployment with monitoring"
+        },
+        {
+          "key": "C",
+          "label": "Feature flags in application code only"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "GitHub Actions with environment deployments, progressive delivery, and custom health checks",
+      "rationaleHtml": "",
+      "extraHtml": "GitHub Environments can orchestrate progressive deployments with approval gates between stages, Actions can query health metrics and conditionally proceed or rollback. Manual deployment doesn't scale. Feature flags alone don't control deployment progression. Environment-based progressive delivery provides controlled rollout automation."
+    },
+    {
+      "id": "gh300-bba6fc29032b",
+      "examSlug": "gh300",
+      "domain": "Security",
+      "topic": "SupplyChain",
+      "tags": [
+        "GH-300",
+        "Security",
+        "SupplyChain"
+      ],
+      "promptHtml": "A security policy requires that all GitHub Actions workflows use only verified actions from GitHub Marketplace, with automatic blocking of unverified third-party actions.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Organization-level action usage policy restricting to verified creators"
+        },
+        {
+          "key": "B",
+          "label": "Manual code review of all workflows"
+        },
+        {
+          "key": "C",
+          "label": "Disable GitHub Actions entirely"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Organization-level action usage policy restricting to verified creators",
+      "rationaleHtml": "",
+      "extraHtml": "Action usage policies enforce allowed actions at organization level, blocking unverified actions automatically. Manual review doesn't scale. Disabling Actions removes CI/CD capability. Usage policies provide scalable governance over action supply chain security."
+    },
+    {
+      "id": "gh300-65962c232688",
+      "examSlug": "gh300",
+      "domain": "CICD",
+      "topic": "ContainerSecurity",
+      "tags": [
+        "GH-300",
+        "CICD",
+        "ContainerSecurity"
+      ],
+      "promptHtml": "A GitHub Actions workflow must build a container image, scan for vulnerabilities, sign the image, and push to Azure Container Registry only if no critical vulnerabilities exist.",
+      "options": [
+        {
+          "key": "A",
+          "label": "GitHub Actions with Docker build, Trivy/Anchore scan, Cosign signing, conditional push"
+        },
+        {
+          "key": "B",
+          "label": "Build and push without scanning"
+        },
+        {
+          "key": "C",
+          "label": "Manual image scanning after deployment"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "GitHub Actions with Docker build, Trivy/Anchore scan, Cosign signing, conditional push",
+      "rationaleHtml": "",
+      "extraHtml": "Container scanning actions identify vulnerabilities pre-push, cosign provides image signing for supply chain security, conditional steps prevent vulnerable image deployment. No scanning creates security risks. Post-deployment scanning is reactive. Pre-push scanning + signing = secure container pipeline."
+    },
+    {
+      "id": "gh300-2e12a3cd5082",
+      "examSlug": "gh300",
+      "domain": "DataManagement",
+      "topic": "LargeFiles",
+      "tags": [
+        "GH-300",
+        "DataManagement",
+        "LargeFiles"
+      ],
+      "promptHtml": "Your organization requires Git LFS for large binary assets with 100TB total storage, fine-grained access control per repository, and monthly storage usage reporting.",
+      "options": [
+        {
+          "key": "A",
+          "label": "GitHub Enterprise with Git LFS enabled and storage monitoring via API"
+        },
+        {
+          "key": "B",
+          "label": "Git LFS with external storage backend only"
+        },
+        {
+          "key": "C",
+          "label": "Store large files directly in Git repositories"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "GitHub Enterprise with Git LFS enabled and storage monitoring via API",
+      "rationaleHtml": "",
+      "extraHtml": "GitHub Enterprise supports Git LFS with included storage, repository-level permissions apply naturally, API provides storage metrics for reporting. External storage complicates permissions. Large files in Git repositories degrade performance severely. Native LFS integration provides managed large file storage."
+    },
+    {
+      "id": "gh300-f1fb6a844ac4",
+      "examSlug": "gh300",
+      "domain": "Compliance",
+      "topic": "DataRetention",
+      "tags": [
+        "GH-300",
+        "Compliance",
+        "DataRetention"
+      ],
+      "promptHtml": "A compliance requirement mandates all code review comments and decisions be retained for 7 years, with immutable storage preventing deletion or modification.",
+      "options": [
+        {
+          "key": "A",
+          "label": "GitHub Enterprise with audit log archival to immutable storage and PR export"
+        },
+        {
+          "key": "B",
+          "label": "Screenshots of PR conversations"
+        },
+        {
+          "key": "C",
+          "label": "No retention policy"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "GitHub Enterprise with audit log archival to immutable storage and PR export",
+      "rationaleHtml": "",
+      "extraHtml": "Audit logs capture all PR activities, export to immutable storage (S3 Object Lock, Azure Blob immutability) ensures compliance. Screenshots aren't scalable or verifiable. No retention violates compliance. Structured log archival + immutable storage meets regulatory requirements."
+    },
+    {
+      "id": "gh300-1f928b62f90e",
+      "examSlug": "gh300",
+      "domain": "CICD",
+      "topic": "Development",
+      "tags": [
+        "GH-300",
+        "CICD",
+        "Development"
+      ],
+      "promptHtml": "Your team needs to test GitHub Actions workflows locally before committing to see if they execute correctly in the GitHub-hosted runner environment.",
+      "options": [
+        {
+          "key": "A",
+          "label": "act tool for local GitHub Actions execution"
+        },
+        {
+          "key": "B",
+          "label": "Commit and push to test branch repeatedly"
+        },
+        {
+          "key": "C",
+          "label": "Run bash scripts manually"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "act tool for local GitHub Actions execution",
+      "rationaleHtml": "",
+      "extraHtml": "act runs GitHub Actions workflows locally in containers matching GitHub-hosted runners, enabling rapid iteration without commits. Repeated commits pollute history. Bash scripts don't match Actions environment. act provides local Actions development workflow for faster iteration."
+    },
+    {
+      "id": "gh300-57d9b306ce5d",
+      "examSlug": "gh300",
+      "domain": "Security",
+      "topic": "PolicyManagement",
+      "tags": [
+        "GH-300",
+        "Security",
+        "PolicyManagement"
+      ],
+      "promptHtml": "A GitHub organization has 500 repositories. New security policies require enabling Dependabot, secret scanning, and code scanning on all existing and future repositories.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Organization-level security settings with automatic enablement for new repositories"
+        },
+        {
+          "key": "B",
+          "label": "Manually enable on each repository"
+        },
+        {
+          "key": "C",
+          "label": "GitHub Actions workflow to enable via API"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Organization-level security settings with automatic enablement for new repositories",
+      "rationaleHtml": "",
+      "extraHtml": "Organization security settings enable features across all repos at once and automatically enable for new repos. Manual enablement doesn't scale (500 repos). API scripts work but are custom maintenance. Org-level settings provide centralized security feature management at scale."
+    },
+    {
+      "id": "gh300-07d01973b7e5",
+      "examSlug": "gh300",
+      "domain": "CICD",
+      "topic": "Kubernetes",
+      "tags": [
+        "GH-300",
+        "CICD",
+        "Kubernetes"
+      ],
+      "promptHtml": "Your CI/CD pipeline must deploy to Kubernetes with blue-green deployments, automatic smoke tests on green environment, and traffic shift only after tests pass.",
+      "options": [
+        {
+          "key": "A",
+          "label": "GitHub Actions with kubectl, separate blue/green deployments, test job, conditional traffic shift"
+        },
+        {
+          "key": "B",
+          "label": "Manual kubectl apply commands"
+        },
+        {
+          "key": "C",
+          "label": "GitHub Actions with direct production deployment only"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "GitHub Actions with kubectl, separate blue/green deployments, test job, conditional traffic shift",
+      "rationaleHtml": "",
+      "extraHtml": "Blue-green deployment pattern in Actions: deploy green environment, run smoke tests, conditionally update service to point to green. Manual deployment lacks automation and consistency. Direct production deployment lacks safety. Automated blue-green provides zero-downtime deployments with validation gates."
+    },
+    {
+      "id": "gh300-3c3045e7d08e",
+      "examSlug": "gh300",
+      "domain": "Integration",
+      "topic": "CICD",
+      "tags": [
+        "GH-300",
+        "Integration",
+        "CICD"
+      ],
+      "promptHtml": "A GitHub Enterprise environment must integrate with on-premises Jenkins for existing CI/CD pipelines during a gradual migration to GitHub Actions.",
+      "options": [
+        {
+          "key": "A",
+          "label": "GitHub webhooks triggering Jenkins pipelines with GitHub checks API for status reporting"
+        },
+        {
+          "key": "B",
+          "label": "Maintain completely separate systems"
+        },
+        {
+          "key": "C",
+          "label": "Migrate all pipelines simultaneously"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "GitHub webhooks triggering Jenkins pipelines with GitHub checks API for status reporting",
+      "rationaleHtml": "",
+      "extraHtml": "Webhooks from GitHub trigger Jenkins jobs, Jenkins reports status back via GitHub Checks API showing results in PRs. Separate systems lack integration. Simultaneous migration is high-risk. Webhook + Checks API provides hybrid integration during gradual migration."
+    },
+    {
+      "id": "gh300-2784e86bbd9f",
+      "examSlug": "gh300",
+      "domain": "CICD",
+      "topic": "PolicyAsCode",
+      "tags": [
+        "GH-300",
+        "CICD",
+        "PolicyAsCode"
+      ],
+      "promptHtml": "Your organization needs to enforce that all Terraform code uses approved module versions from a private registry, with automatic validation in pull requests.",
+      "options": [
+        {
+          "key": "A",
+          "label": "GitHub Actions with Terraform validation and module version checks using conftest or OPA"
+        },
+        {
+          "key": "B",
+          "label": "Manual code review only"
+        },
+        {
+          "key": "C",
+          "label": "No version enforcement"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "GitHub Actions with Terraform validation and module version checks using conftest or OPA",
+      "rationaleHtml": "",
+      "extraHtml": "Policy-as-code tools (conftest/OPA) validate Terraform module versions against approved list, automated in PR checks. Manual review doesn't scale and is error-prone. No enforcement leads to drift. Automated policy validation enforces infrastructure standards at code review time."
+    },
+    {
+      "id": "gh300-dcaa8aac013f",
+      "examSlug": "gh300",
+      "domain": "CICD",
+      "topic": "Performance",
+      "tags": [
+        "GH-300",
+        "CICD",
+        "Performance"
+      ],
+      "promptHtml": "A monorepo CI/CD pipeline builds 30 services. To optimize costs and build time, workflows should cache dependencies per service and reuse across builds.",
+      "options": [
+        {
+          "key": "A",
+          "label": "GitHub Actions cache with key based on service-specific dependency file hashes"
+        },
+        {
+          "key": "B",
+          "label": "No caching, fresh install every build"
+        },
+        {
+          "key": "C",
+          "label": "Single organization-wide cache key"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "GitHub Actions cache with key based on service-specific dependency file hashes",
+      "rationaleHtml": "",
+      "extraHtml": "Service-specific cache keys (e.g., hash of package.json per service) enable targeted cache hits and invalidation. No caching wastes time and resources. Single cache key causes excessive cache misses. Per-service caching with hash-based keys optimizes build performance in monorepos."
+    },
+    {
+      "id": "gh300-0130703d4f0f",
+      "examSlug": "gh300",
+      "domain": "Compliance",
+      "topic": "OpenSource",
+      "tags": [
+        "GH-300",
+        "Compliance",
+        "OpenSource"
+      ],
+      "promptHtml": "Your company must track and report on all open source license compliance across 200 repositories, flagging GPL and AGPL licenses that conflict with corporate policy.",
+      "options": [
+        {
+          "key": "A",
+          "label": "GitHub dependency graph with license information and policy enforcement actions"
+        },
+        {
+          "key": "B",
+          "label": "Manual license audits quarterly"
+        },
+        {
+          "key": "C",
+          "label": "No license tracking"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "GitHub dependency graph with license information and policy enforcement actions",
+      "rationaleHtml": "",
+      "extraHtml": "Dependency graph includes license metadata, Actions can query and flag non-compliant licenses in PRs. Manual audits are point-in-time and don't prevent violations. No tracking creates legal risk. Automated dependency license scanning provides continuous compliance monitoring."
+    },
+    {
+      "id": "gh300-56044a46617f",
+      "examSlug": "gh300",
+      "domain": "Security",
+      "topic": "SecretsManagement",
+      "tags": [
+        "GH-300",
+        "Security",
+        "SecretsManagement"
+      ],
+      "promptHtml": "A GitHub Actions workflow processes secrets and must ensure that secret values never appear in logs, even when debugging or in third-party actions.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Use GitHub Actions automatic secret masking and avoid echo/print of secrets"
+        },
+        {
+          "key": "B",
+          "label": "Disable logging entirely"
+        },
+        {
+          "key": "C",
+          "label": "Trust all third-party actions with secrets"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Use GitHub Actions automatic secret masking and avoid echo/print of secrets",
+      "rationaleHtml": "",
+      "extraHtml": "GitHub automatically masks registered secrets in logs. Best practice: never echo secrets, audit third-party actions before use, use OIDC when possible to avoid static secrets. Disabling logs hinders troubleshooting. Blindly trusting actions risks secret exposure. Secret masking + careful secret handling + action auditing = secure secret management."
+    },
+    {
+      "id": "gh300-ef2e1e816d6a",
+      "examSlug": "gh300",
+      "domain": "Administration",
+      "topic": "HighAvailability",
+      "tags": [
+        "GH-300",
+        "Administration",
+        "HighAvailability"
+      ],
+      "promptHtml": "Your organization needs GitHub Enterprise High Availability with near-zero data loss tolerance, active monitoring of replication lag, and automated health checks.",
+      "options": [
+        {
+          "key": "A",
+          "label": "GitHub Enterprise HA replica with monitoring of replication status via HAProxy and collectd"
+        },
+        {
+          "key": "B",
+          "label": "Regular backup snapshots only"
+        },
+        {
+          "key": "C",
+          "label": "Multiple standalone instances behind load balancer"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "GitHub Enterprise HA replica with monitoring of replication status via HAProxy and collectd",
+      "rationaleHtml": "",
+      "extraHtml": "GHES HA provides active-passive replication with minimal RPO, HAProxy monitors health, collectd exposes metrics for monitoring. Backups alone don't provide near-zero data loss for failover. Load-balanced standalone instances don't replicate data. HA replica is the zero-RPO disaster recovery architecture."
+    },
+    {
+      "id": "gh300-34e09646ceac",
+      "examSlug": "gh300",
+      "domain": "Compliance",
+      "topic": "Auditing",
+      "tags": [
+        "GH-300",
+        "Compliance",
+        "Auditing"
+      ],
+      "promptHtml": "A compliance audit requires證明all production deployments passed required security scans, were approved by authorized personnel, and are traceable to code changes.",
+      "options": [
+        {
+          "key": "A",
+          "label": "GitHub deployment logs with environment protection rules, required reviewers, and status checks"
+        },
+        {
+          "key": "B",
+          "label": "Email approval trails"
+        },
+        {
+          "key": "C",
+          "label": "Spreadsheet deployment log"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "GitHub deployment logs with environment protection rules, required reviewers, and status checks",
+      "rationaleHtml": "",
+      "extraHtml": "GitHub Environments capture deployment history, required reviewers provide approval trail, status checks show security scan results, all linked to commits/PRs. Email trails aren't structured or tamper-proof. Spreadsheets are manual and unreliable. Environment deployment history provides auditable deployment chain of custody."
+    },
+    {
+      "id": "gh300-522e72da31cd",
+      "examSlug": "gh300",
+      "domain": "CICD",
+      "topic": "ActionDevelopment",
+      "tags": [
+        "GH-300",
+        "CICD",
+        "ActionDevelopment"
+      ],
+      "promptHtml": "Your team develops a GitHub Action used across 50 repositories. Updates to the action must not break existing workflows, requiring semantic versioning and compatibility testing.",
+      "options": [
+        {
+          "key": "A",
+          "label": "GitHub Action with semantic version tags, test workflows, and major version branches"
+        },
+        {
+          "key": "B",
+          "label": "Single latest tag updated continuously"
+        },
+        {
+          "key": "C",
+          "label": "No versioning strategy"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "GitHub Action with semantic version tags, test workflows, and major version branches",
+      "rationaleHtml": "",
+      "extraHtml": "Semantic versioning (v1.0.0) with major version branches (v1) allows users to pin to major version while receiving minor/patch updates, or pin to specific version for stability. Continuous latest tag breaks workflows. No versioning prevents compatibility management. SemVer + version branches = stable action distribution."
+    },
+    {
+      "id": "gh300-7a4242f99f95",
+      "examSlug": "gh300",
+      "domain": "Administration",
+      "topic": "Security",
+      "tags": [
+        "GH-300",
+        "Administration",
+        "Security"
+      ],
+      "promptHtml": "A GitHub Enterprise Server deployment must support custom SSL certificates from internal CA, with automated certificate renewal and no service interruption.",
+      "options": [
+        {
+          "key": "A",
+          "label": "GitHub Enterprise Server with custom SSL/TLS certificate and renewal via API or config change"
+        },
+        {
+          "key": "B",
+          "label": "Self-signed certificates only"
+        },
+        {
+          "key": "C",
+          "label": "Let's Encrypt certificates for internal domain"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "GitHub Enterprise Server with custom SSL/TLS certificate and renewal via API or config change",
+      "rationaleHtml": "",
+      "extraHtml": "GHES supports custom SSL/TLS certificates from enterprise CA, can be updated via management console or API without restart. Self-signed causes trust warnings. Let's Encrypt requires public domain validation (may not work for internal domains). Custom CA certificates integrate with enterprise PKI."
+    },
+    {
+      "id": "gh300-47bb7676bac7",
+      "examSlug": "gh300",
+      "domain": "CICD",
+      "topic": "DevelopmentEnvironments",
+      "tags": [
+        "GH-300",
+        "CICD",
+        "DevelopmentEnvironments"
+      ],
+      "promptHtml": "Your organization needs to provide developers with ephemeral development environments created automatically for each PR, with the environment destroyed after PR closure.",
+      "options": [
+        {
+          "key": "A",
+          "label": "GitHub Actions with IaC tools (Terraform/Pulumi) creating cloud resources per PR, cleanup on close"
+        },
+        {
+          "key": "B",
+          "label": "Shared development environment for all developers"
+        },
+        {
+          "key": "C",
+          "label": "Manual environment provisioning"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "GitHub Actions with IaC tools (Terraform/Pulumi) creating cloud resources per PR, cleanup on close",
+      "rationaleHtml": "",
+      "extraHtml": "PR-triggered Actions deploy ephemeral environments using IaC, PR close event triggers cleanup. Shared environments cause conflicts. Manual provisioning doesn't scale. Automated ephemeral environments provide isolated testing without resource waste."
+    },
+    {
+      "id": "gh300-c1e8cc0a15b6",
+      "examSlug": "gh300",
+      "domain": "Security",
+      "topic": "AccessManagement",
+      "tags": [
+        "GH-300",
+        "Security",
+        "AccessManagement"
+      ],
+      "promptHtml": "A security team needs visibility into all GitHub organization members who have admin access across repositories, with weekly reports identifying excessive permissions.",
+      "options": [
+        {
+          "key": "A",
+          "label": "GitHub GraphQL API querying organization and repository permissions with scheduled reporting"
+        },
+        {
+          "key": "B",
+          "label": "Manual audit of repository settings"
+        },
+        {
+          "key": "C",
+          "label": "No permission tracking"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "GitHub GraphQL API querying organization and repository permissions with scheduled reporting",
+      "rationaleHtml": "",
+      "extraHtml": "GraphQL API provides programmatic access to org/repo permissions, enabling automated reports identifying privilege creep. Manual audits don't scale and are point-in-time. No tracking leads to privilege accumulation. Automated permission reporting enables least-privilege enforcement."
+    },
+    {
+      "id": "gh300-45c3d72ba3c2",
+      "examSlug": "gh300",
+      "domain": "CICD",
+      "topic": "Testing",
+      "tags": [
+        "GH-300",
+        "CICD",
+        "Testing"
+      ],
+      "promptHtml": "Your CI/CD pipeline must run integration tests requiring a live database, with database cleaned and reset between test runs, minimizing test execution time.",
+      "options": [
+        {
+          "key": "A",
+          "label": "GitHub Actions with service containers (PostgreSQL/MySQL) started per workflow run"
+        },
+        {
+          "key": "B",
+          "label": "Shared permanent test database"
+        },
+        {
+          "key": "C",
+          "label": "Mock database only"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "GitHub Actions with service containers (PostgreSQL/MySQL) started per workflow run",
+      "rationaleHtml": "",
+      "extraHtml": "Service containers provide isolated, clean database instances per workflow run, ensuring test independence and parallelization. Shared database causes test interference. Mocks don't catch integration issues. Service containers = fast, isolated, realistic integration tests."
+    },
+    {
+      "id": "gh300-329d276844e4",
+      "examSlug": "gh300",
+      "domain": "Governance",
+      "topic": "TeamManagement",
+      "tags": [
+        "GH-300",
+        "Governance",
+        "TeamManagement"
+      ],
+      "promptHtml": "A GitHub organization has 50 teams with varying repository access needs. Administration must be delegated to team leads while preventing privilege escalation and maintaining audit capability.",
+      "options": [
+        {
+          "key": "A",
+          "label": "GitHub team maintainer role with organization-level permission constraints and audit logging"
+        },
+        {
+          "key": "B",
+          "label": "All team leads have organization owner role"
+        },
+        {
+          "key": "C",
+          "label": "Central IT manages all permissions"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "GitHub team maintainer role with organization-level permission constraints and audit logging",
+      "rationaleHtml": "",
+      "extraHtml": "Team maintainer role allows team management without org-level permissions, org settings constrain max permissions, audit logs track all changes. Owner role overprivileges team leads. Centralized management doesn't scale. Team maintainer role + org constraints = delegated administration with governance."
+    },
+    {
+      "id": "gh300-7f4228d33217",
+      "examSlug": "gh300",
+      "domain": "Security",
+      "topic": "CloudIntegration",
+      "tags": [
+        "GH-300",
+        "Security",
+        "CloudIntegration"
+      ],
+      "promptHtml": "A GitHub Actions workflow must deploy to AWS without storing long-lived access keys, using temporary credentials with least-privilege permissions scoped to the deployment role.",
+      "options": [
+        {
+          "key": "A",
+          "label": "GitHub OIDC provider with AWS IAM role assumption (Web Identity Federation)"
+        },
+        {
+          "key": "B",
+          "label": "AWS access keys stored in GitHub secrets"
+        },
+        {
+          "key": "C",
+          "label": "Shared IAM user for all workflows"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "GitHub OIDC provider with AWS IAM role assumption (Web Identity Federation)",
+      "rationaleHtml": "",
+      "extraHtml": "GitHub OIDC provides temporary credentials via IAM role assumption, no stored secrets, fine-grained permissions per workflow. Access keys are static secrets (security risk). Shared IAM user lacks isolation. OIDC federation eliminates static credentials and enables dynamic, scoped access."
+    },
+    {
+      "id": "gh300-975a9fc34e73",
+      "examSlug": "gh300",
+      "domain": "Security",
+      "topic": "Automation",
+      "tags": [
+        "GH-300",
+        "Security",
+        "Automation"
+      ],
+      "promptHtml": "Your company requires that critical security alerts from CodeQL and Dependabot be automatically forwarded to Slack and create Jira tickets within 5 minutes of detection.",
+      "options": [
+        {
+          "key": "A",
+          "label": "GitHub webhooks for security alerts with automation forwarding to Slack and Jira APIs"
+        },
+        {
+          "key": "B",
+          "label": "Manual monitoring of GitHub security tab"
+        },
+        {
+          "key": "C",
+          "label": "Daily email summary only"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "GitHub webhooks for security alerts with automation forwarding to Slack and Jira APIs",
+      "rationaleHtml": "",
+      "extraHtml": "Repository webhooks emit events for security alerts, automation (Actions or external) forwards to Slack and creates Jira tickets immediately. Manual monitoring has delay and human error. Daily summaries don't meet 5-minute SLA. Real-time webhook-based integration provides immediate security alerting."
+    },
+    {
+      "id": "gh300-38bc7dd455e5",
+      "examSlug": "gh300",
+      "domain": "CICD",
+      "topic": "Security",
+      "tags": [
+        "GH-300",
+        "CICD",
+        "Security"
+      ],
+      "promptHtml": "A GitHub Actions self-hosted runner must execute jobs for multiple repositories while preventing environment contamination between jobs and ensuring consistent build environments.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Ephemeral self-hosted runners provisioned per job and destroyed after completion"
+        },
+        {
+          "key": "B",
+          "label": "Persistent self-hosted runner with manual cleanup"
+        },
+        {
+          "key": "C",
+          "label": "GitHub-hosted runners only"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Ephemeral self-hosted runners provisioned per job and destroyed after completion",
+      "rationaleHtml": "",
+      "extraHtml": "Ephemeral runners (created via Actions or infrastructure automation) provide clean environment per job, preventing contamination and secrets leakage. Persistent runners accumulate state. GitHub-hosted runners may not meet custom infrastructure requirements. Ephemeral runners = isolation with custom infrastructure."
+    },
+    {
+      "id": "gh300-ab5c7c4c1c99",
+      "examSlug": "gh300",
+      "domain": "Migration",
+      "topic": "CloudMigration",
+      "tags": [
+        "GH-300",
+        "Migration",
+        "CloudMigration"
+      ],
+      "promptHtml": "Your organization needs to migrate 2000 repositories from GitHub Enterprise Server to GitHub Enterprise Cloud with minimal downtime and preservation of all metadata including issues, PRs, releases, and wikis.",
+      "options": [
+        {
+          "key": "A",
+          "label": "GitHub Enterprise Importer (gei) with staged migration approach"
+        },
+        {
+          "key": "B",
+          "label": "Git push mirror to new organization"
+        },
+        {
+          "key": "C",
+          "label": "Archive download and manual recreation"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "GitHub Enterprise Importer (gei) with staged migration approach",
+      "rationaleHtml": "",
+      "extraHtml": "GEI preserves full repository metadata (issues, PRs, milestones, releases, wikis), supports staged migration for testing, minimizes downtime. Git push loses all metadata. Manual recreation is error-prone. GEI is purpose-built for high-fidelity GHES to Cloud migrations."
+    },
+    {
+      "id": "gh300-f7c088616285",
+      "examSlug": "gh300",
+      "domain": "Security",
+      "topic": "Authentication",
+      "tags": [
+        "GH-300",
+        "Security",
+        "Authentication"
+      ],
+      "promptHtml": "A development team needs fine-grained personal access tokens with repository-specific permissions and 90-day expiration for API automation scripts.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Fine-grained personal access tokens with repository access and expiration configured"
+        },
+        {
+          "key": "B",
+          "label": "Classic personal access tokens with full org scope"
+        },
+        {
+          "key": "C",
+          "label": "OAuth app with broad permissions"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Fine-grained personal access tokens with repository access and expiration configured",
+      "rationaleHtml": "",
+      "extraHtml": "Fine-grained PATs provide repository-level scoping, specific permission selection, and mandatory expiration. Classic PATs have broad scope. OAuth apps require user interaction. Fine-grained PATs enable least-privilege API access with lifecycle management."
+    }
+  ]
+}

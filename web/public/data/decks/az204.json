@@ -1,0 +1,1238 @@
+{
+  "exam": {
+    "slug": "az204",
+    "code": "AZ-204",
+    "title": "Developing Solutions for Microsoft Azure",
+    "sourceFile": "az204_flashcards_2026-02-06.csv",
+    "updatedOn": "2026-02-06",
+    "questionCount": 40,
+    "domains": [
+      "APIM",
+      "Compute",
+      "Configuration",
+      "Messaging",
+      "Monitoring",
+      "Optimization",
+      "Security",
+      "Storage"
+    ],
+    "topics": [
+      "APIM",
+      "APIManagement",
+      "AppConfiguration",
+      "ApplicationInsights",
+      "Authentication",
+      "AzureFunctions",
+      "BlobStorage",
+      "Caching",
+      "Containers",
+      "CosmosDB",
+      "EventGrid",
+      "KeyVault",
+      "ManagedIdentity",
+      "ServiceBus"
+    ]
+  },
+  "questions": [
+    {
+      "id": "az204-8f6080e52641",
+      "examSlug": "az204",
+      "domain": "Compute",
+      "topic": "AzureFunctions",
+      "tags": [
+        "AZ-204",
+        "Compute",
+        "AzureFunctions"
+      ],
+      "promptHtml": "Your web application needs to execute background tasks triggered by HTTP requests but complete asynchronously. Tasks may run for up to 10 minutes. The solution must minimize infrastructure management and costs.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure App Service WebJobs with continuous execution"
+        },
+        {
+          "key": "B",
+          "label": "Azure Functions with Durable Functions extension"
+        },
+        {
+          "key": "C",
+          "label": "Azure Container Instances with REST API trigger"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Azure Functions with Durable Functions extension",
+      "rationaleHtml": "",
+      "extraHtml": "Durable Functions orchestrate long-running workflows with built-in state management, automatic retries, and checkpointing. Supports async HTTP APIs with status polling. WebJobs require App Service plan (always running). ACI lacks native workflow orchestration. Durable Functions is serverless and purpose-built for stateful workflows."
+    },
+    {
+      "id": "az204-0af8eb8b3e05",
+      "examSlug": "az204",
+      "domain": "Compute",
+      "topic": "Containers",
+      "tags": [
+        "AZ-204",
+        "Compute",
+        "Containers"
+      ],
+      "promptHtml": "An application must scale to 1000 concurrent users with <100ms response time. Traffic is unpredictable with usage spikes during business hours. The solution must minimize costs during off-hours.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure App Service with Premium V3 plan and autoscale rules"
+        },
+        {
+          "key": "B",
+          "label": "Azure Functions Consumption plan with HTTP trigger"
+        },
+        {
+          "key": "C",
+          "label": "Azure Container Apps with KEDA autoscaling"
+        }
+      ],
+      "correctOption": "C",
+      "correctLabel": "Azure Container Apps with KEDA autoscaling",
+      "rationaleHtml": "",
+      "extraHtml": "Container Apps provides automatic scale-to-zero, KEDA-based scaling, and microservices-optimized hosting. Functions Consumption has 230-second timeout (insufficient for some requests). App Service Premium doesn't scale to zero. Container Apps balances serverless economics with container flexibility for web workloads."
+    },
+    {
+      "id": "az204-c8ed83e7ceaa",
+      "examSlug": "az204",
+      "domain": "Messaging",
+      "topic": "ServiceBus",
+      "tags": [
+        "AZ-204",
+        "Messaging",
+        "ServiceBus"
+      ],
+      "promptHtml": "A Function App processes messages from a Service Bus queue. During high volume, poison messages cause repeated failures. The solution must move failed messages after 5 attempts without losing data.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Configure Service Bus queue with dead-letter queue and maxDeliveryCount=5"
+        },
+        {
+          "key": "B",
+          "label": "Implement try-catch in function code with retry logic"
+        },
+        {
+          "key": "C",
+          "label": "Use Application Insights to track failures and manual intervention"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Configure Service Bus queue with dead-letter queue and maxDeliveryCount=5",
+      "rationaleHtml": "",
+      "extraHtml": "Service Bus automatically moves messages to DLQ after maxDeliveryCount exceeded, preserving message metadata and enabling later analysis/reprocessing. Manual retry logic is error-prone and couples business logic with error handling. App Insights monitors but doesn't handle messages. DLQ is the platform pattern for poison message handling."
+    },
+    {
+      "id": "az204-6a849d359d61",
+      "examSlug": "az204",
+      "domain": "Security",
+      "topic": "ManagedIdentity",
+      "tags": [
+        "AZ-204",
+        "Security",
+        "ManagedIdentity"
+      ],
+      "promptHtml": "Your Azure Function must authenticate to Azure SQL Database without credentials in code. The function uses a system-assigned managed identity. Connection strings are managed centrally.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Store connection string with password in Key Vault, retrieve using managed identity"
+        },
+        {
+          "key": "B",
+          "label": "Use managed identity token in SQL connection string with Azure AD authentication"
+        },
+        {
+          "key": "C",
+          "label": "Store credentials in Function App application settings encrypted"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Use managed identity token in SQL connection string with Azure AD authentication",
+      "rationaleHtml": "",
+      "extraHtml": "Managed identity with SQL Azure AD auth eliminates credentials entirely - connection string uses Authentication=Active Directory Managed Identity. Option A still has passwords in Key Vault. Option C stores credentials (encrypted but present). Managed identity to SQL auth is credential-free pattern for Azure compute."
+    },
+    {
+      "id": "az204-b110218ffcab",
+      "examSlug": "az204",
+      "domain": "Security",
+      "topic": "KeyVault",
+      "tags": [
+        "AZ-204",
+        "Security",
+        "KeyVault"
+      ],
+      "promptHtml": "An API must securely store database connection strings, API keys, and certificates with automatic rotation every 90 days and audit logging of all access attempts.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Key Vault with secret versioning and access policies"
+        },
+        {
+          "key": "B",
+          "label": "Azure App Configuration with Key Vault references"
+        },
+        {
+          "key": "C",
+          "label": "Application settings with encryption at rest"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Key Vault with secret versioning and access policies",
+      "rationaleHtml": "",
+      "extraHtml": "Key Vault is purpose-built for secrets management with versioning, automatic rotation via integrations, and comprehensive audit logs. App Configuration is for settings (use Key Vault references for secrets). Application settings lack rotation features and granular auditing. Key Vault is the secure secrets store with governance features."
+    },
+    {
+      "id": "az204-ad7ddc3e2ec9",
+      "examSlug": "az204",
+      "domain": "Configuration",
+      "topic": "AppConfiguration",
+      "tags": [
+        "AZ-204",
+        "Configuration",
+        "AppConfiguration"
+      ],
+      "promptHtml": "A web application must retrieve feature flags and configuration values with <50ms latency. Configuration changes must propagate to all app instances within 30 seconds without redeployment.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure App Configuration with push refresh and feature management"
+        },
+        {
+          "key": "B",
+          "label": "Azure Key Vault with application polling"
+        },
+        {
+          "key": "C",
+          "label": "Environment variables with configuration reload"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure App Configuration with push refresh and feature management",
+      "rationaleHtml": "",
+      "extraHtml": "App Configuration provides dynamic configuration with push refresh (Event Grid notifications), feature flags with targeting, and built-in caching for low latency. Key Vault is for secrets not config. Environment variables require app restart. App Configuration is the dynamic config management service with sub-second propagation."
+    },
+    {
+      "id": "az204-b0987847fd20",
+      "examSlug": "az204",
+      "domain": "Compute",
+      "topic": "Containers",
+      "tags": [
+        "AZ-204",
+        "Compute",
+        "Containers"
+      ],
+      "promptHtml": "Your containerized application must scale from 0 to 100 instances based on Azure Service Bus queue length with Kubernetes-compatible APIs. The solution must minimize operational overhead.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Kubernetes Service with KEDA scaler"
+        },
+        {
+          "key": "B",
+          "label": "Azure Container Instances with Azure Logic App trigger"
+        },
+        {
+          "key": "C",
+          "label": "Azure Container Apps with Service Bus scale rule"
+        }
+      ],
+      "correctOption": "C",
+      "correctLabel": "Azure Container Apps with Service Bus scale rule",
+      "rationaleHtml": "",
+      "extraHtml": "Container Apps has built-in KEDA scaling with Service Bus queue depth trigger, scales to zero, and is fully managed (no cluster management). AKS requires cluster operations. ACI doesn't autoscale natively by queue depth. Container Apps provides KEDA scaling without Kubernetes operational complexity."
+    },
+    {
+      "id": "az204-7bce7f4774de",
+      "examSlug": "az204",
+      "domain": "Storage",
+      "topic": "CosmosDB",
+      "tags": [
+        "AZ-204",
+        "Storage",
+        "CosmosDB"
+      ],
+      "promptHtml": "An application stores 500GB of JSON documents queried by user ID and timestamp. Queries must support complex filters and global distribution across 3 regions with <10ms P99 read latency.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Cosmos DB for NoSQL with composite indexes"
+        },
+        {
+          "key": "B",
+          "label": "Azure SQL Database with JSON columns and geo-replication"
+        },
+        {
+          "key": "C",
+          "label": "Azure Table Storage with geo-redundant storage"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Cosmos DB for NoSQL with composite indexes",
+      "rationaleHtml": "",
+      "extraHtml": "Cosmos DB provides automatic global distribution with <10ms reads, multi-region writes, and composite indexes for efficient JSON queries. SQL Database geo-replication is async (higher latency). Table Storage lacks complex query capabilities. Cosmos DB is the globally distributed NoSQL database optimized for JSON with SLA-backed latency."
+    },
+    {
+      "id": "az204-cc6b380630ac",
+      "examSlug": "az204",
+      "domain": "Storage",
+      "topic": "BlobStorage",
+      "tags": [
+        "AZ-204",
+        "Storage",
+        "BlobStorage"
+      ],
+      "promptHtml": "Your application must upload 10,000 images per hour to Blob Storage with optimized throughput and automatic retry on transient failures. Images vary from 100KB to 5MB.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Storage SDK with BlobClient and parallel upload operations"
+        },
+        {
+          "key": "B",
+          "label": "REST API with PUT Blob calls"
+        },
+        {
+          "key": "C",
+          "label": "AzCopy command-line tool in application code"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Storage SDK with BlobClient and parallel upload operations",
+      "rationaleHtml": "",
+      "extraHtml": "Storage SDK provides built-in retry policies, parallel uploads for large blobs, and optimized throughput with block upload. REST API requires manual retry logic. AzCopy is for command-line scenarios not application integration. SDK abstracts complexity with best practices (exponential backoff, parallelization) built-in."
+    },
+    {
+      "id": "az204-8deb02fab534",
+      "examSlug": "az204",
+      "domain": "Storage",
+      "topic": "BlobStorage",
+      "tags": [
+        "AZ-204",
+        "Storage",
+        "BlobStorage"
+      ],
+      "promptHtml": "A blob storage solution must support versioning with automatic deletion of old versions after 30 days while preserving current versions indefinitely. The solution must minimize storage costs.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Enable blob versioning with lifecycle management policy to delete non-current versions after 30 days"
+        },
+        {
+          "key": "B",
+          "label": "Use blob snapshots with scheduled Azure Function cleanup"
+        },
+        {
+          "key": "C",
+          "label": "Enable soft delete with 30-day retention"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Enable blob versioning with lifecycle management policy to delete non-current versions after 30 days",
+      "rationaleHtml": "",
+      "extraHtml": "Blob versioning automatically maintains previous versions, lifecycle management has noncurrentVersionsToDelete action for retention policies. Snapshots require manual management. Soft delete protects against deletion but doesn't manage version retention. Versioning + lifecycle = automated version lifecycle with cost optimization."
+    },
+    {
+      "id": "az204-d87c3324a6ea",
+      "examSlug": "az204",
+      "domain": "Optimization",
+      "topic": "Caching",
+      "tags": [
+        "AZ-204",
+        "Optimization",
+        "Caching"
+      ],
+      "promptHtml": "Your API must implement caching for product catalog queries with 5-minute TTL and support for tag-based cache invalidation when products update. Cache must be shared across multiple app instances.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Cache for Redis with SET commands and tag-based eviction"
+        },
+        {
+          "key": "B",
+          "label": "In-memory caching with IMemoryCache per instance"
+        },
+        {
+          "key": "C",
+          "label": "Azure SQL Database query results caching"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Cache for Redis with SET commands and tag-based eviction",
+      "rationaleHtml": "",
+      "extraHtml": "Redis provides distributed caching shared across instances, TTL support, and tag-based eviction via SET data structures or key patterns. In-memory caching is per-instance (not shared). SQL query caching lacks flexible invalidation. Redis is the distributed cache for multi-instance applications with advanced eviction strategies."
+    },
+    {
+      "id": "az204-22cc8e074cd9",
+      "examSlug": "az204",
+      "domain": "Messaging",
+      "topic": "EventGrid",
+      "tags": [
+        "AZ-204",
+        "Messaging",
+        "EventGrid"
+      ],
+      "promptHtml": "An Azure Function must process Event Grid events from Blob Storage with guaranteed delivery and manual checkpoint control for batch processing. Processing may take up to 5 minutes per batch.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Event Grid trigger with default settings"
+        },
+        {
+          "key": "B",
+          "label": "Azure Blob Storage trigger with polling"
+        },
+        {
+          "key": "C",
+          "label": "Event Hubs output binding from Event Grid with Event Hubs trigger"
+        }
+      ],
+      "correctOption": "C",
+      "correctLabel": "Event Hubs output binding from Event Grid with Event Hubs trigger",
+      "rationaleHtml": "",
+      "extraHtml": "Event Grid webhook has 60-second timeout (insufficient). Blob trigger uses polling (delay). Event Grid can output to Event Hubs, then Event Hubs trigger provides checkpoint control and longer processing time. This pattern buffers Event Grid events through Event Hubs for reliable long-running processing with manual checkpoints."
+    },
+    {
+      "id": "az204-b7d42c354792",
+      "examSlug": "az204",
+      "domain": "Security",
+      "topic": "Authentication",
+      "tags": [
+        "AZ-204",
+        "Security",
+        "Authentication"
+      ],
+      "promptHtml": "Your application must implement authentication using Azure AD with support for personal Microsoft accounts and social identity providers. Users should consent to permissions on first sign-in.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Microsoft Identity Platform with microsoft.com/consumers endpoint"
+        },
+        {
+          "key": "B",
+          "label": "Azure AD B2C with custom policies"
+        },
+        {
+          "key": "C",
+          "label": "Azure AD with guest user invitations"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Microsoft Identity Platform with microsoft.com/consumers endpoint",
+      "rationaleHtml": "",
+      "extraHtml": "Microsoft Identity Platform supports both organizational (AAD) and personal accounts (MSA) via /common or /consumers endpoints, built-in consent framework. B2C is for customer identity with more customization (overkill). Guest invitations are for B2B scenarios. Identity Platform is the unified auth solution for consumer + enterprise apps."
+    },
+    {
+      "id": "az204-4704ac9d9811",
+      "examSlug": "az204",
+      "domain": "Security",
+      "topic": "APIM",
+      "tags": [
+        "AZ-204",
+        "Security",
+        "APIM"
+      ],
+      "promptHtml": "A REST API must validate JWT tokens from Azure AD, check for specific application roles, and deny requests without valid tokens. The solution must minimize custom code.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure API Management with validate-jwt policy and check-claim policy"
+        },
+        {
+          "key": "B",
+          "label": "Application middleware with manual JWT validation"
+        },
+        {
+          "key": "C",
+          "label": "Azure Front Door with Azure AD authentication"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure API Management with validate-jwt policy and check-claim policy",
+      "rationaleHtml": "",
+      "extraHtml": "APIM validate-jwt policy verifies token signature, expiration, and audience declaratively. Check-claim policy validates roles/scopes. This is declarative security without code. Manual validation is error-prone. Front Door doesn't have JWT validation policies. APIM centralizes API security with policy-based token validation."
+    },
+    {
+      "id": "az204-e41ceac21fab",
+      "examSlug": "az204",
+      "domain": "Security",
+      "topic": "KeyVault",
+      "tags": [
+        "AZ-204",
+        "Security",
+        "KeyVault"
+      ],
+      "promptHtml": "Your application must retrieve secrets from Key Vault with automatic retry on throttling errors and caching of secrets for 1 hour to minimize Key Vault requests and costs.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure SDK for Key Vault with DefaultAzureCredential and custom caching logic"
+        },
+        {
+          "key": "B",
+          "label": "REST API calls to Key Vault with manual cache implementation"
+        },
+        {
+          "key": "C",
+          "label": "Azure App Configuration Key Vault references"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure SDK for Key Vault with DefaultAzureCredential and custom caching logic",
+      "rationaleHtml": "",
+      "extraHtml": "Key Vault SDK with DefaultAzureCredential provides automatic authentication (managed identity in Azure), built-in retry policies for throttling. Add caching layer to reduce calls. Option C uses App Configuration as proxy (adds latency). REST API requires manual retry logic. SDK + caching = resilient secret retrieval with cost optimization."
+    },
+    {
+      "id": "az204-cf24e85f4372",
+      "examSlug": "az204",
+      "domain": "Compute",
+      "topic": "AzureFunctions",
+      "tags": [
+        "AZ-204",
+        "Compute",
+        "AzureFunctions"
+      ],
+      "promptHtml": "An Azure Function triggered by HTTP must return immediately with 202 Accepted and process work asynchronously with status polling endpoint. Processing may take 10 minutes with potential retries.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Durable Functions with async HTTP pattern"
+        },
+        {
+          "key": "B",
+          "label": "Synchronous function with Task.Run for background work"
+        },
+        {
+          "key": "C",
+          "label": "Queue output binding with separate function for processing"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Durable Functions with async HTTP pattern",
+      "rationaleHtml": "",
+      "extraHtml": "Durable Functions async HTTP returns 202 with status/cancel/terminate URLs automatically, orchestrates long-running workflows with retries and checkpoints. Task.Run blocks worker threads. Queue pattern requires manual status tracking. Durable Functions implements async HTTP API pattern with built-in state management and status endpoints."
+    },
+    {
+      "id": "az204-13532dbe1dbb",
+      "examSlug": "az204",
+      "domain": "Security",
+      "topic": "APIM",
+      "tags": [
+        "AZ-204",
+        "Security",
+        "APIM"
+      ],
+      "promptHtml": "Your API must implement rate limiting with 1000 requests per minute per user and return HTTP 429 with Retry-After header when exceeded. The solution must work across multiple API instances.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure API Management with rate-limit-by-key policy using subscription key"
+        },
+        {
+          "key": "B",
+          "label": "Application code with distributed cache counter"
+        },
+        {
+          "key": "C",
+          "label": "Azure Front Door with rate limiting rules"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure API Management with rate-limit-by-key policy using subscription key",
+      "rationaleHtml": "",
+      "extraHtml": "APIM rate-limit-by-key policy enforces limits across all gateway instances, automatically returns 429 with Retry-After header. Supports various keys (subscription, IP, JWT claim). Option B requires custom implementation. Front Door rate limiting is IP-based only. APIM provides declarative, distributed rate limiting with user-based keys."
+    },
+    {
+      "id": "az204-da9596eab608",
+      "examSlug": "az204",
+      "domain": "Compute",
+      "topic": "Containers",
+      "tags": [
+        "AZ-204",
+        "Compute",
+        "Containers"
+      ],
+      "promptHtml": "A container application must run scheduled jobs every hour with automatic scaling to zero between runs and support for long job executions up to 2 hours.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Container Apps with cron scale rule"
+        },
+        {
+          "key": "B",
+          "label": "Azure Functions with timer trigger"
+        },
+        {
+          "key": "C",
+          "label": "Azure Container Instances with Logic App scheduler"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Container Apps with cron scale rule",
+      "rationaleHtml": "",
+      "extraHtml": "Container Apps supports cron scale rules (scale to zero when idle, scale up on schedule), no execution time limits. Functions timer has 230-second timeout (Consumption) or requires Premium/Dedicated for longer. ACI doesn't autoscale. Container Apps provides serverless containers with cron scheduling and unlimited execution time."
+    },
+    {
+      "id": "az204-9e628907e9e8",
+      "examSlug": "az204",
+      "domain": "Storage",
+      "topic": "CosmosDB",
+      "tags": [
+        "AZ-204",
+        "Storage",
+        "CosmosDB"
+      ],
+      "promptHtml": "Your application must store order data with guaranteed ACID transactions across multiple document types and partition keys. Queries require SQL-like syntax with JOIN operations.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Cosmos DB for NoSQL with transactional batch and subquery support"
+        },
+        {
+          "key": "B",
+          "label": "Azure Cosmos DB with stored procedures for transactions"
+        },
+        {
+          "key": "C",
+          "label": "Azure SQL Database with JSON columns"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Cosmos DB for NoSQL with transactional batch and subquery support",
+      "rationaleHtml": "",
+      "extraHtml": "Cosmos DB transactional batch supports multi-document ACID within same partition, SQL API supports JOINs within documents and subqueries. Stored procedures can cross partitions but complex. SQL Database is relational (not document). Cosmos DB provides NoSQL with ACID guarantees and SQL query capabilities for document data."
+    },
+    {
+      "id": "az204-d8c3d3d7f090",
+      "examSlug": "az204",
+      "domain": "APIM",
+      "topic": "APIManagement",
+      "tags": [
+        "AZ-204",
+        "APIM",
+        "APIManagement"
+      ],
+      "promptHtml": "An API must securely expose backend services with request transformation, response caching, and OAuth 2.0 token validation without modifying backend code.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure API Management with policies for transformation, caching, and JWT validation"
+        },
+        {
+          "key": "B",
+          "label": "Azure Application Gateway with WAF"
+        },
+        {
+          "key": "C",
+          "label": "Azure Functions Proxies with custom middleware"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure API Management with policies for transformation, caching, and JWT validation",
+      "rationaleHtml": "",
+      "extraHtml": "APIM provides declarative policies for request/response transformation, caching, JWT validation, rate limiting - all without backend changes. App Gateway is L7 load balancer (limited transformation). Functions Proxies deprecated. APIM is the API gateway with comprehensive policy framework for API management concerns."
+    },
+    {
+      "id": "az204-e8537f8ee175",
+      "examSlug": "az204",
+      "domain": "Compute",
+      "topic": "AzureFunctions",
+      "tags": [
+        "AZ-204",
+        "Compute",
+        "AzureFunctions"
+      ],
+      "promptHtml": "Your Function App must process messages from an Azure Storage Queue with automatic scaling based on queue depth and exponential backoff retry on failures with maximum 5 attempts.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Functions with Queue trigger and host.json configuration for maxDequeueCount and backoff"
+        },
+        {
+          "key": "B",
+          "label": "Manual polling with SDK and custom retry logic"
+        },
+        {
+          "key": "C",
+          "label": "Logic App with Storage Queue connector"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Functions with Queue trigger and host.json configuration for maxDequeueCount and backoff",
+      "rationaleHtml": "",
+      "extraHtml": "Queue trigger automatically scales based on queue depth, host.json maxDequeueCount moves to poison queue after retries, batchSize controls throughput. Built-in exponential backoff for transient failures. Manual polling requires custom scaling. Logic Apps add cost overhead for compute workloads. Functions is the native queue processing compute with built-in patterns."
+    },
+    {
+      "id": "az204-4fee6087e544",
+      "examSlug": "az204",
+      "domain": "Monitoring",
+      "topic": "ApplicationInsights",
+      "tags": [
+        "AZ-204",
+        "Monitoring",
+        "ApplicationInsights"
+      ],
+      "promptHtml": "An application must emit custom metrics (business KPIs like orders processed) to Azure Monitor for dashboard visualization and threshold-based alerting with <1 minute latency.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Application Insights with TrackMetric() and metric alerts"
+        },
+        {
+          "key": "B",
+          "label": "Log Analytics custom logs with log query alerts"
+        },
+        {
+          "key": "C",
+          "label": "Event Hubs with Stream Analytics aggregation"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Application Insights with TrackMetric() and metric alerts",
+      "rationaleHtml": "",
+      "extraHtml": "Application Insights custom metrics (TrackMetric) support near-real-time ingestion, metric alerts provide <1 min granularity, native dashboard integration. Log query alerts have higher latency (>1 min). Event Hubs streaming adds complexity. App Insights is the APM platform for custom business metrics with fast alerting."
+    },
+    {
+      "id": "az204-d3390b352990",
+      "examSlug": "az204",
+      "domain": "Storage",
+      "topic": "BlobStorage",
+      "tags": [
+        "AZ-204",
+        "Storage",
+        "BlobStorage"
+      ],
+      "promptHtml": "Your web application must handle file uploads up to 500MB with progress reporting, resume capability on failure, and parallelized upload for optimal throughput.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Blob Storage SDK with block blob upload in chunks and BlockBlobClient.StageBlockAsync"
+        },
+        {
+          "key": "B",
+          "label": "HTTP multipart form upload to API, then copy to Storage"
+        },
+        {
+          "key": "C",
+          "label": "Azure Data Factory copy activity"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Blob Storage SDK with block blob upload in chunks and BlockBlobClient.StageBlockAsync",
+      "rationaleHtml": "",
+      "extraHtml": "Block blobs support chunked upload (StageBlockAsync), parallelization, resume capability (track uploaded blocks), and progress reporting. Upload via API doubles bandwidth. Data Factory is for ETL not application uploads. Block blob staging is the optimized pattern for large file uploads with fault tolerance."
+    },
+    {
+      "id": "az204-e0da1d8625d1",
+      "examSlug": "az204",
+      "domain": "Monitoring",
+      "topic": "ApplicationInsights",
+      "tags": [
+        "AZ-204",
+        "Monitoring",
+        "ApplicationInsights"
+      ],
+      "promptHtml": "A microservices application must implement distributed tracing across 15 services with automatic correlation of requests, dependency mapping, and anomaly detection without code changes to existing services.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Application Insights with auto-instrumentation and distributed tracing"
+        },
+        {
+          "key": "B",
+          "label": "Custom logging with correlation IDs"
+        },
+        {
+          "key": "C",
+          "label": "Azure Monitor Logs with manual telemetry"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Application Insights with auto-instrumentation and distributed tracing",
+      "rationaleHtml": "",
+      "extraHtml": "Application Insights auto-instrumentation (agents/extensions) captures telemetry without code changes, distributed tracing uses W3C Trace Context for correlation, application map shows dependencies, smart detection finds anomalies. Custom logging requires manual correlation. App Insights is the zero-code APM solution with distributed tracing."
+    },
+    {
+      "id": "az204-d5c8da48ae5e",
+      "examSlug": "az204",
+      "domain": "Optimization",
+      "topic": "APIM",
+      "tags": [
+        "AZ-204",
+        "Optimization",
+        "APIM"
+      ],
+      "promptHtml": "Your API must implement circuit breaker pattern with 50% failure threshold over 10 seconds, open circuit for 30 seconds, then half-open to test recovery without custom code.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure API Management with circuit breaker backend policy (preview)"
+        },
+        {
+          "key": "B",
+          "label": "Polly library in application code"
+        },
+        {
+          "key": "C",
+          "label": "Azure Front Door with health probes"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure API Management with circuit breaker backend policy (preview)",
+      "rationaleHtml": "",
+      "extraHtml": "APIM circuit breaker policy implements pattern declaratively with configurable thresholds, intervals, and half-open state. Polly requires code (acceptable but adds dependencies). Front Door health probes are for routing not circuit breaking. APIM externalizes resilience patterns from application code with policy-based circuit breaker."
+    },
+    {
+      "id": "az204-402cb0b3d3c2",
+      "examSlug": "az204",
+      "domain": "Security",
+      "topic": "Authentication",
+      "tags": [
+        "AZ-204",
+        "Security",
+        "Authentication"
+      ],
+      "promptHtml": "A Function App must authenticate users via Microsoft Identity Platform, validate access tokens, and extract user claims for authorization. The solution must minimize custom security code.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Functions with built-in authentication (Easy Auth) and ClaimsPrincipal binding"
+        },
+        {
+          "key": "B",
+          "label": "Manual JWT validation with jose-jwt library"
+        },
+        {
+          "key": "C",
+          "label": "Azure API Management JWT validation in front of Functions"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Functions with built-in authentication (Easy Auth) and ClaimsPrincipal binding",
+      "rationaleHtml": "",
+      "extraHtml": "Easy Auth handles OAuth flow, validates tokens, and injects ClaimsPrincipal into function context automatically. No custom validation code needed. Manual JWT validation is complex. APIM validation works but adds layer. Easy Auth is the built-in function identity platform integration with zero security code."
+    },
+    {
+      "id": "az204-73d5096d4223",
+      "examSlug": "az204",
+      "domain": "Storage",
+      "topic": "CosmosDB",
+      "tags": [
+        "AZ-204",
+        "Storage",
+        "CosmosDB"
+      ],
+      "promptHtml": "Your application must store telemetry data with partition key by deviceId and sort by timestamp. Expected 100,000 writes/sec with 99.99% availability and automatic global replication to 5 regions.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Cosmos DB for NoSQL with multi-region writes and partition key on deviceId"
+        },
+        {
+          "key": "B",
+          "label": "Azure Table Storage with geo-redundant replication"
+        },
+        {
+          "key": "C",
+          "label": "Azure SQL Database with auto-failover groups"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Cosmos DB for NoSQL with multi-region writes and partition key on deviceId",
+      "rationaleHtml": "",
+      "extraHtml": "Cosmos DB scales horizontally for 100K writes/sec, multi-region writes (active-active), 99.99% SLA, automatic global replication. Table Storage can't handle this write throughput. SQL Database limited by instance size. Cosmos DB is the globally distributed database for high-throughput time-series with multi-region writes."
+    },
+    {
+      "id": "az204-90d33b506abd",
+      "examSlug": "az204",
+      "domain": "APIM",
+      "topic": "APIManagement",
+      "tags": [
+        "AZ-204",
+        "APIM",
+        "APIManagement"
+      ],
+      "promptHtml": "An API must transform XML requests to JSON before forwarding to backend, add custom headers, and mask sensitive response data without changing backend services.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure API Management with policies: xml-to-json, set-header, and find-replace"
+        },
+        {
+          "key": "B",
+          "label": "Azure Functions proxy with custom code"
+        },
+        {
+          "key": "C",
+          "label": "Azure Logic Apps with XML and JSON actions"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure API Management with policies: xml-to-json, set-header, and find-replace",
+      "rationaleHtml": "",
+      "extraHtml": "APIM policies provide declarative transformation (xml-to-json), header manipulation (set-header), content masking (find-replace) without backend changes. Functions Proxies deprecated. Logic Apps add latency and cost for API scenarios. APIM is the API gateway with rich transformation policies for mediation layer."
+    },
+    {
+      "id": "az204-126a169e058b",
+      "examSlug": "az204",
+      "domain": "Compute",
+      "topic": "Containers",
+      "tags": [
+        "AZ-204",
+        "Compute",
+        "Containers"
+      ],
+      "promptHtml": "Your containerized application must support blue-green deployments with traffic splitting (90% to stable, 10% to new version) and automatic rollback if error rate exceeds 1%.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Container Apps with revisions and traffic splitting rules"
+        },
+        {
+          "key": "B",
+          "label": "Azure Kubernetes Service with Ingress traffic splitting"
+        },
+        {
+          "key": "C",
+          "label": "Azure App Service with deployment slots"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Container Apps with revisions and traffic splitting rules",
+      "rationaleHtml": "",
+      "extraHtml": "Container Apps supports multiple revisions with percentage-based traffic splitting, ingress configuration for routing. Can monitor and adjust traffic based on metrics. AKS requires manual Ingress configuration. App Service slots work but blue-green not traffic splitting. Container Apps provides managed revision-based deployments with traffic control."
+    },
+    {
+      "id": "az204-12e55a0a30ae",
+      "examSlug": "az204",
+      "domain": "Compute",
+      "topic": "AzureFunctions",
+      "tags": [
+        "AZ-204",
+        "Compute",
+        "AzureFunctions"
+      ],
+      "promptHtml": "A Function App must securely connect to on-premises SQL Server via hybrid connection, retrieve data, and return results. The on-premises network restricts inbound traffic.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Functions Premium plan with VNet Integration and VPN Gateway"
+        },
+        {
+          "key": "B",
+          "label": "Azure Functions Consumption plan with Hybrid Connections"
+        },
+        {
+          "key": "C",
+          "label": "Azure App Service with VNet Integration and ExpressRoute"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Azure Functions Consumption plan with Hybrid Connections",
+      "rationaleHtml": "",
+      "extraHtml": "Hybrid Connections (Consumption compatible) create outbound-only tunnel to on-premises without VPN or VNet changes. Premium plan VNet Integration requires VPN/ExpressRoute. Option C is App Service (not Functions). Hybrid Connections provide simplified hybrid connectivity for Functions without network infrastructure changes."
+    },
+    {
+      "id": "az204-e55b7ca8a80b",
+      "examSlug": "az204",
+      "domain": "Storage",
+      "topic": "BlobStorage",
+      "tags": [
+        "AZ-204",
+        "Storage",
+        "BlobStorage"
+      ],
+      "promptHtml": "Your application must implement SAS token generation for blob access with 1-hour validity, read-only permissions, and IP restrictions to corporate network range without exposing storage account keys.",
+      "options": [
+        {
+          "key": "A",
+          "label": "User delegation SAS signed with Azure AD credentials via managed identity"
+        },
+        {
+          "key": "B",
+          "label": "Account SAS signed with storage account key"
+        },
+        {
+          "key": "C",
+          "label": "Service SAS with stored access policy"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "User delegation SAS signed with Azure AD credentials via managed identity",
+      "rationaleHtml": "",
+      "extraHtml": "User delegation SAS uses Azure AD credentials (managed identity) instead of account keys, supports all SAS features (time, permissions, IP). Account SAS requires key exposure. Service SAS with policy still uses account key. User delegation SAS provides key-less SAS generation with Azure AD authentication."
+    },
+    {
+      "id": "az204-57cfc92d1b18",
+      "examSlug": "az204",
+      "domain": "Messaging",
+      "topic": "ServiceBus",
+      "tags": [
+        "AZ-204",
+        "Messaging",
+        "ServiceBus"
+      ],
+      "promptHtml": "An event-driven architecture must process order events with guaranteed at-least-once delivery, message deduplication, and automatic dead-lettering after 5 retries.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Service Bus topic with duplicate detection and maxDeliveryCount"
+        },
+        {
+          "key": "B",
+          "label": "Azure Event Hubs with consumer checkpointing"
+        },
+        {
+          "key": "C",
+          "label": "Azure Event Grid with retry policy"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Service Bus topic with duplicate detection and maxDeliveryCount",
+      "rationaleHtml": "",
+      "extraHtml": "Service Bus provides duplicate detection (message ID based), automatic dead-lettering (maxDeliveryCount), and at-least-once with PeekLock. Event Hubs is streaming (no DLQ). Event Grid lacks duplicate detection. Service Bus is the enterprise messaging service with deduplication and poison message handling for reliable event processing."
+    },
+    {
+      "id": "az204-5d97a06a849e",
+      "examSlug": "az204",
+      "domain": "Optimization",
+      "topic": "APIM",
+      "tags": [
+        "AZ-204",
+        "Optimization",
+        "APIM"
+      ],
+      "promptHtml": "Your API must cache responses for 10 minutes based on query parameters with cache invalidation on POST/PUT/DELETE requests to related resources. Cache must be shared across instances.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure API Management with cache-lookup and cache-store policies with vary-by query parameters"
+        },
+        {
+          "key": "B",
+          "label": "Azure CDN for dynamic content caching"
+        },
+        {
+          "key": "C",
+          "label": "Azure Cache for Redis with custom cache-aside pattern"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure API Management with cache-lookup and cache-store policies with vary-by query parameters",
+      "rationaleHtml": "",
+      "extraHtml": "APIM caching policies provide vary-by (query params, headers), automatic cache invalidation on mutations, distributed cache across gateway instances. CDN is for static/edge content. Redis cache-aside requires code. APIM declarative caching optimizes API responses without backend changes."
+    },
+    {
+      "id": "az204-9977a5d9ea09",
+      "examSlug": "az204",
+      "domain": "Storage",
+      "topic": "CosmosDB",
+      "tags": [
+        "AZ-204",
+        "Storage",
+        "CosmosDB"
+      ],
+      "promptHtml": "A background job must process 1 million records from Cosmos DB with parallel execution across 10 workers, checkpoint progress every 1000 records, and support resume after failure.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Functions with Cosmos DB change feed trigger and lease collection"
+        },
+        {
+          "key": "B",
+          "label": "Azure Batch with custom Cosmos DB query"
+        },
+        {
+          "key": "C",
+          "label": "Durable Functions with activity fan-out"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Functions with Cosmos DB change feed trigger and lease collection",
+      "rationaleHtml": "",
+      "extraHtml": "Change feed trigger automatically distributes work across function instances, lease collection manages checkpoints per partition, supports resume from last checkpoint. Azure Batch requires manual processing logic. Durable fan-out doesn't checkpoint per partition. Change feed is the native parallel Cosmos DB processing pattern with built-in checkpointing."
+    },
+    {
+      "id": "az204-1db0a7dea828",
+      "examSlug": "az204",
+      "domain": "Configuration",
+      "topic": "AppConfiguration",
+      "tags": [
+        "AZ-204",
+        "Configuration",
+        "AppConfiguration"
+      ],
+      "promptHtml": "Your application must retrieve feature flags with real-time updates, A/B testing support with user targeting, and integration with Application Insights for telemetry without polling.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure App Configuration with feature flags and push refresh model"
+        },
+        {
+          "key": "B",
+          "label": "LaunchDarkly third-party service"
+        },
+        {
+          "key": "C",
+          "label": "Database table with application polling"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure App Configuration with feature flags and push refresh model",
+      "rationaleHtml": "",
+      "extraHtml": "App Configuration feature management supports targeting (users, groups, percentage), push refresh via Event Grid (no polling), native App Insights integration for telemetry. LaunchDarkly works but adds external dependency. Database polling adds latency. App Configuration is the Azure-native dynamic config with feature management and push updates."
+    },
+    {
+      "id": "az204-e7b517b6d7fd",
+      "examSlug": "az204",
+      "domain": "Messaging",
+      "topic": "EventGrid",
+      "tags": [
+        "AZ-204",
+        "Messaging",
+        "EventGrid"
+      ],
+      "promptHtml": "An application must handle bursts of 10,000 events per second with event filtering based on event type and routing to different handlers. Event order is not critical.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Event Grid with custom topics and event subscription filters"
+        },
+        {
+          "key": "B",
+          "label": "Azure Service Bus with topic filters"
+        },
+        {
+          "key": "C",
+          "label": "Azure Event Hubs with consumer groups"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Event Grid with custom topics and event subscription filters",
+      "rationaleHtml": "",
+      "extraHtml": "Event Grid handles 10M events/sec, supports subject/data filtering in subscriptions, push-based delivery to multiple handlers. Service Bus optimized for <100K msgs/sec. Event Hubs requires consumers to filter. Event Grid is the high-scale event routing service with declarative filtering and fan-out."
+    },
+    {
+      "id": "az204-19338ff49445",
+      "examSlug": "az204",
+      "domain": "APIM",
+      "topic": "APIManagement",
+      "tags": [
+        "AZ-204",
+        "APIM",
+        "APIManagement"
+      ],
+      "promptHtml": "Your API must implement versioning with support for v1 and v2 simultaneously, route based on header/query parameter, and deprecated version warnings without URL path changes.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure API Management with version sets and revision management"
+        },
+        {
+          "key": "B",
+          "label": "Separate API endpoints with manual routing"
+        },
+        {
+          "key": "C",
+          "label": "Application code with if-else version checking"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure API Management with version sets and revision management",
+      "rationaleHtml": "",
+      "extraHtml": "APIM version sets support multiple versions with routing by header/query param, deprecation warnings, unified management. Separate endpoints fragment API. Code-based versioning couples routing with business logic. APIM centralizes API versioning strategy with flexible routing and lifecycle management."
+    },
+    {
+      "id": "az204-967729ee003c",
+      "examSlug": "az204",
+      "domain": "Compute",
+      "topic": "AzureFunctions",
+      "tags": [
+        "AZ-204",
+        "Compute",
+        "AzureFunctions"
+      ],
+      "promptHtml": "A Function App must execute code in response to blob upload with automatic processing of new files within 1 second and guaranteed ordering per blob container.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Event Grid trigger with Blob Storage events and serial processing per container"
+        },
+        {
+          "key": "B",
+          "label": "Blob Storage trigger with polling interval"
+        },
+        {
+          "key": "C",
+          "label": "Queue trigger with blob notification"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Event Grid trigger with Blob Storage events and serial processing per container",
+      "rationaleHtml": "",
+      "extraHtml": "Event Grid provides near-real-time blob events (<1 sec), guaranteed delivery. Configure single function instance per container for ordering. Blob trigger uses polling (10 sec+ delay). Queue notification requires manual wiring. Event Grid blob events offer lowest latency triggering with event-driven architecture."
+    },
+    {
+      "id": "az204-ef3a7762e4a8",
+      "examSlug": "az204",
+      "domain": "Security",
+      "topic": "Authentication",
+      "tags": [
+        "AZ-204",
+        "Security",
+        "Authentication"
+      ],
+      "promptHtml": "Your application must implement authentication with both Azure AD organizational accounts and social providers (Google, Facebook) for a consumer-facing application with customizable sign-in UI.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure AD B2C with custom policies and identity providers"
+        },
+        {
+          "key": "B",
+          "label": "Microsoft Identity Platform with /common endpoint"
+        },
+        {
+          "key": "C",
+          "label": "Azure AD with B2B guest accounts"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure AD B2C with custom policies and identity providers",
+      "rationaleHtml": "",
+      "extraHtml": "B2C is purpose-built for consumer identity with social IDP federation, custom branding/UI, sign-up/sign-in flows. Identity Platform /common supports MSA but not social. B2B is for business partners. B2C provides comprehensive CIAM (Customer Identity Access Management) with social identity and customization."
+    },
+    {
+      "id": "az204-1a904969bf6c",
+      "examSlug": "az204",
+      "domain": "APIM",
+      "topic": "APIManagement",
+      "tags": [
+        "AZ-204",
+        "APIM",
+        "APIManagement"
+      ],
+      "promptHtml": "An API must implement request throttling with different limits per pricing tier (Basic: 100/min, Premium: 1000/min) and return proper HTTP status codes with retry guidance.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure API Management with rate-limit policy and product subscriptions"
+        },
+        {
+          "key": "B",
+          "label": "Application code with distributed counter"
+        },
+        {
+          "key": "C",
+          "label": "Azure Front Door with custom rules"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure API Management with rate-limit policy and product subscriptions",
+      "rationaleHtml": "",
+      "extraHtml": "APIM products define pricing tiers with different rate limits per product, rate-limit policy enforces limits with 429 responses and Retry-After headers. Custom code requires maintenance. Front Door doesn't support tier-based limiting. APIM monetization features provide declarative tier-based API access control."
+    }
+  ]
+}

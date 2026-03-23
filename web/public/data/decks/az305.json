@@ -1,0 +1,2085 @@
+{
+  "exam": {
+    "slug": "az305",
+    "code": "AZ-305",
+    "title": "Designing Microsoft Azure Infrastructure Solutions",
+    "sourceFile": "az305_flashcards_2026-03-23.csv",
+    "updatedOn": "2026-03-23",
+    "questionCount": 68,
+    "domains": [
+      "BusinessContinuity",
+      "DataStorage",
+      "IdentityGovernance",
+      "Infrastructure"
+    ],
+    "topics": [
+      "ApplicationArchitecture",
+      "ApplicationConfiguration",
+      "ApplicationDeployment",
+      "Authentication",
+      "Authorization",
+      "BackupRecovery",
+      "CachingSolution",
+      "ComputeSolutions",
+      "DataIntegration",
+      "DataProtection",
+      "DatabaseScalability",
+      "EventArchitecture",
+      "Governance",
+      "HighAvailability",
+      "IdentityGovernance",
+      "IdentityManagement",
+      "LoadBalancing",
+      "MessagingArchitecture",
+      "Migrations",
+      "Monitoring",
+      "NetworkSecurity",
+      "NetworkSolutions",
+      "RelationalData",
+      "SecretManagement",
+      "UnstructuredData"
+    ]
+  },
+  "questions": [
+    {
+      "id": "az305-9ba811f99388",
+      "examSlug": "az305",
+      "domain": "IdentityGovernance",
+      "topic": "IdentityManagement",
+      "tags": [
+        "AZ-305",
+        "IdentityGovernance",
+        "IdentityManagement"
+      ],
+      "promptHtml": "A global financial services company requires centralized identity management for 50,000 employees across 20 subsidiaries. Each subsidiary demands autonomy over user lifecycle management while maintaining corporate security policies. The solution must support conditional access and PIM across all entities.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Single Azure AD tenant with administrative units"
+        },
+        {
+          "key": "B",
+          "label": "Azure AD B2B with multiple guest tenants"
+        },
+        {
+          "key": "C",
+          "label": "Separate Azure AD tenant per subsidiary with B2B collaboration"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Single Azure AD tenant with administrative units",
+      "rationaleHtml": "",
+      "extraHtml": "Administrative units enable delegated administration within a single tenant while maintaining centralized governance, conditional access, and PIM policies. Multiple tenants fragment identity management and complicate cross-subsidiary collaboration. B2B is for external partners, not internal subsidiaries requiring full lifecycle management."
+    },
+    {
+      "id": "az305-5b1ec9d4d6a7",
+      "examSlug": "az305",
+      "domain": "IdentityGovernance",
+      "topic": "SecretManagement",
+      "tags": [
+        "AZ-305",
+        "IdentityGovernance",
+        "SecretManagement"
+      ],
+      "promptHtml": "An application processes sensitive healthcare data and must encrypt secrets at rest with customer-managed keys rotated every 90 days. Key operations must be auditable with hardware-backed protection. Access requires approval from two security officers.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Key Vault Premium with managed HSM and access policies"
+        },
+        {
+          "key": "B",
+          "label": "Azure Key Vault Standard with Azure RBAC and rotation policies"
+        },
+        {
+          "key": "C",
+          "label": "Azure Dedicated HSM with custom key management"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Key Vault Premium with managed HSM and access policies",
+      "rationaleHtml": "",
+      "extraHtml": "Premium tier provides HSM-backed keys (FIPS 140-2 Level 3). Access policies support multi-person authorization for key operations. Managed HSM offers full control over HSM resources. Standard tier lacks HSM backing. Azure Dedicated HSM is for legacy applications requiring exclusive HSM access, adding unnecessary complexity."
+    },
+    {
+      "id": "az305-afcd3d8acbd1",
+      "examSlug": "az305",
+      "domain": "IdentityGovernance",
+      "topic": "Governance",
+      "tags": [
+        "AZ-305",
+        "IdentityGovernance",
+        "Governance"
+      ],
+      "promptHtml": "A multinational corporation needs to enforce that all Azure Cosmos DB accounts use private endpoints and prohibit public network access across 200 subscriptions spanning 15 business units. Compliance must be audited monthly with automatic remediation.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Policy with DeployIfNotExists effect and compliance reporting"
+        },
+        {
+          "key": "B",
+          "label": "Azure Blueprints with locked resource groups"
+        },
+        {
+          "key": "C",
+          "label": "Management group hierarchy with Azure RBAC deny assignments"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Policy with DeployIfNotExists effect and compliance reporting",
+      "rationaleHtml": "",
+      "extraHtml": "Azure Policy at management group scope enforces configuration across subscriptions. DeployIfNotExists automatically remediates non-compliant resources. Built-in compliance dashboard tracks violations. Blueprints are for initial deployment, not ongoing enforcement. RBAC deny assignments prevent actions but don't remediate existing configurations."
+    },
+    {
+      "id": "az305-dd30105b16eb",
+      "examSlug": "az305",
+      "domain": "IdentityGovernance",
+      "topic": "Authentication",
+      "tags": [
+        "AZ-305",
+        "IdentityGovernance",
+        "Authentication"
+      ],
+      "promptHtml": "A SaaS application serves 10,000 customer organizations, each requiring isolated identity domains with custom branding and MFA policies. Customers must federate their corporate identity providers (SAML/OIDC). Authentication must handle 100,000 logins per day with sub-second response times.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure AD B2C with custom policies and identity providers"
+        },
+        {
+          "key": "B",
+          "label": "Azure AD B2B with external identities"
+        },
+        {
+          "key": "C",
+          "label": "Multiple Azure AD tenants with Azure Front Door"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure AD B2C with custom policies and identity providers",
+      "rationaleHtml": "",
+      "extraHtml": "B2C is purpose-built for customer identity with multi-tenancy, custom branding per tenant, IDP federation (SAML/OIDC), and custom policies for complex authentication flows. Scales to millions of users. B2B is for business partnerships, not customer-facing multi-tenant SaaS. Multiple AD tenants don't provide isolation per customer organization."
+    },
+    {
+      "id": "az305-cc8a72957fa1",
+      "examSlug": "az305",
+      "domain": "IdentityGovernance",
+      "topic": "Monitoring",
+      "tags": [
+        "AZ-305",
+        "IdentityGovernance",
+        "Monitoring"
+      ],
+      "promptHtml": "An enterprise must collect, analyze, and retain Azure Activity Logs, resource logs, and metrics from 500 resources across multiple regions for 7 years to meet regulatory requirements. Queries must support complex analytics with sub-second performance on recent data.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Monitor Logs workspace with data export to Azure Storage Archive"
+        },
+        {
+          "key": "B",
+          "label": "Azure Event Hubs with Stream Analytics to Cosmos DB"
+        },
+        {
+          "key": "C",
+          "label": "Azure Storage Archive with direct query capability"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Monitor Logs workspace with data export to Azure Storage Archive",
+      "rationaleHtml": "",
+      "extraHtml": "Log Analytics workspace provides real-time querying with KQL for recent data. Export to Archive Storage reduces costs for long-term retention (7 years). Event Hubs doesn't provide log aggregation or long-term storage. Storage Archive alone lacks query capabilities without rehydration."
+    },
+    {
+      "id": "az305-8b8eca19e864",
+      "examSlug": "az305",
+      "domain": "IdentityGovernance",
+      "topic": "Monitoring",
+      "tags": [
+        "AZ-305",
+        "IdentityGovernance",
+        "Monitoring"
+      ],
+      "promptHtml": "A microservices application on AKS requires distributed tracing across 50 services, with automatic dependency mapping, performance anomaly detection, and correlation of user transactions across services. Telemetry must integrate with Prometheus metrics.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Application Insights with distributed tracing and OpenTelemetry"
+        },
+        {
+          "key": "B",
+          "label": "Azure Monitor Logs with custom KQL queries"
+        },
+        {
+          "key": "C",
+          "label": "Grafana with Prometheus exporters"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Application Insights with distributed tracing and OpenTelemetry",
+      "rationaleHtml": "",
+      "extraHtml": "Application Insights provides native distributed tracing, automatic dependency mapping, smart detection for anomalies, and transaction correlation. OpenTelemetry integration supports Prometheus metrics ingestion. Azure Monitor Logs lacks automatic application topology mapping. Grafana/Prometheus requires manual instrumentation and lacks transaction correlation."
+    },
+    {
+      "id": "az305-5536ca025e43",
+      "examSlug": "az305",
+      "domain": "IdentityGovernance",
+      "topic": "Governance",
+      "tags": [
+        "AZ-305",
+        "IdentityGovernance",
+        "Governance"
+      ],
+      "promptHtml": "A healthcare organization requires Azure resources to be organized for chargeback to 5 business divisions, 20 departments, and 100 cost centers. Resource deployments must enforce tagging, with automatic cost analysis dashboards per hierarchy level. Non-compliant resources must be blocked at creation.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Management groups with Azure Policy tag inheritance and Cost Management"
+        },
+        {
+          "key": "B",
+          "label": "Subscriptions per department with Azure RBAC"
+        },
+        {
+          "key": "C",
+          "label": "Resource groups per cost center with manual tagging"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Management groups with Azure Policy tag inheritance and Cost Management",
+      "rationaleHtml": "",
+      "extraHtml": "Management group hierarchy mirrors organizational structure. Azure Policy enforces required tags with Deny effect (blocks non-compliant deployments) and inherit tags from parent scopes. Cost Management automatically aggregates costs by tags. Subscriptions per department don't scale to 100 cost centers. Manual tagging lacks enforcement."
+    },
+    {
+      "id": "az305-5145e232c005",
+      "examSlug": "az305",
+      "domain": "IdentityGovernance",
+      "topic": "IdentityGovernance",
+      "tags": [
+        "AZ-305",
+        "IdentityGovernance",
+        "IdentityGovernance"
+      ],
+      "promptHtml": "A financial application must ensure privileged access to production subscriptions requires just-in-time activation with multi-factor authentication, business justification, and automatic expiration after 4 hours. All activations must trigger alerts to SOC.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure AD Privileged Identity Management with approval workflow"
+        },
+        {
+          "key": "B",
+          "label": "Azure RBAC with time-bound role assignments"
+        },
+        {
+          "key": "C",
+          "label": "Azure AD Conditional Access with MFA"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure AD Privileged Identity Management with approval workflow",
+      "rationaleHtml": "",
+      "extraHtml": "PIM provides JIT activation, multi-factor authentication at activation, approval workflows, business justification requirements, time-bound access (configurable duration), and activation alerts. Azure RBAC doesn't support JIT or approval workflows natively. Conditional Access enforces MFA but lacks JIT and time-bound access."
+    },
+    {
+      "id": "az305-bf0ff885c8bd",
+      "examSlug": "az305",
+      "domain": "IdentityGovernance",
+      "topic": "Monitoring",
+      "tags": [
+        "AZ-305",
+        "IdentityGovernance",
+        "Monitoring"
+      ],
+      "promptHtml": "An IoT solution ingests telemetry from 1 million devices at 10,000 events/second. Monitoring must detect device anomalies in real-time, track device connectivity patterns, and generate alerts when event ingestion drops below 8,000 events/second for 5 minutes.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Monitor metrics with alert rules and action groups"
+        },
+        {
+          "key": "B",
+          "label": "Application Insights with custom events and smart detection"
+        },
+        {
+          "key": "C",
+          "label": "Log Analytics workspace with scheduled KQL queries"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Monitor metrics with alert rules and action groups",
+      "rationaleHtml": "",
+      "extraHtml": "Azure Monitor metrics natively collect IoT Hub/Event Hub metrics (events per second, device connections). Alert rules support threshold-based alerts with time aggregation (5-minute windows). Action groups route alerts to SOC. Application Insights is for application telemetry, not infrastructure metrics. Log queries add latency vs. real-time metrics."
+    },
+    {
+      "id": "az305-467b5337dbf5",
+      "examSlug": "az305",
+      "domain": "IdentityGovernance",
+      "topic": "Governance",
+      "tags": [
+        "AZ-305",
+        "IdentityGovernance",
+        "Governance"
+      ],
+      "promptHtml": "A government agency must ensure all Azure SQL databases in 80 subscriptions enable Transparent Data Encryption with customer-managed keys, audit logging to immutable storage, and Advanced Threat Protection. Non-compliant databases must be automatically configured, and compliance must be visible in a central dashboard.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Policy with DeployIfNotExists and compliance dashboard"
+        },
+        {
+          "key": "B",
+          "label": "Azure Security Center with security policies"
+        },
+        {
+          "key": "C",
+          "label": "Azure Blueprints with ARM templates"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Policy with DeployIfNotExists and compliance dashboard",
+      "rationaleHtml": "",
+      "extraHtml": "Azure Policy DeployIfNotExists effect automatically remediates non-compliant resources by deploying required configurations. Built-in policies exist for SQL TDE, auditing, and ATP. Compliance dashboard aggregates status across subscriptions. Security Center recommends configurations but doesn't enforce or auto-remediate. Blueprints are for initial provisioning, not ongoing compliance."
+    },
+    {
+      "id": "az305-92e47f1bbe78",
+      "examSlug": "az305",
+      "domain": "IdentityGovernance",
+      "topic": "Authorization",
+      "tags": [
+        "AZ-305",
+        "IdentityGovernance",
+        "Authorization"
+      ],
+      "promptHtml": "A web application uses Managed Identity to access Azure Key Vault, Cosmos DB, and Storage. The application runs in AKS and must minimize privilege by granting access only to specific Key Vault secrets, Cosmos DB containers, and Storage containers. Identity should not require credential management.",
+      "options": [
+        {
+          "key": "A",
+          "label": "User-assigned Managed Identity with Azure RBAC at resource scope"
+        },
+        {
+          "key": "B",
+          "label": "System-assigned Managed Identity with access policies"
+        },
+        {
+          "key": "C",
+          "label": "Service Principal with certificate authentication"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "User-assigned Managed Identity with Azure RBAC at resource scope",
+      "rationaleHtml": "",
+      "extraHtml": "User-assigned MI can be shared across pods and provides lifecycle management independent of workload. Azure RBAC grants granular permissions (e.g., specific secrets, containers). No credential management required. System-assigned MI is tied to single resource lifecycle. Service Principal requires certificate rotation and management."
+    },
+    {
+      "id": "az305-4516d773d3fe",
+      "examSlug": "az305",
+      "domain": "IdentityGovernance",
+      "topic": "Authorization",
+      "tags": [
+        "AZ-305",
+        "IdentityGovernance",
+        "Authorization"
+      ],
+      "promptHtml": "A multi-tenant application must authorize users to access resources in their own tenant based on custom claims (e.g., department, clearance level) evaluated dynamically from an HR system API during each request. Authorization rules must be centrally managed and auditable.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure AD with custom security attributes and Conditional Access policies"
+        },
+        {
+          "key": "B",
+          "label": "API Management with policy expressions and external authorization service"
+        },
+        {
+          "key": "C",
+          "label": "Application code with JWT claim validation"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure AD with custom security attributes and Conditional Access policies",
+      "rationaleHtml": "",
+      "extraHtml": "Custom security attributes allow storing custom claims (department, clearance) in Azure AD. Conditional Access policies evaluate claims dynamically per-request with external API integration. Centrally managed in Azure AD with audit logs. API Management doesn't provide identity-aware authorization at scale. Application code lacks centralized management and auditability."
+    },
+    {
+      "id": "az305-2a47bf36b741",
+      "examSlug": "az305",
+      "domain": "IdentityGovernance",
+      "topic": "Governance",
+      "tags": [
+        "AZ-305",
+        "IdentityGovernance",
+        "Governance"
+      ],
+      "promptHtml": "An organization has 100 subscriptions across 10 Azure AD tenants due to acquisitions. A project requires cross-tenant resource access with centralized identity management, unified billing, and consistent governance policies. Migration to a single tenant is not feasible in the short term.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Lighthouse with delegated resource management"
+        },
+        {
+          "key": "B",
+          "label": "Azure AD B2B with guest access to each tenant"
+        },
+        {
+          "key": "C",
+          "label": "Azure Resource Mover to consolidate subscriptions"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Lighthouse with delegated resource management",
+      "rationaleHtml": "",
+      "extraHtml": "Lighthouse enables cross-tenant management with Azure RBAC delegation. Managing tenant sees all resources in a unified view, enforces policies, and provides centralized billing. B2B guest access doesn't consolidate management or governance. Resource Mover relocates resources but doesn't solve multi-tenant governance challenges."
+    },
+    {
+      "id": "az305-a61618dc4a8c",
+      "examSlug": "az305",
+      "domain": "IdentityGovernance",
+      "topic": "SecretManagement",
+      "tags": [
+        "AZ-305",
+        "IdentityGovernance",
+        "SecretManagement"
+      ],
+      "promptHtml": "A machine learning application requires access to thousands of API keys, database passwords, and certificates across development, staging, and production environments. Secrets must be versioned, access must be audited, and applications must retrieve secrets without code changes when rotating.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Key Vault with secret versioning and references in App Configuration"
+        },
+        {
+          "key": "B",
+          "label": "Azure App Service application settings with slot settings"
+        },
+        {
+          "key": "C",
+          "label": "Azure DevOps variable groups with secured variables"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Key Vault with secret versioning and references in App Configuration",
+      "rationaleHtml": "",
+      "extraHtml": "Key Vault provides secret versioning, audit logs, automatic rotation notifications, and retrieval via URI (no code changes). App Configuration centrally manages references to Key Vault secrets per environment. App Service settings lack versioning and audit. DevOps variable groups are for CI/CD, not runtime secret access."
+    },
+    {
+      "id": "az305-9e077987e478",
+      "examSlug": "az305",
+      "domain": "IdentityGovernance",
+      "topic": "Monitoring",
+      "tags": [
+        "AZ-305",
+        "IdentityGovernance",
+        "Monitoring"
+      ],
+      "promptHtml": "A compliance requirement mandates recording every privileged operation (e.g., role assignments, policy changes, key access) across 200 Azure subscriptions with tamper-proof storage for 10 years. Logs must be searchable for forensic investigations.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Activity Logs exported to Log Analytics with immutable storage archive"
+        },
+        {
+          "key": "B",
+          "label": "Azure Monitor with data export to Event Hubs"
+        },
+        {
+          "key": "C",
+          "label": "Azure Storage with append-only blob containers"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Activity Logs exported to Log Analytics with immutable storage archive",
+      "rationaleHtml": "",
+      "extraHtml": "Activity Logs capture control plane operations (RBAC, policy, etc.). Export to Log Analytics enables KQL queries for investigations. Archive to immutable Storage (WORM policy) ensures tamper-proof retention for 10 years. Event Hubs is for streaming, not long-term storage. Append-only blobs lack query capabilities."
+    },
+    {
+      "id": "az305-46db278da710",
+      "examSlug": "az305",
+      "domain": "IdentityGovernance",
+      "topic": "Authentication",
+      "tags": [
+        "AZ-305",
+        "IdentityGovernance",
+        "Authentication"
+      ],
+      "promptHtml": "An application requires conditional access policies that deny access from non-corporate devices unless the user is in a specific security group and the application risk level is low. MFA must be required for all external network access regardless of device compliance.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure AD Conditional Access with multiple conditions and controls"
+        },
+        {
+          "key": "B",
+          "label": "Azure AD Identity Protection with risk-based policies"
+        },
+        {
+          "key": "C",
+          "label": "Azure Firewall with application rules"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure AD Conditional Access with multiple conditions and controls",
+      "rationaleHtml": "",
+      "extraHtml": "Conditional Access supports multiple conditions (device compliance, group membership, risk level, network location) combined with AND/OR logic. Controls enforce MFA or block access. Identity Protection calculates risk but doesn't enforce multi-condition policies. Azure Firewall operates at network layer, not identity layer."
+    },
+    {
+      "id": "az305-9d0ed4fd7370",
+      "examSlug": "az305",
+      "domain": "IdentityGovernance",
+      "topic": "Monitoring",
+      "tags": [
+        "AZ-305",
+        "IdentityGovernance",
+        "Monitoring"
+      ],
+      "promptHtml": "A global organization must route Azure Monitor Logs from 500 resources in 10 regions to separate Log Analytics workspaces per region for data residency compliance, with a central workspace for global queries. Regional logs must never leave their geography.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Diagnostic settings per resource with workspace destinations and cross-workspace queries"
+        },
+        {
+          "key": "B",
+          "label": "Azure Event Hubs with regional namespaces and Stream Analytics"
+        },
+        {
+          "key": "C",
+          "label": "Azure Data Factory with regional pipelines copying logs"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Diagnostic settings per resource with workspace destinations and cross-workspace queries",
+      "rationaleHtml": "",
+      "extraHtml": "Diagnostic settings send resource logs to region-specific workspaces (ensures data residency). Cross-workspace queries in Log Analytics aggregate data for global analysis without moving data. Event Hubs adds complexity without log retention. Data Factory is for data movement, violating residency requirements."
+    },
+    {
+      "id": "az305-f5fb23e8dca5",
+      "examSlug": "az305",
+      "domain": "IdentityGovernance",
+      "topic": "Authentication",
+      "tags": [
+        "AZ-305",
+        "IdentityGovernance",
+        "Authentication"
+      ],
+      "promptHtml": "A containerized application on AKS must authenticate to Azure SQL, Key Vault, and Cosmos DB using Managed Identity without storing credentials. Different pods must have different permissions based on workload identity. Solution must support Kubernetes RBAC integration.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure AD Workload Identity with federated credentials"
+        },
+        {
+          "key": "B",
+          "label": "System-assigned Managed Identity on AKS cluster"
+        },
+        {
+          "key": "C",
+          "label": "Service Principal per pod with Kubernetes secrets"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure AD Workload Identity with federated credentials",
+      "rationaleHtml": "",
+      "extraHtml": "Workload Identity federates Kubernetes service accounts with Azure AD identities, enabling per-pod identity with Managed Identity benefits. Integrates with Kubernetes RBAC. System-assigned MI applies cluster-wide, not per-pod. Service Principals require credential management in secrets."
+    },
+    {
+      "id": "az305-85fb041bfe73",
+      "examSlug": "az305",
+      "domain": "IdentityGovernance",
+      "topic": "Governance",
+      "tags": [
+        "AZ-305",
+        "IdentityGovernance",
+        "Governance"
+      ],
+      "promptHtml": "An enterprise must enforce that all resource groups in 50 subscriptions inherit tags (CostCenter, Environment, Owner) from parent management groups. New resource groups without these tags must be denied creation. Existing non-compliant groups must be tagged automatically.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Policy with Deny and Modify effects at management group scope"
+        },
+        {
+          "key": "B",
+          "label": "Azure Resource Manager templates with required parameters"
+        },
+        {
+          "key": "C",
+          "label": "Azure Automation runbook triggered by Event Grid"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Policy with Deny and Modify effects at management group scope",
+      "rationaleHtml": "",
+      "extraHtml": "Azure Policy Deny effect prevents creation of non-compliant resource groups. Modify effect auto-remediates existing resources by adding missing tags. Inherit tag policies copy tags from management group. ARM templates don't enforce tags at scale. Runbooks add operational overhead and delay."
+    },
+    {
+      "id": "az305-4009cef14149",
+      "examSlug": "az305",
+      "domain": "IdentityGovernance",
+      "topic": "Monitoring",
+      "tags": [
+        "AZ-305",
+        "IdentityGovernance",
+        "Monitoring"
+      ],
+      "promptHtml": "A workload requires monitoring 200 VMs for CPU, memory, disk, and network metrics with sub-minute granularity. Alerts must trigger when average CPU exceeds 80% across all VMs for 3 minutes or when any single VM disk space drops below 10%. Custom performance counters must be collected.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Monitor VM Insights with metrics and alert rules"
+        },
+        {
+          "key": "B",
+          "label": "Log Analytics with performance counters and scheduled queries"
+        },
+        {
+          "key": "C",
+          "label": "Azure Monitor Logs with diagnostics extension"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Monitor VM Insights with metrics and alert rules",
+      "rationaleHtml": "",
+      "extraHtml": "VM Insights automatically collects detailed performance metrics with 1-minute granularity, including custom counters, with minimal configuration. Alert rules support multi-resource conditions (average across VMs) and single-resource thresholds. Log-based monitoring adds query latency vs. near-real-time metrics."
+    },
+    {
+      "id": "az305-54ba2011b29d",
+      "examSlug": "az305",
+      "domain": "IdentityGovernance",
+      "topic": "IdentityGovernance",
+      "tags": [
+        "AZ-305",
+        "IdentityGovernance",
+        "IdentityGovernance"
+      ],
+      "promptHtml": "A regulated workload must ensure administrators cannot assign themselves privileged roles without approval. All role activations require justification and time-bound access (maximum 8 hours). Security team must review all activations weekly.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure AD Privileged Identity Management with approval workflow and access reviews"
+        },
+        {
+          "key": "B",
+          "label": "Azure Policy with role assignment restrictions"
+        },
+        {
+          "key": "C",
+          "label": "Azure RBAC with custom roles and deny assignments"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure AD Privileged Identity Management with approval workflow and access reviews",
+      "rationaleHtml": "",
+      "extraHtml": "PIM enforces approval workflows for role activation, requires justification, and limits access duration (configurable up to 8 hours). Access reviews provide periodic certification of privileged access. Azure Policy can't control role activation workflows. RBAC doesn't support approval or JIT."
+    },
+    {
+      "id": "az305-3a4f0a81189c",
+      "examSlug": "az305",
+      "domain": "DataStorage",
+      "topic": "RelationalData",
+      "tags": [
+        "AZ-305",
+        "DataStorage",
+        "RelationalData"
+      ],
+      "promptHtml": "A financial application stores transaction records in Azure SQL Database with millions of INSERTs per day. Data older than 90 days is rarely queried but must be retained for 7 years for compliance. Recent data requires sub-second query performance. Solution must minimize costs.",
+      "options": [
+        {
+          "key": "A",
+          "label": "SQL Database with temporal tables and automatic data archiving to Azure Storage"
+        },
+        {
+          "key": "B",
+          "label": "SQL Database with partitioning and read replicas"
+        },
+        {
+          "key": "C",
+          "label": "Cosmos DB with TTL and change feed to Archive Storage"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "SQL Database with temporal tables and automatic data archiving to Azure Storage",
+      "rationaleHtml": "",
+      "extraHtml": "Temporal tables provide automatic historical data tracking. Data retention policies automatically move old data to cheaper Azure Storage (reducing SQL storage costs) while maintaining queryability. Partitioning improves performance but doesn't reduce costs. Cosmos DB TTL deletes data, not archives it."
+    },
+    {
+      "id": "az305-5801afe0ea5f",
+      "examSlug": "az305",
+      "domain": "DataStorage",
+      "topic": "RelationalData",
+      "tags": [
+        "AZ-305",
+        "DataStorage",
+        "RelationalData"
+      ],
+      "promptHtml": "A global e-commerce platform requires a database with single-digit millisecond reads/writes from 20 geographic regions, with automatic conflict resolution for concurrent updates. Data must be strongly consistent in the primary region and eventually consistent globally. RPO must be zero.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Cosmos DB with multi-region writes and custom conflict resolution"
+        },
+        {
+          "key": "B",
+          "label": "Azure SQL Database with active geo-replication"
+        },
+        {
+          "key": "C",
+          "label": "Azure Database for PostgreSQL with read replicas"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Cosmos DB with multi-region writes and custom conflict resolution",
+      "rationaleHtml": "",
+      "extraHtml": "Cosmos DB supports multi-region writes with configurable consistency levels (strong in primary, eventual globally). Custom conflict resolution policies (last-writer-wins, custom procedures) handle concurrent updates. Zero RPO with synchronous replication in write regions. SQL geo-replication requires manual failover and doesn't support multi-write. PostgreSQL replicas are read-only."
+    },
+    {
+      "id": "az305-d29d15d5e592",
+      "examSlug": "az305",
+      "domain": "DataStorage",
+      "topic": "RelationalData",
+      "tags": [
+        "AZ-305",
+        "DataStorage",
+        "RelationalData"
+      ],
+      "promptHtml": "A data warehouse stores 500 TB of historical sales data queried monthly for executive reports. Queries analyze 3-5 years of data with complex aggregations. Current solution uses Azure SQL Database at DTU premium tier with monthly costs exceeding $15,000. Queries can tolerate 30-second start latency.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Synapse Analytics serverless SQL pool with data in Azure Data Lake Storage"
+        },
+        {
+          "key": "B",
+          "label": "Azure SQL Database with read-scale-out replicas"
+        },
+        {
+          "key": "C",
+          "label": "Azure Cosmos DB with analytical store"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Synapse Analytics serverless SQL pool with data in Azure Data Lake Storage",
+      "rationaleHtml": "",
+      "extraHtml": "Serverless SQL pool charges only for data scanned during queries (pay-per-query), not continuous compute. Ideal for infrequent querying of massive datasets in ADLS Gen2. Supports complex SQL analytics. Read replicas reduce primary load but don't reduce costs. Cosmos DB analytical store suited for operational analytics, not data warehouse scale."
+    },
+    {
+      "id": "az305-fead24bc6554",
+      "examSlug": "az305",
+      "domain": "DataStorage",
+      "topic": "RelationalData",
+      "tags": [
+        "AZ-305",
+        "DataStorage",
+        "RelationalData"
+      ],
+      "promptHtml": "A SaaS application serves 10,000 tenants with isolated databases per tenant (database-per-tenant model). Each tenant database is 5-50 GB. The solution must maximize resource utilization, simplify management, and provide per-tenant performance isolation with automatic scaling.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure SQL Database elastic pools with per-database min/max eDTU settings"
+        },
+        {
+          "key": "B",
+          "label": "Azure SQL Managed Instance with collocation"
+        },
+        {
+          "key": "C",
+          "label": "Separate SQL Database servers per tenant"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure SQL Database elastic pools with per-database min/max eDTU settings",
+      "rationaleHtml": "",
+      "extraHtml": "Elastic pools share resources across multiple databases (cost efficiency) while allowing per-database limits (performance isolation). Automatically scales resources based on aggregate demand. Simplifies management (single pool vs. thousands of servers). Managed Instance doesn't offer per-database resource controls. Separate servers maximize cost and management complexity."
+    },
+    {
+      "id": "az305-4e24964ec3eb",
+      "examSlug": "az305",
+      "domain": "DataStorage",
+      "topic": "UnstructuredData",
+      "tags": [
+        "AZ-305",
+        "DataStorage",
+        "UnstructuredData"
+      ],
+      "promptHtml": "A machine learning workload stores 10 PB of unstructured training data (images, videos) accessed randomly during model training. Data is write-once, read-many with training jobs requiring maximum throughput. Data must be encrypted with customer-managed keys and support lifecycle management to archive data after 180 days.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Blob Storage Premium block blobs with lifecycle management and CMK"
+        },
+        {
+          "key": "B",
+          "label": "Azure Data Lake Storage Gen2 with hierarchical namespace"
+        },
+        {
+          "key": "C",
+          "label": "Azure Files Premium with SMB protocol"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Blob Storage Premium block blobs with lifecycle management and CMK",
+      "rationaleHtml": "",
+      "extraHtml": "Premium block blobs provide highest throughput for random access workloads. Lifecycle management policies automatically move data to Archive tier after 180 days. Supports CMK encryption. ADLS Gen2 optimized for analytics (sequential reads), not random access ML training. Azure Files suited for shared file systems, not blob-scale ML datasets."
+    },
+    {
+      "id": "az305-48ea270b396a",
+      "examSlug": "az305",
+      "domain": "DataStorage",
+      "topic": "UnstructuredData",
+      "tags": [
+        "AZ-305",
+        "DataStorage",
+        "UnstructuredData"
+      ],
+      "promptHtml": "A healthcare application stores millions of DICOM medical images (each 50-500 MB) that must be available for immediate retrieval during patient visits. Images older than 5 years are accessed less than once per year but must remain retrievable within 15 hours. Solution must minimize storage costs.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Blob Storage Hot tier with lifecycle policy to Archive tier after 5 years"
+        },
+        {
+          "key": "B",
+          "label": "Azure Blob Storage Cool tier with manual migration"
+        },
+        {
+          "key": "C",
+          "label": "Azure Files with tiering to Azure NetApp Files"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Blob Storage Hot tier with lifecycle policy to Archive tier after 5 years",
+      "rationaleHtml": "",
+      "extraHtml": "Hot tier provides immediate access for recent images. Lifecycle policies automatically transition blobs to Archive tier after 5 years (lowest cost). Archive retrieval supports rehydration within 15 hours. Cool tier more expensive than Archive for rarely accessed data. Azure Files doesn't support automatic tiering to low-cost archive."
+    },
+    {
+      "id": "az305-0fc2be49d174",
+      "examSlug": "az305",
+      "domain": "DataStorage",
+      "topic": "UnstructuredData",
+      "tags": [
+        "AZ-305",
+        "DataStorage",
+        "UnstructuredData"
+      ],
+      "promptHtml": "A financial services application stores audit logs as JSON files in Azure Storage, totaling 50 TB annually. Logs must be immutable for 7 years (WORM compliance), queryable without moving data, and support granular access control per compliance team reviewing specific log types.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Data Lake Storage Gen2 with immutable blob storage and Azure RBAC"
+        },
+        {
+          "key": "B",
+          "label": "Azure Blob Storage with legal hold and shared access signatures"
+        },
+        {
+          "key": "C",
+          "label": "Azure Cosmos DB with analytical store and TTL"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Data Lake Storage Gen2 with immutable blob storage and Azure RBAC",
+      "rationaleHtml": "",
+      "extraHtml": "ADLS Gen2 immutable storage provides time-based retention (WORM) for compliance. Native querying via Synapse/Databricks without data movement. Hierarchical namespace enables folder-level RBAC for granular access control. Legal hold doesn't enforce time-based retention automatically. Cosmos DB unsuited for massive log file storage."
+    },
+    {
+      "id": "az305-366f9483bd30",
+      "examSlug": "az305",
+      "domain": "DataStorage",
+      "topic": "UnstructuredData",
+      "tags": [
+        "AZ-305",
+        "DataStorage",
+        "UnstructuredData"
+      ],
+      "promptHtml": "A media streaming platform stores 100 TB of video files in Azure Storage, accessed by 1 million users globally. Content must be delivered with low latency worldwide, with 95% of requests served within 50ms. Storage costs must be minimized while maintaining high availability.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Blob Storage with Azure CDN Premium and geo-redundant storage"
+        },
+        {
+          "key": "B",
+          "label": "Azure Storage with read-access geo-redundant storage and geofiltering"
+        },
+        {
+          "key": "C",
+          "label": "Azure Files Premium with global file sync"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Blob Storage with Azure CDN Premium and geo-redundant storage",
+      "rationaleHtml": "",
+      "extraHtml": "Azure CDN caches content at edge locations globally (low-latency delivery). Premium CDN provides advanced caching rules and performance optimization. GRS provides storage redundancy. RA-GRS without CDN can't meet 50ms latency globally. Azure Files Premium lacks CDN integration for web delivery."
+    },
+    {
+      "id": "az305-035ee4fc5aa4",
+      "examSlug": "az305",
+      "domain": "DataStorage",
+      "topic": "UnstructuredData",
+      "tags": [
+        "AZ-305",
+        "DataStorage",
+        "UnstructuredData"
+      ],
+      "promptHtml": "A data analytics workload processes 5 TB of IoT telemetry daily, stored as Parquet files in Azure Storage. Queries filter by device ID, timestamp, and sensor type. Data scientists run ad-hoc queries requiring sub-second results filtering on metadata without scanning entire files.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Data Lake Storage Gen2 with Azure Synapse Analytics and partition pruning"
+        },
+        {
+          "key": "B",
+          "label": "Azure Blob Storage with Azure Data Explorer"
+        },
+        {
+          "key": "C",
+          "label": "Azure Table Storage with partition and row keys"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Data Lake Storage Gen2 with Azure Synapse Analytics and partition pruning",
+      "rationaleHtml": "",
+      "extraHtml": "ADLS Gen2 hierarchical namespace enables folder partitioning by device/timestamp. Synapse serverless SQL pools support partition pruning (only scans relevant partitions), dramatically reducing query time and cost. Data Explorer suited for time-series, not file-based analytics. Table Storage doesn't support Parquet or complex queries."
+    },
+    {
+      "id": "az305-74a24a416963",
+      "examSlug": "az305",
+      "domain": "DataStorage",
+      "topic": "DataIntegration",
+      "tags": [
+        "AZ-305",
+        "DataStorage",
+        "DataIntegration"
+      ],
+      "promptHtml": "A enterprise data warehouse ingests data from 50 on-premises SQL Server databases, 20 SaaS applications (Salesforce, SAP), and 100 Azure services. Data must be transformed and loaded nightly into Azure Synapse Analytics. Solution requires no-code data integration with monitoring and error handling.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Data Factory with mapping data flows and monitoring pipelines"
+        },
+        {
+          "key": "B",
+          "label": "Azure Databricks with Spark jobs and notebooks"
+        },
+        {
+          "key": "C",
+          "label": "Azure Logic Apps with connectors and workflows"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Data Factory with mapping data flows and monitoring pipelines",
+      "rationaleHtml": "",
+      "extraHtml": "Data Factory provides 90+ native connectors for on-premises, SaaS, and Azure sources. Mapping data flows offer no-code visual ETL. Built-in monitoring, alerting, and retry logic. Databricks requires code (Spark) and lacks pre-built connectors. Logic Apps suited for workflows, not large-scale ETL."
+    },
+    {
+      "id": "az305-5d37823d5b14",
+      "examSlug": "az305",
+      "domain": "DataStorage",
+      "topic": "DataIntegration",
+      "tags": [
+        "AZ-305",
+        "DataStorage",
+        "DataIntegration"
+      ],
+      "promptHtml": "A retail company has data in Azure SQL Database, Cosmos DB, and Data Lake Storage that must be combined for Power BI dashboards with sub-second query performance. Data refreshes every 15 minutes. Business users require self-service querying without understanding underlying storage technologies.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Synapse Analytics with serverless SQL pools and logical data warehouse"
+        },
+        {
+          "key": "B",
+          "label": "Azure Data Factory with incremental copies to Synapse dedicated pool"
+        },
+        {
+          "key": "C",
+          "label": "Power BI DirectQuery to each data source"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Synapse Analytics with serverless SQL pools and logical data warehouse",
+      "rationaleHtml": "",
+      "extraHtml": "Serverless SQL pools create unified views across SQL, Cosmos, and ADLS without data movement. Supports T-SQL queries over heterogeneous sources. Integrates natively with Power BI. Dedicated pools require data movement (latency, cost). DirectQuery to multiple sources lacks performance optimization and unified schema."
+    },
+    {
+      "id": "az305-55f31ac1cac2",
+      "examSlug": "az305",
+      "domain": "DataStorage",
+      "topic": "DataIntegration",
+      "tags": [
+        "AZ-305",
+        "DataStorage",
+        "DataIntegration"
+      ],
+      "promptHtml": "A financial application stores transactional data in Azure SQL Database (100 GB, 10,000 transactions/sec) and requires read-only analytics queries without impacting OLTP performance. Analytics queries scan large date ranges and execute every 5 minutes. Solution must minimize costs and replication lag.",
+      "options": [
+        {
+          "key": "A",
+          "label": "SQL Database Hyperscale with read-scale-out replicas"
+        },
+        {
+          "key": "B",
+          "label": "SQL Database with active geo-replication and read replica"
+        },
+        {
+          "key": "C",
+          "label": "Cosmos DB with analytical store"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "SQL Database Hyperscale with read-scale-out replicas",
+      "rationaleHtml": "",
+      "extraHtml": "Hyperscale read replicas provide near-zero replication lag, isolate analytics workload from primary OLTP, and scale independently. Supports up to 4 read replicas included in pricing. Geo-replication designed for disaster recovery, not analytics offloading, with higher replication lag. Cosmos DB requires data migration from SQL."
+    },
+    {
+      "id": "az305-e928857f4e7d",
+      "examSlug": "az305",
+      "domain": "DataStorage",
+      "topic": "DataIntegration",
+      "tags": [
+        "AZ-305",
+        "DataStorage",
+        "DataIntegration"
+      ],
+      "promptHtml": "A healthcare organization stores patient records in Azure SQL Database and must replicate data to Azure Synapse Analytics nightly for compliance reporting. Data contains PII that must be masked during replication. Failed pipelines must retry up to 3 times with alerts to operations team.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Data Factory with masking transformations, retry policy, and alert actions"
+        },
+        {
+          "key": "B",
+          "label": "Azure SQL Data Sync with firewall rules"
+        },
+        {
+          "key": "C",
+          "label": "Azure Synapse pipeline with stored procedures"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Data Factory with masking transformations, retry policy, and alert actions",
+      "rationaleHtml": "",
+      "extraHtml": "Data Factory mapping data flows support column-level masking transformations. Pipeline retry policies handle transient failures. Alert actions integrate with email, Logic Apps, or webhook. SQL Data Sync for bidirectional sync between SQL databases, not analytics. Synapse pipelines lack built-in masking and sophisticated error handling."
+    },
+    {
+      "id": "az305-fbf55ad9b0aa",
+      "examSlug": "az305",
+      "domain": "DataStorage",
+      "topic": "DataIntegration",
+      "tags": [
+        "AZ-305",
+        "DataStorage",
+        "DataIntegration"
+      ],
+      "promptHtml": "A manufacturing IoT solution captures time-series sensor data (temperature, pressure, vibration) from 100,000 devices at 1 event/second/device. Data must be stored for 1 year with queries aggregating by device, sensor type, and time windows. Solution must optimize for time-series queries and minimize costs.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Data Explorer with time-series optimized storage and materialized views"
+        },
+        {
+          "key": "B",
+          "label": "Azure Cosmos DB with time-series containers"
+        },
+        {
+          "key": "C",
+          "label": "Azure SQL Database with time-series tables"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Data Explorer with time-series optimized storage and materialized views",
+      "rationaleHtml": "",
+      "extraHtml": "Data Explorer purpose-built for time-series analytics with columnar storage, automatic data compression, and time-series functions (aggregations, interpolation). Materialized views pre-compute aggregations for fast queries. Scales to billions of events. Cosmos DB expensive for massive time-series. SQL time-series lacks native time-series optimizations."
+    },
+    {
+      "id": "az305-bb298edce92f",
+      "examSlug": "az305",
+      "domain": "DataStorage",
+      "topic": "DataIntegration",
+      "tags": [
+        "AZ-305",
+        "DataStorage",
+        "DataIntegration"
+      ],
+      "promptHtml": "A media company stores 50 TB of JSON event logs in Azure Data Lake Storage Gen2. Data scientists require SQL querying without moving data or provisioning databases. Queries execute 10-20 times per month analyzing specific date ranges (1-7 days of data per query).",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Synapse Analytics serverless SQL pool with OPENROWSET"
+        },
+        {
+          "key": "B",
+          "label": "Azure Databricks with Delta Lake"
+        },
+        {
+          "key": "C",
+          "label": "Azure Data Factory with data flows"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Synapse Analytics serverless SQL pool with OPENROWSET",
+      "rationaleHtml": "",
+      "extraHtml": "Serverless SQL pools enable T-SQL queries directly over files in ADLS Gen2 using OPENROWSET (no data movement). Pay-per-query pricing ideal for infrequent usage. Supports JSON parsing. Databricks requires Spark knowledge and continuous compute. Data Factory for ETL, not ad-hoc querying."
+    },
+    {
+      "id": "az305-d63583aab4f0",
+      "examSlug": "az305",
+      "domain": "DataStorage",
+      "topic": "DataProtection",
+      "tags": [
+        "AZ-305",
+        "DataStorage",
+        "DataProtection"
+      ],
+      "promptHtml": "A global application stores customer profile data (name, address, preferences) totaling 10 TB. Data must be replicated across 5 Azure regions with automatic failover, strong consistency for reads/writes in the primary region, and eventual consistency in secondary regions. RPO must be zero in the primary region.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Cosmos DB with multi-region writes and session consistency in primary region"
+        },
+        {
+          "key": "B",
+          "label": "Azure SQL Database with auto-failover groups and synchronous replication"
+        },
+        {
+          "key": "C",
+          "label": "Azure Storage with geo-redundant storage"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Cosmos DB with multi-region writes and session consistency in primary region",
+      "rationaleHtml": "",
+      "extraHtml": "Cosmos DB supports multi-region writes with tunable consistency (strong in primary via bounded staleness, eventual in secondary). Automatic failover with RPO zero via synchronous replication in write region. SQL auto-failover limited to 2 regions with async secondary. GRS for blobs, not structured profile data with consistency requirements."
+    },
+    {
+      "id": "az305-244b9f0538c5",
+      "examSlug": "az305",
+      "domain": "DataStorage",
+      "topic": "DatabaseScalability",
+      "tags": [
+        "AZ-305",
+        "DataStorage",
+        "DatabaseScalability"
+      ],
+      "promptHtml": "A database workload requires 1 TB storage that doubles annually. Current Azure SQL Database General Purpose tier approaches max capacity. Workloads are transaction-heavy (50,000 IOPS) with unpredictable scaling. Solution must support growth to 100 TB without downtime and scale storage independently from compute.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure SQL Database Hyperscale tier"
+        },
+        {
+          "key": "B",
+          "label": "Azure SQL Managed Instance"
+        },
+        {
+          "key": "C",
+          "label": "Azure Cosmos DB with autoscale"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure SQL Database Hyperscale tier",
+      "rationaleHtml": "",
+      "extraHtml": "Hyperscale tier scales storage independently to 100 TB+ without downtime. Supports high IOPS (up to 100,000+) and instant snapshots. Storage auto-grows on demand. Managed Instance limited to 8-16 TB depending on hardware. Cosmos DB requires application refactoring for NoSQL model."
+    },
+    {
+      "id": "az305-16535daf5053",
+      "examSlug": "az305",
+      "domain": "DataStorage",
+      "topic": "DatabaseScalability",
+      "tags": [
+        "AZ-305",
+        "DataStorage",
+        "DatabaseScalability"
+      ],
+      "promptHtml": "A web application database experiences predictable load of 1,000 DTU during business hours (8 AM - 6 PM) and 100 DTU overnight. Database must automatically scale down overnight to reduce costs and scale up before business hours to maintain performance.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure SQL Database serverless tier with auto-pause and auto-resume"
+        },
+        {
+          "key": "B",
+          "label": "Azure SQL Database with Azure Automation scaling scripts"
+        },
+        {
+          "key": "C",
+          "label": "Azure SQL Elastic Pool with DTU-based scaling"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure SQL Database serverless tier with auto-pause and auto-resume",
+      "rationaleHtml": "",
+      "extraHtml": "Serverless tier automatically scales compute based on workload demand (1-100 DTU equivalent in vCores) and pauses during inactivity (no compute charges). Auto-resumes on first request. Ideal for intermittent workloads. Automation scripts add operational overhead and delay. Elastic pools for multi-database scenarios, not single database with predictable patterns."
+    },
+    {
+      "id": "az305-78ecf21c007b",
+      "examSlug": "az305",
+      "domain": "DataStorage",
+      "topic": "DataProtection",
+      "tags": [
+        "AZ-305",
+        "DataStorage",
+        "DataProtection"
+      ],
+      "promptHtml": "A video processing application encodes uploaded videos (1 TB per day) and stores results in Azure Blob Storage. Processing occurs in batches nightly. Current solution uses locally redundant storage (LRS). Business requires protection against regional failures with 4-hour RPO and automatic failover.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Geo-redundant storage (GRS) with read-access geo-redundant storage (RA-GRS)"
+        },
+        {
+          "key": "B",
+          "label": "Zone-redundant storage (ZRS) with lifecycle management"
+        },
+        {
+          "key": "C",
+          "label": "Locally redundant storage with Azure Backup"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Geo-redundant storage (GRS) with read-access geo-redundant storage (RA-GRS)",
+      "rationaleHtml": "",
+      "extraHtml": "GRS replicates data to secondary region (300+ miles away), providing regional disaster recovery. RA-GRS enables read access to secondary region during primary outage. RPO typically 15 minutes (well within 4 hours). ZRS protects against zone failures in single region. Azure Backup for long-term retention, not geo-redundancy."
+    },
+    {
+      "id": "az305-ffef552a21f9",
+      "examSlug": "az305",
+      "domain": "DataStorage",
+      "topic": "DataProtection",
+      "tags": [
+        "AZ-305",
+        "DataStorage",
+        "DataProtection"
+      ],
+      "promptHtml": "A financial application requires hybrid connectivity between on-premises data center and Azure SQL Database with <10ms latency, private connectivity (no public internet), and throughput up to 10 Gbps. Solution must support multiple subscriptions and virtual networks.",
+      "options": [
+        {
+          "key": "A",
+          "label": "ExpressRoute with private peering and VNet integration"
+        },
+        {
+          "key": "B",
+          "label": "Site-to-site VPN with VPN Gateway"
+        },
+        {
+          "key": "C",
+          "label": "Azure SQL Database private endpoint with VPN"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "ExpressRoute with private peering and VNet integration",
+      "rationaleHtml": "",
+      "extraHtml": "ExpressRoute provides dedicated private connection (bypasses internet) with predictable latency <10ms and bandwidth up to 100 Gbps. Supports VNet peering across subscriptions. Site-to-site VPN limited to 1.25 Gbps per tunnel with variable latency over internet. Private endpoint provides private IP but doesn't solve hybrid connectivity."
+    },
+    {
+      "id": "az305-5e8351faa811",
+      "examSlug": "az305",
+      "domain": "BusinessContinuity",
+      "topic": "HighAvailability",
+      "tags": [
+        "AZ-305",
+        "BusinessContinuity",
+        "HighAvailability"
+      ],
+      "promptHtml": "A mission-critical application requires Azure SQL Database to withstand datacenter failures within a region with RPO of zero and RTO under 1 minute. The database must continue operating without data loss during zone outages.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure SQL Database Business Critical tier with zone-redundant configuration"
+        },
+        {
+          "key": "B",
+          "label": "Azure SQL Database with active geo-replication"
+        },
+        {
+          "key": "C",
+          "label": "Azure SQL Managed Instance with zone redundancy"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure SQL Database Business Critical tier with zone-redundant configuration",
+      "rationaleHtml": "",
+      "extraHtml": "Business Critical tier with zone redundancy replicates database synchronously across 3 availability zones (RPO zero). Automatic failover occurs within 30-60 seconds (RTO <1 min). Geo-replication provides regional redundancy but asynchronous (RPO >0). Managed Instance zone redundancy available but for instance-level, not matching single database requirement."
+    },
+    {
+      "id": "az305-fd89b6665e73",
+      "examSlug": "az305",
+      "domain": "BusinessContinuity",
+      "topic": "HighAvailability",
+      "tags": [
+        "AZ-305",
+        "BusinessContinuity",
+        "HighAvailability"
+      ],
+      "promptHtml": "A containerized microservices application on AKS must remain available during node failures, planned maintenance, and zone outages. Services must autoscale from 10 to 100 pods based on CPU and custom metrics (queue depth). Solution must support multiple node pools across availability zones.",
+      "options": [
+        {
+          "key": "A",
+          "label": "AKS with system node pool zone-spanning and user node pools per zone with HPA and KEDA"
+        },
+        {
+          "key": "B",
+          "label": "Azure Container Instances with Azure Front Door"
+        },
+        {
+          "key": "C",
+          "label": "App Service for Containers with scaling rules"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "AKS with system node pool zone-spanning and user node pools per zone with HPA and KEDA",
+      "rationaleHtml": "",
+      "extraHtml": "AKS system node pool across zones ensures control plane HA. User node pools distributed across zones provide workload resilience. HPA (Horizontal Pod Autoscaler) scales on CPU/memory. KEDA scales on custom metrics (queue depth, etc.). ACI doesn't support Kubernetes orchestration. App Service for Containers limited container orchestration capabilities."
+    },
+    {
+      "id": "az305-48344e4432c7",
+      "examSlug": "az305",
+      "domain": "BusinessContinuity",
+      "topic": "BackupRecovery",
+      "tags": [
+        "AZ-305",
+        "BusinessContinuity",
+        "BackupRecovery"
+      ],
+      "promptHtml": "A data warehouse on Azure Synapse Analytics (dedicated SQL pool) stores 50 TB of historical sales data with nightly ETL loads. Business requires point-in-time restore capability for 30 days and long-term retention of year-end snapshots for 7 years. Restore must complete within 2 hours.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Automatic restore points with user-defined restore points and long-term backup to Azure Storage"
+        },
+        {
+          "key": "B",
+          "label": "Azure Backup with Recovery Services Vault"
+        },
+        {
+          "key": "C",
+          "label": "Geo-redundant storage replication"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Automatic restore points with user-defined restore points and long-term backup to Azure Storage",
+      "rationaleHtml": "",
+      "extraHtml": "Synapse dedicated pools provide automatic restore points every 8 hours (retained 7 days) and support user-defined restore points before critical operations (retained 42 days). Export database before year-end to Azure Storage for 7-year retention. Restore from point completes in 1-2 hours. Azure Backup doesn't support Synapse. GRS replicates data, not point-in-time recovery."
+    },
+    {
+      "id": "az305-1a543afaa1b1",
+      "examSlug": "az305",
+      "domain": "BusinessContinuity",
+      "topic": "BackupRecovery",
+      "tags": [
+        "AZ-305",
+        "BusinessContinuity",
+        "BackupRecovery"
+      ],
+      "promptHtml": "A web application on App Service connects to Azure SQL Database. Business requires 4-hour RPO, 1-hour RTO, and protection against regional failures. Failover must be automatic without manual intervention. Solution must minimize costs during normal operation.",
+      "options": [
+        {
+          "key": "A",
+          "label": "App Service with Traffic Manager and SQL Database with auto-failover groups"
+        },
+        {
+          "key": "B",
+          "label": "App Service slots with Azure Front Door and SQL geo-replication"
+        },
+        {
+          "key": "C",
+          "label": "Azure Site Recovery for App Service and SQL mirroring"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "App Service with Traffic Manager and SQL Database with auto-failover groups",
+      "rationaleHtml": "",
+      "extraHtml": "Traffic Manager distributes traffic across regional App Service instances. SQL auto-failover groups provide automatic failover of database to secondary region with read-write listener endpoint (application connection string unchanged). Meets RPO/RTO requirements. Slots for staging, not DR. Site Recovery for VMs, not App Service PaaS."
+    },
+    {
+      "id": "az305-bff57b50e99d",
+      "examSlug": "az305",
+      "domain": "BusinessContinuity",
+      "topic": "BackupRecovery",
+      "tags": [
+        "AZ-305",
+        "BusinessContinuity",
+        "BackupRecovery"
+      ],
+      "promptHtml": "A file server workload stores 20 TB of user home directories on Azure Files Premium. Data must be protected with daily backups retained for 90 days and weekly backups for 5 years. Restores must support granular file-level recovery without restoring entire share.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Backup for Azure Files with retention policies and item-level restore"
+        },
+        {
+          "key": "B",
+          "label": "Azure Files snapshots with lifecycle management"
+        },
+        {
+          "key": "C",
+          "label": "Azure Site Recovery with file-level recovery"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Backup for Azure Files with retention policies and item-level restore",
+      "rationaleHtml": "",
+      "extraHtml": "Azure Backup provides policy-based backups (daily, weekly) with flexible retention (90 days, 5 years). Supports item-level restore (individual files/folders) without full share restore. Share snapshots manual and lack long-term retention management. Site Recovery for infrastructure DR, not file backup."
+    },
+    {
+      "id": "az305-83dc9358a43c",
+      "examSlug": "az305",
+      "domain": "BusinessContinuity",
+      "topic": "BackupRecovery",
+      "tags": [
+        "AZ-305",
+        "BusinessContinuity",
+        "BackupRecovery"
+      ],
+      "promptHtml": "A stateful application on Azure VMs requires crash-consistent backups every 6 hours with 30-day retention. During regional outage, VMs must be restored to secondary region within 2 hours. Backup solution must minimize impact on VM performance.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Backup with snapshot-based incremental backups and cross-region restore"
+        },
+        {
+          "key": "B",
+          "label": "Azure Site Recovery with replication to secondary region"
+        },
+        {
+          "key": "C",
+          "label": "Managed disk snapshots with Azure Automation"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Backup with snapshot-based incremental backups and cross-region restore",
+      "rationaleHtml": "",
+      "extraHtml": "Azure Backup uses instant restore snapshots (minimal performance impact) stored locally and vault-standard tier replicated to secondary region. Supports crash-consistent backups every 4 hours (configurable). Cross-region restore enables RTO 2 hours. ASR for continuous replication (lower RTO but higher cost). Manual snapshots lack orchestration and cross-region restore."
+    },
+    {
+      "id": "az305-8c54ea8c291c",
+      "examSlug": "az305",
+      "domain": "BusinessContinuity",
+      "topic": "BackupRecovery",
+      "tags": [
+        "AZ-305",
+        "BusinessContinuity",
+        "BackupRecovery"
+      ],
+      "promptHtml": "A multi-tier application (web, app, database) on Azure VMs must failover to secondary region during disasters with RPO 15 minutes and RTO 4 hours. Failover must be orchestrated across all tiers with automated testing. Solution must support non-disruptive DR testing.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Site Recovery with recovery plans and test failover"
+        },
+        {
+          "key": "B",
+          "label": "Azure Backup with cross-region restore"
+        },
+        {
+          "key": "C",
+          "label": "Geo-redundant load balancer with manual failover"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Site Recovery with recovery plans and test failover",
+      "rationaleHtml": "",
+      "extraHtml": "ASR continuously replicates VMs to secondary region (RPO 15 minutes achievable). Recovery plans orchestrate multi-tier failover with sequencing and scripts. Test failover creates isolated environment for DR testing without affecting production. Azure Backup for data restore, not VM failover orchestration. Manual failover doesn't meet RTO requirements."
+    },
+    {
+      "id": "az305-9b74b754e479",
+      "examSlug": "az305",
+      "domain": "BusinessContinuity",
+      "topic": "HighAvailability",
+      "tags": [
+        "AZ-305",
+        "BusinessContinuity",
+        "HighAvailability"
+      ],
+      "promptHtml": "A NoSQL database on Cosmos DB stores mission-critical application data with 99.999% availability SLA requirement. Data must be readable during regional outages with automatic failover and strong consistency within a region. Business operates in 3 Azure regions.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Cosmos DB with multi-region writes, availability zones, and bounded staleness consistency"
+        },
+        {
+          "key": "B",
+          "label": "Cosmos DB with single-region write and read regions"
+        },
+        {
+          "key": "C",
+          "label": "Cosmos DB with session consistency and manual failover"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Cosmos DB with multi-region writes, availability zones, and bounded staleness consistency",
+      "rationaleHtml": "",
+      "extraHtml": "Multi-region writes with availability zones enables 99.999% availability SLA. Bounded staleness consistency provides strong consistency within region (defined staleness window) while enabling multi-region writes. Automatic regional failover. Single-region write provides 99.99% SLA. Session consistency doesn't guarantee strong consistency."
+    },
+    {
+      "id": "az305-d745dc2a828c",
+      "examSlug": "az305",
+      "domain": "BusinessContinuity",
+      "topic": "HighAvailability",
+      "tags": [
+        "AZ-305",
+        "BusinessContinuity",
+        "HighAvailability"
+      ],
+      "promptHtml": "A real-time analytics application on Azure Synapse Analytics must remain available during datacenter failures within a region. Data warehouse stores 100 TB with nightly ETL jobs that cannot be interrupted. Solution must provide automatic failover within 5 minutes.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Synapse workspace with zone redundancy cannot meet requirements without additional architecture"
+        },
+        {
+          "key": "B",
+          "label": "Synapse dedicated SQL pool with geo-restore and Traffic Manager"
+        },
+        {
+          "key": "C",
+          "label": "Cosmos DB with analytical store"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Synapse workspace with zone redundancy cannot meet requirements without additional architecture",
+      "rationaleHtml": "",
+      "extraHtml": "Synapse dedicated pools don't currently support automatic zone redundancy or fast failover (geo-restore RTO hours, not minutes). Meeting <5 min RTO requires active-active architecture with data replication and manual failover orchestration. Geo-restore is backup-based (slow). This highlights Synapse limitation for HA within single region."
+    },
+    {
+      "id": "az305-a48f896614e1",
+      "examSlug": "az305",
+      "domain": "Infrastructure",
+      "topic": "ComputeSolutions",
+      "tags": [
+        "AZ-305",
+        "Infrastructure",
+        "ComputeSolutions"
+      ],
+      "promptHtml": "A batch processing workload runs nightly ETL jobs processing 10 TB of data over 6 hours on 20 VMs. Jobs run once per day and do not require immediate response. VMs idle 18 hours daily. Solution must minimize compute costs while meeting nightly processing window.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Batch with low-priority VMs and scale sets"
+        },
+        {
+          "key": "B",
+          "label": "Virtual Machine Scale Sets with deallocate during idle time"
+        },
+        {
+          "key": "C",
+          "label": "Azure Kubernetes Service with node auto-pause"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Batch with low-priority VMs and scale sets",
+      "rationaleHtml": "",
+      "extraHtml": "Azure Batch optimized for large-scale batch processing with automatic scaling. Low-priority VMs provide up to 80% cost savings vs. standard VMs. Batch manages provisioning and deallocation. VMSS with manual deallocation requires scripting and doesn't optimize batch orchestration. AKS with node auto-pause not supported natively."
+    },
+    {
+      "id": "az305-955ddcdc9d5d",
+      "examSlug": "az305",
+      "domain": "Infrastructure",
+      "topic": "ComputeSolutions",
+      "tags": [
+        "AZ-305",
+        "Infrastructure",
+        "ComputeSolutions"
+      ],
+      "promptHtml": "A CPU-intensive scientific simulation requires 500 cores with RDMA interconnect for MPI workloads, completing in 48 hours. Workload runs quarterly. Solution must provide maximum CPU performance with lowest inter-node latency.",
+      "options": [
+        {
+          "key": "A",
+          "label": "HB-series VMs with InfiniBand in Azure Batch"
+        },
+        {
+          "key": "B",
+          "label": "FSv2-series VMs with accelerated networking"
+        },
+        {
+          "key": "C",
+          "label": "Azure Container Instances with high CPU allocation"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "HB-series VMs with InfiniBand in Azure Batch",
+      "rationaleHtml": "",
+      "extraHtml": "HB-series VMs purpose-built for HPC with high core count, InfiniBand interconnect (sub-microsecond latency), and RDMA support for MPI. Azure Batch orchestrates large-scale compute. FSv2 lacks InfiniBand RDMA. ACI unsuited for HPC workloads requiring inter-node communication."
+    },
+    {
+      "id": "az305-dc5a05e39489",
+      "examSlug": "az305",
+      "domain": "Infrastructure",
+      "topic": "ComputeSolutions",
+      "tags": [
+        "AZ-305",
+        "Infrastructure",
+        "ComputeSolutions"
+      ],
+      "promptHtml": "A containerized application requires running 10,000 short-lived tasks (30 seconds each) triggered by queue messages. Tasks are stateless and do not require orchestration. Solution must minimize costs and start tasks within 5 seconds of queue message arrival.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Container Instances with Container Groups triggered by Azure Functions"
+        },
+        {
+          "key": "B",
+          "label": "Azure Kubernetes Service with horizontal pod autoscaling"
+        },
+        {
+          "key": "C",
+          "label": "Azure Container Apps with KEDA queue scaling"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Container Apps with KEDA queue scaling",
+      "rationaleHtml": "",
+      "extraHtml": "Container Apps with KEDA automatically scales containers based on queue depth (0 to N instances). Subsecond cold start. Pay-per-execution pricing for consumption tier. ACI requires manual triggering and slower cold start. AKS over-engineered for event-driven tasks (requires infrastructure management)."
+    },
+    {
+      "id": "az305-2730565993e9",
+      "examSlug": "az305",
+      "domain": "Infrastructure",
+      "topic": "ComputeSolutions",
+      "tags": [
+        "AZ-305",
+        "Infrastructure",
+        "ComputeSolutions"
+      ],
+      "promptHtml": "A legacy .NET Framework application requires Windows Server 2016, specific registry configurations, and COM components. Application must migrate to Azure with minimal refactoring. Solution must support auto-scaling and backup.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Virtual Machines with custom VM images and scale sets"
+        },
+        {
+          "key": "B",
+          "label": "Azure App Service with Windows containers"
+        },
+        {
+          "key": "C",
+          "label": "Azure Container Instances with Windows containers"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Virtual Machines with custom VM images and scale sets",
+      "rationaleHtml": "",
+      "extraHtml": "VMs support full Windows Server with registry, COM components, and legacy dependencies. Custom images capture configurations. VM scale sets provide auto-scaling. Azure Backup supports VM backup. App Service Windows containers don't support COM components. ACI unsuited for stateful legacy applications."
+    },
+    {
+      "id": "az305-30fb1ebc3a11",
+      "examSlug": "az305",
+      "domain": "Infrastructure",
+      "topic": "ApplicationArchitecture",
+      "tags": [
+        "AZ-305",
+        "Infrastructure",
+        "ApplicationArchitecture"
+      ],
+      "promptHtml": "A microservices application on AKS requires Blue/Green deployments with instant traffic shifting between versions, A/B testing with traffic splitting (90% stable, 10% canary), and automatic rollback on errors. Solution must integrate with existing Kubernetes infrastructure.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Service Mesh (Istio) with virtual services and traffic management"
+        },
+        {
+          "key": "B",
+          "label": "Azure Traffic Manager with weighted routing"
+        },
+        {
+          "key": "C",
+          "label": "Kubernetes Deployments with rolling updates"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Service Mesh (Istio) with virtual services and traffic management",
+      "rationaleHtml": "",
+      "extraHtml": "Service mesh (Istio) provides advanced traffic management: traffic splitting percentages, canary deployments, automatic retries/timeouts, and observability. Integrates natively with AKS. Traffic Manager operates at DNS level (slow propagation). K8s rolling updates lack fine-grained traffic control and automatic rollback."
+    },
+    {
+      "id": "az305-13c47527380a",
+      "examSlug": "az305",
+      "domain": "Infrastructure",
+      "topic": "MessagingArchitecture",
+      "tags": [
+        "AZ-305",
+        "Infrastructure",
+        "MessagingArchitecture"
+      ],
+      "promptHtml": "A distributed application requires asynchronous communication between 20 microservices with guaranteed delivery and ordering per message session. Messages contain order processing data requiring FIFO processing per customer. Peak load reaches 50,000 messages/second.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Service Bus Premium tier with sessions and partitioning"
+        },
+        {
+          "key": "B",
+          "label": "Azure Event Hubs with consumer groups and partition keys"
+        },
+        {
+          "key": "C",
+          "label": "Azure Storage Queues with at-least-once delivery"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Service Bus Premium tier with sessions and partitioning",
+      "rationaleHtml": "",
+      "extraHtml": "Service Bus sessions guarantee FIFO ordering per session (customer). Premium tier supports high throughput (50K+ msg/sec) with partitioning. Exactly-once delivery. Event Hubs for event streaming, not message queuing with FIFO guarantees. Storage Queues lack ordering and session support."
+    },
+    {
+      "id": "az305-6f14399b9261",
+      "examSlug": "az305",
+      "domain": "Infrastructure",
+      "topic": "EventArchitecture",
+      "tags": [
+        "AZ-305",
+        "Infrastructure",
+        "EventArchitecture"
+      ],
+      "promptHtml": "A real-time notification system must push events from Azure services (Blob Storage, Event Grid, custom applications) to thousands of subscribers with automatic retry, dead-lettering, and filtering per subscriber based on event attributes. Events must be delivered within 1 second.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Event Grid with event subscriptions and filters"
+        },
+        {
+          "key": "B",
+          "label": "Azure Service Bus with topic subscriptions"
+        },
+        {
+          "key": "C",
+          "label": "Azure Event Hubs with consumer groups"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Event Grid with event subscriptions and filters",
+      "rationaleHtml": "",
+      "extraHtml": "Event Grid purpose-built for reactive event distribution with subsecond latency. Native integration with 20+ Azure services. Advanced filtering per subscription. Built-in retry and dead-letter. Service Bus for reliable messaging, not reactive event distribution. Event Hubs for high-throughput ingestion, not fan-out distribution."
+    },
+    {
+      "id": "az305-d3c8b956a361",
+      "examSlug": "az305",
+      "domain": "Infrastructure",
+      "topic": "CachingSolution",
+      "tags": [
+        "AZ-305",
+        "Infrastructure",
+        "CachingSolution"
+      ],
+      "promptHtml": "A web API serves 1 million requests per day with response data rarely changing. 80% of requests query the same 100 products. API response time must be <50ms. Backend database query time averages 200ms. Solution must minimize database load.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Cache for Redis with cache-aside pattern and sliding expiration"
+        },
+        {
+          "key": "B",
+          "label": "Azure API Management with response caching policy"
+        },
+        {
+          "key": "C",
+          "label": "Application-level in-memory caching"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Cache for Redis with cache-aside pattern and sliding expiration",
+      "rationaleHtml": "",
+      "extraHtml": "Redis provides distributed cache accessible across multiple API instances (unlike in-memory cache). Cache-aside pattern queries cache first, reads DB on miss, populates cache. Sliding expiration keeps hot data cached. APIM response caching limited to gateway level (doesn't reduce backend calls from multiple gateways). In-memory cache not shared across instances."
+    },
+    {
+      "id": "az305-fec438a42e75",
+      "examSlug": "az305",
+      "domain": "Infrastructure",
+      "topic": "ApplicationConfiguration",
+      "tags": [
+        "AZ-305",
+        "Infrastructure",
+        "ApplicationConfiguration"
+      ],
+      "promptHtml": "A microservices application stores configuration (feature flags, connection strings, service endpoints) that changes weekly. 30 services must refresh configuration every 5 minutes without redeployment. Configuration must support versioning and rollback. Secrets must integrate with Key Vault.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure App Configuration with feature flags and Key Vault references"
+        },
+        {
+          "key": "B",
+          "label": "Azure Key Vault with secret versioning"
+        },
+        {
+          "key": "C",
+          "label": "Azure Storage with JSON configuration files"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure App Configuration with feature flags and Key Vault references",
+      "rationaleHtml": "",
+      "extraHtml": "App Configuration provides centralized configuration with dynamic refresh (no redeployment). Feature flag management with targeting rules. Key Vault references for secrets (not stored in App Config). Configuration versioning and point-in-time snapshot. Key Vault for secrets only, not app configuration. Storage files require manual refresh logic."
+    },
+    {
+      "id": "az305-8e1877b7e571",
+      "examSlug": "az305",
+      "domain": "Infrastructure",
+      "topic": "ApplicationDeployment",
+      "tags": [
+        "AZ-305",
+        "Infrastructure",
+        "ApplicationDeployment"
+      ],
+      "promptHtml": "A CI/CD pipeline deploys containerized applications to 10 AKS clusters across regions. Deployments must be GitOps-based with automatic reconciliation of cluster state with Git repository. Configuration drift must be detected and corrected automatically. Solution must support progressive delivery strategies.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure DevOps with Argo CD and Flux"
+        },
+        {
+          "key": "B",
+          "label": "Azure Pipelines with kubectl commands"
+        },
+        {
+          "key": "C",
+          "label": "GitHub Actions with Helm"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure DevOps with Argo CD and Flux",
+      "rationaleHtml": "",
+      "extraHtml": "GitOps tools (Argo CD, Flux) continuously monitor Git repository and reconcile cluster state (automatic drift correction). Support progressive delivery (canary, blue/green). Azure Pipelines with kubectl is imperative (no automatic reconciliation). GitHub Actions with Helm lacks continuous reconciliation and drift detection."
+    },
+    {
+      "id": "az305-12334cf2bae6",
+      "examSlug": "az305",
+      "domain": "Infrastructure",
+      "topic": "NetworkSolutions",
+      "tags": [
+        "AZ-305",
+        "Infrastructure",
+        "NetworkSolutions"
+      ],
+      "promptHtml": "A global web application requires intelligent routing of users to the nearest healthy Azure region based on latency, with automatic failover during regional outages. Solution must support priority-based routing with primary region preferred unless unhealthy.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Traffic Manager with performance routing and endpoint monitoring"
+        },
+        {
+          "key": "B",
+          "label": "Azure Front Door with priority-based routing"
+        },
+        {
+          "key": "C",
+          "label": "Azure Load Balancer with cross-region support"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Front Door with priority-based routing",
+      "rationaleHtml": "",
+      "extraHtml": "Front Door provides priority-based routing (prefer primary region) with automatic failover based on health probes. SSL offload, WAF, and CDN capabilities included. Traffic Manager uses DNS (slower failover detection). Standard Load Balancer regional only (cross-region LB limited scenarios)."
+    },
+    {
+      "id": "az305-78effcd53046",
+      "examSlug": "az305",
+      "domain": "Infrastructure",
+      "topic": "NetworkSecurity",
+      "tags": [
+        "AZ-305",
+        "Infrastructure",
+        "NetworkSecurity"
+      ],
+      "promptHtml": "An Azure environment with 200 VMs across 10 virtual networks in hub-spoke topology requires centralized egress filtering with threat intelligence and deep packet inspection. All internet-bound traffic must be inspected with logging. Solution must support automatic scaling during traffic spikes.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Firewall Premium with threat intelligence and forced tunneling in hub VNet"
+        },
+        {
+          "key": "B",
+          "label": "Network Security Groups with service tags"
+        },
+        {
+          "key": "C",
+          "label": "Network Virtual Appliance with UDRs"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Firewall Premium with threat intelligence and forced tunneling in hub VNet",
+      "rationaleHtml": "",
+      "extraHtml": "Azure Firewall in hub VNet with UDRs in spokes forces all egress through firewall (hub-spoke topology). Premium tier provides threat intelligence, TLS inspection, and IDPS. Auto-scales to handle traffic spikes. NSGs stateless filtering, no deep packet inspection. NVA requires manual scaling and management."
+    },
+    {
+      "id": "az305-c3e4ee76a3e2",
+      "examSlug": "az305",
+      "domain": "Infrastructure",
+      "topic": "NetworkSolutions",
+      "tags": [
+        "AZ-305",
+        "Infrastructure",
+        "NetworkSolutions"
+      ],
+      "promptHtml": "A hybrid application requires private connectivity between on-premises datacenter and 50 Azure VNets across 3 regions with transitive routing. On-premises should route to any VNet through single connection. Solution must support 5 Gbps aggregate throughput and BGP route exchange.",
+      "options": [
+        {
+          "key": "A",
+          "label": "ExpressRoute with Virtual WAN hub and spoke"
+        },
+        {
+          "key": "B",
+          "label": "Site-to-site VPN with Virtual Network Gateway in each VNet"
+        },
+        {
+          "key": "C",
+          "label": "ExpressRoute with VNet peering mesh"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "ExpressRoute with Virtual WAN hub and spoke",
+      "rationaleHtml": "",
+      "extraHtml": "Virtual WAN provides transitive routing across hubs and spokes (on-prem routes to any VNet through WAN hub). Single ExpressRoute connection to WAN hub reaches all spokes. BGP support for dynamic routing. Multiple VPN gateways don't support transitive routing. VNet peering mesh requires full mesh (N*(N-1)/2 peerings, not scalable)."
+    },
+    {
+      "id": "az305-e884d643da7a",
+      "examSlug": "az305",
+      "domain": "Infrastructure",
+      "topic": "LoadBalancing",
+      "tags": [
+        "AZ-305",
+        "Infrastructure",
+        "LoadBalancing"
+      ],
+      "promptHtml": "A latency-sensitive application requires load balancing across VMs in multiple availability zones with session affinity (same client to same backend). Health probes must check application-level health every 5 seconds. Solution must support both inbound and outbound NAT.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Standard Load Balancer with zone-redundant frontend and health probes"
+        },
+        {
+          "key": "B",
+          "label": "Azure Application Gateway with cookie-based affinity"
+        },
+        {
+          "key": "C",
+          "label": "Azure Traffic Manager with geographic routing"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Standard Load Balancer with zone-redundant frontend and health probes",
+      "rationaleHtml": "",
+      "extraHtml": "Standard Load Balancer supports zone redundancy, session affinity (source IP), configurable health probes (5-second interval), and outbound NAT. Low latency (Layer 4). Application Gateway operates at Layer 7 (higher latency). Traffic Manager DNS-based (unsuited for session affinity and zone-level load balancing)."
+    },
+    {
+      "id": "az305-3cd3a82dbfdb",
+      "examSlug": "az305",
+      "domain": "Infrastructure",
+      "topic": "NetworkSolutions",
+      "tags": [
+        "AZ-305",
+        "Infrastructure",
+        "NetworkSolutions"
+      ],
+      "promptHtml": "A web application on App Service requires private access to Azure SQL Database, Storage, and Key Vault without internet exposure. Application must resolve Azure service private IPs using DNS. VNet integration required.",
+      "options": [
+        {
+          "key": "A",
+          "label": "App Service VNet integration with private endpoints and Azure Private DNS zones"
+        },
+        {
+          "key": "B",
+          "label": "App Service with service endpoints"
+        },
+        {
+          "key": "C",
+          "label": "Azure Application Gateway with backend pools"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "App Service VNet integration with private endpoints and Azure Private DNS zones",
+      "rationaleHtml": "",
+      "extraHtml": "App Service VNet integration enables private connectivity. Private endpoints assign private IPs to SQL, Storage, Key Vault. Azure Private DNS zones provide name resolution to private IPs (e.g., mydb.database.windows.net resolves to 10.0.1.5). Service endpoints don't prevent public IP exposure. Application Gateway for inbound traffic, not outbound private connectivity."
+    },
+    {
+      "id": "az305-9dfe142ca5ec",
+      "examSlug": "az305",
+      "domain": "Infrastructure",
+      "topic": "Migrations",
+      "tags": [
+        "AZ-305",
+        "Infrastructure",
+        "Migrations"
+      ],
+      "promptHtml": "An Azure SQL Database migration from on-premises SQL Server 2017 (5 TB, 100 databases) requires minimal downtime (<5 minutes), schema compatibility validation, and automatic rollback capability. Migration must preserve logins, jobs, and alerts.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Database Migration Service with online migration and Azure SQL Managed Instance"
+        },
+        {
+          "key": "B",
+          "label": "Azure Data Factory with incremental copy to Azure SQL Database"
+        },
+        {
+          "key": "C",
+          "label": "SQL Server backup/restore to Azure SQL Database"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Database Migration Service with online migration and Azure SQL Managed Instance",
+      "rationaleHtml": "",
+      "extraHtml": "DMS online migration provides near-zero downtime with continuous replication. Managed Instance supports 100% SQL Server compatibility (jobs, logins, alerts). Migration assessment validates compatibility. Cutover supports rollback. Azure SQL Database doesn't support SQL Agent jobs. Backup/restore significant downtime (5 TB)."
+    },
+    {
+      "id": "az305-3e341ab52ba8",
+      "examSlug": "az305",
+      "domain": "Infrastructure",
+      "topic": "Migrations",
+      "tags": [
+        "AZ-305",
+        "Infrastructure",
+        "Migrations"
+      ],
+      "promptHtml": "A data center decommissioning requires migrating 500 VMs (Windows, Linux, various applications) to Azure within 3 months. Migration must assess dependencies, group workloads, and perform discovery. Solution must minimize refactoring and support wave-based migration.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Migrate with dependency analysis and replication appliance"
+        },
+        {
+          "key": "B",
+          "label": "Azure Site Recovery with recovery plans"
+        },
+        {
+          "key": "C",
+          "label": "Azure Data Box with VM disk transfer"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Migrate with dependency analysis and replication appliance",
+      "rationaleHtml": "",
+      "extraHtml": "Azure Migrate provides assessment (dependency mapping, grouping, sizing), agentless discovery, and Azure Site Recovery-based replication. Supports wave-based migration with testing. Aligns with Cloud Adoption Framework. ASR component of Migrate but lacks assessment. Data Box for data transfer, not VM migration."
+    },
+    {
+      "id": "az305-ffec2ad286ec",
+      "examSlug": "az305",
+      "domain": "Infrastructure",
+      "topic": "Migrations",
+      "tags": [
+        "AZ-305",
+        "Infrastructure",
+        "Migrations"
+      ],
+      "promptHtml": "A web application with 10 TB SQL Database, 50 TB Blob Storage, and 20 VMs must migrate to Azure with <1 hour downtime. Network bandwidth to Azure is 1 Gbps. Solution must optimize transfer time and minimize costs.",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Data Box for initial data transfer with DMS/ASR for final sync"
+        },
+        {
+          "key": "B",
+          "label": "ExpressRoute with parallel data transfer"
+        },
+        {
+          "key": "C",
+          "label": "Azure Site Recovery for all workloads"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Data Box for initial data transfer with DMS/ASR for final sync",
+      "rationaleHtml": "",
+      "extraHtml": "Data Box physically transfers 60 TB offline (faster than 1 Gbps network). Database Migration Service and Site Recovery perform final incremental sync during cutover (minimizes downtime to <1 hour). ExpressRoute requires time to provision and doesn't reduce total transfer time significantly. ASR alone slow for 60 TB initial replication over internet."
+    }
+  ]
+}
