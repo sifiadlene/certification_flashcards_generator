@@ -16,8 +16,17 @@ Your task: Generate high‑quality exam-realistic flashcards ANKI deck in CSV fo
 
 ## Preparation Phase
 
-1. **Research First**: Search the web for current exam objectives, official study guides, and recent exam pattern updates for the specified certification
-2. **Reference Examples**: Review `.github/agents/flashcard_examples.md` to understand quality standards before generating
+1. **Extract Official Exam Topics First**:
+  - Use only official Microsoft sources, starting with the Microsoft Learn certification exam page for the specified exam code
+  - Extract all listed domains and "skills measured" subtopics from the official exam guide
+  - Build a topic map that becomes the required coverage backbone for flashcard generation
+
+2. **Create Topic-Driven Coverage Plan**:
+  - Allocate flashcards across extracted domains proportionally to official exam weighting
+  - If explicit weighting is unavailable, distribute proportionally by number of listed skills per domain
+  - Keep questions in scope of extracted official topics unless the user explicitly asks for a narrow topic-only subset
+
+3. **Reference Quality Examples**: Review `.github/agents/flashcard_examples.md` to apply quality standards after the topic map is finalized
 
 ## Flashcard Structure
 
@@ -87,6 +96,8 @@ Avoid:
 - Every flashcard must test practical, exam-relevant knowledge
 - Scenarios should include specific requirements/constraints that guide the solution
 - Balance across different Azure service categories
+- Anchor all question topics to the extracted official Microsoft exam guide domain/topic map
+- Keep domain coverage proportional to official exam weighting (or skill-count fallback when weighting is not published)
 
 ## Self-Evaluation
 
@@ -98,8 +109,18 @@ After generating flashcards, review each against:
 ✓ Extra field adds architectural insight or valuable comparison
 ✓ Tags accurately match content
 ✓ No duplicate concepts or overly similar question patterns
+✓ Question topic exists in the extracted official exam guide domains/skills measured
+✓ Domain distribution aligns with the planned weighted coverage
 
 **Action**: Flag any flashcard that doesn't meet all standards and regenerate it before finalizing the output.
+
+## Coverage Validation Checklist (Pre-Delivery)
+
+✓ Extracted topic map includes all domains from the official Microsoft exam guide
+✓ Flashcard distribution across domains follows official exam weighting (or skill-count fallback)
+✓ Every domain in the official guide is represented by at least one flashcard
+✓ No flashcards test topics outside the extracted official exam scope (unless user explicitly requests a focused subset)
+✓ Tags map to extracted domain/topic names rather than invented categories
 
 ## Final Output
 
@@ -116,17 +137,19 @@ After generating the flashcards, provide clear import instructions:
 2. **Go to File → Import** (or press Ctrl+Shift+I / Cmd+Shift+I on Mac)
 
 3. **Select the CSV file**: Navigate to and select the generated CSV file
+   - Ensure the file is saved as plain text CSV in UTF-8 encoding
 
 4. **Configure import settings**:
-   - **Type**: Choose "Basic (and reverse card)" or create a custom note type with Front/Back/Extra fields
+   - **Note Type**: Choose `Basic` if you only want Front/Back, or choose a custom note type with `Front`, `Back`, and `Extra` fields if you want the Extra column displayed on the back of the card
    - **Deck**: Select your target deck
    - **Fields separated by**: Comma
-   - **Field mapping**:
-     - Field 1 → Front
-     - Field 2 → Back  
-     - Field 3 → Extra (if using custom note type)
-     - Field 4 → Tags
-   - **Important**: Check **"Allow HTML in fields"** (required for `<br>` tags to render properly)
+   - **Field mapping**: Map the CSV columns in this order:
+     - Column 1 → Front
+     - Column 2 → Back
+     - Column 3 → Extra (only if the selected note type includes an `Extra` field)
+     - Column 4 → Tags
+   - **Allow HTML**: Enable the import option that allows HTML so `<br>` tags render as line breaks
+   - **Note**: If you import into `Basic`, only `Front` and `Back` will be used. To preserve the `Extra` column, import into a note type that includes an `Extra` field.
 
 5. **Click Import**
 
@@ -146,4 +169,4 @@ After generating the flashcards, provide clear import instructions:
   {{/Extra}}
   ```
 
-The Tags field will automatically tag each card for easy filtering (e.g., by exam, domain, or topic). 
+The Tags column will tag each note for easy filtering by exam, domain, or topic.
