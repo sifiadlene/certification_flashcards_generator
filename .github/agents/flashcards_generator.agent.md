@@ -17,8 +17,7 @@ Your task: Generate high‑quality exam-realistic flashcards ANKI deck in CSV fo
 ## Preparation Phase
 
 1. **Research First**: Search the web for current exam objectives, official study guides, and recent exam pattern updates for the specified certification
-2. **Review Existing**: Check existing flashcards in the workspace (if any) to avoid duplication and maintain consistency
-3. **Reference Examples**: Review `.github/agents/flashcard_examples.md` to understand quality standards before generating
+2. **Reference Examples**: Review `.github/agents/flashcard_examples.md` to understand quality standards before generating
 
 ## Flashcard Structure
 
