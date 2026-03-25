@@ -173,6 +173,19 @@ function filterQuestions(
   })
 }
 
+function shuffleArray<T>(items: T[]) {
+  const shuffled = [...items]
+
+  for (let index = shuffled.length - 1; index > 0; index -= 1) {
+    const randomIndex = Math.floor(Math.random() * (index + 1))
+    const value = shuffled[index]
+    shuffled[index] = shuffled[randomIndex]
+    shuffled[randomIndex] = value
+  }
+
+  return shuffled
+}
+
 // Language Switcher Component
 function LanguageSwitcher({ lang, onToggle }: { lang: 'en' | 'fr'; onToggle: () => void }) {
   const nextLabel = lang === 'en' ? 'FR' : 'EN'
@@ -394,12 +407,14 @@ function App() {
 
       setSetupError('')
 
+      const randomizedQuestionIds = shuffleArray(filteredQuestions.map((question) => question.id))
+
       startTransition(() => {
         setResult(null)
         setSession({
           examSlug: selectedExamSlug,
           mode: setup.mode,
-          questionIds: filteredQuestions.map((question) => question.id),
+          questionIds: randomizedQuestionIds,
           questionIndex: 0,
           answers: {},
           selectedOption: null,
