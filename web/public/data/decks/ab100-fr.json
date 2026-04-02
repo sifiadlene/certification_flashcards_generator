@@ -1,0 +1,2405 @@
+{
+  "exam": {
+    "slug": "ab100",
+    "code": "AB-100",
+    "title": "AB-100",
+    "sourceFile": "ab100_flashcards_2026-04-02.csv",
+    "updatedOn": "2026-04-02",
+    "questionCount": 77,
+    "domains": [
+      "Deploy",
+      "Design",
+      "Planning"
+    ],
+    "topics": [
+      "A2ATesting",
+      "AICoE",
+      "AIHumanCollaboration",
+      "AccuracyValidation",
+      "AdvancedAnalysis",
+      "AgentGovernance",
+      "AgentReasoning",
+      "AgentSecurity",
+      "AgentStrategy",
+      "AuditTrails",
+      "AutonomousAgents",
+      "BuildVsBuy",
+      "ChangeManagement",
+      "CloudAdoptionFramework",
+      "ComputerUse",
+      "Connectors",
+      "CopilotALM",
+      "CopilotCustomization",
+      "CopilotForService",
+      "CopilotStudioVsExtension",
+      "CopilotTesting",
+      "CrossPlatform",
+      "CustomModelIntegration",
+      "DataAccessibility",
+      "DataIntegration",
+      "DataModelALM",
+      "DataPreparation",
+      "DataProcessing",
+      "DataResidency",
+      "Dynamics365ALM",
+      "EmbeddedAgents",
+      "EndToEndTesting",
+      "FairnessValidation",
+      "FallbackTopics",
+      "FeedbackAnalysis",
+      "FinanceAIOrchestration",
+      "FoundryTools",
+      "GlobalScale",
+      "HybridNLU",
+      "KnowledgeGrounding",
+      "M365CopilotExtension",
+      "MCP",
+      "ModelALM",
+      "ModelIsolation",
+      "ModelMonitoring",
+      "ModelRouter",
+      "ModelSecurity",
+      "ModelValidation",
+      "Monitoring",
+      "MultiDynamics365",
+      "MultiSourceGrounding",
+      "NLU",
+      "OmnichannelAgents",
+      "OptimizationStrategy",
+      "PerformanceMetrics",
+      "PrebuiltVsCustom",
+      "PrivacyCompliance",
+      "PromptEngineering",
+      "PromptLibrary",
+      "PromptSecurity",
+      "PromptValidation",
+      "ROIAnalysis",
+      "ResponsibleAI",
+      "RootCauseAnalysis",
+      "ScalableDeployment",
+      "SecurityTesting",
+      "SmallLanguageModels",
+      "TaskAgents",
+      "TelemetryAnalysis",
+      "ThirdPartyALM",
+      "TransferLearning",
+      "UXAnalysis",
+      "UnifiedGovernance",
+      "ValueRealization",
+      "VoiceMode",
+      "WellArchitected"
+    ]
+  },
+  "questions": [
+    {
+      "id": "ab100-e1e9009f62db",
+      "examSlug": "ab100",
+      "domain": "Planning",
+      "topic": "AgentStrategy",
+      "tags": [
+        "AB-100",
+        "Planning",
+        "AgentStrategy"
+      ],
+      "promptHtml": "Une entreprise manufacturière souhaite automatiser le traitement des factures, les inspections de contrôle qualité et l’optimisation de la chaîne d’approvisionnement. Les factures sont des PDF numérisés, les inspections nécessitent une analyse d’images, et l’optimisation nécessite des données en temps réel. Quelle stratégie d’agent IA répond le mieux à ces exigences variées ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Agent autonome unique gérant les trois tâches"
+        },
+        {
+          "key": "B",
+          "label": "Orchestration multi-agents avec agents spécialisés par tâche"
+        },
+        {
+          "key": "C",
+          "label": "Agent prompt et réponse avec changement manuel de tâche"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Orchestration multi-agents avec agents spécialisés par tâche",
+      "rationaleHtml": "",
+      "extraHtml": "L’orchestration multi-agents permet à des agents spécialisés (extraction de documents, vision par ordinateur, analytique) de collaborer sur des flux de travail complexes avec une optimisation spécifique à chaque domaine. Les agents individuels manquent de spécialisation pour différents types de données. Les agents prompt/réponse nécessitent une orchestration manuelle, inadaptée à l’automatisation.<br><br>Référence : <a href=\"https://learn.microsoft.com/microsoft-copilot-studio/fundamentals-agents\">Orchestration multi-agents</a>"
+    },
+    {
+      "id": "ab100-5e949d69a872",
+      "examSlug": "ab100",
+      "domain": "Planning",
+      "topic": "DataPreparation",
+      "tags": [
+        "AB-100",
+        "Planning",
+        "DataPreparation"
+      ],
+      "promptHtml": "Votre organisation dispose de 50 To de données historiques d’interaction client nécessitant un nettoyage, une validation et un enrichissement avant utilisation pour la mise à la terre des agents. Les données contiennent des incohérences et des champs manquants. Quelle approche de préparation des données garantit la précision de l’agent ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Utilisez les données brutes directement avec le nettoyage des données des agents"
+        },
+        {
+          "key": "B",
+          "label": "Implémentez le nettoyage, la validation et la standardisation des canalisations ETL avant la mise à la terre"
+        },
+        {
+          "key": "C",
+          "label": "Examen manuel de tous les disques de 50 To"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Implémentez le nettoyage, la validation et la standardisation des canalisations ETL avant la mise à la terre",
+      "rationaleHtml": "",
+      "extraHtml": "Les pipelines ETL nettoient, valident, standardisent et enrichissent systématiquement les données, garantissant une mise à la terre des agents de haute qualité avec des réponses précises et cohérentes. Les données brutes provoquent des hallucinations et des erreurs chez les agents. La revue manuelle de 50 To ne s’adapte pas.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/architecture/data-guide/big-data/data-preparation\">Préparation des données pour l’IA</a>"
+    },
+    {
+      "id": "ab100-a4d240db958c",
+      "examSlug": "ab100",
+      "domain": "Planning",
+      "topic": "ROIAnalysis",
+      "tags": [
+        "AB-100",
+        "Planning",
+        "ROIAnalysis"
+      ],
+      "promptHtml": "Une organisation de distribution souhaite mettre en place des agents d’IA mais doit justifier cet investissement. Le leadership exige de démontrer un retour sur investissement avant d’engager un budget. Quelle approche d’analyse quantifie la valeur de la solution IA ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Descriptions qualitatives des bénéfices sans métriques"
+        },
+        {
+          "key": "B",
+          "label": "Analyse du ROI comparant le coût total de propriété avec les résultats commerciaux mesurables"
+        },
+        {
+          "key": "C",
+          "label": "Analyse concurrentielle de l’adoption de l’IA"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Analyse du ROI comparant le coût total de propriété avec les résultats commerciaux mesurables",
+      "rationaleHtml": "",
+      "extraHtml": "L’analyse du ROI quantifie les coûts (licences, développement, infrastructures) par rapport aux bénéfices mesurables (gain de temps, réduction des erreurs, augmentation des revenus) en fournissant une justification financière. Les descriptions qualitatives manquent de quantification. L’analyse concurrentielle ne démontre pas le retour sur investissement organisationnel.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/cloud-adoption-framework/strategy/business-outcomes/\">Cadre des résultats commerciaux</a>"
+    },
+    {
+      "id": "ab100-ee3bac5ce2de",
+      "examSlug": "ab100",
+      "domain": "Planning",
+      "topic": "BuildVsBuy",
+      "tags": [
+        "AB-100",
+        "Planning",
+        "BuildVsBuy"
+      ],
+      "promptHtml": "Votre entreprise a besoin d’une solution d’IA pour le service client. Vous devez évaluer s’il faut créer des agents personnalisés, étendre Microsoft 365 Copilot ou utiliser des agents Dynamics 365 préconfigurés. Quels facteurs déterminent la décision entre construire et acheter ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Coût uniquement sans prendre en compte les capacités"
+        },
+        {
+          "key": "B",
+          "label": "Besoins en personnalisation, délai de mise sur le marché, frais généraux de maintenance et coût total de possession"
+        },
+        {
+          "key": "C",
+          "label": "Construisez toujours sur mesure pour un contrôle maximal"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Besoins en personnalisation, délai de mise sur le marché, frais généraux de maintenance et coût total de possession",
+      "rationaleHtml": "",
+      "extraHtml": "L’analyse build-vs-buy prend en compte les exigences de personnalisation équilibrées avec les coûts de développement/maintenance et le délai de mise sur le marché. Les agents préconstruits accélèrent le déploiement pour des scénarios standards ; Les agents de la clientèle justifient des exigences uniques et complexes. Les approches à coût uniquement ou à construction constante passent à côté des compromis critiques.<br><br>Référence : <a href=\"https://learn.microsoft.com/dynamics365/customer-service/copilot-overview\">Agents Dynamics 365 Copilot</a>"
+    },
+    {
+      "id": "ab100-7044ea1548dd",
+      "examSlug": "ab100",
+      "domain": "Planning",
+      "topic": "CloudAdoptionFramework",
+      "tags": [
+        "AB-100",
+        "Planning",
+        "CloudAdoptionFramework"
+      ],
+      "promptHtml": "Une organisation met en œuvre le Cloud Adoption Framework pour l’IA. La phase stratégique nécessite de définir comment l’IA s’intègre à travers les processus métier. Quel élément de cadre fournit ces conseils d’intégration de l’IA ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Expérimentation aléatoire en IA sans cadre"
+        },
+        {
+          "key": "B",
+          "label": "Processus d’adoption de l’IA avec résultats métier, gouvernance et alignement organisationnel"
+        },
+        {
+          "key": "C",
+          "label": "Approche axée sur la technologie en ignorant la stratégie d’entreprise"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Processus d’adoption de l’IA avec résultats métier, gouvernance et alignement organisationnel",
+      "rationaleHtml": "",
+      "extraHtml": "Cadre d’adoption du cloud Le processus d’adoption de l’IA aligne la stratégie IA avec les résultats métier, établit la gouvernance, définit la préparation organisationnelle et intègre l’IA de manière systématique. L’expérimentation aléatoire gaspille des ressources. Les approches axées sur la technologie manquent d’alignement sur la valeur commerciale.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/cloud-adoption-framework/innovate/ai/ai-adoption-framework\">Cadre d’adoption du cloud IA</a>"
+    },
+    {
+      "id": "ab100-7b4029dc6f1e",
+      "examSlug": "ab100",
+      "domain": "Planning",
+      "topic": "ModelRouter",
+      "tags": [
+        "AB-100",
+        "Planning",
+        "ModelRouter"
+      ],
+      "promptHtml": "Votre solution nécessite plusieurs capacités d’IA : compréhension des documents, interactions conversationnelles et inspection visuelle. Les contraintes budgétaires nécessitent d’optimiser les coûts du modèle. Quelle stratégie équilibre capacité et efficacité des coûts ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Utiliser le modèle le plus coûteux pour toutes les tâches"
+        },
+        {
+          "key": "B",
+          "label": "Implémenter par le routeur de modèles dirigeant les requêtes vers des modèles optimaux selon la complexité de la tâche"
+        },
+        {
+          "key": "C",
+          "label": "Utilisez le modèle le moins cher pour toutes les tâches, quelle que soit la qualité"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Implémenter par le routeur de modèles dirigeant les requêtes vers des modèles optimaux selon la complexité de la tâche",
+      "rationaleHtml": "",
+      "extraHtml": "Les routeurs de modèles acheminent intelligemment les requêtes vers des modèles appropriés en fonction de leur complexité et de leur coût, en utilisant des modèles plus petits pour des tâches simples et des modèles avancés pour des scénarios complexes, optimisant ainsi le compromis coût-performance. Les approches monomodèles manquent des opportunités d’optimisation.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/ai-services/openai/how-to/model-router\">Stratégies de routage modéliques</a>"
+    },
+    {
+      "id": "ab100-a767fa1a88aa",
+      "examSlug": "ab100",
+      "domain": "Planning",
+      "topic": "DataIntegration",
+      "tags": [
+        "AB-100",
+        "Planning",
+        "DataIntegration"
+      ],
+      "promptHtml": "Une entreprise souhaite des agents IA accédant aux systèmes Dataverse, SharePoint et SAP. La solution nécessite un accès unifié aux données pour la mise à la terre sans synchronisation manuelle des données. Quel patron d’architecture permet cette disponibilité des données inter-systèmes ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Copie manuelle des données entre systèmes"
+        },
+        {
+          "key": "B",
+          "label": "Intégration virtuelle des données avec connecteurs et accès en temps réel"
+        },
+        {
+          "key": "C",
+          "label": "Agents isolés par source de données"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Intégration virtuelle des données avec connecteurs et accès en temps réel",
+      "rationaleHtml": "",
+      "extraHtml": "L’intégration virtuelle des données via des connecteurs permet aux agents d’accéder à plusieurs systèmes en temps réel sans duplication de données, garantissant ainsi des données actuelles et réduisant la surcharge de synchronisation. La copie des données crée des incohérences et du décalage. Les agents isolés fragmentent l’expérience utilisateur.<br><br>Référence : <a href=\"https://learn.microsoft.com/power-platform/admin/wp-onpremises-gateway\">Modèles d’intégration des données</a>"
+    },
+    {
+      "id": "ab100-26aa518ef6c7",
+      "examSlug": "ab100",
+      "domain": "Planning",
+      "topic": "PromptLibrary",
+      "tags": [
+        "AB-100",
+        "Planning",
+        "PromptLibrary"
+      ],
+      "promptHtml": "Votre organisation développe une bibliothèque de prompts pour des interactions cohérentes avec l’IA entre les équipes. La bibliothèque doit prendre en charge la gestion des versions, le contrôle d’accès et la réutilisation. Quelle approche d’implémentation gère cette bibliothèque de prompts d’entreprise ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Document Word partagé avec des prompts"
+        },
+        {
+          "key": "B",
+          "label": "Dépôt centralisé de prompts avec contrôle de version, catégorisation et gouvernance"
+        },
+        {
+          "key": "C",
+          "label": "Stockage des prompts individuels par équipe sans partage"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Dépôt centralisé de prompts avec contrôle de version, catégorisation et gouvernance",
+      "rationaleHtml": "",
+      "extraHtml": "Les dépôts centralisés de prompts permettent la gestion des versions, le contrôle d’accès, la catégorisation par cas d’usage et le partage à l’échelle de l’entreprise, assurant cohérence et qualité. Les approches fondées sur le document manquent de gouvernance. Le stockage isolé empêche la réutilisation et crée des incohérences.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow\">Bonnes pratiques de gestion rapide</a>"
+    },
+    {
+      "id": "ab100-5c6310a40f0c",
+      "examSlug": "ab100",
+      "domain": "Planning",
+      "topic": "SmallLanguageModels",
+      "tags": [
+        "AB-100",
+        "Planning",
+        "SmallLanguageModels"
+      ],
+      "promptHtml": "Une société de services financiers exige que les agents IA utilisent une terminologie spécifique à un domaine et des modèles compacts pour des scénarios sensibles à la latence. Quelle approche répond à ces exigences linguistiques spécialisées ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Grands modèles de langage génériques sans personnalisation"
+        },
+        {
+          "key": "B",
+          "label": "Petits modèles de langage personnalisés affinés sur les données de domaine"
+        },
+        {
+          "key": "C",
+          "label": "Systèmes basés sur des règles sans IA"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Petits modèles de langage personnalisés affinés sur les données de domaine",
+      "rationaleHtml": "",
+      "extraHtml": "Les petits modèles de langage (SLM) affinés sur des données spécifiques à un domaine offrent une compréhension terminologique industrielle avec une latence et un coût inférieurs comparés aux grands modèles. Les modèles génériques manquent de précision de domaine. Les systèmes basés sur des règles ne peuvent pas gérer la variabilité du langage naturel.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune\">Ajustement fin des modèles de langage</a>"
+    },
+    {
+      "id": "ab100-345a4bc0a924",
+      "examSlug": "ab100",
+      "domain": "Planning",
+      "topic": "AICoE",
+      "tags": [
+        "AB-100",
+        "Planning",
+        "AICoE"
+      ],
+      "promptHtml": "Votre organisation crée un Centre d’Excellence en IA pour gérer les initiatives en IA. Le centre doit équilibrer innovation et gestion des risques. Quels éléments cet organe de gouvernance devrait-il inclure ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Équipe technique uniquement sans représentation professionnelle"
+        },
+        {
+          "key": "B",
+          "label": "Équipe interfonctionnelle couvrant la stratégie, l’éthique, la sécurité, la conformité et la valeur commerciale"
+        },
+        {
+          "key": "C",
+          "label": "Une seule personne prenant toutes les décisions de l’IA"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Équipe interfonctionnelle couvrant la stratégie, l’éthique, la sécurité, la conformité et la valeur commerciale",
+      "rationaleHtml": "",
+      "extraHtml": "Les centres d’excellence en IA exigent une représentation transversale garantissant l’excellence technique, des pratiques éthiques en IA, la conformité en matière de sécurité et l’alignement des valeurs commerciales. Les équipes uniquement techniques manquent de contexte business. La gouvernance individuelle manque de perspectives diverses et de grande montée en échelle.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/cloud-adoption-framework/organize/cloud-center-of-excellence\">Organisation Centre d’excellence</a>"
+    },
+    {
+      "id": "ab100-44e00203a8ee",
+      "examSlug": "ab100",
+      "domain": "Planning",
+      "topic": "DataResidency",
+      "tags": [
+        "AB-100",
+        "Planning",
+        "DataResidency"
+      ],
+      "promptHtml": "Une organisation de santé a besoin d’agents pour analyser les données des patients tout en maintenant une stricte conformité à la résidence des données. Les données des patients ne doivent jamais quitter des régions géographiques spécifiques. Quelle stratégie d’ancrage garantit cette conformité ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Services cloud sans restrictions régionales"
+        },
+        {
+          "key": "B",
+          "label": "Stockage de données spécifique à une région avec contrôles d’accès empêchant le transfert interrégional"
+        },
+        {
+          "key": "C",
+          "label": "Stockage des données sur les appareils mobiles"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Stockage de données spécifique à une région avec contrôles d’accès empêchant le transfert interrégional",
+      "rationaleHtml": "",
+      "extraHtml": "La résidence des données spécifique à une région avec des contrôles d’accès renforcés garantit la conformité en empêchant les déplacements de données à travers les frontières géographiques tout en permettant la mise à terre de l’agent. Le stockage cloud illimité viole la conformité. Le stockage mobile manque de contrôles d’entreprise.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/compliance/offerings/\">Conformité à la résidence des données</a>"
+    },
+    {
+      "id": "ab100-01353ac5b328",
+      "examSlug": "ab100",
+      "domain": "Planning",
+      "topic": "MultiDynamics365",
+      "tags": [
+        "AB-100",
+        "Planning",
+        "MultiDynamics365"
+      ],
+      "promptHtml": "Votre entreprise adopte plusieurs applications Dynamics 365 (Ventes, Service Client, Service Terrain) nécessitant une stratégie d’IA unifiée. Les agents doivent partager le contexte entre les applications. Quelle approche de conception permet cette intégration ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Agents déconnectés séparés par application"
+        },
+        {
+          "key": "B",
+          "label": "solution multi-agents avec base de connaissances partagée et orchestration inter-applications"
+        },
+        {
+          "key": "C",
+          "label": "Transfert manuel de données entre conversations d’agents"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "solution multi-agents avec base de connaissances partagée et orchestration inter-applications",
+      "rationaleHtml": "",
+      "extraHtml": "L’architecture multi-agents avec des bases de connaissances partagées et une orchestration permet le partage de contexte entre les applications Dynamics 365, offrant une vue client unifiée. Les agents déconnectés créent des silos. Le transfert manuel ne s’étend pas et perd des avantages d’automatisation.<br><br>Référence : <a href=\"https://learn.microsoft.com/dynamics365/copilot-overview\">Copilot sur Dynamics 365</a>"
+    },
+    {
+      "id": "ab100-a262c226fd04",
+      "examSlug": "ab100",
+      "domain": "Planning",
+      "topic": "PromptEngineering",
+      "tags": [
+        "AB-100",
+        "Planning",
+        "PromptEngineering"
+      ],
+      "promptHtml": "Une entreprise mondiale met en œuvre des agents d’IA nécessitant une cohérence en ingénierie rapide entre langues et contextes culturels. Quelle directive d’ingénierie des prompts répond à cette exigence globale ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Prompts uniquement en anglais sans localisation"
+        },
+        {
+          "key": "B",
+          "label": "Ingénierie des prompts consciente de la culture avec localisation, évitement des idiomes et clarté du contexte"
+        },
+        {
+          "key": "C",
+          "label": "Invites traduites automatiquement sans validation"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Ingénierie des prompts consciente de la culture avec localisation, évitement des idiomes et clarté du contexte",
+      "rationaleHtml": "",
+      "extraHtml": "Les prompts conscients de la culture prennent en compte les nuances du langage, évitent les idiomes, fournissent un contexte culturel et subissent une validation pour les locuteurs natifs afin d’assurer un comportement cohérent des agents à l’échelle mondiale. L’anglais uniquement exclut les marchés. La traduction automatique sans validation introduit des erreurs et des décalages culturels.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/ai-services/openai/concepts/prompt-engineering\">Ingénierie globale des prompts</a>"
+    },
+    {
+      "id": "ab100-35e830053fd8",
+      "examSlug": "ab100",
+      "domain": "Planning",
+      "topic": "AIHumanCollaboration",
+      "tags": [
+        "AB-100",
+        "Planning",
+        "AIHumanCollaboration"
+      ],
+      "promptHtml": "Une organisation souhaite que des agents IA renforcent la prise de décision des employés plutôt que de remplacer les humains. Quelle évaluation de cas d’usage se concentre sur la collaboration IA-humain appropriée ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Automatisation de toutes les tâches sans intervention humaine"
+        },
+        {
+          "key": "B",
+          "label": "Des agents fournissant des idées, des recommandations et automatisant le travail routinier pendant que les humains prennent les décisions finales"
+        },
+        {
+          "key": "C",
+          "label": "Agents travaillant sans transparence"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Des agents fournissant des idées, des recommandations et automatisant le travail routinier pendant que les humains prennent les décisions finales",
+      "rationaleHtml": "",
+      "extraHtml": "L’approche d’augmentation positionne les agents comme outils d’aide à la décision gérant l’analyse de données et les tâches routinières, tandis que les humains appliquent jugement et responsabilité. L’automatisation complète manque de valeur d’expertise humaine. Des agents non transparents empêchent une collaboration efficace.<br><br>Référence : <a href=\"https://www.microsoft.com/ai/responsible-ai\">Principes de l’IA responsable</a>"
+    },
+    {
+      "id": "ab100-0a62d754f55f",
+      "examSlug": "ab100",
+      "domain": "Planning",
+      "topic": "DataAccessibility",
+      "tags": [
+        "AB-100",
+        "Planning",
+        "DataAccessibility"
+      ],
+      "promptHtml": "Votre solution doit organiser les données métier pour qu’elles soient accessibles à d’autres systèmes d’IA au-delà de votre implémentation, permettant ainsi l’intégration de l’écosystème. Quelle architecture de données permet l’interopérabilité de ce système d’IA ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Formats de données propriétaires sans accès externe"
+        },
+        {
+          "key": "B",
+          "label": "Des standards ouverts, des API et des couches de données sémantiques permettant la consommation externe d’IA"
+        },
+        {
+          "key": "C",
+          "label": "Vidages de données non structurés sans métadonnées"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Des standards ouverts, des API et des couches de données sémantiques permettant la consommation externe d’IA",
+      "rationaleHtml": "",
+      "extraHtml": "Des standards ouverts (JSON, OData), des API bien documentées et des couches sémantiques permettent aux systèmes d’IA externes de découvrir et de consommer des données, favorisant l’intégration des écosystèmes. Les formats propriétaires créent un verrouillage. Les données non structurées manquent de visibilité et de contexte.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/architecture/data-guide/big-data/data-lakes\">Architecture des lacs de données</a>"
+    },
+    {
+      "id": "ab100-11672547f1ec",
+      "examSlug": "ab100",
+      "domain": "Planning",
+      "topic": "CopilotStudioVsExtension",
+      "tags": [
+        "AB-100",
+        "Planning",
+        "CopilotStudioVsExtension"
+      ],
+      "promptHtml": "Un fabricant évalue la mise en œuvre des agents Copilot Studio par rapport à l’extension Microsoft 365 Copilot. L’exigence inclut des flux de travail personnalisés, l’intégration d’API externe et l’exploitation autonome. Quelle plateforme répond le mieux à ces besoins ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Extension Microsoft 365 Copilot uniquement"
+        },
+        {
+          "key": "B",
+          "label": "Copilot Studio avec agents personnalisés, connecteurs et orchestration de workflow"
+        },
+        {
+          "key": "C",
+          "label": "Chatbot générique sans intégration Microsoft"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Copilot Studio avec agents personnalisés, connecteurs et orchestration de workflow",
+      "rationaleHtml": "",
+      "extraHtml": "Copilot Studio propose une plateforme complète de développement d’agents avec des sujets personnalisés, des connecteurs API, une orchestration de flux de travail et un déploiement autonome. Les extensions M365 Copilot améliorent Microsoft 365 mais manquent de fonctionnalités autonomes. Les chatbots génériques manquent l’intégration de l’écosystème Microsoft.<br><br>Référence : <a href=\"https://learn.microsoft.com/microsoft-copilot-studio/fundamentals-what-is-copilot-studio\">Capacités du Copilot Studio</a>"
+    },
+    {
+      "id": "ab100-17bab621e331",
+      "examSlug": "ab100",
+      "domain": "Planning",
+      "topic": "TransferLearning",
+      "tags": [
+        "AB-100",
+        "Planning",
+        "TransferLearning"
+      ],
+      "promptHtml": "Votre stratégie d’IA nécessite de petits modèles de langage pour des secteurs commerciaux spécifiques avec des données d’entraînement limitées. Quelle approche maximise l’efficacité du modèle compte tenu des contraintes de données ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Entraînement à partir de zéro avec des données limitées"
+        },
+        {
+          "key": "B",
+          "label": "Transférer l’apprentissage à partir de modèles pré-entraînés avec un ajustement fin spécifique au domaine"
+        },
+        {
+          "key": "C",
+          "label": "Utiliser un modèle sans lien sans personnalisation"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Transférer l’apprentissage à partir de modèles pré-entraînés avec un ajustement fin spécifique au domaine",
+      "rationaleHtml": "",
+      "extraHtml": "L’apprentissage par transfert exploite les connaissances pré-entraînées du modèle tout en affinant les données du domaine, obtenant de bons résultats avec des données limitées. S’entraîner à partir de zéro nécessite d’énormes ensembles de données. Les modèles non liés manquent de compréhension du domaine.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/ai-studio/concepts/fine-tuning-overview\">Apprentissage par transfert et ajustement fin</a>"
+    },
+    {
+      "id": "ab100-0dd9809b3723",
+      "examSlug": "ab100",
+      "domain": "Planning",
+      "topic": "ScalableDeployment",
+      "tags": [
+        "AB-100",
+        "Planning",
+        "ScalableDeployment"
+      ],
+      "promptHtml": "Une entreprise de distribution prévoit un déploiement de l’IA dans 200 magasins. Chaque magasin dispose d’un inventaire unique, d’une démographie des clients et d’une réglementation locale. Quelle stratégie de déploiement équilibre standardisation et personnalisation locale ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Agent monolithique unique pour tous les magasins"
+        },
+        {
+          "key": "B",
+          "label": "Plateforme d’agent configurable avec des fonctionnalités de base et des personnalisations spécifiques à la boutique"
+        },
+        {
+          "key": "C",
+          "label": "Des agents entièrement personnalisés par magasin"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Plateforme d’agent configurable avec des fonctionnalités de base et des personnalisations spécifiques à la boutique",
+      "rationaleHtml": "",
+      "extraHtml": "La plateforme configurable offre des capacités standard d’agent de base tout en permettant des personnalisations spécifiques au magasin via la configuration, les données et les règles, équilibrant cohérence et flexibilité. Les agents monolithiques ne peuvent pas s’adapter. Les agents entièrement en douane multiplient les coûts d’entretien.<br><br>Référence : <a href=\"https://learn.microsoft.com/power-platform/guidance/adoption/environment-strategy\">Schémas de stratégie environnementale</a>"
+    },
+    {
+      "id": "ab100-09af4ed4ecce",
+      "examSlug": "ab100",
+      "domain": "Planning",
+      "topic": "MultiSourceGrounding",
+      "tags": [
+        "AB-100",
+        "Planning",
+        "MultiSourceGrounding"
+      ],
+      "promptHtml": "Votre organisation exige que des agents accèdent à la fois à des bases de données SQL structurées et à des documents SharePoint non structurés. Les réponses des agents doivent citer des sources de données spécifiques. Quelle architecture de mise à la terre prend en charge cette exigence multi-source ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Source de données unique"
+        },
+        {
+          "key": "B",
+          "label": "Base de connaissances multi-sources avec attribution de source et recherche hybride"
+        },
+        {
+          "key": "C",
+          "label": "Agent sans mise à la terre"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Base de connaissances multi-sources avec attribution de source et recherche hybride",
+      "rationaleHtml": "",
+      "extraHtml": "Des bases de connaissances multi-sources avec recherche hybride (vecteur et mot-clé) permettent aux agents de fonder les réponses entre des données structurées et non structurées tout en maintenant l’attribution de la source. La source unique limite les capacités. Les agents non punis hallucinen.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/ai-search/retrieval-augmented-generation-overview\">Multi-source RAG</a>"
+    },
+    {
+      "id": "ab100-a7a810a45cc3",
+      "examSlug": "ab100",
+      "domain": "Planning",
+      "topic": "ModelIsolation",
+      "tags": [
+        "AB-100",
+        "Planning",
+        "ModelIsolation"
+      ],
+      "promptHtml": "Une société de services financiers entraîne des modèles d’IA personnalisés sur des données clients. La réglementation exige de démontrer les données et de ne jamais entraîner les modèles des concurrents. Quel modèle assure l’isolement des données client ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Modèle partagé entraîné sur toutes les données clients"
+        },
+        {
+          "key": "B",
+          "label": "Instances de modèles spécifiques au client avec données d’entraînement isolées et gouvernance"
+        },
+        {
+          "key": "C",
+          "label": "Modèles de cloud public sans contrôles"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Instances de modèles spécifiques au client avec données d’entraînement isolées et gouvernance",
+      "rationaleHtml": "",
+      "extraHtml": "Les instances de modèle spécifiques au client, avec une isolation stricte des données, des contrôles d’accès et des traces d’audit, garantissent la conformité réglementaire et évitent la fuite de données entre les clients. Les modèles partagés risquent un mélange de données. Les modèles publics non contrôlés violent la conformité.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/ai-services/openai/concepts/use-your-data\">Motifs d’isolement des données</a>"
+    },
+    {
+      "id": "ab100-bb4f77675e77",
+      "examSlug": "ab100",
+      "domain": "Planning",
+      "topic": "PrebuiltVsCustom",
+      "tags": [
+        "AB-100",
+        "Planning",
+        "PrebuiltVsCustom"
+      ],
+      "promptHtml": "Votre organisation évalue s’il faut utiliser des agents commerciaux Dynamics 365 prédéfinis ou créer des agents personnalisés pour la qualification des prospects. Le processus de vente comprend des modèles de notation uniques et une intégration des données tierces. Quels facteurs de décision déterminent l’approche ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Le coût comme seul facteur"
+        },
+        {
+          "key": "B",
+          "label": "Ajustement standard du processus, profondeur de personnalisation, délai de mise en valeur et coût total de possession"
+        },
+        {
+          "key": "C",
+          "label": "Utilisez toujours des pré-construits, quelles que soient les exigences"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Ajustement standard du processus, profondeur de personnalisation, délai de mise en valeur et coût total de possession",
+      "rationaleHtml": "",
+      "extraHtml": "Évaluer la couverture standard des processus d’agent préconstruite, la complexité de personnalisation requise, les délais de déploiement et les coûts à long terme. Les processus simples privilégient les préconstruits avec un temps d’acquisition de valeur plus rapide ; des processus complexes et uniques justifient un développement personnalisé. Les décisions à facteur unique passent à côté des compromis critiques.<br><br>Référence : <a href=\"https://learn.microsoft.com/dynamics365/sales/copilot-overview\">Dynamics 365 Sales Copilot</a>"
+    },
+    {
+      "id": "ab100-91c59ee6bc6c",
+      "examSlug": "ab100",
+      "domain": "Planning",
+      "topic": "FoundryTools",
+      "tags": [
+        "AB-100",
+        "Planning",
+        "FoundryTools"
+      ],
+      "promptHtml": "Une entreprise manufacturière souhaite que des agents d’IA recommandent des optimisations de production. Les recommandations nécessitent l’intégration des données de capteurs IoT, des systèmes ERP et des prévisions météorologiques. Quel outil Foundry répond le mieux à cette exigence d’analyse multi-sources ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Analyse d’une seule source de données sans intégration"
+        },
+        {
+          "key": "B",
+          "label": "Azure AI Foundry avec orchestration de données multi-sources et modèles ML"
+        },
+        {
+          "key": "C",
+          "label": "Analyse manuelle des feuilles Excel"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Azure AI Foundry avec orchestration de données multi-sources et modèles ML",
+      "rationaleHtml": "",
+      "extraHtml": "Azure AI Foundry permet de construire des modèles ML consommant plusieurs sources de données grâce à l’orchestration des données, à l’ingénierie des fonctionnalités et au déploiement de modèles pour des analyses de qualité production. L’analyse à source unique manque d’informations. L’analyse manuelle ne s’étend pas et n’automatise pas.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/ai-studio/what-is-ai-studio\">Capacités Azure AI Foundry</a>"
+    },
+    {
+      "id": "ab100-1a7e3aea3e1a",
+      "examSlug": "ab100",
+      "domain": "Design",
+      "topic": "NLU",
+      "tags": [
+        "AB-100",
+        "Design",
+        "NLU"
+      ],
+      "promptHtml": "Votre solution d’agent nécessite une compréhension du langage naturel pour les intentions de l’utilisateur, mais les utilisateurs utilisent souvent des requêtes ambiguës ou incomplètes. Quelle capacité de Copilot Studio améliore la précision de la reconnaissance des intentions ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Correspondance exacte uniquement par mots-clés"
+        },
+        {
+          "key": "B",
+          "label": "Compréhension conversationnelle du langage avec extraction d’entités et évaluation de la confiance en intention"
+        },
+        {
+          "key": "C",
+          "label": "Génération aléatoire de réponses"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Compréhension conversationnelle du langage avec extraction d’entités et évaluation de la confiance en intention",
+      "rationaleHtml": "",
+      "extraHtml": "La compréhension conversationnelle du langage (CLU) gère la variabilité du langage naturel, extrait des entités, évalue la confiance en intention et permet de clarifier les questions pour des entrées ambiguës. La correspondance par mots-clés ne peut pas gérer les variations. Les réponses aléatoires ne comprennent pas l’intention.<br><br>Référence : <a href=\"https://learn.microsoft.com/microsoft-copilot-studio/advanced-entities\">Compréhension avancée des langues</a>"
+    },
+    {
+      "id": "ab100-2062fa693e66",
+      "examSlug": "ab100",
+      "domain": "Design",
+      "topic": "HybridNLU",
+      "tags": [
+        "AB-100",
+        "Design",
+        "HybridNLU"
+      ],
+      "promptHtml": "Une solution de service client a besoin d’agents pour gérer les requêtes FAQ structurées et la résolution de problèmes complexes non structurés. Quel modèle de design de Copilot Studio traite des deux scénarios ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Seule la correspondance des FAQ sans flexibilité"
+        },
+        {
+          "key": "B",
+          "label": "Approche hybride utilisant des sujets pour les FAQ et l’IA générative pour les requêtes complexes"
+        },
+        {
+          "key": "C",
+          "label": "IA générative pour tout ce qui n’est pas structuré"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Approche hybride utilisant des sujets pour les FAQ et l’IA générative pour les requêtes complexes",
+      "rationaleHtml": "",
+      "extraHtml": "La conception hybride utilise des sujets pour des requêtes structurées prévisibles offrant précision et contrôle, tandis que l’orchestration par IA générative gère des scénarios complexes ouverts nécessitant un raisonnement. La FAQ limite la capacité. Le mode génératif uniquement manque de structure pour les requêtes standards.<br><br>Référence : <a href=\"https://learn.microsoft.com/microsoft-copilot-studio/nlu-boost-conversations\">Approche hybride NLU</a>"
+    },
+    {
+      "id": "ab100-85d7aef1b007",
+      "examSlug": "ab100",
+      "domain": "Design",
+      "topic": "CopilotCustomization",
+      "tags": [
+        "AB-100",
+        "Design",
+        "CopilotCustomization"
+      ],
+      "promptHtml": "Votre organisation personnalise Copilot dans Dynamics 365 Sales pour fournir des informations spécifiques à chaque secteur. La personnalisation doit être native sans perturber l’expérience standard de Copilot. Quelle approche de conception permet d’intégrer cette intégration fluide ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Agent autonome séparé déconnecté de Copilot"
+        },
+        {
+          "key": "B",
+          "label": "Extensibilité du copilot en utilisant des termes métier, des compétences personnalisées et des actions contextuelles"
+        },
+        {
+          "key": "C",
+          "label": "Remplacer entièrement Copilot par une solution personnalisée"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Extensibilité du copilot en utilisant des termes métier, des compétences personnalisées et des actions contextuelles",
+      "rationaleHtml": "",
+      "extraHtml": "L’extensibilité de Copilot permet d’ajouter des termes métier spécifiques à l’industrie, des compétences personnalisées et des actions contextuelles dans l’interface native de Copilot, maintenant une expérience utilisateur cohérente. Les agents indépendants fragmentent l’expérience. Un remplacement complet perd l’évolution continue de la plateforme.<br><br>Référence : <a href=\"https://learn.microsoft.com/dynamics365/sales/copilot-customize-data\">Personnalisation du Dynamics 365 Copilot</a>"
+    },
+    {
+      "id": "ab100-20ae912470f6",
+      "examSlug": "ab100",
+      "domain": "Design",
+      "topic": "OmnichannelAgents",
+      "tags": [
+        "AB-100",
+        "Design",
+        "OmnichannelAgents"
+      ],
+      "promptHtml": "Un centre de contact déploie des agents pour répondre aux demandes clients par téléphone, chat, e-mail et réseaux sociaux. Les réponses des agents doivent être cohérentes entre les canaux. Quelle architecture assure cette cohérence omnicanale ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Différentes implémentations d’agents par canal"
+        },
+        {
+          "key": "B",
+          "label": "Logique d’agent unifiée avec adaptateurs spécifiques au canal pour le Contact Center Dynamics 365"
+        },
+        {
+          "key": "C",
+          "label": "Routage manuel entre agents spécifiques à un canal"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Logique d’agent unifiée avec adaptateurs spécifiques au canal pour le Contact Center Dynamics 365",
+      "rationaleHtml": "",
+      "extraHtml": "Une architecture d’agent unifiée avec adaptateurs de canal garantit une logique et des connaissances cohérentes tout en adaptant la présentation aux capacités du canal (voix, texte, médias enrichis). Les agents par canal créent des incohérences. Le routage manuel ne s’adapte pas.<br><br>Référence : <a href=\"https://learn.microsoft.com/dynamics365/contact-center/implement-contact-center\">Centre de contact Dynamics 365</a>"
+    },
+    {
+      "id": "ab100-1cc3a34521ee",
+      "examSlug": "ab100",
+      "domain": "Design",
+      "topic": "TaskAgents",
+      "tags": [
+        "AB-100",
+        "Design",
+        "TaskAgents"
+      ],
+      "promptHtml": "Votre solution exige que les agents exécutent des flux de travail en plusieurs étapes incluant la validation des données, les approbations et les mises à jour du système. Chaque étape peut échouer nécessitant un retour en arrière. Quel type d’agent offre cette capacité d’orchestration ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Agent simple à réponse rapide"
+        },
+        {
+          "key": "B",
+          "label": "Agent de tâches avec orchestration de flux de travail, gestion des erreurs et transactions compensatoires"
+        },
+        {
+          "key": "C",
+          "label": "Agent autonome sans supervision humaine"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Agent de tâches avec orchestration de flux de travail, gestion des erreurs et transactions compensatoires",
+      "rationaleHtml": "",
+      "extraHtml": "Les agents de tâches orchestrent des processus en plusieurs étapes avec la gestion des erreurs, les portes d’approbation, la logique de compensation et la gestion des transactions, garantissant une exécution fiable des flux de travail. Les agents de réponse rapide manquent d’orchestration. Les agents entièrement autonomes sans supervision risquent des actions incorrectes.<br><br>Référence : <a href=\"https://learn.microsoft.com/microsoft-copilot-studio/fundamentals-agents\">Agents de tâches</a>"
+    },
+    {
+      "id": "ab100-c6ab5b84b0ec",
+      "examSlug": "ab100",
+      "domain": "Design",
+      "topic": "AutonomousAgents",
+      "tags": [
+        "AB-100",
+        "Design",
+        "AutonomousAgents"
+      ],
+      "promptHtml": "Une organisation commerciale souhaite un agent qui qualifie autonomement les prospects, planifie des réunions et met à jour le CRM en fonction des interactions conversationnelles, sans nécessiter d’approbation par action. Quel modèle de conception d’agents supporte cette opération autonome ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Agent purement réactif nécessitant l’approbation pour chaque action"
+        },
+        {
+          "key": "B",
+          "label": "Agent autonome avec un comportement dirigé vers un but, un raisonnement et des protections"
+        },
+        {
+          "key": "C",
+          "label": "Automatisation basée sur des règles sans IA"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Agent autonome avec un comportement dirigé vers un but, un raisonnement et des protections",
+      "rationaleHtml": "",
+      "extraHtml": "Les agents autonomes utilisent le raisonnement pour planifier et exécuter des objectifs en plusieurs étapes de manière indépendante, tout en respectant les garde-fous et les cas limites escaladés. Les agents purement réactifs ne poursuivent pas activement des objectifs. L’approbation par action élimine les avantages d’autonomie. Le système basé sur les règles manque d’adaptabilité.<br><br>Référence : <a href=\"https://learn.microsoft.com/microsoft-copilot-studio/autonomous-agents\">Agents autonomes</a>"
+    },
+    {
+      "id": "ab100-359f1c0710e2",
+      "examSlug": "ab100",
+      "domain": "Design",
+      "topic": "EmbeddedAgents",
+      "tags": [
+        "AB-100",
+        "Design",
+        "EmbeddedAgents"
+      ],
+      "promptHtml": "Votre application doit intégrer directement les capacités des agents dans une application canvas Power Apps avec des composants UI personnalisés montrant les suggestions des agents en même temps que la saisie des données utilisateur. Quel modèle de conception permet cette expérience d’agent embarqué ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Agent autonome ouvert dans une fenêtre séparée"
+        },
+        {
+          "key": "B",
+          "label": "Pages génératives axées sur le code avec contrôle du flux d’agents intégré dans Power Apps"
+        },
+        {
+          "key": "C",
+          "label": "Interaction avec un agent par e-mail"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Pages génératives axées sur le code avec contrôle du flux d’agents intégré dans Power Apps",
+      "rationaleHtml": "",
+      "extraHtml": "Les pages génératives axées sur le code permettent d’intégrer directement les flux d’agents dans Power Apps avec une interface personnalisée offrant une assistance contextuelle aux agents dans le flux de travail applicatif. Les agents autonomes perturbent le flux utilisateur. L’interaction par e-mail manque d’intégration en temps réel.<br><br>Référence : <a href=\"https://learn.microsoft.com/power-apps/maker/canvas-apps/add-copilot\">Intégrer Copilot dans Power Apps</a>"
+    },
+    {
+      "id": "ab100-f7627de447e1",
+      "examSlug": "ab100",
+      "domain": "Design",
+      "topic": "KnowledgeGrounding",
+      "tags": [
+        "AB-100",
+        "Design",
+        "KnowledgeGrounding"
+      ],
+      "promptHtml": "Un agent du support technique doit accéder aux connaissances via SharePoint, des wikis internes et des documents de procédure. Le système devrait fonder les réponses sur ces sources faisant autorité. Quelle configuration de Copilot Studio met en œuvre ce grounding des connaissances ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Agent sans connaissance sources qui inventent des réponses"
+        },
+        {
+          "key": "B",
+          "label": "Sources de connaissances configurées avec des connecteurs SharePoint et l’indexation des documents"
+        },
+        {
+          "key": "C",
+          "label": "Réponses codées en dur pour toutes les questions possibles"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Sources de connaissances configurées avec des connecteurs SharePoint et l’indexation des documents",
+      "rationaleHtml": "",
+      "extraHtml": "Les sources de connaissances avec connecteurs SharePoint permettent aux agents de rechercher et de citer des documents faisant autorité lors de la génération de réponses, réduisant ainsi les hallucinations. Les agents non ancrés fabriquent des réponses. Les réponses codées en dur ne sont pas adaptées et ne supportent pas les variations de langage.<br><br>Référence : <a href=\"https://learn.microsoft.com/microsoft-copilot-studio/knowledge-store-overview\">Sources de connaissances dans Copilot Studio</a>"
+    },
+    {
+      "id": "ab100-5c7be476774c",
+      "examSlug": "ab100",
+      "domain": "Design",
+      "topic": "DataProcessing",
+      "tags": [
+        "AB-100",
+        "Design",
+        "DataProcessing"
+      ],
+      "promptHtml": "Votre solution nécessite un prétraitement des données, incluant le nettoyage du texte non structuré, l’extraction d’entités et le calcul des fonctionnalités dérivées avant la consommation des agents. Quel composant de conception gère ce traitement des données ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Les agents traitant directement les données brutes non structurées"
+        },
+        {
+          "key": "B",
+          "label": "Pipeline de traitement des données avec ETL, ingénierie des fonctionnalités et sortie structurée"
+        },
+        {
+          "key": "C",
+          "label": "Préparation manuelle des données sans automatisation"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Pipeline de traitement des données avec ETL, ingénierie des fonctionnalités et sortie structurée",
+      "rationaleHtml": "",
+      "extraHtml": "Les pipelines de traitement des données nettoient, transforment, extraient systématiquement des fonctionnalités et structurent les données en optimisant la performance et la précision des agents. Les données brutes non structurées dégradent la qualité de l’agent. Le traitement manuel ne s’adapte pas.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/architecture/data-guide/scenarios/data-preprocessing\">Architecture de prétraitement des données</a>"
+    },
+    {
+      "id": "ab100-99533f4fd6ac",
+      "examSlug": "ab100",
+      "domain": "Design",
+      "topic": "FallbackTopics",
+      "tags": [
+        "AB-100",
+        "Design",
+        "FallbackTopics"
+      ],
+      "promptHtml": "Un conseiller financier doit gérer à la fois les questions structurées sur le catalogue de produits et les conversations de planification financière non structurée. Quelle configuration NLU de Copilot Studio répond à cette double complexité ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Approche NLU unique pour toutes les requêtes"
+        },
+        {
+          "key": "B",
+          "label": "Sujets de secours avec l’orchestration par IA générative pour les requêtes non structurées"
+        },
+        {
+          "key": "C",
+          "label": "Aucune configuration NLU"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Sujets de secours avec l’orchestration par IA générative pour les requêtes non structurées",
+      "rationaleHtml": "",
+      "extraHtml": "Les sujets de secours permettent d’escalader de la correspondance structurée des sujets vers l’IA générative pour les requêtes ne correspondant pas à des sujets prédéfinis, en gérant à la fois des scénarios structurés et ouverts. L’approche unique n’optimise pas par scénario. Non, NLU ne comprend pas l’intention de l’utilisateur.<br><br>Référence : <a href=\"https://learn.microsoft.com/microsoft-copilot-studio/authoring-system-fallback-topic\">Conception de sujets de secours</a>"
+    },
+    {
+      "id": "ab100-a616a8401c74",
+      "examSlug": "ab100",
+      "domain": "Design",
+      "topic": "WellArchitected",
+      "tags": [
+        "AB-100",
+        "Design",
+        "WellArchitected"
+      ],
+      "promptHtml": "Votre organisation adopte le cadre bien architecté Power Platform pour une charge de travail intelligente dans une application. La solution inclut un traitement IA intensif. Quel pilier nécessite une attention particulière pour les charges de travail de l’IA ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Aucun, le framework ne s’applique pas à l’IA"
+        },
+        {
+          "key": "B",
+          "label": "Efficacité des performances grâce à la latence, au débit et à l’optimisation du calcul de l’IA"
+        },
+        {
+          "key": "C",
+          "label": "Seule l’optimisation des coûts compte"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Efficacité des performances grâce à la latence, au débit et à l’optimisation du calcul de l’IA",
+      "rationaleHtml": "",
+      "extraHtml": "Les charges de travail de l’IA nécessitent des considérations particulières de performance, notamment la latence d’inférence, les limites des jetons, les stratégies de batching, la sélection des SKU de calcul et la mise en cache pour répondre aux exigences d’expérience utilisateur. Tous les piliers du cadre s’appliquent. L’accent mis uniquement sur les coûts ignore les besoins critiques en matière de performance et de fiabilité.<br><br>Référence : <a href=\"https://learn.microsoft.com/power-platform/well-architected/\">Cadre bien architecturé de Power Platform</a>"
+    },
+    {
+      "id": "ab100-335c668f883c",
+      "examSlug": "ab100",
+      "domain": "Design",
+      "topic": "Connectors",
+      "tags": [
+        "AB-100",
+        "Design",
+        "Connectors"
+      ],
+      "promptHtml": "Un agent commercial doit extraire les données clients de Dynamics 365, les scores de crédit externes via une API tierce, et l’intelligence concurrentielle provenant de sources web. Quelle fonctionnalité de Copilot Studio permet cette intégration multi-systèmes ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Saisie manuelle des données par les utilisateurs"
+        },
+        {
+          "key": "B",
+          "label": "Connecteurs et actions personnalisées pour Dataverse, requêtes HTTP et analyse de données"
+        },
+        {
+          "key": "C",
+          "label": "Les agents ne peuvent pas intégrer de systèmes externes"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Connecteurs et actions personnalisées pour Dataverse, requêtes HTTP et analyse de données",
+      "rationaleHtml": "",
+      "extraHtml": "Les connecteurs permettent aux agents d’invoquer des API, de requêtes dans des bases de données et d’intégrer des systèmes externes, tandis que les actions personnalisées fournissent une logique d’intégration réutilisable. L’entrée manuelle va à l’encontre de l’automatisation. Les agents isolés ne peuvent pas accéder aux données nécessaires.<br><br>Référence : <a href=\"https://learn.microsoft.com/microsoft-copilot-studio/advanced-connectors\">Connecteurs Copilot Studio</a>"
+    },
+    {
+      "id": "ab100-2eaf2d7854cd",
+      "examSlug": "ab100",
+      "domain": "Design",
+      "topic": "CustomModelIntegration",
+      "tags": [
+        "AB-100",
+        "Design",
+        "CustomModelIntegration"
+      ],
+      "promptHtml": "Votre solution d’agent doit utiliser des modèles d’IA personnalisés entraînés dans Azure AI Foundry pour la prédiction de domaines spécialisés, ainsi que des modèles de langage à usage général pour la conversation. Quelle architecture intègre les deux types de modèles ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Seuls les modèles polyvalents sans spécialisation"
+        },
+        {
+          "key": "B",
+          "label": "Architecture hybride avec modèles personnalisés pour la prédiction et LLM pour l’orchestration des conversations"
+        },
+        {
+          "key": "C",
+          "label": "Modèles personnalisés uniquement sans possibilité de conversation"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Architecture hybride avec modèles personnalisés pour la prédiction et LLM pour l’orchestration des conversations",
+      "rationaleHtml": "",
+      "extraHtml": "L’architecture hybride exploite des modèles personnalisés pour des prédictions spécialisées tout en utilisant des LLM pour la compréhension du langage naturel et le flux de conversation, optimisant la précision et l’expérience utilisateur. Le mode général uniquement manque de précision de domaine. Le mode personnalisé manque d’interaction naturelle.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-custom\">Intégration de modèles personnalisés</a>"
+    },
+    {
+      "id": "ab100-942b4967ced4",
+      "examSlug": "ab100",
+      "domain": "Design",
+      "topic": "M365CopilotExtension",
+      "tags": [
+        "AB-100",
+        "Design",
+        "M365CopilotExtension"
+      ],
+      "promptHtml": "Un agent de santé doit étendre Microsoft 365 Copilot avec des capacités de planification des patients, de consultation de dossiers médicaux et de renouvellement d’ordonnances. Quel mécanisme d’extensibilité offre cette fonctionnalité dans le M365 Copilot ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Application complètement séparée"
+        },
+        {
+          "key": "B",
+          "label": "Agents Microsoft 365 Copilot avec extensions de messages et connecteurs"
+        },
+        {
+          "key": "C",
+          "label": "Flux de travail basé sur l’email sans Copilot"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Agents Microsoft 365 Copilot avec extensions de messages et connecteurs",
+      "rationaleHtml": "",
+      "extraHtml": "Les agents Microsoft 365 Copilot étendent Copilot avec des fonctionnalités, compétences et connecteurs personnalisés apparaissant nativement dans l’interface Copilot. Des applications séparées fragmentent l’expérience. Les flux de travail par e-mail manquent d’une assistance IA en temps réel.<br><br>Référence : <a href=\"https://learn.microsoft.com/microsoft-365-copilot/extensibility/\">extensibilité du M365 Copilot</a>"
+    },
+    {
+      "id": "ab100-0f40623ea99b",
+      "examSlug": "ab100",
+      "domain": "Design",
+      "topic": "MCP",
+      "tags": [
+        "AB-100",
+        "Design",
+        "MCP"
+      ],
+      "promptHtml": "La conception de votre agent nécessite l’intégration du protocole de contexte modèle (MCP) pour maintenir le contexte de la conversation entre plusieurs agents spécialisés. Quelle capacité MCP permet ce partage de contexte ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Aucun partage de contexte entre agents"
+        },
+        {
+          "key": "B",
+          "label": "Gestion du contexte MCP avec historique de conversation partagé et état"
+        },
+        {
+          "key": "C",
+          "label": "Transfert manuel de contexte par les utilisateurs"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Gestion du contexte MCP avec historique de conversation partagé et état",
+      "rationaleHtml": "",
+      "extraHtml": "Le protocole de contexte modèle permet le partage de contexte entre agents, maintenant la continuité des conversations, les préférences de l’utilisateur et l’état entre les transferts d’agents. Aucun partage crée des expériences décousues. Le transfert manuel ne s’adapte pas.<br><br>Référence : <a href=\"https://modelcontextprotocol.io/\">Protocole de contexte modèle</a>"
+    },
+    {
+      "id": "ab100-3c3ffe0739b7",
+      "examSlug": "ab100",
+      "domain": "Design",
+      "topic": "VoiceMode",
+      "tags": [
+        "AB-100",
+        "Design",
+        "VoiceMode"
+      ],
+      "promptHtml": "Un agent du service client doit fonctionner en mode vocal pour les interactions téléphoniques avec traitement vocal en temps réel et réponses vocales naturelles. Quelle capacité de Copilot Studio permet cette interaction vocale ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Agent textuel uniquement sans voix"
+        },
+        {
+          "key": "B",
+          "label": "Mode voix avec reconnaissance vocale, synthèse et IA conversationnelle"
+        },
+        {
+          "key": "C",
+          "label": "Lecture de messages préenregistrés"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Mode voix avec reconnaissance vocale, synthèse et IA conversationnelle",
+      "rationaleHtml": "",
+      "extraHtml": "Le mode voix intègre la reconnaissance vocale, le traitement IA conversationnel et la synthèse vocale pour des interactions vocales naturelles avec une faible latence. Le texte uniquement exclut les canaux vocaux. Les messages préenregistrés ne fournissent pas de conversations dynamiques.<br><br>Référence : <a href=\"https://learn.microsoft.com/microsoft-copilot-studio/voice-build\">Agents activés par la voix</a>"
+    },
+    {
+      "id": "ab100-733166e2e85d",
+      "examSlug": "ab100",
+      "domain": "Design",
+      "topic": "ComputerUse",
+      "tags": [
+        "AB-100",
+        "Design",
+        "ComputerUse"
+      ],
+      "promptHtml": "La conception de votre solution nécessite que les agents automatisent les interactions avec les applications web, y compris le remplissage de formulaires, la navigation et l’extraction de données à partir de systèmes hérités sans API. Quelle capacité de Copilot Studio permet cette automatisation ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Les agents ne peuvent pas interagir avec des applications web"
+        },
+        {
+          "key": "B",
+          "label": "Utilisation de l’ordinateur dans Copilot Studio pour l’automatisation de l’interface utilisateur"
+        },
+        {
+          "key": "C",
+          "label": "Saisie manuelle des données utilisateur à partir d’applications web"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Utilisation de l’ordinateur dans Copilot Studio pour l’automatisation de l’interface utilisateur",
+      "rationaleHtml": "",
+      "extraHtml": "L’utilisation informatique permet aux agents d’interagir avec les applications via l’automatisation de l’interface utilisateur, incluant le clic, la saisie et la lecture d’écran, permettant l’intégration des systèmes hérités sans API. L’incapacité à interagir limite l’automatisation. L’entrée manuelle va à l’encontre de l’automatisation.<br><br>Référence : <a href=\"https://learn.microsoft.com/microsoft-copilot-studio/computer-use\">Automatisation de l’utilisation de l’ordinateur</a>"
+    },
+    {
+      "id": "ab100-7bb243702fdd",
+      "examSlug": "ab100",
+      "domain": "Design",
+      "topic": "AgentReasoning",
+      "tags": [
+        "AB-100",
+        "Design",
+        "AgentReasoning"
+      ],
+      "promptHtml": "Une solution de fabrication nécessite que des agents raisonnent à travers des problèmes complexes en plusieurs étapes impliquant des contraintes d’optimisation et des analyses de compromis. Quelle capacité de comportement de l’agent soutient ce raisonnement complexe ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Réponses simples fondées sur des règles"
+        },
+        {
+          "key": "B",
+          "label": "Mode raisonnement avec incitation en chaîne de pensée et analyse en plusieurs étapes"
+        },
+        {
+          "key": "C",
+          "label": "Sélection aléatoire sans logique"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Mode raisonnement avec incitation en chaîne de pensée et analyse en plusieurs étapes",
+      "rationaleHtml": "",
+      "extraHtml": "Le mode raisonnement permet aux agents de résoudre des problèmes complexes étape par étape, en tenant compte des contraintes, en évaluant des alternatives et en expliquant la raison. Les systèmes basés sur des règles manquent d’adaptabilité. La sélection aléatoire n’applique pas la logique.<br><br>Référence : <a href=\"https://learn.microsoft.com/microsoft-copilot-studio/agent-reasoning\">Capacités de raisonnement de l’agent</a>"
+    },
+    {
+      "id": "ab100-c09c10db8a1e",
+      "examSlug": "ab100",
+      "domain": "Design",
+      "topic": "CrossPlatform",
+      "tags": [
+        "AB-100",
+        "Design",
+        "CrossPlatform"
+      ],
+      "promptHtml": "Votre organisation utilise à la fois Microsoft 365 et Power Platform. Les agents doivent accéder sans interruption aux canaux Teams, aux sites SharePoint et à Dataverse. Quel modèle d’intégration optimise cet accès multiplateforme ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Agents déconnectés séparés par plateforme"
+        },
+        {
+          "key": "B",
+          "label": "Solution d’agent unifiée exploitant une identité partagée, des connecteurs et Microsoft Graph"
+        },
+        {
+          "key": "C",
+          "label": "Transfert manuel de données entre plateformes"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Solution d’agent unifiée exploitant une identité partagée, des connecteurs et Microsoft Graph",
+      "rationaleHtml": "",
+      "extraHtml": "Une architecture unifiée avec Microsoft Graph et des connecteurs permet aux agents d’accéder aux ressources M365 et Power Platform via une identité partagée, assurant une intégration multiplateforme sans faille. Les agents déconnectés créent des silos. Le transfert manuel ne s’adapte pas à l’échelle et n’automatise pas.<br><br>Référence : <a href=\"https://learn.microsoft.com/graph/overview\">Intégration Microsoft Graph</a>"
+    },
+    {
+      "id": "ab100-8ffcf9b925df",
+      "examSlug": "ab100",
+      "domain": "Design",
+      "topic": "FinanceAIOrchestration",
+      "tags": [
+        "AB-100",
+        "Design",
+        "FinanceAIOrchestration"
+      ],
+      "promptHtml": "Un agent des services financiers doit configurer différentes fonctionnalités d’IA dans Dynamics 365 Finance et Supply Chain Management, y compris des insights prédictifs et des recommandations intelligentes. Quelle approche d’orchestration coordonne ces multiples capacités d’IA ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Pas d’orchestration avec des fonctionnalités indépendantes"
+        },
+        {
+          "key": "B",
+          "label": "Orchestration des fonctionnalités d’IA configurée avec intégration de la logique métier"
+        },
+        {
+          "key": "C",
+          "label": "Activation aléatoire des fonctionnalités IA"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Orchestration des fonctionnalités d’IA configurée avec intégration de la logique métier",
+      "rationaleHtml": "",
+      "extraHtml": "L’orchestration des fonctionnalités de l’IA configure plusieurs capacités d’IA (prédictions, recommandations, insights) pour fonctionner de manière cohérente avec l’intégration des processus métier, offrant une application intelligente et complète. Les fonctionnalités indépendantes manquent de coordination. L’activation aléatoire manque d’alignement sur la valeur commerciale.<br><br>Référence : <a href=\"https://learn.microsoft.com/dynamics365/finance/get-started/copilot-finance\">fonctionnalités de Dynamics 365 Finance AI</a>"
+    },
+    {
+      "id": "ab100-bb97f5154db1",
+      "examSlug": "ab100",
+      "domain": "Design",
+      "topic": "CopilotForService",
+      "tags": [
+        "AB-100",
+        "Design",
+        "CopilotForService"
+      ],
+      "promptHtml": "Votre solution de service client configure Microsoft 365 Copilot for Service avec des sources de connaissances personnalisées et des règles de routage spécialisées. Quelle orchestration de configuration assure une bonne intégration ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Copilot par défaut sans personnalisation"
+        },
+        {
+          "key": "B",
+          "label": "Configuration orchestrée des sources de connaissances, routage, intégration de la gestion des cas"
+        },
+        {
+          "key": "C",
+          "label": "Copilote désactivé pour les scénarios de service"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Configuration orchestrée des sources de connaissances, routage, intégration de la gestion des cas",
+      "rationaleHtml": "",
+      "extraHtml": "La configuration orchestrée aligne Copilot for Service avec les systèmes de connaissances organisationnelles, de routage de processus et de gestion de cas fournissant une assistance de service contextuellement pertinente. La configuration par défaut manque de contexte organisationnel. Désactiver élimine les avantages de l’IA.<br><br>Référence : <a href=\"https://learn.microsoft.com/microsoft-365-copilot/microsoft-365-copilot-service\">M365 Copilot pour le service</a>"
+    },
+    {
+      "id": "ab100-1b462148420c",
+      "examSlug": "ab100",
+      "domain": "Deploy",
+      "topic": "Monitoring",
+      "tags": [
+        "AB-100",
+        "Deploy",
+        "Monitoring"
+      ],
+      "promptHtml": "Une solution d’agent présente une qualité de réponse incohérente, certains utilisateurs rapportant une aide excellente et d’autres recevant des informations non pertinentes. Quelle approche de surveillance diagnostique cette variabilité ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Aucun suivi ni évaluation de la qualité"
+        },
+        {
+          "key": "B",
+          "label": "Surveillance de la performance des agents avec des indicateurs de qualité de réponse, satisfaction utilisateur et analyse des conversations"
+        },
+        {
+          "key": "C",
+          "label": "Vérification aléatoire des conversations"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Surveillance de la performance des agents avec des indicateurs de qualité de réponse, satisfaction utilisateur et analyse des conversations",
+      "rationaleHtml": "",
+      "extraHtml": "Une surveillance complète du suivi de la pertinence des réponses, de la satisfaction des utilisateurs, des taux de résolution et des modes de conversation identifie les problèmes de qualité permettant des améliorations ciblées. Aucune surveillance empêche l’amélioration. Les vérifications aléatoires manquent des problèmes systémiques.<br><br>Référence : <a href=\"https://learn.microsoft.com/microsoft-copilot-studio/analytics-overview\">Analyse et surveillance des agents</a>"
+    },
+    {
+      "id": "ab100-4ca17d812c47",
+      "examSlug": "ab100",
+      "domain": "Deploy",
+      "topic": "FeedbackAnalysis",
+      "tags": [
+        "AB-100",
+        "Deploy",
+        "FeedbackAnalysis"
+      ],
+      "promptHtml": "Votre organisation collecte les retours des utilisateurs montrant que les agents comprennent mal certains termes du secteur. Comment ce retour devrait-il influencer l’ajustement de l’agent ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Ignorez les retours des utilisateurs"
+        },
+        {
+          "key": "B",
+          "label": "Analyser les retours pour identifier les lacunes terminologiques, mettre à jour les données d’entraînement, affiner les prompts et réévaluer"
+        },
+        {
+          "key": "C",
+          "label": "Changements aléatoires d’agents sans analyse"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Analyser les retours pour identifier les lacunes terminologiques, mettre à jour les données d’entraînement, affiner les prompts et réévaluer",
+      "rationaleHtml": "",
+      "extraHtml": "L’analyse structurée des retours identifie les schémas informant les améliorations ciblées, notamment les mises à jour de la base de connaissances, le raffinement rapide et la formation terminologique garantissant une amélioration continue des agents. Ignorer les retours empêche l’optimisation. Les changements aléatoires risquent une régression.<br><br>Référence : <a href=\"https://learn.microsoft.com/microsoft-copilot-studio/analytics-topic-analysis\">Amélioration basée sur le retour d’information</a>"
+    },
+    {
+      "id": "ab100-09e4b4686cf0",
+      "examSlug": "ab100",
+      "domain": "Deploy",
+      "topic": "ModelMonitoring",
+      "tags": [
+        "AB-100",
+        "Deploy",
+        "ModelMonitoring"
+      ],
+      "promptHtml": "Un modèle d’IA entraîné montre une précision dégradée au fil du temps à mesure que les conditions commerciales évoluent. Quelle stratégie de surveillance détecte et corrige cette dérive du modèle ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Pas de surveillance du modèle après le déploiement"
+        },
+        {
+          "key": "B",
+          "label": "Surveillance continue de la précision du modèle, de la distribution des données et des déclencheurs de réentraînement"
+        },
+        {
+          "key": "C",
+          "label": "Contrôle de précision unique lors du déploiement"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Surveillance continue de la précision du modèle, de la distribution des données et des déclencheurs de réentraînement",
+      "rationaleHtml": "",
+      "extraHtml": "La surveillance continue suit la précision des prédictions, les changements de distribution des données d’entrée et l’alignement des métriques métier déclenchant un réentraînement lorsqu’une dérive est détectée. Aucun contrôle ne permet la dégradation. Les vérifications uniques manquent la dérive temporelle.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/machine-learning/how-to-monitor-models\">Surveillance du modèle et détection de dérive</a>"
+    },
+    {
+      "id": "ab100-3e380436ca28",
+      "examSlug": "ab100",
+      "domain": "Deploy",
+      "topic": "TelemetryAnalysis",
+      "tags": [
+        "AB-100",
+        "Deploy",
+        "TelemetryAnalysis"
+      ],
+      "promptHtml": "Vos indicateurs d’agent montrent un taux d’abandon de conversation de 40 % avant la résolution. Quelle approche d’analyse identifie les causes profondes de l’abandon ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Ignorez l’abandon comme inévitable"
+        },
+        {
+          "key": "B",
+          "label": "Analyse télémétrique des points d’abandon, des incompatibilités d’intention utilisateur et des problèmes de latence"
+        },
+        {
+          "key": "C",
+          "label": "Supposons un comportement aléatoire de l’utilisateur"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Analyse télémétrique des points d’abandon, des incompatibilités d’intention utilisateur et des problèmes de latence",
+      "rationaleHtml": "",
+      "extraHtml": "L’analyse de télémétrie révélant des schémas d’abandon (sujets spécifiques, pics de latence, intentions mal comprises) permet des correctifs ciblés répondant aux points sensibles de l’utilisateur. Ignorer empêche l’amélioration. Les approches basées sur l’hypothèse passent à côté des causes réelles.<br><br>Référence : <a href=\"https://learn.microsoft.com/microsoft-copilot-studio/analytics-sessions\">Analyse de l’abandon de session</a>"
+    },
+    {
+      "id": "ab100-ba9eddc47d3f",
+      "examSlug": "ab100",
+      "domain": "Deploy",
+      "topic": "PerformanceMetrics",
+      "tags": [
+        "AB-100",
+        "Deploy",
+        "PerformanceMetrics"
+      ],
+      "promptHtml": "Un agent atteint une résolution de 85 % au premier contact mais le temps moyen de manipulation reste élevé. Quels indicateurs aident à optimiser l’efficacité sans compromettre la qualité ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Concentrez-vous uniquement sur la vitesse en ignorant la qualité"
+        },
+        {
+          "key": "B",
+          "label": "Des métriques équilibrées suivant le taux de résolution, le temps de manipulation, la satisfaction client et la précision"
+        },
+        {
+          "key": "C",
+          "label": "Aucun indicateur de performance n’est nécessaire"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Des métriques équilibrées suivant le taux de résolution, le temps de manipulation, la satisfaction client et la précision",
+      "rationaleHtml": "",
+      "extraHtml": "Les métriques équilibrées identifient les opportunités d’optimisation en maintenant la qualité tout en améliorant l’efficacité grâce à l’optimisation du flux d’agents, aux lacunes de connaissances et aux étapes inutiles. La mise au point uniquement en vitesse dégrade la qualité. Aucun indicateur n’empêche l’optimisation.<br><br>Référence : <a href=\"https://learn.microsoft.com/microsoft-copilot-studio/analytics-billed-sessions\">Indicateurs de performance</a>"
+    },
+    {
+      "id": "ab100-0ddfedd9f357",
+      "examSlug": "ab100",
+      "domain": "Deploy",
+      "topic": "ModelValidation",
+      "tags": [
+        "AB-100",
+        "Deploy",
+        "ModelValidation"
+      ],
+      "promptHtml": "Votre modèle d’IA personnalisé nécessite des critères de validation avant le déploiement en production. Quelle approche de validation garantit la fiabilité du modèle ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Déploiement sans test"
+        },
+        {
+          "key": "B",
+          "label": "Validation complète incluant la précision, la robustesse, l’équité, l’interprétabilité et les tests de cas extrêmes"
+        },
+        {
+          "key": "C",
+          "label": "Une seule métrique de précision"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Validation complète incluant la précision, la robustesse, l’équité, l’interprétabilité et les tests de cas extrêmes",
+      "rationaleHtml": "",
+      "extraHtml": "Des tests de validation complets modélisent la précision dans tous les scénarios, la robustesse aux variations d’entrée, l’équité selon les démographies, l’interprétabilité des résultats et la gestion des cas particuliers garantissant la préparation à la production. Aucun test ne risque d’échec. La précision ne fait que passer à côté des aspects critiques.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/machine-learning/concept-model-catalog-validation\">Cadre de validation du modèle</a>"
+    },
+    {
+      "id": "ab100-a220f8df0c48",
+      "examSlug": "ab100",
+      "domain": "Deploy",
+      "topic": "PromptValidation",
+      "tags": [
+        "AB-100",
+        "Deploy",
+        "PromptValidation"
+      ],
+      "promptHtml": "Une bibliothèque de prompts Copilot montre une qualité incohérente, certains prompts donnant d’excellents résultats et d’autres de mauvaises réponses. Quel processus de validation améliore la cohérence des prompts ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Aucune validation rapide avant utilisation"
+        },
+        {
+          "key": "B",
+          "label": "Tests rapides avec des entrées diverses, des cas particuliers et une validation des bonnes pratiques d’adhésion"
+        },
+        {
+          "key": "C",
+          "label": "Un utilisateur propose des invitations de test informel"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Tests rapides avec des entrées diverses, des cas particuliers et une validation des bonnes pratiques d’adhésion",
+      "rationaleHtml": "",
+      "extraHtml": "Des tests systématiques sur les prompts évaluant les résultats selon les variations d’entrée, la gestion des cas particuliers, la détection des biais et le respect des bonnes pratiques garantissent la qualité et la cohérence rapides. Aucune validation ne permet de mal avoir des prompts. Les tests à un seul utilisateur ne prennent pas en compte.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/ai-services/openai/concepts/prompt-engineering\">Validation de prompt</a>"
+    },
+    {
+      "id": "ab100-99df8705eef1",
+      "examSlug": "ab100",
+      "domain": "Deploy",
+      "topic": "EndToEndTesting",
+      "tags": [
+        "AB-100",
+        "Deploy",
+        "EndToEndTesting"
+      ],
+      "promptHtml": "Votre organisation déploie une solution d’IA utilisant plusieurs applications Dynamics 365. Les tests doivent valider des scénarios de bout en bout couvrant les ventes, le service client et le service sur le terrain. Quelle stratégie de test couvre cette intégration ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Testez chaque application indépendamment sans tests d’intégration"
+        },
+        {
+          "key": "B",
+          "label": "Scénarios de test de bout en bout validant le flux de données inter-applications, les transferts et les parcours utilisateurs"
+        },
+        {
+          "key": "C",
+          "label": "Tests en production sans validation préalable au déploiement"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Scénarios de test de bout en bout validant le flux de données inter-applications, les transferts et les parcours utilisateurs",
+      "rationaleHtml": "",
+      "extraHtml": "Les tests de bout en bout valident des scénarios métier complets à travers les applications, garantissant la cohérence des données, des transferts appropriés et une expérience utilisateur fluide. Les tests indépendants ne détectent pas les problèmes d’intégration. Les tests axés sur la production risquent un impact sur l’utilisateur.<br><br>Référence : <a href=\"https://learn.microsoft.com/dynamics365/guidance/implementation-guide/testing-strategy\">stratégie de test Dynamics 365</a>"
+    },
+    {
+      "id": "ab100-edb90916a5f3",
+      "examSlug": "ab100",
+      "domain": "Deploy",
+      "topic": "CopilotTesting",
+      "tags": [
+        "AB-100",
+        "Deploy",
+        "CopilotTesting"
+      ],
+      "promptHtml": "Votre équipe crée manuellement des cas de test pour les scénarios d’agent. Chaque scénario nécessite un temps important et la couverture des tests reste faible. Quelle stratégie améliore l’efficacité de la création de cas de test ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Continuer la création manuelle de cas de test"
+        },
+        {
+          "key": "B",
+          "label": "Génération de cas de test assistée par copilote à partir des exigences avec validation automatisée"
+        },
+        {
+          "key": "C",
+          "label": "Pas de cas de test pour gagner du temps"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Génération de cas de test assistée par copilote à partir des exigences avec validation automatisée",
+      "rationaleHtml": "",
+      "extraHtml": "La génération de tests assistée par copilote crée des cas de test complets à partir des spécifications des exigences, suggérant des cas limites et des critères de validation, améliorant ainsi la couverture et la rapidité. Le mode manuel limite la couverture. Aucun test ne risque de problèmes de qualité.<br><br>Référence : <a href=\"https://learn.microsoft.com/microsoft-copilot-studio/testing-best-practices\">Meilleures pratiques pour les tests d’agents</a>"
+    },
+    {
+      "id": "ab100-77b53424f7b9",
+      "examSlug": "ab100",
+      "domain": "Deploy",
+      "topic": "CopilotALM",
+      "tags": [
+        "AB-100",
+        "Deploy",
+        "CopilotALM"
+      ],
+      "promptHtml": "Vos agents du Copilot Studio utilisent plusieurs sources de données et actions personnalisées. Le processus ALM doit contrôler les versions de tous les composants de manière cohérente. Quelle approche gère cette ALM multi-composantes ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Versionisation manuelle sans contrôle de version"
+        },
+        {
+          "key": "B",
+          "label": "Intégration du contrôle de version avec l’emballage de solutions pour agents, actions, connecteurs et dépendances"
+        },
+        {
+          "key": "C",
+          "label": "Montage uniquement en production sans versionnement"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Intégration du contrôle de version avec l’emballage de solutions pour agents, actions, connecteurs et dépendances",
+      "rationaleHtml": "",
+      "extraHtml": "L’ALM basé sur la solution regroupe tous les composants de l’agent (sujets, actions, connecteurs, sources de données) pour un déploiement contrôlé de version à travers des environnements avec gestion des dépendances. Le contrôle manuel des versions manque de cohérence. Le montage uniquement en production empêche une gestion correcte des modifications.<br><br>Référence : <a href=\"https://learn.microsoft.com/microsoft-copilot-studio/manage-source-control\">Copilot Studio ALM</a>"
+    },
+    {
+      "id": "ab100-93c4c6a66b11",
+      "examSlug": "ab100",
+      "domain": "Deploy",
+      "topic": "ModelALM",
+      "tags": [
+        "AB-100",
+        "Deploy",
+        "ModelALM"
+      ],
+      "promptHtml": "Un modèle d’IA personnalisé entraîné dans Azure AI Foundry nécessite l’ALM, incluant le système de versionnement des données d’entraînement, le versionnage des modèles et le suivi du déploiement. Quelle stratégie ALM gère le cycle de vie du modèle ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Stockage manuel des fichiers de modèles sans suivi"
+        },
+        {
+          "key": "B",
+          "label": "Pipeline MLOps avec versionnement des données, registre de modèles, suivi des expériences et automatisation du déploiement"
+        },
+        {
+          "key": "C",
+          "label": "Pièces jointes par email des fichiers modèles"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Pipeline MLOps avec versionnement des données, registre de modèles, suivi des expériences et automatisation du déploiement",
+      "rationaleHtml": "",
+      "extraHtml": "Les pratiques MLOps fournissent une gestion complète du cycle de vie des modèles, incluant des données d’entraînement versionnées, un registre de modèles, la comparaison d’expériences, le déploiement automatisé et la surveillance. Le stockage manuel manque de traçabilité. Les approches basées sur l’email ne soutiennent ni l’automatisation ni la gouvernance.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/machine-learning/concept-model-management-and-deployment\">MLOps et gestion de modèles</a>"
+    },
+    {
+      "id": "ab100-2fd937e9b9d7",
+      "examSlug": "ab100",
+      "domain": "Deploy",
+      "topic": "DataModelALM",
+      "tags": [
+        "AB-100",
+        "Deploy",
+        "DataModelALM"
+      ],
+      "promptHtml": "Votre organisation affine les modèles de langage à partir de données propriétaires. Le processus ALM doit suivre les modifications des données, les versions des modèles et les configurations d’entraînement. Quelle approche offre ce suivi complet ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Aucun suivi des données ou des modèles"
+        },
+        {
+          "key": "B",
+          "label": "ALM intégré avec la lignée des données, le versionnement des modèles, les métadonnées d’entraînement et le suivi des expériences"
+        },
+        {
+          "key": "C",
+          "label": "Suivi manuel des tableaux Excel"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "ALM intégré avec la lignée des données, le versionnement des modèles, les métadonnées d’entraînement et le suivi des expériences",
+      "rationaleHtml": "",
+      "extraHtml": "La plateforme ALM intégrée suit la provenance des données, la lignée des modèles, les hyperparamètres, les métriques d’entraînement et l’historique de déploiement, offrant une visibilité complète sur le cycle de vie. Aucun suivi empêche la reproductibilité. Les tableaux manuels manquent d’automatisation et d’auditabilité.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/machine-learning/concept-mlops\">Gestion du cycle de vie du ML</a>"
+    },
+    {
+      "id": "ab100-32704c421b6e",
+      "examSlug": "ab100",
+      "domain": "Deploy",
+      "topic": "Dynamics365ALM",
+      "tags": [
+        "AB-100",
+        "Deploy",
+        "Dynamics365ALM"
+      ],
+      "promptHtml": "Les fonctionnalités d’IA de Dynamics 365, y compris les prédictions et recommandations, nécessitent de l’ALM pour le développement, le test et la production. Quelle approche ALM gère l’IA embarquée de Dynamics 365 ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Configuration manuelle dans chaque environnement"
+        },
+        {
+          "key": "B",
+          "label": "Déploiement basé sur des solutions incluant la configuration, les modèles et les flux de travail de l’IA"
+        },
+        {
+          "key": "C",
+          "label": "Configuration IA uniquement en production"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Déploiement basé sur des solutions incluant la configuration, les modèles et les flux de travail de l’IA",
+      "rationaleHtml": "",
+      "extraHtml": "Les solutions Dynamics 365 intègrent des configurations d’IA, des modèles personnalisés et des flux de travail intégrés, permettant un déploiement cohérent à travers les environnements grâce au suivi des changements. La configuration manuelle crée une dérive de l’environnement. La production uniquement empêche les tests appropriés.<br><br>Référence : <a href=\"https://learn.microsoft.com/power-platform/alm/overview-alm\">Power Platform ALM</a>"
+    },
+    {
+      "id": "ab100-bd50cdb0835f",
+      "examSlug": "ab100",
+      "domain": "Deploy",
+      "topic": "ResponsibleAI",
+      "tags": [
+        "AB-100",
+        "Deploy",
+        "ResponsibleAI"
+      ],
+      "promptHtml": "Votre solution d’IA doit respecter les principes responsables de l’IA garantissant l’équité, la fiabilité, la sécurité, la confidentialité, l’inclusivité, la transparence et la responsabilité. Quel processus de revue de conception valide cette conformité ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Pas de critique responsable de l’IA"
+        },
+        {
+          "key": "B",
+          "label": "Revue structurée évaluant les indicateurs d’équité, la détection des biais, la transparence, les contrôles de confidentialité et les tests de sécurité"
+        },
+        {
+          "key": "C",
+          "label": "Jugement d’un seul développeur sans cadre"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Revue structurée évaluant les indicateurs d’équité, la détection des biais, la transparence, les contrôles de confidentialité et les tests de sécurité",
+      "rationaleHtml": "",
+      "extraHtml": "L’examen structuré de l’IA responsable évalue systématiquement les solutions selon les principes de l’IA responsable de Microsoft, avec des tests d’équité, la détection des biais, la validation de la vie privée, des mesures de sécurité et une documentation de transparence. Aucune révision ne risque de nuire. Le jugement individuel manque de rigueur et de cohérence.<br><br>Référence : <a href=\"https://www.microsoft.com/ai/responsible-ai\">Microsoft Responsible AI</a>"
+    },
+    {
+      "id": "ab100-903b42775a9b",
+      "examSlug": "ab100",
+      "domain": "Deploy",
+      "topic": "AgentSecurity",
+      "tags": [
+        "AB-100",
+        "Deploy",
+        "AgentSecurity"
+      ],
+      "promptHtml": "Un agent accède aux informations personnelles et financières des clients. La conception de la sécurité doit empêcher l’accès non autorisé et la consignation des informations sensibles. Quels contrôles de sécurité répondent à cette exigence de protection des données ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Aucun contrôle de sécurité sur l’accès des agents"
+        },
+        {
+          "key": "B",
+          "label": "Contrôle d’accès basé sur les rôles, chiffrement des données, détection des PII et journalisation des audits"
+        },
+        {
+          "key": "C",
+          "label": "Tous les utilisateurs ont un accès complet"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Contrôle d’accès basé sur les rôles, chiffrement des données, détection des PII et journalisation des audits",
+      "rationaleHtml": "",
+      "extraHtml": "La sécurité globale inclut la limitation de l’accès par RBAC par rôle, le chiffrement protégeant les données au repos et au transit, la détection des PII empêchant la consigne des données sensibles, et le suivi des traces d’audit de l’accès. Aucun contrôle n’expose les données. L’accès illimité viole le moindre privilège.<br><br>Référence : <a href=\"https://learn.microsoft.com/microsoft-copilot-studio/security-compliance\">Sécurité des agents</a>"
+    },
+    {
+      "id": "ab100-3370de9eb727",
+      "examSlug": "ab100",
+      "domain": "Deploy",
+      "topic": "AgentGovernance",
+      "tags": [
+        "AB-100",
+        "Deploy",
+        "AgentGovernance"
+      ],
+      "promptHtml": "Votre organisation régit le développement des agents, y compris les flux de travail d’approbation, la séparation des environnements et la gestion du changement. Quel cadre de gouvernance met en œuvre ces contrôles ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Aucune gouvernance ne permettant un développement incontrôlé"
+        },
+        {
+          "key": "B",
+          "label": "Gouvernance des agents avec portes d’approbation, politiques environnementales et suivi des changements"
+        },
+        {
+          "key": "C",
+          "label": "Personne célibataire approuvant tout"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Gouvernance des agents avec portes d’approbation, politiques environnementales et suivi des changements",
+      "rationaleHtml": "",
+      "extraHtml": "Le cadre de gouvernance des agents établit les flux de travail d’approbation pour le déploiement des agents, les politiques d’isolement de l’environnement, les processus de gestion des changements et la validation de la conformité assurant un cycle de vie contrôlé des agents. Aucune gouvernance ne risque de changements non validés. L’approver unique crée des goulots d’étranglement.<br><br>Référence : <a href=\"https://learn.microsoft.com/power-platform/guidance/adoption/admin-best-practices\">Meilleures pratiques en gouvernance</a>"
+    },
+    {
+      "id": "ab100-3b7c68914592",
+      "examSlug": "ab100",
+      "domain": "Deploy",
+      "topic": "PromptSecurity",
+      "tags": [
+        "AB-100",
+        "Deploy",
+        "PromptSecurity"
+      ],
+      "promptHtml": "Un modèle entraîné montre des vulnérabilités face aux attaques par injection incitées en manipulant les réponses pour contourner les contrôles de sécurité. Quelle stratégie d’atténuation aborde les risques de manipulation rapide ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Aucune défense par injection rapide"
+        },
+        {
+          "key": "B",
+          "label": "Validation des entrées, filtrage de sortie, sandboxing prompt et classificateurs de sécurité"
+        },
+        {
+          "key": "C",
+          "label": "Faites confiance à toutes les entrées utilisateur"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Validation des entrées, filtrage de sortie, sandboxing prompt et classificateurs de sécurité",
+      "rationaleHtml": "",
+      "extraHtml": "Les défenses en couches, incluant la validation des entrées, la détection de motifs suspects, le filtrage de sortie, l’isolation des prompts et les classificateurs de sécurité, détectent et empêchent les tentatives de manipulation prompt. Aucune défense ne permet l’exploitation. Faire confiance à toutes les entrées permet les attaques.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/ai-services/openai/concepts/red-team-guidance\">Atténuation par injection rapide</a>"
+    },
+    {
+      "id": "ab100-d892f1e61260",
+      "examSlug": "ab100",
+      "domain": "Deploy",
+      "topic": "DataResidency",
+      "tags": [
+        "AB-100",
+        "Deploy",
+        "DataResidency"
+      ],
+      "promptHtml": "Votre solution entraîne des modèles sur les données clients européens. Le RGPD exige de démontrer que les données ne quittent jamais les frontières de l’UE. Quels contrôles techniques imposent la conformité à la résidence des données ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Aucun contrôle de résidence des données"
+        },
+        {
+          "key": "B",
+          "label": "Des politiques de stockage, de calcul et de réseau verrouillées par région empêchant le transfert transfrontalier"
+        },
+        {
+          "key": "C",
+          "label": "Espérons que les données restent dans la région"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Stockage verrouillé régionalement, politiques de calcul et réseau empêchant le transfert transfrontalier",
+      "rationaleHtml": "",
+      "extraHtml": "L’application technique via les politiques régionales Azure, les verrouillages de localisation des comptes de stockage, les contrôles périmétriques réseau et la prévention des pertes de données garantit la conformité en empêchant les mouvements transfrontaliers de données. Aucun contrôle en cas de violation. L’espoir n’est pas une stratégie de conformité.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/compliance/offerings/offering-gdpr\">Conformité à la résidence des données</a>"
+    },
+    {
+      "id": "ab100-90f096a34b04",
+      "examSlug": "ab100",
+      "domain": "Deploy",
+      "topic": "ModelSecurity",
+      "tags": [
+        "AB-100",
+        "Deploy",
+        "ModelSecurity"
+      ],
+      "promptHtml": "L’entraînement personnalisé des modèles utilise des données métier sensibles. Le processus de réglage des modèles et les artefacts des modèles réglés nécessitent une protection contre tout accès non autorisé. Quelles mesures de sécurité protègent les données de modèles et d’entraînement ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Stockage public des données d’entraînement et des modèles"
+        },
+        {
+          "key": "B",
+          "label": "Contrôles d’accès sur les données d’entraînement, stockage de modèles chiffrés, environnements d’entraînement sécurisés et traces d’audit"
+        },
+        {
+          "key": "C",
+          "label": "Aucune protection des modèles ni des données"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Contrôles d’accès sur les données d’entraînement, stockage de modèles chiffrés, environnements d’entraînement sécurisés et traces d’audit",
+      "rationaleHtml": "",
+      "extraHtml": "La protection complète inclut le RBAC pour l’accès aux données d’entraînement, le stockage d’artefacts du modèle chiffré, un environnement de calcul d’entraînement isolé et l’enregistrement d’audit des accès et modifications. Le stockage public expose l’IP et les données. Aucune protection n’autorise l’accès non autorisé.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/machine-learning/concept-enterprise-security\">Sécurité ML</a>"
+    },
+    {
+      "id": "ab100-5a72d00175ca",
+      "examSlug": "ab100",
+      "domain": "Deploy",
+      "topic": "AuditTrails",
+      "tags": [
+        "AB-100",
+        "Deploy",
+        "AuditTrails"
+      ],
+      "promptHtml": "Votre solution d’IA implique plusieurs versions de modèles, mises à jour de données et modifications de configuration. Les exigences d’audit exigent de suivre toutes les modifications avec attribution utilisateur et horodatage. Quel système offre ce suivi complet des changements ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Aucun suivi de changement"
+        },
+        {
+          "key": "B",
+          "label": "Système d’audit intégré enregistrant les modifications de modèle, les modifications de données, les mises à jour de configuration avec attribution"
+        },
+        {
+          "key": "C",
+          "label": "Document de journal des modifications manuel"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Système d’audit intégré enregistrant les modifications de modèle, les modifications de données, les mises à jour de configuration avec attribution",
+      "rationaleHtml": "",
+      "extraHtml": "Les traces d’audit intégrées enregistrent automatiquement toutes les modifications apportées aux modèles, données, configurations avec attribution utilisateur, horodatages et description des modifications, permettant ainsi la conformité et l’enquête médico-légale. Aucun suivi ne viole les exigences d’audit. Les journaux manuels sont incomplets et non vérifiables.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/governance/policy/overview\">Gouvernance et pistes d’audit</a>"
+    },
+    {
+      "id": "ab100-c3ada5bbaa0b",
+      "examSlug": "ab100",
+      "domain": "Deploy",
+      "topic": "AccuracyValidation",
+      "tags": [
+        "AB-100",
+        "Deploy",
+        "AccuracyValidation"
+      ],
+      "promptHtml": "Les réponses des agents incluent parfois des informations factuellement incorrectes malgré des sources de données fondées. Quelle approche de validation détecte ces problèmes de précision ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Aucune validation de la précision"
+        },
+        {
+          "key": "B",
+          "label": "Vérification automatisée des faits par rapport à la vérité sur le terrain, la revue humaine et les boucles de rétroaction"
+        },
+        {
+          "key": "C",
+          "label": "Supposez que toutes les réponses sont exactes"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Vérification automatisée des faits par rapport à la vérité sur le terrain, la revue humaine et les boucles de rétroaction",
+      "rationaleHtml": "",
+      "extraHtml": "La validation multi-couches, incluant la vérification automatisée des faits, l’examen d’experts humains, la collecte de retours utilisateurs et les boucles d’amélioration continue, détecte et corrige les inexactitudes. Aucune validation ne permet d’avoir des erreurs. Les approches basées sur des hypothèses ne vérifient pas l’exactitude.<br><br>Référence : <a href=\"https://learn.microsoft.com/microsoft-copilot-studio/analytics-topic-analysis\">Validation de la qualité de la réponse</a>"
+    },
+    {
+      "id": "ab100-705d42d84085",
+      "examSlug": "ab100",
+      "domain": "Deploy",
+      "topic": "FairnessValidation",
+      "tags": [
+        "AB-100",
+        "Deploy",
+        "FairnessValidation"
+      ],
+      "promptHtml": "Votre organisation déploie des agents pour vous aider dans les décisions d’embauche. L’évaluation responsable de l’IA révèle un biais potentiel dans les recommandations de sélection des CV. Quelle remédiation répond à cette question d’équité ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Déploiement sans biais d’adressage"
+        },
+        {
+          "key": "B",
+          "label": "Test de détection de biais, évaluation des métriques d’équité, données d’entraînement diversifiées et supervision humaine"
+        },
+        {
+          "key": "C",
+          "label": "Ignorez les considérations d’équité"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Test de détection de biais, évaluation des métriques d’équité, données d’entraînement diversifiées et supervision humaine",
+      "rationaleHtml": "",
+      "extraHtml": "L’approche globale d’équité inclut les tests de biais à travers les données démographiques, l’évaluation des indicateurs d’équité, l’amélioration de la diversité des ensembles de données, et la supervision des examinateurs humains pour les décisions à enjeux élevés. Ignorer les préjugés risque de discriminer. Déployer avec un biais connu viole les principes de l’IA responsable.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/machine-learning/concept-fairness-ml\">L’équité dans l’IA</a>"
+    },
+    {
+      "id": "ab100-486a978bb90b",
+      "examSlug": "ab100",
+      "domain": "Deploy",
+      "topic": "PrivacyCompliance",
+      "tags": [
+        "AB-100",
+        "Deploy",
+        "PrivacyCompliance"
+      ],
+      "promptHtml": "Les agents traitent les données des clients à travers plusieurs juridictions avec des lois sur la vie privée variées. Quelle approche de conception garantit le respect des exigences de confidentialité diverses ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Approche unique mondiale de la vie privée ignorant les lois locales"
+        },
+        {
+          "key": "B",
+          "label": "Gestion des données spécifique à une région avec une implémentation applicable du contrôle de la confidentialité"
+        },
+        {
+          "key": "C",
+          "label": "Aucun contrôle de confidentialité"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Gestion des données spécifique à une région avec une implémentation applicable du contrôle de la confidentialité",
+      "rationaleHtml": "",
+      "extraHtml": "La conformité régionale met en place des contrôles de confidentialité adaptés aux réglementations locales (RGPD, CCPA, etc.), incluant l’accès, la conservation, la suppression et les exigences de consentement aux données. L’approche unique risque de ne pas se conformer. Aucun contrôle ne viole les lois sur la vie privée.<br><br>Référence : <a href=\"https://learn.microsoft.com/compliance/regulatory/offering-home\">Conformité régionale</a>"
+    },
+    {
+      "id": "ab100-da236a5770f9",
+      "examSlug": "ab100",
+      "domain": "Deploy",
+      "topic": "AdvancedAnalysis",
+      "tags": [
+        "AB-100",
+        "Deploy",
+        "AdvancedAnalysis"
+      ],
+      "promptHtml": "Les performances du modèle se dégradent en production, mais la télémétrie ne révèle pas de schémas clairs. Quelle technique d’analyse avancée identifie des problèmes subtils de performance ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Aucune analyse au-delà des métriques de base"
+        },
+        {
+          "key": "B",
+          "label": "Détection d’anomalies basée sur l’IA en analysant les modèles de télémétrie, la détection de dérive et l’analyse de corrélation"
+        },
+        {
+          "key": "C",
+          "label": "Devinettes aléatoires sur les causes"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Détection d’anomalies basée sur l’IA en analysant les modèles de télémétrie, la détection de dérive et l’analyse de corrélation",
+      "rationaleHtml": "",
+      "extraHtml": "Les outils d’analyse alimentés par l’IA détectent des schémas subtils en télémétrie, notamment des anomalies, des dérives de données, des effets saisonniers et des corrélations, invisibles à la revue manuelle, permettant une détection proactive des problèmes. Les indicateurs de base passent à côté des schémas complexes. Deviner ne permet pas d’identifier les causes profondes.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/machine-learning/how-to-monitor-model-performance\">Analyse avancée des performances</a>"
+    },
+    {
+      "id": "ab100-4a3855baee31",
+      "examSlug": "ab100",
+      "domain": "Deploy",
+      "topic": "UnifiedGovernance",
+      "tags": [
+        "AB-100",
+        "Deploy",
+        "UnifiedGovernance"
+      ],
+      "promptHtml": "Votre solution inclut des agents intégrés à la fois dans Copilot Studio et Microsoft Foundry, nécessitant une gouvernance, une sécurité et une surveillance unifiées. Quelle approche de gestion gère cet environnement hétérogène ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Gestion distincte pour chaque technologie"
+        },
+        {
+          "key": "B",
+          "label": "Cadre de gouvernance unifié avec politiques, indicateurs et contrôles multiplateformes"
+        },
+        {
+          "key": "C",
+          "label": "Aucune coordination entre les quais"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Cadre de gouvernance unifié avec politiques, indicateurs et contrôles multiplateformes",
+      "rationaleHtml": "",
+      "extraHtml": "Un cadre unifié établit des politiques de gouvernance cohérentes, des contrôles de sécurité et un suivi sur toutes les plateformes d’agents, garantissant la conformité et la visibilité à l’échelle de l’entreprise. Une gestion séparée crée des lacunes et des incohérences. Aucune coordination n’empêche la gouvernance d’entreprise.<br><br>Référence : <a href=\"https://learn.microsoft.com/power-platform/guidance/adoption/governance-best-practices\">Gouvernance multiplateforme</a>"
+    },
+    {
+      "id": "ab100-03cc3a3a5129",
+      "examSlug": "ab100",
+      "domain": "Deploy",
+      "topic": "RootCauseAnalysis",
+      "tags": [
+        "AB-100",
+        "Deploy",
+        "RootCauseAnalysis"
+      ],
+      "promptHtml": "Un agent de production subit des pannes intermittentes lorsqu’il ne peut pas accéder aux sources de données requises. La télémétrie montre des erreurs de délai API sporadiques. Quelle approche diagnostique identifie la cause profonde ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Redémarrer l’agent et espérer que le problème se résolve"
+        },
+        {
+          "key": "B",
+          "label": "Analyse de corrélation des délais d’attente avec les métriques d’infrastructure, les journaux API et la télémétrie réseau"
+        },
+        {
+          "key": "C",
+          "label": "Blâmer les utilisateurs pour les problèmes"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Analyse de corrélation des délais d’attente avec les métriques d’infrastructure, les journaux API et la télémétrie réseau",
+      "rationaleHtml": "",
+      "extraHtml": "Un diagnostic complet corrélant la télémétrie des applications avec les métriques d’infrastructure, les réponses API et la performance du réseau identifie les causes profondes telles que les limites de capacité, les problèmes réseau ou les problèmes d’API. Redémarrer masque les problèmes sans les corriger. Le blâme de l’utilisateur ne permet pas d’identifier les problèmes techniques.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/azure-monitor/app/troubleshoot-availability\">Dépannage de diagnostic</a>"
+    },
+    {
+      "id": "ab100-36ddb9db8618",
+      "examSlug": "ab100",
+      "domain": "Deploy",
+      "topic": "ChangeManagement",
+      "tags": [
+        "AB-100",
+        "Deploy",
+        "ChangeManagement"
+      ],
+      "promptHtml": "L’adoption à l’échelle de l’organisation des agents montre que 30 % des utilisateurs utilisent activement des agents tandis que 70 % ne l’ont pas adopté. Quelle stratégie améliore les taux d’adoption ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Utilisation de force sans support"
+        },
+        {
+          "key": "B",
+          "label": "Gestion du changement avec formation, programme de champions, collecte de retours et amélioration itérative"
+        },
+        {
+          "key": "C",
+          "label": "Supposons que les non-utilisateurs n’aient pas besoin d’agents"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Gestion du changement avec formation, programme de champions, collecte de retours et amélioration itérative",
+      "rationaleHtml": "",
+      "extraHtml": "La gestion structurée du changement, incluant la formation des utilisateurs, l’identification/le soutien des champions, la collecte de retours sur les obstacles à l’adoption et la prise en charge itérative des préoccupations, favorise l’adoption. L’utilisation forcée sans support crée une résistance. Les approches basées sur des hypothèses passent à côté des obstacles.<br><br>Référence : <a href=\"https://learn.microsoft.com/power-platform/guidance/adoption/adoption-best-practices\">Bonnes pratiques en adoption</a>"
+    },
+    {
+      "id": "ab100-1293f4bff865",
+      "examSlug": "ab100",
+      "domain": "Deploy",
+      "topic": "A2ATesting",
+      "tags": [
+        "AB-100",
+        "Deploy",
+        "A2ATesting"
+      ],
+      "promptHtml": "Votre solution d’agent utilise le protocole Agent2Agent (A2A) pour la collaboration multi-agents. Les tests doivent valider une bonne gestion des messages A2A et une coordination des agents. Quelle approche de test vérifie la mise en œuvre de l’A2A ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Agents de test indépendamment sans validation A2A"
+        },
+        {
+          "key": "B",
+          "label": "Tests d’intégration validant l’échange de messages A2A, la conformité aux protocoles et la logique de coordination"
+        },
+        {
+          "key": "C",
+          "label": "Aucun test de communication entre agents"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Tests d’intégration validant l’échange de messages A2A, la conformité aux protocoles et la logique de coordination",
+      "rationaleHtml": "",
+      "extraHtml": "Les tests d’intégration A2A valident la sérialisation des messages, la conformité aux spécifications du protocole, la logique de transfert d’agents et les flux de coordination garantissant un bon fonctionnement multi-agents. Les tests indépendants ne détectent pas les problèmes d’intégration. Aucun test de communication ne risque de défaillance de la coordination.<br><br>Référence : <a href=\"https://agent2agent.ai/\">protocole Agent2Agent</a>"
+    },
+    {
+      "id": "ab100-008d41ef99cc",
+      "examSlug": "ab100",
+      "domain": "Deploy",
+      "topic": "UXAnalysis",
+      "tags": [
+        "AB-100",
+        "Deploy",
+        "UXAnalysis"
+      ],
+      "promptHtml": "Les agents de production montrent une baisse des scores de satisfaction des utilisateurs mais les indicateurs techniques restent en bonne santé. Quelle analyse identifie les problèmes d’expérience utilisateur manqués par la surveillance technique ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Ignorez les scores de satisfaction"
+        },
+        {
+          "key": "B",
+          "label": "Analyse qualitative des retours, exploration de conversations et cartographie du parcours utilisateur"
+        },
+        {
+          "key": "C",
+          "label": "Surveiller uniquement les indicateurs techniques"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Analyse qualitative des retours, exploration de conversations et cartographie du parcours utilisateur",
+      "rationaleHtml": "",
+      "extraHtml": "L’analyse de l’expérience utilisateur qui examine les retours qualitatifs, les schémas de conversation, les points de frustration et la complétion du parcours révèle des problèmes d’ergonomie absents des indicateurs techniques. La surveillance uniquement technique ne permet pas de gérer les problèmes d’expérience utilisateur. Ignorer la satisfaction empêche l’amélioration.<br><br>Référence : <a href=\"https://learn.microsoft.com/microsoft-copilot-studio/analytics-satisfaction\">Analyse de la satisfaction des utilisateurs</a>"
+    },
+    {
+      "id": "ab100-a0af28321b67",
+      "examSlug": "ab100",
+      "domain": "Deploy",
+      "topic": "ValueRealization",
+      "tags": [
+        "AB-100",
+        "Deploy",
+        "ValueRealization"
+      ],
+      "promptHtml": "Votre solution IA génère des rapports de coûts, mais la direction s’interroge sur la valeur suffisante de l’investissement en IA. Quelle approche analytique démontre la valeur commerciale ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Coûts de rapport uniquement sans mesure de valeur"
+        },
+        {
+          "key": "B",
+          "label": "Suivi de la réalisation de la valeur en mesurant le gain de temps, la réduction des erreurs, l’impact sur le chiffre d’affaires et la satisfaction client par rapport à l’investissement"
+        },
+        {
+          "key": "C",
+          "label": "Histoires de réussite anecdotiques sans données"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Suivi de la réalisation de la valeur en mesurant le gain de temps, la réduction des erreurs, l’impact sur le chiffre d’affaires et la satisfaction client par rapport à l’investissement",
+      "rationaleHtml": "",
+      "extraHtml": "Un suivi complet de la valeur quantifie les bénéfices tangibles (productivité, précision, revenus) et les améliorations qualitatives (satisfaction, expérience) par rapport à l’investissement total, fournissant une démonstration du ROI. Le coût uniquement ne montre pas de valeur. Les anecdotes manquent de quantification.<br><br>Référence : <a href=\"https://learn.microsoft.com/power-platform/guidance/adoption/measure-business-value\">Mesure de la valeur commerciale</a>"
+    },
+    {
+      "id": "ab100-bb1affc37f73",
+      "examSlug": "ab100",
+      "domain": "Deploy",
+      "topic": "GlobalScale",
+      "tags": [
+        "AB-100",
+        "Deploy",
+        "GlobalScale"
+      ],
+      "promptHtml": "Un déploiement multinational couvre 50 pays, nécessitant des agents localisés pour la langue, les réglementations et les pratiques commerciales. Quelle stratégie de déploiement gère cette échelle mondiale ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Agent unique anglais pour tous les pays"
+        },
+        {
+          "key": "B",
+          "label": "Cadre d’agent configurable avec couches de localisation pour le langage, la conformité et les règles métier"
+        },
+        {
+          "key": "C",
+          "label": "Agents entièrement en douane par pays"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Cadre d’agent configurable avec couches de localisation pour le langage, la conformité et les règles métier",
+      "rationaleHtml": "",
+      "extraHtml": "Le cadre configurable avec des couches de localisation (modèles de langage, règles de conformité, données régionales) équilibre la cohérence globale avec la personnalisation locale à l’échelle de 50 pays. L’anglais uniquement exclut les marchés. Une personnalisation totale par pays multiplie les coûts et fragmente la maintenance.<br><br>Référence : <a href=\"https://learn.microsoft.com/power-platform/guidance/adoption/environment-strategy\">Schémas de déploiement mondiaux</a>"
+    },
+    {
+      "id": "ab100-a94ca4b9ac17",
+      "examSlug": "ab100",
+      "domain": "Deploy",
+      "topic": "ThirdPartyALM",
+      "tags": [
+        "AB-100",
+        "Deploy",
+        "ThirdPartyALM"
+      ],
+      "promptHtml": "Les solutions d’IA tierces s’intègrent à votre environnement Microsoft. ALM doit couvrir de manière cohérente à la fois Microsoft et les composants tiers. Quelle stratégie gère cette ALM hétérogène ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Pas d’ALM pour les composants tiers"
+        },
+        {
+          "key": "B",
+          "label": "Cadre ALM étendu avec versionnement d’API, tests d’intégration et déploiement unifié"
+        },
+        {
+          "key": "C",
+          "label": "ALM séparé et déconnecté par fournisseur"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Cadre ALM étendu avec versionnement d’API, tests d’intégration et déploiement unifié",
+      "rationaleHtml": "",
+      "extraHtml": "L’ALM étendu inclut des composants tiers dans le contrôle de version, les tests d’intégration, le déploiement coordonné et la gestion des changements, assurant une gestion complète du cycle de vie. L’absence d’ALM pour les tiers crée des lacunes. ALM déconnecté fragmente gestion des changements.<br><br>Référence : <a href=\"https://learn.microsoft.com/power-platform/alm/third-party-alm\">Intégration ALM tierce</a>"
+    },
+    {
+      "id": "ab100-3b597924adf3",
+      "examSlug": "ab100",
+      "domain": "Deploy",
+      "topic": "SecurityTesting",
+      "tags": [
+        "AB-100",
+        "Deploy",
+        "SecurityTesting"
+      ],
+      "promptHtml": "Votre organisation met en place des agents IA traitant des données financières sensibles. L’évaluation de la sécurité identifie les vecteurs d’attaque potentiels. Quelle mesure de sécurité proactive renforce la sécurité des agents ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Attendez que des incidents de sécurité surviennent"
+        },
+        {
+          "key": "B",
+          "label": "Exercices de l’équipe rouge simulant des attaques, des tests d’intrusion et un renforcement de la sécurité"
+        },
+        {
+          "key": "C",
+          "label": "Supposons que les agents soient sécurisés"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Exercices de l’équipe rouge simulant des attaques, des tests d’intrusion et un renforcement de la sécurité",
+      "rationaleHtml": "",
+      "extraHtml": "La sécurité proactive par les attaques de l’équipe rouge, les tests d’intrusion et les tests adversariaux identifie les vulnérabilités avant l’exploitation, permettant un durcissement préventif. Attendre les incidents permet les brèches. La sécurité fondée sur des hypothèses ne valide pas les défenses.<br><br>Référence : <a href=\"https://learn.microsoft.com/security/engineering/red-team\">Tests de sécurité de l’équipe rouge</a>"
+    },
+    {
+      "id": "ab100-1f0c95dc5f3e",
+      "examSlug": "ab100",
+      "domain": "Deploy",
+      "topic": "OptimizationStrategy",
+      "tags": [
+        "AB-100",
+        "Deploy",
+        "OptimizationStrategy"
+      ],
+      "promptHtml": "Les agents fonctionnent 24h/24 et 7j/7 avec des schémas de charge variables. L’optimisation des performances doit équilibrer le temps de réponse et l’efficacité des coûts. Quelle approche optimise ce compromis performance-coût ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Capacité maximale en permanence"
+        },
+        {
+          "key": "B",
+          "label": "Mise à l’échelle dynamique avec ajustement de calcul basé sur la charge, mise en cache et optimisation de la sélection de modèles"
+        },
+        {
+          "key": "C",
+          "label": "Capacité minimale quelle que soit la charge"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Mise à l’échelle dynamique avec ajustement de calcul basé sur la charge, mise en cache et optimisation de la sélection de modèles",
+      "rationaleHtml": "",
+      "extraHtml": "L’optimisation dynamique inclut l’auto-mise en valeur des ressources de calcul, la mise en cache des réponses pour les requêtes répétées, et le routage intelligent des modèles utilisant des modèles rentables pour des requêtes simples, optimisant la performance et le coût. La capacité maximale gaspille des coûts. La capacité minimale dégrade les performances.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/architecture/framework/cost/optimize-compute\">Optimisation performance-coût</a>"
+    }
+  ]
+}

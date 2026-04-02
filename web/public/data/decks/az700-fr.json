@@ -1,0 +1,2656 @@
+{
+  "exam": {
+    "slug": "az700",
+    "code": "AZ-700",
+    "title": "AZ-700",
+    "sourceFile": "az700_flashcards_2026-04-02.csv",
+    "updatedOn": "2026-04-02",
+    "questionCount": 85,
+    "domains": [
+      "ApplicationDelivery",
+      "Connectivity",
+      "CoreNetworking",
+      "NetworkSecurity",
+      "PrivateAccess"
+    ],
+    "topics": [
+      "ASG",
+      "AVNM",
+      "AddressSpaceOverlap",
+      "AlwaysOnVPN",
+      "AppGWAutoscaling",
+      "AppGWHTTPSettings",
+      "ApplicationRules",
+      "BFD",
+      "BGP",
+      "BGPASN",
+      "BYOIP",
+      "Bastion",
+      "CRSCustomization",
+      "CoexistenceFeatures",
+      "CustomDNS",
+      "DDoS",
+      "DNS",
+      "Diagnostics",
+      "ExpressRouteBandwidth",
+      "ExpressRouteDirect",
+      "ExpressRouteEncryption",
+      "ExpressRoutePeering",
+      "ExpressRouteRedundancy",
+      "FastPath",
+      "FirewallManager",
+      "FirewallPremium",
+      "FirewallSNAT",
+      "FlowLogStorage",
+      "FlowLogs",
+      "ForcedTunneling",
+      "FrontDoorCaching",
+      "FrontDoorRouting",
+      "FrontDoorTLS",
+      "GatewayLB",
+      "GatewayTransit",
+      "GlobalNetwork",
+      "GlobalReach",
+      "HubSpoke",
+      "HybridDNS",
+      "IPAddressing",
+      "IPFlowVerify",
+      "InboundNAT",
+      "LoadBalancerAffinity",
+      "NATGateway",
+      "NSGRules",
+      "OutboundLB",
+      "P2SRadius",
+      "P2SSessionTimeout",
+      "PathBasedRouting",
+      "PolicyBasedVPN",
+      "PrivateDNS",
+      "PrivateDNSIntegration",
+      "PrivateEndpoint",
+      "PrivateEndpointDNS",
+      "PrivateEndpointDNSRecords",
+      "PrivateLinkNAT",
+      "PrivateLinkService",
+      "ProbeConfiguration",
+      "PublicAccessControl",
+      "PublicIPPrefix",
+      "RouteServer",
+      "RouteSummarization",
+      "SNATExhaustion",
+      "SecureHub",
+      "SecurityRecommendations",
+      "ServiceEndpointPolicy",
+      "ServiceEndpoints",
+      "SubnetDelegation",
+      "SubnetDesign",
+      "SubnetGranularity",
+      "ThreatIntel",
+      "TrafficAnalytics",
+      "TrafficManagerProbes",
+      "Troubleshooting",
+      "UDR",
+      "URLRewrite",
+      "VNetEncryption",
+      "VNetModification",
+      "VPNHA",
+      "VWANNVAIntegration",
+      "VWANScaling",
+      "VirtualWAN",
+      "WAFBotProtection",
+      "WAFPolicy",
+      "WAFTuning"
+    ]
+  },
+  "questions": [
+    {
+      "id": "az700-e42ab919aaf8",
+      "examSlug": "az700",
+      "domain": "CoreNetworking",
+      "topic": "HubSpoke",
+      "tags": [
+        "AZ-700",
+        "CoreNetworking",
+        "HubSpoke"
+      ],
+      "promptHtml": "Votre organisation déploie une topologie à rayons hub avec un VNet hub (10.0.0.0/16) et des VNets à 20 rayons (10.1.0.0/16 à 10.20.0.0/16). Chaque radio doit communiquer avec des services partagés dans le hub et entre eux. Quelle configuration de routage permet cette communication en maillage complet ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Peering VNet spoke-to-spoke sans implication du hub"
+        },
+        {
+          "key": "B",
+          "label": "Peering VNet Hub avec transit passerelle et Permettre le trafic refoulé activé"
+        },
+        {
+          "key": "C",
+          "label": "Aucune configuration de peering nécessaire"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Peering VNet Hub avec transit passerelle et Permettre le trafic refoulé activé",
+      "rationaleHtml": "",
+      "extraHtml": "La topologie en rayons hub avec transit de passerelle permet aux rayons de communiquer via un hub en utilisant des UR ou un transit de passerelle réseau virtuelle. Permettre le trafic redirigé permet le rayon en spoke via hub. Le peering direct en rayons-to-spoke crée une complexité de gestion avec 190 peerings. Aucun peering empêche la communication.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/architecture/networking/architecture/hub-spoke\">Topologie réseau en rayons hub</a>"
+    },
+    {
+      "id": "az700-b02ffd9c4c25",
+      "examSlug": "az700",
+      "domain": "CoreNetworking",
+      "topic": "IPAddressing",
+      "tags": [
+        "AZ-700",
+        "CoreNetworking",
+        "IPAddressing"
+      ],
+      "promptHtml": "Un VNet nécessite un espace d’adresses IP pour 500 VM, 50 instances Azure Firewall, 10 passerelles d’application et Azure Bastion. Les VM ont besoin d’un sous-réseau /24, les pare-feux ont besoin de /26, les passerelles d’application ont besoin de /27, et Bastion de /26. Quel VNet CIDR offre une capacité suffisante avec un minimum de déchets ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "/16 fournissant 65 536 adresses"
+        },
+        {
+          "key": "B",
+          "label": "/20 fournissant 4 096 adresses"
+        },
+        {
+          "key": "C",
+          "label": "/24 fournissant 256 adresses"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "/20 fournissant 4 096 adresses",
+      "rationaleHtml": "",
+      "extraHtml": "/20 fournit 4 096 IP : les VM nécessitent 512 (/23 ou deux /24), les pare-feux 64 (/26), l’application GW 128 (minimum 4x /27), Bastion 64 (/26) = ~768 + Azure réservé ~5 % = moins de 1000, tenant en /20. /16 gaspille 60 000+ adresses. /24 insuffisant pour les exigences.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/virtual-network/virtual-networks-faq#how-small-and-how-large-can-vnets-and-subnets-be\">Taille VNet</a>"
+    },
+    {
+      "id": "az700-05f8abd184cf",
+      "examSlug": "az700",
+      "domain": "CoreNetworking",
+      "topic": "BYOIP",
+      "tags": [
+        "AZ-700",
+        "CoreNetworking",
+        "BYOIP"
+      ],
+      "promptHtml": "Votre organisation possède la plage d’IP publique 203.0.113.0/24 et souhaite l’utiliser dans Azure plutôt que dans les IP publiques fournies par Azure pour la conformité réglementaire. Quelle fonctionnalité Azure permet d’apporter ses propres adresses IP ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Adresses IP publiques standard sans plage personnalisée"
+        },
+        {
+          "key": "B",
+          "label": "Préfixe d’adresse IP publique personnalisé (BYOIP) avec attestation de plage"
+        },
+        {
+          "key": "C",
+          "label": "Adresses IP privées uniquement"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Préfixe d’adresse IP publique personnalisé (BYOIP) avec attestation de plage",
+      "rationaleHtml": "",
+      "extraHtml": "Le préfixe IP personnalisé (BYOIP) permet d’apporter les plages d’IP publiques détenues par le client vers Azure après vérification de propriété. Les IP publiques Azure standard utilisent des plages appartenant à Microsoft. Les IP privées ne fournissent pas la connexion internet publique requise.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/virtual-network/ip-services/custom-ip-address-prefix\">Apportez votre propre propriété intellectuelle</a>"
+    },
+    {
+      "id": "az700-d3e8887a523a",
+      "examSlug": "az700",
+      "domain": "CoreNetworking",
+      "topic": "DNS",
+      "tags": [
+        "AZ-700",
+        "CoreNetworking",
+        "DNS"
+      ],
+      "promptHtml": "Une application multi-région nécessite une résolution DNS où les utilisateurs se connectent à la région saine la plus proche. La solution doit automatiquement supprimer les régions défaillantes du DNS dans les 30 secondes. Quelle configuration DNS Azure parvient à cela ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure DNS zone publique avec des enregistrements A statiques"
+        },
+        {
+          "key": "B",
+          "label": "Azure Traffic Manager avec routage performance et sondes de santé"
+        },
+        {
+          "key": "C",
+          "label": "Azure Private DNS sans surveillance"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Azure Traffic Manager avec routage performance et sondes de santé",
+      "rationaleHtml": "",
+      "extraHtml": "Traffic Manager fournit une distribution globale du trafic basée sur DNS, avec un routage performant dirigeant les utilisateurs vers la région la plus proche, et les sondes de santé supprimant automatiquement les points de terminaison malsains. Le DNS statique manque de surveillance de la santé. Le DNS privé ne supporte pas le routage public sur Internet.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/traffic-manager/traffic-manager-routing-methods\">Itinéraire du gestionnaire de trafic</a>"
+    },
+    {
+      "id": "az700-0a7a3f3d8cd7",
+      "examSlug": "az700",
+      "domain": "CoreNetworking",
+      "topic": "PrivateDNS",
+      "tags": [
+        "AZ-700",
+        "CoreNetworking",
+        "PrivateDNS"
+      ],
+      "promptHtml": "Votre solution nécessite une résolution DNS privée entre Azure VNets et réseaux locaux avec un transfert conditionnel pour des suffixes de domaine spécifiques. Quelle solution DNS Azure offre cette capacité DNS hybride ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure public DNS zones"
+        },
+        {
+          "key": "B",
+          "label": "Azure DNS Private Resolver avec règles de redirection"
+        },
+        {
+          "key": "C",
+          "label": "DNS sur site uniquement"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Azure DNS Private Resolver avec règles de redirection",
+      "rationaleHtml": "",
+      "extraHtml": "Azure DNS Private Resolver permet une résolution DNS centralisée avec un transfert conditionnel entre Azure et sur site, prenant en charge les zones DNS privées et les règles de transfert personnalisées. Les zones publiques ne résolvent pas les noms privés. Le DNS uniquement sur site ne peut pas résoudre les zones DNS privées Azure.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/dns/dns-private-resolver-overview\">Azure DNS Private Resolver</a>"
+    },
+    {
+      "id": "az700-03d0d17172fb",
+      "examSlug": "az700",
+      "domain": "CoreNetworking",
+      "topic": "SubnetDelegation",
+      "tags": [
+        "AZ-700",
+        "CoreNetworking",
+        "SubnetDelegation"
+      ],
+      "promptHtml": "Un VNet nécessite un sous-réseau délégué à Azure SQL Managed Instance. L’instance gérée nécessite un contrôle exclusif sur le sous-réseau. Quel paramètre de configuration de sous-réseau permet cette délégation de service ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Pas de délégation, sous-réseau partagé avec d’autres ressources"
+        },
+        {
+          "key": "B",
+          "label": "Délégation de sous-réseau vers le service Microsoft.Sql/managedInstances"
+        },
+        {
+          "key": "C",
+          "label": "Règles de groupe de sécurité réseau uniquement"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Délégation de sous-réseau vers le service Microsoft.Sql/managedInstances",
+      "rationaleHtml": "",
+      "extraHtml": "La délégation de sous-réseau accorde un contrôle exclusif à des services Azure spécifiques nécessitant une gestion de la politique réseau. SQL Managed Instance nécessite un sous-réseau délégué. Les sous-réseaux partagés ne fournissent pas un contrôle réseau requis par service. Les règles NSG seules ne déléguent pas le contrôle du sous-réseau.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/virtual-network/subnet-delegation-overview\">Délégation de sous-réseau</a>"
+    },
+    {
+      "id": "az700-5d1ec173698a",
+      "examSlug": "az700",
+      "domain": "CoreNetworking",
+      "topic": "SubnetDesign",
+      "tags": [
+        "AZ-700",
+        "CoreNetworking",
+        "SubnetDesign"
+      ],
+      "promptHtml": "Votre organisation déploie Azure Kubernetes Service et Azure App Service nécessitant des sous-réseaux dédiés dans le même VNet. Les deux services nécessitent un accès internet sortant. Quel design de sous-réseau offre une isolation et une connectivité appropriées ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Sous-réseau partagé unique pour tous les services"
+        },
+        {
+          "key": "B",
+          "label": "Sous-réseaux dédiés par service avec passerelle NAT partagée ou pare-feu Azure"
+        },
+        {
+          "key": "C",
+          "label": "Aucune configuration de connexion internet"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Sous-réseaux dédiés par service avec passerelle NAT partagée ou pare-feu Azure",
+      "rationaleHtml": "",
+      "extraHtml": "Les sous-réseaux dédiés par service assurent une isolation de sécurité tandis que la passerelle NAT partagée ou Azure Firewall assure une connectivité internet sortante centralisée et une gestion IP. Un sous-réseau unique réduit l’isolement. Les services sans accès internet ne peuvent pas télécharger les mises à jour ni accéder aux API externes.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/virtual-network/nat-gateway/nat-overview\">Azure NAT Gateway</a>"
+    },
+    {
+      "id": "az700-7d18249197a2",
+      "examSlug": "az700",
+      "domain": "CoreNetworking",
+      "topic": "UDR",
+      "tags": [
+        "AZ-700",
+        "CoreNetworking",
+        "UDR"
+      ],
+      "promptHtml": "Un VNet (10.0.0.0/16) s’entrecoupe avec un autre VNet (10.1.0.0/16). Le trafic de 10.0.0.0/16 vers un sous-réseau spécifique 10.1.10.0/24 doit passer par un pare-feu à 10.0.1.4. Quelle configuration implémente ce routage personnalisé ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Pas de configuration, le routage par défaut gère tout le trafic"
+        },
+        {
+          "key": "B",
+          "label": "Route définie par l’utilisateur (UDR) avec un itinéraire vers 10.1.10.0/24 via l’appareil 10.0.1.4"
+        },
+        {
+          "key": "C",
+          "label": "Le routage par peering VNet s’applique automatiquement"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Route définie par l’utilisateur (UDR) avec un itinéraire vers 10.1.10.0/24 via l’appareil 10.0.1.4",
+      "rationaleHtml": "",
+      "extraHtml": "Les UDR suppriment le routage Azure par défaut, dirigeant un trafic spécifique via des appliances virtuelles réseau comme les pare-feus. Le routage par défaut utilise un peering VNet direct sans inspection. Le peering VNet seul ne fait pas respecter le trafic via les appliances de sécurité.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/virtual-network/virtual-networks-udr-overview\">Routes définies par l’utilisateur</a>"
+    },
+    {
+      "id": "az700-0394447bb742",
+      "examSlug": "az700",
+      "domain": "CoreNetworking",
+      "topic": "ForcedTunneling",
+      "tags": [
+        "AZ-700",
+        "CoreNetworking",
+        "ForcedTunneling"
+      ],
+      "promptHtml": "Votre organisation exige que tout le trafic VNet vers les locaux passe par un pare-feu Azure pour inspection, même les routes par défaut VPN/ExpressRoute. Quelle configuration UDR impose ce flux de trafic ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Pas de configuration de route, routes par défaut vers les sites"
+        },
+        {
+          "key": "B",
+          "label": "UDR avec 0.0.0.0/0 vers le pare-feu et désactive la propagation des routes BGP"
+        },
+        {
+          "key": "C",
+          "label": "Routes de peering VNet uniquement"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "UDR avec 0.0.0.0/0 vers le pare-feu et désactive la propagation des routes BGP",
+      "rationaleHtml": "",
+      "extraHtml": "Le tunneling forcé avec un UDR 0.0.0.0/0 vers le pare-feu et la propagation BGP désactivée empêche les routes par défaut sur site de contourner le pare-feu. Les routes par défaut permettent un VPN direct/ExpressRoute sans inspection. Le peering VNet n’affecte pas le routage sur site.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/vpn-gateway/vpn-gateway-forced-tunneling-rm\">Tunnel forcé</a>"
+    },
+    {
+      "id": "az700-5058407dfcdd",
+      "examSlug": "az700",
+      "domain": "CoreNetworking",
+      "topic": "Troubleshooting",
+      "tags": [
+        "AZ-700",
+        "CoreNetworking",
+        "Troubleshooting"
+      ],
+      "promptHtml": "Une application dans le sous-réseau A (10.0.1.0/24) ne peut pas accéder aux ressources du sous-réseau B (10.0.2.0/24) au sein du même VNet. La vérification du flux IP de Network Watcher montre que le trafic est bloqué. Quelle étape diagnostique identifie la cause profonde ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Supposons un problème de routage sans vérification"
+        },
+        {
+          "key": "B",
+          "label": "Vérifiez les règles de sécurité efficaces NSG à la fois sur le sous-réseau et la carte réseau"
+        },
+        {
+          "key": "C",
+          "label": "Redémarrez toutes les VM pour réparer la connectivité"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Vérifiez les règles de sécurité efficaces NSG à la fois sur le sous-réseau et la carte réseau",
+      "rationaleHtml": "",
+      "extraHtml": "Les règles de sécurité efficaces du NSG montrent le résultat combiné des règles NSG au niveau du sous-réseau et du NIC identifiant les règles de blocage. Les suppositions passent à côté de la cause réelle. Redémarrer les VM ne corrige pas les erreurs de configuration NSG qui empêchent la connectivité.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/network-watcher/network-watcher-security-group-view-overview\">Diagnostic NSG</a>"
+    },
+    {
+      "id": "az700-7ad770748511",
+      "examSlug": "az700",
+      "domain": "CoreNetworking",
+      "topic": "RouteServer",
+      "tags": [
+        "AZ-700",
+        "CoreNetworking",
+        "RouteServer"
+      ],
+      "promptHtml": "Votre topologie en rayons hub exige que les VNets spoke apprennent les routes vers les sites via une passerelle VPN dans le hub. Quelle configuration Azure Route Server permet cette propagation dynamique de routes ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Routes statiques dans chaque VNet à rayons"
+        },
+        {
+          "key": "B",
+          "label": "Azure Route Server dans le hub qui peere BGP routes vers des spokes"
+        },
+        {
+          "key": "C",
+          "label": "Mises à jour manuelles de la table de routage par rayon"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Azure Route Server dans le hub qui peere BGP routes vers des spokes",
+      "rationaleHtml": "",
+      "extraHtml": "Azure Route Server échange des routes avec des appareils virtuels réseau et les propage vers des VNets en pair, permettant ainsi l’apprentissage dynamique des routes sans configuration statique. Les routes statiques nécessitent des mises à jour manuelles à chaque modification. Les mises à jour manuelles ne s’étendent pas et manquent les changements dynamiques.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/route-server/overview\">Azure Route Server</a>"
+    },
+    {
+      "id": "az700-b8814a724cbe",
+      "examSlug": "az700",
+      "domain": "CoreNetworking",
+      "topic": "NATGateway",
+      "tags": [
+        "AZ-700",
+        "CoreNetworking",
+        "NATGateway"
+      ],
+      "promptHtml": "Un VNet nécessite une connectivité internet sortante pour 1 000 VM avec une IP source cohérente pour permettre la listation d’un pare-feu externe. Le standard Azure Load Balancer est déjà déployé. Quel composant supplémentaire fournit le SNAT sortant ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Aucune configuration supplémentaire n’est nécessaire"
+        },
+        {
+          "key": "B",
+          "label": "Azure NAT Gateway fournissant des IP sortantes dédiées et SNAT"
+        },
+        {
+          "key": "C",
+          "label": "IP publique individuelle par VM"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Azure NAT Gateway fournissant des IP sortantes dédiées et SNAT",
+      "rationaleHtml": "",
+      "extraHtml": "NAT Gateway fournit un SNAT sortant évolutif avec des IP publiques dédiées pour permettre la listation du pare-feu sans épuisement des ports. L’équilibreur de charge seul peut évacuer les ports SNAT. Les IP individuelles par VM sont coûteuses et complexes à gérer.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/nat-gateway/nat-overview\">NAT Gateway pour l’entrée</a>"
+    },
+    {
+      "id": "az700-a65efe8359ee",
+      "examSlug": "az700",
+      "domain": "CoreNetworking",
+      "topic": "AVNM",
+      "tags": [
+        "AZ-700",
+        "CoreNetworking",
+        "AVNM"
+      ],
+      "promptHtml": "Votre organisation déploie Azure Virtual Network Manager pour gérer centralisément 50 VNets à travers des abonnements. La politique de sécurité exige de bloquer le trafic entre les VNets dev et prod tout en permettant le dev-à-dev et prod-to-prod. Quelle fonctionnalité AVNM met en œuvre cette segmentation ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Règles NSG manuelles dans chaque VNet"
+        },
+        {
+          "key": "B",
+          "label": "Règles d’administration de sécurité AVNM avec groupes réseau"
+        },
+        {
+          "key": "C",
+          "label": "Aucune gestion centralisée possible"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Règles d’administration de sécurité AVNM avec groupes réseau",
+      "rationaleHtml": "",
+      "extraHtml": "Les groupes réseau Azure Virtual Network Manager et les règles d’administration de sécurité fournissent une politique centralisée de segmentation réseau à travers les VNets. Les règles NSG manuelles par VNet ne s’adaptent pas et manquent de gestion centralisée. AVNM spécifiquement conçu pour la gouvernance multi-VNet.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/virtual-network-manager/concept-security-admins\">Sécurité AVNM</a>"
+    },
+    {
+      "id": "az700-3317fdeec30f",
+      "examSlug": "az700",
+      "domain": "CoreNetworking",
+      "topic": "FlowLogs",
+      "tags": [
+        "AZ-700",
+        "CoreNetworking",
+        "FlowLogs"
+      ],
+      "promptHtml": "Les journaux de flux Network Watcher montrent un volume de trafic élevé provenant d’une IP source spécifique vers plusieurs VM sur le port 3389. Vous devez déterminer s’il s’agit d’un trafic administrateur légitime ou d’une attaque potentielle. Quelle approche d’analyse identifie cela ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Ignorez l’analyse du trafic"
+        },
+        {
+          "key": "B",
+          "label": "Analyse du trafic avec journaux de flux NSG analysant les schémas et anomalies"
+        },
+        {
+          "key": "C",
+          "label": "Révision manuelle des journaux sans outils"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Analyse du trafic avec journaux de flux NSG analysant les schémas et anomalies",
+      "rationaleHtml": "",
+      "extraHtml": "L’analyse du trafic traite les journaux de flux NSG avec la détection d’anomalies basée sur le ML, identifiant des schémas inhabituels et des problèmes de sécurité potentiels. Ignorer le trafic permet des attaques non détectées. La revue manuelle ne fait pas de transition ni ne détecte de motifs subtils.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/network-watcher/traffic-analytics\">Analyse du trafic</a>"
+    },
+    {
+      "id": "az700-e1dfb849c835",
+      "examSlug": "az700",
+      "domain": "CoreNetworking",
+      "topic": "DDoS",
+      "tags": [
+        "AZ-700",
+        "CoreNetworking",
+        "DDoS"
+      ],
+      "promptHtml": "Votre organisation nécessite une protection DDoS pour les adresses IP publiques avec atténuation automatique des attaques et accès à l’équipe de réponse rapide DDoS. Quel niveau de protection DDoS Azure offre ces capacités avancées ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Protection DDoS de base incluse gratuitement"
+        },
+        {
+          "key": "B",
+          "label": "Norme de protection DDoS avec accès à l’équipe DRR"
+        },
+        {
+          "key": "C",
+          "label": "Aucune protection DDoS disponible"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Norme de protection DDoS avec accès à l’équipe DRR",
+      "rationaleHtml": "",
+      "extraHtml": "La norme de protection DDoS fournit un réglage adaptatif, des analyses d’attaque, des rapports d’atténuation et l’engagement des équipes de réponse rapide DDoS. La protection de base ne propose que des protections au niveau de l’infrastructure sans fonctionnalités avancées. Tous les services Azure ont une protection de base mais les scénarios avancés nécessitent le Standard.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/ddos-protection/ddos-protection-overview\">Norme de protection contre les attaques DDoS</a>"
+    },
+    {
+      "id": "az700-2797524ee5bb",
+      "examSlug": "az700",
+      "domain": "CoreNetworking",
+      "topic": "SecurityRecommendations",
+      "tags": [
+        "AZ-700",
+        "CoreNetworking",
+        "SecurityRecommendations"
+      ],
+      "promptHtml": "Microsoft Defender for Cloud identifie le sous-réseau sans NSG comme recommandation de sécurité. Le sous-réseau ne contient que les services Azure PaaS utilisant des points de terminaison de service. Comment cette recommandation devrait-elle être prise en compte ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Ignorez les recommandations pour les services PaaS"
+        },
+        {
+          "key": "B",
+          "label": "Implémenter NSG avec des règles de service tag pour les services PaaS"
+        },
+        {
+          "key": "C",
+          "label": "Supprimer toutes les ressources du sous-réseau"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Implémenter NSG avec des règles de service tag pour les services PaaS",
+      "rationaleHtml": "",
+      "extraHtml": "Les NSG doivent protéger tous les sous-réseaux, y compris les services PaaS, utilisant des étiquettes de service pour simplifier la gestion. Ignorer les recommandations de sécurité augmente le risque. Supprimer des ressources ne répond pas aux exigences de sécurité.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/virtual-network/service-tags-overview\">Plaques de service dans les NSG</a>"
+    },
+    {
+      "id": "az700-540b116d44a4",
+      "examSlug": "az700",
+      "domain": "CoreNetworking",
+      "topic": "Diagnostics",
+      "tags": [
+        "AZ-700",
+        "CoreNetworking",
+        "Diagnostics"
+      ],
+      "promptHtml": "Network Watcher Connection Monitor montre des pics de latence vers la base de données sur site pendant les heures d’ouverture. Quels diagnostics déterminent si le problème vient du réseau Azure, du tunnel VPN ou d’un réseau sur site ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Supposer un problème réseau Azure sans tester"
+        },
+        {
+          "key": "B",
+          "label": "Moniteur de connexion avec analyse de chemins multi-sauts et NPM"
+        },
+        {
+          "key": "C",
+          "label": "Aucun outil de diagnostic disponible"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Moniteur de connexion avec analyse de chemins multi-sauts et NPM",
+      "rationaleHtml": "",
+      "extraHtml": "Connection Monitor avec Network Performance Monitor fournit une analyse de latence saut par saut isolant les problèmes à des segments réseau spécifiques (Azure, VPN, sur site). Les hypothèses ne permettent pas d’identifier la cause profonde. Azure fournit un diagnostic réseau complet.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/network-watcher/connection-monitor-overview\">Connection Monitor</a>"
+    },
+    {
+      "id": "az700-389c54ed5eb0",
+      "examSlug": "az700",
+      "domain": "CoreNetworking",
+      "topic": "GatewayTransit",
+      "tags": [
+        "AZ-700",
+        "CoreNetworking",
+        "GatewayTransit"
+      ],
+      "promptHtml": "Votre hub VNet dispose d’une passerelle VPN et d’un pare-feu Azure. Les VNet spoke doivent accéder sur site via une passerelle hub et faire inspecter le trafic Internet par un pare-feu de hub. Quelle combinaison répond aux deux exigences ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Peering VNet avec transit passerelle et UDR vers le pare-feu pour 0.0.0.0/0"
+        },
+        {
+          "key": "B",
+          "label": "Pas de configuration de peering"
+        },
+        {
+          "key": "C",
+          "label": "Passerelle VPN directe dans chaque rayon"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Peering VNet avec transit passerelle et UDR vers le pare-feu pour 0.0.0.0/0",
+      "rationaleHtml": "",
+      "extraHtml": "Le transit de passerelle permet aux rayons d’utiliser la passerelle VPN hub pour la connectivité sur site tandis que les UR acheminent le trafic internet (0.0.0.0/0) via un pare-feu pour inspection. Aucun peering empêche la connectivité. Les passerelles directes par radio sont coûteuses et complexes.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/vpn-gateway/vpn-gateway-peering-gateway-transit\">Transit passerelle</a>"
+    },
+    {
+      "id": "az700-0014d6b850f7",
+      "examSlug": "az700",
+      "domain": "CoreNetworking",
+      "topic": "PublicIPPrefix",
+      "tags": [
+        "AZ-700",
+        "CoreNetworking",
+        "PublicIPPrefix"
+      ],
+      "promptHtml": "Un préfixe d’adresse IP publique avec 16 adresses (203.0.113.0/28) doit être alloué à plusieurs passerelles d’application dans différentes régions. Quelle stratégie d’allocation de PI assure la distribution régionale ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "IP publique unique partagée entre régions"
+        },
+        {
+          "key": "B",
+          "label": "Créer des IP publiques à partir du préfixe et assigner par région"
+        },
+        {
+          "key": "C",
+          "label": "IP privées uniquement"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Créer des IP publiques à partir du préfixe et assigner par région",
+      "rationaleHtml": "",
+      "extraHtml": "Le préfixe IP public permet de créer plusieurs IP publiques à partir d’une plage contiguë, en les assignant aux ressources par région tout en maintenant la continuité de la plage IP. L’IP unique ne fournit pas de distribution régionale. IP publiques requises pour les passerelles connectées à Internet.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/virtual-network/ip-services/public-ip-address-prefix\">préfixe IP publique</a>"
+    },
+    {
+      "id": "az700-fe43b2666bea",
+      "examSlug": "az700",
+      "domain": "CoreNetworking",
+      "topic": "BGP",
+      "tags": [
+        "AZ-700",
+        "CoreNetworking",
+        "BGP"
+      ],
+      "promptHtml": "Votre organisation connecte 200 agences à Azure via un VPN site-à-site avec BGP. Les publicités de routage depuis les sites dépassent les limites de route de la passerelle VPN. Quelle optimisation de routage répond à cette limitation d’échelle ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Désactivez BGP et utilisez des routes statiques"
+        },
+        {
+          "key": "B",
+          "label": "Implémenter la synthèse des routes en agrégation des routes"
+        },
+        {
+          "key": "C",
+          "label": "Déploie une passerelle séparée par branche"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Implémenter la synthèse des routes en agrégation des routes",
+      "rationaleHtml": "",
+      "extraHtml": "La synthèse des itinéraires réduit le nombre de routes annoncées en agrégeant des itinéraires spécifiques en itinéraires sommaires, restant dans les limites de la passerelle. Désactiver BGP perd des avantages de routage dynamique. Des passerelles séparées par branche sont trop coûteuses et ingérables.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/vpn-gateway/bgp-overview\">BGP avec passerelle VPN</a>"
+    },
+    {
+      "id": "az700-2ec0dcebed8d",
+      "examSlug": "az700",
+      "domain": "CoreNetworking",
+      "topic": "VNetModification",
+      "tags": [
+        "AZ-700",
+        "CoreNetworking",
+        "VNetModification"
+      ],
+      "promptHtml": "Un VNet s’appoie avec plusieurs autres VNets dans une topologie à rayons hub. Vous devez modifier l’espace d’adressage du VNet, mais le déploiement réussit avec un avertissement possible de perturbation de connectivité. Quel est le risque ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Aucun risque, les changements s’appliquent immédiatement sans impact"
+        },
+        {
+          "key": "B",
+          "label": "Espaces d’adressage chevauchants ou problèmes de routage pendant la transition"
+        },
+        {
+          "key": "C",
+          "label": "L’espace d’adressage VNet ne peut pas être modifié"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Espaces d’adressage chevauchants ou problèmes de routage pendant la transition",
+      "rationaleHtml": "",
+      "extraHtml": "Modifier l’espace d’adressage VNet en étant par pairs peut temporairement perturber la connectivité si une nouvelle plage chevauche des VNet pairés ou lors de la propagation de l’itinéraire. Les changements ne sont pas instantanés et nécessitent une validation. Les espaces d’adresses peuvent être modifiés mais nécessitent une planification minutieuse.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/virtual-network/virtual-networks-faq#can-i-add-address-ranges-to-a-vnet-that-has-peerings\">Modifications de l’espace d’adressage VNet</a>"
+    },
+    {
+      "id": "az700-5bf11969cbf5",
+      "examSlug": "az700",
+      "domain": "CoreNetworking",
+      "topic": "VNetEncryption",
+      "tags": [
+        "AZ-700",
+        "CoreNetworking",
+        "VNetEncryption"
+      ],
+      "promptHtml": "L’évaluation de Azure Policy montre que plusieurs VNets ne disposent pas de clés gérées par le client pour le chiffrement VNet. Quelle remédiation comble cette lacune de conformité ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Ignorez l’exigence de chiffrement VNet"
+        },
+        {
+          "key": "B",
+          "label": "Activez le chiffrement VNet avec des clés gérées personnalisées par VNet"
+        },
+        {
+          "key": "C",
+          "label": "Chiffrement non pris en charge pour les VNets"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Activez le chiffrement VNet avec des clés gérées personnalisées par VNet",
+      "rationaleHtml": "",
+      "extraHtml": "Le chiffrement VNet avec les clés gérées par le client offre une protection supplémentaire des données pour le trafic réseau virtuel, répondant aux exigences de conformité. Ignorer les exigences va à l’encontre de la politique. Le chiffrement VNet est pris en charge et recommandé pour les charges de travail sensibles.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/virtual-network/virtual-network-encryption-overview\">Chiffrement VNet</a>"
+    },
+    {
+      "id": "az700-67ffe91ad2a3",
+      "examSlug": "az700",
+      "domain": "CoreNetworking",
+      "topic": "IPFlowVerify",
+      "tags": [
+        "AZ-700",
+        "CoreNetworking",
+        "IPFlowVerify"
+      ],
+      "promptHtml": "Network Watcher montre des paquets perdus entre deux machines virtuelles dans des sous-réseaux différents. Le dépannage du prochain saut montre un routage correct. Quel diagnostic supplémentaire identifie le point de blocage ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Supposons un problème réseau sans diagnostic supplémentaire"
+        },
+        {
+          "key": "B",
+          "label": "IP Flow Verify vérifiant les règles NSG au niveau du sous-réseau et de la carte réseau"
+        },
+        {
+          "key": "C",
+          "label": "Redémarrer les machines virtuelles pour résoudre"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "IP Flow Verify vérifiant les règles NSG au niveau du sous-réseau et de la carte réseau",
+      "rationaleHtml": "",
+      "extraHtml": "IP Flow Verify teste si le paquet est autorisé ou refusé par les règles NSG, en montrant un trafic bloquant des règles spécifiques. Le prochain saut montre le routage mais pas le filtrage de sécurité. Les hypothèses et les redémarrages n’identifient pas les erreurs de configuration NSG.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/network-watcher/network-watcher-ip-flow-verify-overview\">Vérification du flux IP</a>"
+    },
+    {
+      "id": "az700-03c29bb0931d",
+      "examSlug": "az700",
+      "domain": "CoreNetworking",
+      "topic": "Bastion",
+      "tags": [
+        "AZ-700",
+        "CoreNetworking",
+        "Bastion"
+      ],
+      "promptHtml": "Votre organisation implémente Azure Bastion nécessitant un sous-réseau dédié. Le sous-réseau Bastion ne peut pas être associé à NSG. Quel nom de sous-réseau et quelle taille minimale sont requis ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Tout nom de sous-réseau avec /27 ou plus"
+        },
+        {
+          "key": "B",
+          "label": "Sous-réseau nommé AzureBastionSubnet avec /26 ou plus"
+        },
+        {
+          "key": "C",
+          "label": "Aucun sous-réseau dédié n’est requis"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Sous-réseau nommé AzureBastionSubnet avec /26 ou plus",
+      "rationaleHtml": "",
+      "extraHtml": "Azure Bastion nécessite un sous-réseau dédié nommé AzureBastionSubnet avec un CIDR minimum /26. NSG peut être associé mais pas obligatoire. Une mauvaise dénomination ou une mauvaise taille empêche le déploiement de Bastion.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/bastion/configuration-settings\">Exigences du sous-réseau Bastion</a>"
+    },
+    {
+      "id": "az700-27b3fdf963d3",
+      "examSlug": "az700",
+      "domain": "Connectivity",
+      "topic": "VPNHA",
+      "tags": [
+        "AZ-700",
+        "Connectivity",
+        "VPNHA"
+      ],
+      "promptHtml": "Un datacenter sur site nécessite un VPN site-à-site vers Azure avec un SLA de 99,9 % en uptime et un basculement automatique lors de la maintenance de la passerelle. Quelle configuration de passerelle VPN permet de bénéficier de cette disponibilité ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Passerelle VPN unique SKU de base"
+        },
+        {
+          "key": "B",
+          "label": "Passerelle VPN active-active avec deux tunnels"
+        },
+        {
+          "key": "C",
+          "label": "Tunnel unique avec basculement manuel"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Passerelle VPN active-active avec deux tunnels",
+      "rationaleHtml": "",
+      "extraHtml": "La configuration de passerelle VPN active-active offre une redondance avec un basculement automatique pendant la maintenance ou les pannes respectant un SLA de 99,9 %. Le SKU de base ne prend pas en charge active-active. Le tunnel unique manque de redondance.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/vpn-gateway/vpn-gateway-highlyavailable\">VPN hautement disponible</a>"
+    },
+    {
+      "id": "az700-b3b86e443fa7",
+      "examSlug": "az700",
+      "domain": "Connectivity",
+      "topic": "PolicyBasedVPN",
+      "tags": [
+        "AZ-700",
+        "Connectivity",
+        "PolicyBasedVPN"
+      ],
+      "promptHtml": "Votre VPN site-à-site nécessite une sécurité IPsec basée sur des politiques pour être compatible avec le pare-feu sur site hérité. Quel SKU de passerelle VPN prend en charge le VPN basé sur des politiques ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "SKU standards ou hautes performances"
+        },
+        {
+          "key": "B",
+          "label": "SKU de base pour un VPN basé sur des politiques"
+        },
+        {
+          "key": "C",
+          "label": "VpnGw1 ou supérieur"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "SKU de base pour un VPN basé sur des politiques",
+      "rationaleHtml": "",
+      "extraHtml": "Le SKU Basic prend en charge le VPN basé sur des politiques pour la compatibilité des appareils hérités tandis que les SKU standard/HighPerformance et VpnGw prennent en charge le VPN basé sur la route avec plus de fonctionnalités. Basé sur des politiques est nécessaire lorsque les appareils hérités ne supportent pas les routes basées sur des routes.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpn-gateway-settings#gwsku\">SKU de passerelle VPN</a>"
+    },
+    {
+      "id": "az700-34f5fc011257",
+      "examSlug": "az700",
+      "domain": "Connectivity",
+      "topic": "P2SRadius",
+      "tags": [
+        "AZ-700",
+        "Connectivity",
+        "P2SRadius"
+      ],
+      "promptHtml": "Un VPN point à site nécessite une authentification utilisant des identifiants Active Directory sur site via RADIUS sans Microsoft Entra ID. Quel type de tunnel P2S et quelle méthode d’authentification supportent cela ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Tunnel SSTP avec authentification Microsoft Entra"
+        },
+        {
+          "key": "B",
+          "label": "Tunnel OpenVPN ou IKEv2 avec authentification RADIUS"
+        },
+        {
+          "key": "C",
+          "label": "Authentification des certificats Azure uniquement"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Tunnel OpenVPN ou IKEv2 avec authentification RADIUS",
+      "rationaleHtml": "",
+      "extraHtml": "OpenVPN et IKEv2 prennent en charge l’authentification RADIUS s’intégrant à l’AD sur site via NPS. Le SSTP prend en charge RADIUS mais est moins flexible qu’OpenVPN. L’authentification par certificat ne s’intègre pas aux identifiants AD.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/vpn-gateway/point-to-site-about#authentication\">Méthodes d’authentification P2S</a>"
+    },
+    {
+      "id": "az700-e97749fe40de",
+      "examSlug": "az700",
+      "domain": "Connectivity",
+      "topic": "AlwaysOnVPN",
+      "tags": [
+        "AZ-700",
+        "Connectivity",
+        "AlwaysOnVPN"
+      ],
+      "promptHtml": "Les utilisateurs distants nécessitent un VPN toujours activé avec connexion automatique lorsqu’ils sont connectés au réseau d’entreprise. Quelle fonctionnalité VPN Azure P2S et quelle configuration client permettent cela ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Connexion VPN manuelle nécessitant l’initiation de l’utilisateur"
+        },
+        {
+          "key": "B",
+          "label": "Profil VPN toujours activé avec tunnel d’appareil et filtres de trafic"
+        },
+        {
+          "key": "C",
+          "label": "VPN site-à-site pour les utilisateurs"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Profil VPN toujours activé avec tunnel d’appareil et filtres de trafic",
+      "rationaleHtml": "",
+      "extraHtml": "Always On VPN configure la connexion automatique avec le tunnel de l’appareil pour la connectivité pré-connexion et le tunnel utilisateur pour l’accès authentifié, en utilisant des filtres de trafic pour le routage sélectif. La connexion manuelle ne fournit pas de connectivité automatique. Le VPN S2S connecte les sites, pas les utilisateurs individuels.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-always-on-device-tunnel\">VPN toujours activé</a>"
+    },
+    {
+      "id": "az700-028549f535a2",
+      "examSlug": "az700",
+      "domain": "Connectivity",
+      "topic": "ExpressRouteDirect",
+      "tags": [
+        "AZ-700",
+        "Connectivity",
+        "ExpressRouteDirect"
+      ],
+      "promptHtml": "Votre organisation nécessite ExpressRoute avec une bande passante de 10 Gbps et un SLA de 99,95 %. Le niveau maximum standard ExpressRoute est de 10 Gbps mais il faut une capacité de débit plus élevée. Quelle option ExpressRoute offre une capacité de 100 Gbps ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Circuits ExpressRoute standards multiples"
+        },
+        {
+          "key": "B",
+          "label": "ExpressRoute Direct avec port 100 Gbps"
+        },
+        {
+          "key": "C",
+          "label": "ExpressRoute est limité à 10 Gbps"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "ExpressRoute Direct avec port 100 Gbps",
+      "rationaleHtml": "",
+      "extraHtml": "ExpressRoute Direct propose des ports physiques dédiés de 10 ou 100 Gbps directement connectés au réseau Microsoft, contournant ainsi les limitations standard des circuits. Plusieurs circuits standards ne fournissent pas une connexion unique à haute bande passante. ExpressRoute prend en charge jusqu’à 100 Gbps via Direct.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/expressroute/expressroute-erdirect-about\">ExpressRoute Direct</a>"
+    },
+    {
+      "id": "az700-5a8efa73ad63",
+      "examSlug": "az700",
+      "domain": "Connectivity",
+      "topic": "ExpressRoutePeering",
+      "tags": [
+        "AZ-700",
+        "Connectivity",
+        "ExpressRoutePeering"
+      ],
+      "promptHtml": "Un circuit ExpressRoute se connecte à Azure via un peering privé. Vous devez accéder à Microsoft 365 et Dynamics 365 via le même circuit sans interruption d’internet. Quel type de peering permet l’accès aux services cloud Microsoft ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Le peering privé seul peut accéder à tous les services Microsoft"
+        },
+        {
+          "key": "B",
+          "label": "Peering Microsoft pour Microsoft 365 et les services cloud publics"
+        },
+        {
+          "key": "C",
+          "label": "Aucune solution, internet nécessaire"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Peering Microsoft pour Microsoft 365 et les services cloud publics",
+      "rationaleHtml": "",
+      "extraHtml": "Le peering Microsoft permet l’accès aux services cloud publics Microsoft (M365, Dynamics 365, IP publiques Azure) via ExpressRoute. Le peering privé n’accéde qu’à l’espace IP privé Azure. Les deux peerings peuvent coexister sur un seul circuit.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/expressroute/expressroute-circuit-peerings\">Peerings ExpressRoute</a>"
+    },
+    {
+      "id": "az700-04cea2c1dd08",
+      "examSlug": "az700",
+      "domain": "Connectivity",
+      "topic": "GlobalReach",
+      "tags": [
+        "AZ-700",
+        "Connectivity",
+        "GlobalReach"
+      ],
+      "promptHtml": "Votre circuit ExpressRoute nécessite de connecter des VNet à travers différentes régions Azure à des sites on-premises avec une latence optimale. Quelle fonctionnalité ExpressRoute permet la connectivité inter-région sans plusieurs circuits ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Circuit ExpressRoute unique limité à une seule région"
+        },
+        {
+          "key": "B",
+          "label": "ExpressRoute Global Reach reliant des sites isolés"
+        },
+        {
+          "key": "C",
+          "label": "Plusieurs circuits ExpressRoute requis par région"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "ExpressRoute Global Reach reliant des sites isolés",
+      "rationaleHtml": "",
+      "extraHtml": "ExpressRoute Global Reach connecte des circuits dans différentes régions, permettant une connectivité privée entre des sites éloignés via le réseau global Microsoft. Un circuit unique peut connecter plusieurs VNets régionaux. Plusieurs circuits peuvent aussi fonctionner, mais Global Reach optimise les scénarios multi-régions.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/expressroute/expressroute-global-reach\">Portée mondiale d’ExpressRoute</a>"
+    },
+    {
+      "id": "az700-16ba89e0c87d",
+      "examSlug": "az700",
+      "domain": "Connectivity",
+      "topic": "FastPath",
+      "tags": [
+        "AZ-700",
+        "Connectivity",
+        "FastPath"
+      ],
+      "promptHtml": "Une application nécessite une latence ultra-faible pour les machines virtuelles Azure via ExpressRoute. Le routage standard ExpressRoute ajoute une légère latence. Quelle fonctionnalité contourne la passerelle ExpressRoute en réduisant la latence ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Routage standard ExpressRoute via passerelle"
+        },
+        {
+          "key": "B",
+          "label": "ExpressRoute FastPath contournant la passerelle"
+        },
+        {
+          "key": "C",
+          "label": "La latence ne peut pas être réduite davantage"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "ExpressRoute FastPath contournant la passerelle",
+      "rationaleHtml": "",
+      "extraHtml": "FastPath envoie le trafic de données directement aux VM en contournant la passerelle ExpressRoute, réduisant ainsi la latence pour les charges de travail critiques en performance. Le routage standard via passerelle ajoute une légère latence. FastPath optimise le chemin des données tandis que le plan de contrôle utilise toujours la passerelle.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/expressroute/about-fastpath\">ExpressRoute FastPath</a>"
+    },
+    {
+      "id": "az700-899b6b4c29f3",
+      "examSlug": "az700",
+      "domain": "Connectivity",
+      "topic": "ExpressRouteEncryption",
+      "tags": [
+        "AZ-700",
+        "Connectivity",
+        "ExpressRouteEncryption"
+      ],
+      "promptHtml": "Le circuit ExpressRoute nécessite de chiffrer le trafic entre les sites et Azure via un peering privé. Quelle méthode de chiffrement sécurise le trafic de peering privé ExpressRoute ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Le chiffrement natif ExpressRoute non pris en charge"
+        },
+        {
+          "key": "B",
+          "label": "VPN IPsec via peering privé ExpressRoute (MACsec pour la couche liaison)"
+        },
+        {
+          "key": "C",
+          "label": "Le chiffrement n’est pas nécessaire pour le peering privé"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "VPN IPsec via peering privé ExpressRoute (MACsec pour la couche liaison)",
+      "rationaleHtml": "",
+      "extraHtml": "IPsec via ExpressRoute ou MACsec pour ExpressRoute Direct chiffre le trafic via le peering privé. ExpressRoute lui-même ne chiffre pas par défaut. Le peering privé seul ne garantit pas le chiffrement conforme aux exigences de sécurité.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/expressroute/expressroute-about-encryption\">Chiffrement ExpressRoute</a>"
+    },
+    {
+      "id": "az700-626f8c67dee2",
+      "examSlug": "az700",
+      "domain": "Connectivity",
+      "topic": "BFD",
+      "tags": [
+        "AZ-700",
+        "Connectivity",
+        "BFD"
+      ],
+      "promptHtml": "Une connexion ExpressRoute montre une perte intermittente de paquets. La détection de transfert bidirectionnel (BFD) devrait surveiller l’état du lien et détecter les pannes plus rapidement. Comment BFD est-il implémenté sur ExpressRoute ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "BFD non pris en charge sur ExpressRoute"
+        },
+        {
+          "key": "B",
+          "label": "BFD activé automatiquement sur les circuits ExpressRoute"
+        },
+        {
+          "key": "C",
+          "label": "Configuration manuelle du BFD requise"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "BFD activé automatiquement sur les circuits ExpressRoute",
+      "rationaleHtml": "",
+      "extraHtml": "Le BFD est automatiquement activé sur le peering privé ExpressRoute, offrant une détection rapide des pannes (en moins d’une seconde). Aucune configuration manuelle nécessaire. BFD améliore le temps de convergence lors des pannes réseau.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/expressroute/expressroute-bfd\">ExpressRoute BFD</a>"
+    },
+    {
+      "id": "az700-d7f6253b4e62",
+      "examSlug": "az700",
+      "domain": "Connectivity",
+      "topic": "VirtualWAN",
+      "tags": [
+        "AZ-700",
+        "Connectivity",
+        "VirtualWAN"
+      ],
+      "promptHtml": "Votre organisation déploie Azure Virtual WAN reliant 50 agences et 10 VNets à travers les régions. Quel SKU WAN virtuel offre une connectivité de transport en commun mondiale avec un routage inter-hub ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "WAN virtuel de base limité à une seule région"
+        },
+        {
+          "key": "B",
+          "label": "WAN virtuel standard avec architecture de transport en commun"
+        },
+        {
+          "key": "C",
+          "label": "Le WAN virtuel ne supporte pas plusieurs régions"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "WAN virtuel standard avec architecture de transport en commun",
+      "rationaleHtml": "",
+      "extraHtml": "Le WAN virtuel standard permet une architecture de transport en commun mondiale avec une connectivité n’importe quel à travers hubs, VNets et branches. Le WAN virtuel de base ne prend en charge que le VPN site-à-site sans routage inter-centre. WAN virtuel spécifiquement conçu pour des scénarios multi-régions.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/virtual-wan/virtual-wan-about#basicstandard\">SKU WAN virtuels</a>"
+    },
+    {
+      "id": "az700-d9011eda540d",
+      "examSlug": "az700",
+      "domain": "Connectivity",
+      "topic": "VWANScaling",
+      "tags": [
+        "AZ-700",
+        "Connectivity",
+        "VWANScaling"
+      ],
+      "promptHtml": "Un hub WAN virtuel nécessite une passerelle VPN supportant 1 000 connexions site-à-site avec un débit agrégé de 20 Gbps. Quelle configuration d’unités à l’échelle répond à ces exigences ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "1 unité à l’échelle (500 Mbps)"
+        },
+        {
+          "key": "B",
+          "label": "Unités à l’échelle 40 (20 Gbps en total)"
+        },
+        {
+          "key": "C",
+          "label": "Les unités à l’échelle n’affectent pas le débit"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Unités à l’échelle 40 (20 Gbps en total)",
+      "rationaleHtml": "",
+      "extraHtml": "Les unités d’échelle de passerelle VPN VPN virtuelle déterminent le débit agrégé (500 Mbps par unité). 20 Gbps nécessite 40 unités à l’échelle. Le nombre de connexions pris en charge dépend des unités d’échelle. Les unités à échelle impactent directement la capacité et le coût de la passerelle.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/virtual-wan/gateway-settings\">Échelle de passerelle WAN virtuelle</a>"
+    },
+    {
+      "id": "az700-760687b27bdb",
+      "examSlug": "az700",
+      "domain": "Connectivity",
+      "topic": "VWANNVAIntegration",
+      "tags": [
+        "AZ-700",
+        "Connectivity",
+        "VWANNVAIntegration"
+      ],
+      "promptHtml": "Le hub WAN virtuel nécessite l’intégration d’un appareil virtuel réseau tiers pour l’inspection du trafic. Quelle fonctionnalité de Virtual WAN permet l’intégration NVA dans le hub ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "NVA ne peut pas s’intégrer au Virtual WAN"
+        },
+        {
+          "key": "B",
+          "label": "Intégration VAN virtuelle NVA routant le trafic via un appareil tiers"
+        },
+        {
+          "key": "C",
+          "label": "Un VNet séparé avec NVA uniquement"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Intégration VAN virtuelle NVA routant le trafic via un appareil tiers",
+      "rationaleHtml": "",
+      "extraHtml": "Le WAN virtuel prend en compte le déploiement NVA tiers dans le hub, avec l’intégration du routage permettant l’inspection du trafic pour les ressources connectées au hub. Les NVA s’intègrent entièrement au Virtual WAN. Un VNet séparé bat l’architecture centralisée de Virtual WAN.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/virtual-wan/about-nva-hub\">NVA en WAN virtuel</a>"
+    },
+    {
+      "id": "az700-ad6bb3d07458",
+      "examSlug": "az700",
+      "domain": "Connectivity",
+      "topic": "ExpressRouteRedundancy",
+      "tags": [
+        "AZ-700",
+        "Connectivity",
+        "ExpressRouteRedundancy"
+      ],
+      "promptHtml": "Votre organisation connecte 4 circuits ExpressRoute dans différentes régions. Chaque circuit fait 10 Gbps. Un circuit tombe en panne. Quelle configuration de routage garantit que le trafic utilise automatiquement les circuits restants sans intervention manuelle ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Routes statiques nécessitant un basculement manuel"
+        },
+        {
+          "key": "B",
+          "label": "BGP avec prédisposition de chemin AS ou préférence locale pour le basculement automatique"
+        },
+        {
+          "key": "C",
+          "label": "Aucune configuration de redondance possible"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "BGP avec prédisposition de chemin AS ou préférence locale pour le basculement automatique",
+      "rationaleHtml": "",
+      "extraHtml": "BGP redirige dynamiquement le trafic à travers les chemins disponibles en utilisant des attributs de chemin (prépendence de chemin AS, préférence locale, MED) permettant un basculement automatique sans intervention manuelle. Les routes statiques nécessitent des mises à jour manuelles. ExpressRoute BGP permet des déploiements multi-circuits résilients.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/expressroute/designing-for-disaster-recovery-with-expressroute-privatepeering\">Redondance ExpressRoute</a>"
+    },
+    {
+      "id": "az700-42663814368a",
+      "examSlug": "az700",
+      "domain": "Connectivity",
+      "topic": "BGPASN",
+      "tags": [
+        "AZ-700",
+        "Connectivity",
+        "BGPASN"
+      ],
+      "promptHtml": "Une passerelle réseau virtuelle pour VPN site-à-site affiche le statut de pair BGP comme déconnecté. Le diagnostic révèle un décalage BGP ASN entre Azure et les sites sur site. Quelle plage d’ASN est valable pour l’ASN personnalisé de la passerelle VPN Azure ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Seul Azure par défaut ASN 65515"
+        },
+        {
+          "key": "B",
+          "label": "Les ASN BGP valides sont les plages 64512-65534 (privé) ou ASN public enregistré"
+        },
+        {
+          "key": "C",
+          "label": "N’importe quel nombre de 32 bits"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Les ASN BGP valides sont les plages 64512-65534 (privé) ou ASN public enregistré",
+      "rationaleHtml": "",
+      "extraHtml": "Azure VPN Gateway prend en charge des ASN BGP personnalisés utilisant des plages ASN privées (64512-65534) ou des ASN publics enregistrés. ASN réservés (65515, 65517) utilisés par Azure. L’ASN 32 bits nécessite une configuration spécifique.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/vpn-gateway/bgp-overview#faq\">exigences ASN BGP</a>"
+    },
+    {
+      "id": "az700-5dda83ccb343",
+      "examSlug": "az700",
+      "domain": "Connectivity",
+      "topic": "P2SSessionTimeout",
+      "tags": [
+        "AZ-700",
+        "Connectivity",
+        "P2SSessionTimeout"
+      ],
+      "promptHtml": "Les utilisateurs de VPN point-to-site signalent des déconnexions intermittentes toutes les 12 heures nécessitant une reconnexion manuelle. Quel réglage P2S prolonge la durée de la session ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Le délai d’expiration par défaut de la session ne peut pas être ajusté"
+        },
+        {
+          "key": "B",
+          "label": "Configurez un délai d’attente d’arrêt prolongé dans la configuration P2S de la passerelle VPN"
+        },
+        {
+          "key": "C",
+          "label": "Augmenter le SKU de passerelle VPN"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Configurez un délai d’attente d’arrêt prolongé dans la configuration P2S de la passerelle VPN",
+      "rationaleHtml": "",
+      "extraHtml": "La configuration d’expiration d’un VPN P2S en mode inactif prolonge la durée de la session avant la déconnexion automatique. Le délai d’expiration par défaut peut être trop court pour les sessions de longue durée. SKU n’affecte pas les temps d’attente des sessions.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/vpn-gateway/point-to-site-about\">configuration P2S</a>"
+    },
+    {
+      "id": "az700-746df53e3ffa",
+      "examSlug": "az700",
+      "domain": "Connectivity",
+      "topic": "RouteSummarization",
+      "tags": [
+        "AZ-700",
+        "Connectivity",
+        "RouteSummarization"
+      ],
+      "promptHtml": "Un circuit ExpressRoute annonce 200+ routes provenant de sites dépassant les limites de routes Azure VNet. Quelle optimisation des itinéraires empêche les problèmes de limite de route tout en maintenant la connectivité ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Suppression de trajets aléatoires"
+        },
+        {
+          "key": "B",
+          "label": "Résumé des itinéraires en agrégation de routes spécifiques en itinéraires sommaires"
+        },
+        {
+          "key": "C",
+          "label": "Désactiver la publicité de la route BGP"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Résumé des itinéraires en agrégation de routes spécifiques en itinéraires sommaires",
+      "rationaleHtml": "",
+      "extraHtml": "La synthèse des routes réduit le nombre d’itinéraires annoncés en agrégeant des préfixes spécifiques en itinéraires résumés respectant les limites d’Azure sans perdre de connectivité. Un retrait aléatoire crée des problèmes de connectivité. Désactiver BGP casse le routage dynamique.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/expressroute/expressroute-optimize-routing\">Optimisation des routes ExpressRoute</a>"
+    },
+    {
+      "id": "az700-470fc68baca9",
+      "examSlug": "az700",
+      "domain": "ApplicationDelivery",
+      "topic": "LoadBalancerAffinity",
+      "tags": [
+        "AZ-700",
+        "ApplicationDelivery",
+        "LoadBalancerAffinity"
+      ],
+      "promptHtml": "Une application multi-niveaux nécessite de répartir le trafic sur 50 machines virtuelles backend avec une persistance de session sur la même VM pendant 10 minutes. Quelle configuration d’équilibreur de charge réussit cela ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Distribution de hachage par défaut à 5 uplets"
+        },
+        {
+          "key": "B",
+          "label": "Mode de distribution d’affinité IP source avec persistance IP client"
+        },
+        {
+          "key": "C",
+          "label": "Aucune persistance possible en session"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Mode de distribution d’affinité IP source avec persistance IP client",
+      "rationaleHtml": "",
+      "extraHtml": "L’affinité IP source (affinité de session) utilise un hachage à 2 uplets (IP source, IP de destination) ou à 3 uplets (IP source, IP de destination, protocole), assurant que le même client se connecte au même backend en maintenant la fixation de la session. Le 5-uplet par défaut peut router les sessions vers différents backends. L’équilibreur de charge prend en charge plusieurs modes de distribution.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/load-balancer/distribution-mode-concepts\">Modes de distribution de l’équilibreur de charge</a>"
+    },
+    {
+      "id": "az700-58daf2d7b1f2",
+      "examSlug": "az700",
+      "domain": "ApplicationDelivery",
+      "topic": "OutboundLB",
+      "tags": [
+        "AZ-700",
+        "ApplicationDelivery",
+        "OutboundLB"
+      ],
+      "promptHtml": "Votre organisation nécessite un Load Balancer interne pour les applications privées mais aussi un accès internet sortant pour les machines virtuelles backend. Quelle configuration offre à la fois l’équilibrage de charge interne et la connectivité sortante ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Le LB interne seul assure la connectivité sortante"
+        },
+        {
+          "key": "B",
+          "label": "LB interne avec des règles NAT Gateway ou sortantes séparées"
+        },
+        {
+          "key": "C",
+          "label": "LB public requis pour toute connectivité sortante"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "LB interne avec des règles NAT Gateway ou sortantes séparées",
+      "rationaleHtml": "",
+      "extraHtml": "L’Équilibreur de Charge Interne ne fournit pas de connectivité sortante par défaut. La passerelle NAT ou des règles sortantes explicites sur LB standard permettent l’accès à Internet sortant. Internal LB ne dispose pas d’IP publiques pour l’outbound. Plusieurs localités (internes et publiques) ou NAT Gateway gèrent les deux scénarios.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/load-balancer/load-balancer-outbound-connections\">Connexions sortantes</a>"
+    },
+    {
+      "id": "az700-e0a90c27365b",
+      "examSlug": "az700",
+      "domain": "ApplicationDelivery",
+      "topic": "InboundNAT",
+      "tags": [
+        "AZ-700",
+        "ApplicationDelivery",
+        "InboundNAT"
+      ],
+      "promptHtml": "Un Load Balancer nécessite de transférer des IP source spécifiques vers des VM backend spécifiques pour un accès administrateur (port 3389), indépendamment des règles d’équilibrage de charge. Quelle fonctionnalité LB permet ce transfert de port statique ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Les règles d’équilibrage de charge ne prennent pas en charge des IP spécifiques"
+        },
+        {
+          "key": "B",
+          "label": "Règles NAT entrantes qui mappent l’IP/port source vers un backend spécifique"
+        },
+        {
+          "key": "C",
+          "label": "Les règles sortantes configurent le trafic entrant"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Règles NAT entrantes qui mappent l’IP/port source vers un backend spécifique",
+      "rationaleHtml": "",
+      "extraHtml": "Les règles NAT entrantes associent une IP et un port frontend spécifiques à une VM backend spécifique, permettant des connexions directes comme RDP ou SSH indépendamment de la distribution d’équilibrage de charge. Les règles d’équilibrage de charge sont distribuées à tous les membres du pool backend. Les règles sortantes concernent le trafic sortant, pas le trafic entrant.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/load-balancer/inbound-nat-rules\">Règles NAT entrantes</a>"
+    },
+    {
+      "id": "az700-d871889314c4",
+      "examSlug": "az700",
+      "domain": "ApplicationDelivery",
+      "topic": "TrafficManagerProbes",
+      "tags": [
+        "AZ-700",
+        "ApplicationDelivery",
+        "TrafficManagerProbes"
+      ],
+      "promptHtml": "Les profils du Traffic Manager nécessitent de diriger les utilisateurs vers le point de terminaison sain le plus proche par latence. Un point final devient malsain. Quelle fréquence de sonde de Traffic Manager assure la détection de basculement la plus rapide ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Intervalle de sonde de 30 secondes (par défaut)"
+        },
+        {
+          "key": "B",
+          "label": "Surveillance rapide des terminaux avec un intervalle de 10 secondes"
+        },
+        {
+          "key": "C",
+          "label": "Aucune surveillance sanitaire nécessaire"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Surveillance rapide des terminaux avec un intervalle de 10 secondes",
+      "rationaleHtml": "",
+      "extraHtml": "La surveillance rapide des terminaux (10 secondes) permet une détection de santé plus rapide et un basculement plus rapide que l’intervalle standard de 30 secondes, ce qui est essentiel pour les applications sensibles à la latence. Le délai par défaut de 30 secondes peut être trop lent. Traffic Manager nécessite des sondes de santé pour un basculement automatique.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/traffic-manager/traffic-manager-monitoring\">Surveillance du gestionnaire de trafic</a>"
+    },
+    {
+      "id": "az700-73234f54b0ac",
+      "examSlug": "az700",
+      "domain": "ApplicationDelivery",
+      "topic": "GatewayLB",
+      "tags": [
+        "AZ-700",
+        "ApplicationDelivery",
+        "GatewayLB"
+      ],
+      "promptHtml": "Les machines virtuelles derrière Gateway Load Balancer nécessitent une inspection du trafic par un appareil virtuel réseau avant d’atteindre le backend réel. Quel schéma d’équilibrage de charge permet cette inspection transparente du trafic ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Balanceur de charge standard sans intégration NVA"
+        },
+        {
+          "key": "B",
+          "label": "Gateway Load Balancer enchaînant le trafic via NVA"
+        },
+        {
+          "key": "C",
+          "label": "Inspection de la Passerelle d’Application Couche 7"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Gateway Load Balancer enchaînant le trafic via NVA",
+      "rationaleHtml": "",
+      "extraHtml": "Gateway Load Balancer insère de manière transparente des appliances virtuelles réseau (pare-feux, IDS/IPS) dans le chemin du trafic, permettant l’inspection tout en maintenant la connexion aux pools backend. Le LB standard ne propose pas de chaîne NVA. App Gateway fournit un WAF de couche 7 mais pas une insertion arbitraire de NVA.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/load-balancer/gateway-overview\">Gateway Load Balancer</a>"
+    },
+    {
+      "id": "az700-393a2b79fb85",
+      "examSlug": "az700",
+      "domain": "ApplicationDelivery",
+      "topic": "AppGWAutoscaling",
+      "tags": [
+        "AZ-700",
+        "ApplicationDelivery",
+        "AppGWAutoscaling"
+      ],
+      "promptHtml": "Application Gateway nécessite une mise à l’échelle automatique entre 2 et 100 unités de calcul en fonction du trafic. Quel SKU Application Gateway supporte l’autoscaling ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Standard_v1 ou WAF_v1 SKU"
+        },
+        {
+          "key": "B",
+          "label": "Standard_v2 ou WAF_v2 SKU avec configuration d’auto-scaling"
+        },
+        {
+          "key": "C",
+          "label": "Autoscaling non supporté"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Standard_v2 ou WAF_v2 SKU avec configuration d’auto-scaling",
+      "rationaleHtml": "",
+      "extraHtml": "Le SKU Application Gateway v2 (Standard_v2/WAF_v2) prend en charge l’autoscaling et la redondance de zone. Le SKU V1 nécessite une gestion manuelle de la capacité. L’autoscaling ajuste la capacité en fonction de métriques sans intervention manuelle.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/application-gateway/overview-v2\">Application Gateway v2</a>"
+    },
+    {
+      "id": "az700-37066aae4fc1",
+      "examSlug": "az700",
+      "domain": "ApplicationDelivery",
+      "topic": "AppGWHTTPSettings",
+      "tags": [
+        "AZ-700",
+        "ApplicationDelivery",
+        "AppGWHTTPSettings"
+      ],
+      "promptHtml": "Le pool backend de passerelle d’application inclut des machines virtuelles dans plusieurs sous-réseaux avec différents paramètres HTTP. Un backend nécessite un délai d’attente de 60 secondes tandis que d’autres en ont besoin de 20 secondes. Comment les différents réglages HTTP sont-ils appliqués par backend ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Un seul paramètre HTTP s’applique à tous les backends"
+        },
+        {
+          "key": "B",
+          "label": "Créer plusieurs paramètres HTTP et règles de routage selon les besoins du backend"
+        },
+        {
+          "key": "C",
+          "label": "Les paramètres HTTP ne peuvent pas différer selon le backend"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Créer plusieurs paramètres HTTP et règles de routage selon les besoins du backend",
+      "rationaleHtml": "",
+      "extraHtml": "Les règles de routage de passerelle d’application associent les écouteurs à des pools backend en utilisant des paramètres HTTP spécifiques, permettant différentes configurations d’expiration, de cookies et de sonde par backend. Un seul réglage HTTP ne donne pas de flexibilité. Plusieurs paramètres HTTP pris en charge par passerelle.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/application-gateway/configuration-http-settings\">paramètres HTTP</a>"
+    },
+    {
+      "id": "az700-ed5e99cef460",
+      "examSlug": "az700",
+      "domain": "ApplicationDelivery",
+      "topic": "PathBasedRouting",
+      "tags": [
+        "AZ-700",
+        "ApplicationDelivery",
+        "PathBasedRouting"
+      ],
+      "promptHtml": "Application Gateway nécessite un routage basé sur URL où /api/* redirige vers le pool backend API et /images/* vers le pool backend d’images. Quelle fonctionnalité de la passerelle d’application implémente ce routage basé sur les chemins ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Routage de base sans connaissance du chemin"
+        },
+        {
+          "key": "B",
+          "label": "Règles de routage basées sur les chemins avec cartes de chemins d’URL"
+        },
+        {
+          "key": "C",
+          "label": "Routage basé uniquement sur l’hôte"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Règles de routage basées sur les chemins avec cartes de chemins d’URL",
+      "rationaleHtml": "",
+      "extraHtml": "Des règles de routage basées sur des chemins avec des cartes de chemin URL acheminent les requêtes vers différents pools backend en fonction de schémas de chemins URL, permettant un routage d’architecture de microservices. Le routage de base manque de connaissance du chemin. Le routage basé sur l’hôte utilise des noms d’hôte, pas des chemins.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/application-gateway/url-route-overview\">Routage basé sur le chemin de l’URL</a>"
+    },
+    {
+      "id": "az700-d6effe056364",
+      "examSlug": "az700",
+      "domain": "ApplicationDelivery",
+      "topic": "ProbeConfiguration",
+      "tags": [
+        "AZ-700",
+        "ApplicationDelivery",
+        "ProbeConfiguration"
+      ],
+      "promptHtml": "Les sondes de santé de la passerelle d’application montrent que les backends sont malsains malgré la réponse directe des VM aux requêtes HTTP. Sonde de santé personnalisée configurée mais l’URL de la sonde renvoie 404. Quelle est la cause probable ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Dysfonctionnement de la passerelle d’application"
+        },
+        {
+          "key": "B",
+          "label": "Le chemin de l’URL de la sonde santé n’existe pas ou renvoie un code d’état incorrect"
+        },
+        {
+          "key": "C",
+          "label": "Les machines virtuelles sont en fait malsaines"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Le chemin de l’URL de la sonde santé n’existe pas ou renvoie un code d’état incorrect dans la plage attendue",
+      "rationaleHtml": "",
+      "extraHtml": "Les sondes de santé nécessitent une réponse en backend avec une plage de code d’état 200-399 sur un chemin spécifié. 404 indique que le chemin de la sonde n’existe pas. Les requêtes HTTP directes vers différents chemins peuvent réussir. La configuration de la sonde doit correspondre au point de terminaison de santé backend réel.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/application-gateway/application-gateway-probe-overview\">Sondes de santé de la passerelle d’application</a>"
+    },
+    {
+      "id": "az700-55d59047277f",
+      "examSlug": "az700",
+      "domain": "ApplicationDelivery",
+      "topic": "FrontDoorTLS",
+      "tags": [
+        "AZ-700",
+        "ApplicationDelivery",
+        "FrontDoorTLS"
+      ],
+      "promptHtml": "Azure Front Door nécessite un chiffrement TLS de bout en bout du client vers le backend d’origine. Le client se connecte via HTTPS à Front Door. Comment vous assurez-vous que Front Door to Origin utilise aussi HTTPS ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Front Door vers l’origine utilise automatiquement HTTPS"
+        },
+        {
+          "key": "B",
+          "label": "Configurez l’origine avec le protocole HTTPS et appliquez la version TLS minimale"
+        },
+        {
+          "key": "C",
+          "label": "Terminaison TLS uniquement à la porte d’entrée"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Configurez l’origine avec le protocole HTTPS et appliquez la version TLS minimale",
+      "rationaleHtml": "",
+      "extraHtml": "Le TLS de bout en bout nécessite de configurer l’origine avec le protocole HTTPS afin d’assurer une connexion chiffrée de la porte frontale vers le backend. Front Door ne fait pas automatiquement appliquer l’HTTPS d’origine. Le déchiffrement TLS uniquement terminant à Front Door en envoyant le texte en clair à l’origine.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/frontdoor/end-to-end-tls\">TLS de bout en bout de Front Door</a>"
+    },
+    {
+      "id": "az700-92620b0b7e24",
+      "examSlug": "az700",
+      "domain": "ApplicationDelivery",
+      "topic": "FrontDoorCaching",
+      "tags": [
+        "AZ-700",
+        "ApplicationDelivery",
+        "FrontDoorCaching"
+      ],
+      "promptHtml": "Azure Front Door met en cache du contenu statique, mais les réponses API dynamiques sont mises en cache, ce qui rend les données obsolètes. Quelle configuration de Front Door contrôle de façon granulaire le comportement de mise en cache par itinéraire ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "La mise en cache globale ne peut pas être ajustée par route"
+        },
+        {
+          "key": "B",
+          "label": "Règles de routage avec la mise en cache désactivée pour le contenu dynamique et activée pour le statique"
+        },
+        {
+          "key": "C",
+          "label": "Désactivez complètement la mise en cache"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Règles de routage avec la mise en cache désactivée pour le contenu dynamique et activée pour le statique",
+      "rationaleHtml": "",
+      "extraHtml": "Les règles de routage Front Door permettent une mise en cache par route avec un comportement de mise en cache de chaînes de requête, permettant une mise en cache statique du contenu tout en contournant le cache pour les API dynamiques. Les paramètres globaux manquent de granularité. Désactiver complètement la mise en cache supprime les avantages de performance pour le contenu statique.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/frontdoor/front-door-caching\">Mise en cache de la porte d’entrée</a>"
+    },
+    {
+      "id": "az700-151be4f2166b",
+      "examSlug": "az700",
+      "domain": "ApplicationDelivery",
+      "topic": "FrontDoorRouting",
+      "tags": [
+        "AZ-700",
+        "ApplicationDelivery",
+        "FrontDoorRouting"
+      ],
+      "promptHtml": "Le groupe d’origine Front Door nécessite la sélection d’origine la plus rapide basée sur des mesures de latence en temps réel. Quelle méthode de routage atteint ce routage à faible latence ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Routage basé sur la priorité vers l’origine primaire"
+        },
+        {
+          "key": "B",
+          "label": "Routage basé sur la latence avec mesures de sensibilité à la latence"
+        },
+        {
+          "key": "C",
+          "label": "Routage pondéré avec une distribution égale"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Routage basé sur la latence avec mesures de sensibilité à la latence",
+      "rationaleHtml": "",
+      "extraHtml": "Le routage basé sur la latence mesure la latence vers les origines en temps réel en sélectionnant l’origine de réponse la plus rapide. Le routage prioritaire ne prend pas en compte la performance. Le routage pondéré se distribue sans optimisation des performances.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/frontdoor/routing-methods\">Méthodes de routage pour porte d’entrée</a>"
+    },
+    {
+      "id": "az700-2136ae63f587",
+      "examSlug": "az700",
+      "domain": "ApplicationDelivery",
+      "topic": "URLRewrite",
+      "tags": [
+        "AZ-700",
+        "ApplicationDelivery",
+        "URLRewrite"
+      ],
+      "promptHtml": "La réécriture de l’URL Azure Front Door nécessite pour transformer l’URL entrante /old-path/* en /new-path/* avant de transférer vers l’origine. Quelle fonctionnalité Front Door implémente la transformation d’URL ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Règles de routage sans transformation"
+        },
+        {
+          "key": "B",
+          "label": "Moteur de règles avec actions de réécriture d’URL"
+        },
+        {
+          "key": "C",
+          "label": "Transformation d’URL non prise en charge"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Moteur de règles avec actions de réécriture d’URL",
+      "rationaleHtml": "",
+      "extraHtml": "Le Front Door Rules Engine permet de réécrire et rediriger des actions d’URL en transformant les URLs, modifiant les en-têtes et implémentant une logique de routage personnalisée. Le routage de base ne transforme pas les URLs. Front Door offre une gestion complète du trafic.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/frontdoor/front-door-rules-engine\">Moteur des règles de la porte d’entrée</a>"
+    },
+    {
+      "id": "az700-63cb98784682",
+      "examSlug": "az700",
+      "domain": "PrivateAccess",
+      "topic": "PrivateEndpoint",
+      "tags": [
+        "AZ-700",
+        "PrivateAccess",
+        "PrivateEndpoint"
+      ],
+      "promptHtml": "Un service PaaS (Azure SQL Database) nécessite une connectivité privée via un VNet spécifique sans exposition au point de terminaison public. Quelle fonctionnalité réseau Azure offre cette connectivité privée ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Point de terminaison public avec règles de pare-feu"
+        },
+        {
+          "key": "B",
+          "label": "Azure Private Endpoint with private IP in VNet"
+        },
+        {
+          "key": "C",
+          "label": "Points de terminaison de service avec liaison VNet"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Azure Private Endpoint with private IP in VNet",
+      "rationaleHtml": "",
+      "extraHtml": "Private Endpoint attribue une adresse IP privée de VNet au service Azure, éliminant ainsi l’exposition aux points publics et permettant la connectivité privée. Les points publics avec pare-feu exposent toujours le service à Internet. Les points de terminaison de service sécurisent le trafic mais le service reste sur une IP publique.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/private-link/private-endpoint-overview\">Point de terminaison privé</a>"
+    },
+    {
+      "id": "az700-16bdd89a2b6c",
+      "examSlug": "az700",
+      "domain": "PrivateAccess",
+      "topic": "PrivateEndpointDNS",
+      "tags": [
+        "AZ-700",
+        "PrivateAccess",
+        "PrivateEndpointDNS"
+      ],
+      "promptHtml": "Plusieurs charges de travail dans différents VNets nécessitent des terminaux privés vers Azure Storage. Chaque VNet dispose d’une zone DNS privée pour la résolution du point de terminaison privé de stockage. Comment le DNS devrait-il être conçu pour une résolution cohérente ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Zones DNS séparées par VNet, ce qui crée une complexité de gestion"
+        },
+        {
+          "key": "B",
+          "label": "Zone DNS privée centralisée liée à tous les VNets avec point de terminaison privé"
+        },
+        {
+          "key": "C",
+          "label": "Aucune configuration DNS nécessaire"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Zone DNS privée centralisée liée à tous les VNets avec point de terminaison privé",
+      "rationaleHtml": "",
+      "extraHtml": "La zone DNS privée du hub liée à des VNets spoke offre une gestion DNS centralisée pour la résolution des points de terminaison privés entre les VNets. Des zones séparées par VNet multiplient la surcharge de gestion. Les terminaux privés nécessitent du DNS pour résoudre les IP privées.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/private-link/private-endpoint-dns\">DNS privé</a>"
+    },
+    {
+      "id": "az700-400fd0a89515",
+      "examSlug": "az700",
+      "domain": "PrivateAccess",
+      "topic": "PrivateLinkService",
+      "tags": [
+        "AZ-700",
+        "PrivateAccess",
+        "PrivateLinkService"
+      ],
+      "promptHtml": "Votre organisation expose une API auto-hébergée comme un service de liaison privée, permettant aux clients de consommer via un point de terminaison privé. Quelle configuration d’équilibreur de charge standard est requise ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Aucun équilibreur de charge n’est nécessaire"
+        },
+        {
+          "key": "B",
+          "label": "Backend du service de front Balancer Standard Interne"
+        },
+        {
+          "key": "C",
+          "label": "Balanceur de charge public exposé à Internet"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Backend du service de front Balancer Standard Interne",
+      "rationaleHtml": "",
+      "extraHtml": "Private Link Service nécessite qu’un Internal Standard Load Balancer fasse la charge de travail de front pour être exposée via Private Link. Aucun équilibreur de charge n’empêche la création de liens privés. L’équilibreur de charge public annule l’objectif d’accès privé.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/private-link/private-link-service-overview\">Service de liaison privée</a>"
+    },
+    {
+      "id": "az700-ce6e16c13477",
+      "examSlug": "az700",
+      "domain": "PrivateAccess",
+      "topic": "HybridDNS",
+      "tags": [
+        "AZ-700",
+        "PrivateAccess",
+        "HybridDNS"
+      ],
+      "promptHtml": "Les clients sur site nécessitent une connectivité privée au service Azure via Private Link. ExpressRoute connecte les sites à Azure. Quelle configuration supplémentaire permet aux locaux de résoudre les IP privées des points de terminaison privés ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Le site résout automatiquement les points de terminaison privés"
+        },
+        {
+          "key": "B",
+          "label": "Redirection DNS depuis les locaux vers Azure DNS Private Resolver ou vers les serveurs DNS"
+        },
+        {
+          "key": "C",
+          "label": "Aucune configuration DNS nécessaire"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Redirection DNS depuis les locaux vers Azure DNS Private Resolver ou vers les serveurs DNS",
+      "rationaleHtml": "",
+      "extraHtml": "Le DNS sur site doit transmettre les FQDN des services Azure vers les serveurs DNS Azure ou le DNS Private Solver pour résoudre les IP des points de terminaison privés. La résolution automatique ne fonctionne pas sans retransmission. La résolution DNS privée nécessite une configuration DNS appropriée.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/private-link/private-endpoint-dns#on-premises-workloads\">DNS privé sur site</a>"
+    },
+    {
+      "id": "az700-62589f7146ca",
+      "examSlug": "az700",
+      "domain": "PrivateAccess",
+      "topic": "ServiceEndpoints",
+      "tags": [
+        "AZ-700",
+        "PrivateAccess",
+        "ServiceEndpoints"
+      ],
+      "promptHtml": "VNet nécessite de restreindre l’accès à Azure Storage uniquement à un sous-réseau spécifique tout en bloquant d’autres sous-réseaux. Quelle fonctionnalité offre un contrôle d’accès aux services au niveau du sous-réseau ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Groupes de sécurité réseau (NSG) bloquant les IP de stockage"
+        },
+        {
+          "key": "B",
+          "label": "Service Endpoint avec règles VNet sur le compte de stockage"
+        },
+        {
+          "key": "C",
+          "label": "Aucun contrôle au niveau du sous-réseau n’est disponible"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Service Endpoint avec règles VNet sur le compte de stockage",
+      "rationaleHtml": "",
+      "extraHtml": "Les points de terminaison de service permettent aux services Azure PaaS de restreindre l’accès à des sous-réseaux VNet spécifiques à l’aide des règles VNet. Les NSG ne peuvent pas filtrer efficacement les services Azure PaaS en utilisant des balises de service. Les services prennent en charge le contrôle d’accès au niveau du sous-réseau via les terminaux de service.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview\">Services Endpoints</a>"
+    },
+    {
+      "id": "az700-b3a691e153ef",
+      "examSlug": "az700",
+      "domain": "PrivateAccess",
+      "topic": "ServiceEndpointPolicy",
+      "tags": [
+        "AZ-700",
+        "PrivateAccess",
+        "ServiceEndpointPolicy"
+      ],
+      "promptHtml": "Le compte de stockage Azure nécessite une politique de terminaison de service imposant des connexions uniquement aux comptes de stockage approuvés, bloquant ainsi les autres comptes de stockage. Quelle fonctionnalité offre ce filtrage au niveau de service ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Points de terminaison de service sans contrôle de politique"
+        },
+        {
+          "key": "B",
+          "label": "Politique de terminaison de service avec liste de ressources autorisées"
+        },
+        {
+          "key": "C",
+          "label": "Politique de service non prise en charge"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Politique de terminaison de service avec liste de ressources autorisées",
+      "rationaleHtml": "",
+      "extraHtml": "Les politiques de terminaison de service offrent un contrôle supplémentaire sur les points de terminaison, permettant ou refusant des ressources Azure spécifiques au service. Les points de terminaison de service de base permettent un accès au niveau VNet sans filtrage au niveau des ressources. Les politiques ajoutent un contrôle granulaire.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/virtual-network/virtual-network-service-endpoint-policies-overview\">Politiques de terminaux de service</a>"
+    },
+    {
+      "id": "az700-60e3eea1ff69",
+      "examSlug": "az700",
+      "domain": "PrivateAccess",
+      "topic": "CoexistenceFeatures",
+      "tags": [
+        "AZ-700",
+        "PrivateAccess",
+        "CoexistenceFeatures"
+      ],
+      "promptHtml": "Votre architecture nécessite un point de terminaison privé pour Azure SQL et un point de terminaison de service pour Azure Storage dans le même sous-réseau. Les deux fonctionnalités peuvent-elles coexister dans un seul sous-réseau ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Une seule fonctionnalité par sous-réseau"
+        },
+        {
+          "key": "B",
+          "label": "Les points de terminaison privés et de service coexistent dans le même sous-réseau"
+        },
+        {
+          "key": "C",
+          "label": "Des VNets séparés sont nécessaires par fonctionnalité"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Les points de terminaison privés et de service coexistent dans le même sous-réseau",
+      "rationaleHtml": "",
+      "extraHtml": "Les points de terminaison privés et les terminaux de service sont complémentaires et coexistent dans le même sous-réseau. Différentes fonctionnalités pour différents services ou différents modes d’accès. Plusieurs options de connectivité privée sont disponibles simultanément.<br><br>Référence : Limitations des <a href=\"https://learn.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview#limitations\">terminaux de service</a>"
+    },
+    {
+      "id": "az700-ee33dd44ffd5",
+      "examSlug": "az700",
+      "domain": "PrivateAccess",
+      "topic": "PrivateDNSIntegration",
+      "tags": [
+        "AZ-700",
+        "PrivateAccess",
+        "PrivateDNSIntegration"
+      ],
+      "promptHtml": "Un point de terminaison privé se connecte à Azure SQL Database. Les utilisateurs sur site via un rapport VPN ne peuvent pas résoudre SQL FQDN vers une IP privée. Quelle configuration DNS résout cela ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Les utilisateurs sur site résolvent automatiquement les IP privées"
+        },
+        {
+          "key": "B",
+          "label": "Azure Private DNS zone liée à VNet avec un transfert conditionnel depuis les locaux"
+        },
+        {
+          "key": "C",
+          "label": "Aucune solution pour l’accès sur site"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Azure Private DNS zone liée à VNet avec un transfert conditionnel depuis les locaux",
+      "rationaleHtml": "",
+      "extraHtml": "La zone DNS privée liée à VNet contient un enregistrement pour un point de terminaison privé. On-premises DNS transmet les requêtes pour les FQDN des services Azure vers les serveurs DNS Private Resolver ou VNet DNS. La résolution automatique ne fonctionne pas sans configuration de retransmission.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/private-link/private-endpoint-dns-integration\">Intégration DNS privé</a>"
+    },
+    {
+      "id": "az700-17f24e6cfab0",
+      "examSlug": "az700",
+      "domain": "PrivateAccess",
+      "topic": "PublicAccessControl",
+      "tags": [
+        "AZ-700",
+        "PrivateAccess",
+        "PublicAccessControl"
+      ],
+      "promptHtml": "Le compte Azure Storage avec terminaison de service reçoit des tentatives de connexion depuis Internet malgré les règles VNet configurées. Quelle configuration supplémentaire empêche l’accès à Internet public ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Les terminaux de service seuls bloquent l’accès public"
+        },
+        {
+          "key": "B",
+          "label": "Désactivez l’accès au réseau public ou configurez les règles du pare-feu interdisant l’accès à Internet"
+        },
+        {
+          "key": "C",
+          "label": "L’accès public ne peut être empêché"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Désactivez l’accès au réseau public ou configurez les règles du pare-feu interdisant l’accès à Internet",
+      "rationaleHtml": "",
+      "extraHtml": "Les terminaux de service sécurisent le trafic de VNet mais ne désactivent pas le point public. Désactiver l’accès au réseau public ou les règles de pare-feu bloquant Internet empêchent l’accès au public. Les points de terminaison de service constituent une couche de défense nécessitant une configuration supplémentaire pour une isolation complète.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/storage/common/storage-network-security\">Sécurité des réseaux de stockage</a>"
+    },
+    {
+      "id": "az700-480bd052dca3",
+      "examSlug": "az700",
+      "domain": "PrivateAccess",
+      "topic": "PrivateLinkNAT",
+      "tags": [
+        "AZ-700",
+        "PrivateAccess",
+        "PrivateLinkNAT"
+      ],
+      "promptHtml": "Private Link Service expose l’application interne aux clients via un point de terminaison privé. Quelle considération de l’adressage IP influence la conception du Private Link Service ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Le service de liaison privée utilise des IP publiques"
+        },
+        {
+          "key": "B",
+          "label": "Configuration des adresses IP NAT pour le service de liaison privée"
+        },
+        {
+          "key": "C",
+          "label": "Aucune considération d’adressage IP"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Configuration des adresses IP NAT pour le service de liaison privée",
+      "rationaleHtml": "",
+      "extraHtml": "Le service de liaison privée nécessite des adresses IP NAT depuis le sous-réseau pour le NAT source, fournissant des adresses IP stables pour les connexions de terminaison privé grand public. Private Link utilise des IP privées. La configuration du NAT est cruciale pour une bonne exposition au service.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/private-link/private-link-service-overview#nat-ip\">IP NAT de liaison privée</a>"
+    },
+    {
+      "id": "az700-8f562c62b805",
+      "examSlug": "az700",
+      "domain": "PrivateAccess",
+      "topic": "SubnetGranularity",
+      "tags": [
+        "AZ-700",
+        "PrivateAccess",
+        "SubnetGranularity"
+      ],
+      "promptHtml": "Le VNet avec plusieurs sous-réseaux nécessite un accès granulaire aux services où le sous-réseau A peut accéder à Azure Storage tandis que le sous-réseau B ne le peut pas. Comment ce contrôle au niveau du sous-réseau est-il implémenté ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Un point de terminaison de service unique s’applique à l’ensemble du VNet"
+        },
+        {
+          "key": "B",
+          "label": "Activez le point de terminaison du service sur des sous-réseaux spécifiques et configurez les règles VNet par sous-réseau"
+        },
+        {
+          "key": "C",
+          "label": "Aucun contrôle granulaire du sous-réseau n’est disponible"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Activez le point de terminaison du service sur des sous-réseaux spécifiques et configurez les règles VNet par sous-réseau",
+      "rationaleHtml": "",
+      "extraHtml": "Les terminaux de service sont activés par sous-réseau avec des règles VNet sur les services Azure spécifiant les sous-réseaux autorisés, fournissant un contrôle granulaire. Les terminaux de service ne s’appliquent pas automatiquement à l’ensemble du VNet. L’activation au niveau du sous-réseau combinée aux règles VNet de service permet un contrôle d’accès granulaire.<br><br>Référence : Configuration du <a href=\"https://learn.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview#configuration\">point de terminaison de service</a>"
+    },
+    {
+      "id": "az700-2c8e8826cafa",
+      "examSlug": "az700",
+      "domain": "PrivateAccess",
+      "topic": "PrivateEndpointDNSRecords",
+      "tags": [
+        "AZ-700",
+        "PrivateAccess",
+        "PrivateEndpointDNSRecords"
+      ],
+      "promptHtml": "Private Endpoint pour Azure SQL Database nécessite une résolution DNS. Plusieurs points de terminaison privés existent pour différents serveurs SQL. Comment le DNS résout-il les IP privées correctes par serveur SQL ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Tous les points de terminaison privés partagent la même IP privée"
+        },
+        {
+          "key": "B",
+          "label": "Les enregistrements de la zone DNS privée A associent FQDN à une IP spécifique de point de terminaison privé"
+        },
+        {
+          "key": "C",
+          "label": "Le DNS ne peut pas distinguer les points d’accès privés"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Les enregistrements de la zone DNS privée A associent FQDN à une IP spécifique de point de terminaison privé",
+      "rationaleHtml": "",
+      "extraHtml": "Chaque point de terminaison privé reçoit une IP privée unique avec le service de mappage d’enregistrements DNS A FQDN vers cette IP privée spécifique. Plusieurs points de terminaison privés créent plusieurs enregistrements DNS. La résolution DNS est spécifique à chaque instance de service.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/private-link/private-endpoint-dns\">Enregistrements DNS de point de terminaison privé</a>"
+    },
+    {
+      "id": "az700-f36ea37f9ec3",
+      "examSlug": "az700",
+      "domain": "NetworkSecurity",
+      "topic": "NSGRules",
+      "tags": [
+        "AZ-700",
+        "NetworkSecurity",
+        "NSGRules"
+      ],
+      "promptHtml": "Un sous-réseau (10.0.1.0/24) nécessite que Network Security Group autorise HTTP (80) depuis internet et RDP (3389) depuis l’IP d’entreprise 203.0.113.0/24. Tous les autres embouteillages refusés. Quelles règles NSG implémentent cela ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Aucune règle NSG n’est nécessaire, par défaut permet tout"
+        },
+        {
+          "key": "B",
+          "label": "Autoriser les règles pour HTTP depuis l’Internet Service Tag et RDP à partir de 203.0.113.0/24, refuser tout à priorité inférieure"
+        },
+        {
+          "key": "C",
+          "label": "Refuser uniquement les règles"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Autoriser les règles pour HTTP depuis l’Internet Service Tag et RDP à partir de 203.0.113.0/24, refuser tout à priorité inférieure",
+      "rationaleHtml": "",
+      "extraHtml": "Les règles NSG traitées par priorité avec des règles de permis spécifiques (HTTP depuis Internet, RDP depuis l’IP source) prévalant avant le refus par défaut. Les règles NSG par défaut interdisent l’accès à Internet. Règles explicites requises pour le trafic autorisé.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/virtual-network/network-security-groups-overview\">Traitement des règles NSG</a>"
+    },
+    {
+      "id": "az700-f5000194203f",
+      "examSlug": "az700",
+      "domain": "NetworkSecurity",
+      "topic": "ASG",
+      "tags": [
+        "AZ-700",
+        "NetworkSecurity",
+        "ASG"
+      ],
+      "promptHtml": "Les machines virtuelles de niveau application (10.0.2.0/24) nécessitent une connectivité au niveau de base de données (10.0.3.0/24) sur le port 1433. Les deux paliers sont dans le même VNet. Comment la sécurité devrait-elle être mise en œuvre tout en minimisant les règles NSG ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Aucune règle NSG nécessaire pour le trafic sur le même VNet"
+        },
+        {
+          "key": "B",
+          "label": "Groupes de sécurité d’applications (ASG) pour les niveaux d’application et de base de données avec des règles NSG entre les ASG"
+        },
+        {
+          "key": "C",
+          "label": "Règles NSG individuelles basées sur IP par VM"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Groupes de sécurité d’applications (ASG) pour les niveaux d’application et de base de données avec des règles NSG entre les ASG",
+      "rationaleHtml": "",
+      "extraHtml": "Les ASG regroupent les VM en activant logiquement les règles NSG basées sur le rôle de l’application plutôt que sur les adresses IP, simplifiant la gestion des règles, notamment avec les VM dynamiques. Le trafic Same-VNet n’est pas automatiquement sécurisé. Les règles basées sur IP par VM ne s’adaptent pas.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/virtual-network/application-security-groups\">Groupes de sécurité des applications</a>"
+    },
+    {
+      "id": "az700-d0338dde5449",
+      "examSlug": "az700",
+      "domain": "NetworkSecurity",
+      "topic": "TrafficAnalytics",
+      "tags": [
+        "AZ-700",
+        "NetworkSecurity",
+        "TrafficAnalytics"
+      ],
+      "promptHtml": "Les journaux de flux NSG montrent un volume de trafic élevé mais il faut comprendre les schémas de trafic, les principaux intervenants et les flux anormaux. Quelle fonctionnalité Azure analyse les journaux de flux NSG pour obtenir des insights ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Analyse manuelle des diamètres de débit"
+        },
+        {
+          "key": "B",
+          "label": "Analyse du trafic avec reconnaissance de motifs alimentée par l’IA"
+        },
+        {
+          "key": "C",
+          "label": "Aucune analyse de journal de débit n’est disponible"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Analyse du trafic avec reconnaissance de motifs alimentée par l’IA",
+      "rationaleHtml": "",
+      "extraHtml": "L’analyse du trafic traite les journaux de flux NSG en fournissant des visualisations, une détection d’anomalies, une analyse des meilleurs intervenants et des analyses de sécurité. L’analyse manuelle ne s’étend pas et ne détecte pas de motifs. Azure propose une analyse intégrée des journaux de flux.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/network-watcher/traffic-analytics\">Analyse du trafic</a>"
+    },
+    {
+      "id": "az700-9188a9cd21c0",
+      "examSlug": "az700",
+      "domain": "NetworkSecurity",
+      "topic": "FirewallManager",
+      "tags": [
+        "AZ-700",
+        "NetworkSecurity",
+        "FirewallManager"
+      ],
+      "promptHtml": "Azure Firewall nécessite une gestion centralisée des politiques de pare-feu à travers 20 pare-feux Azure dans différentes régions et abonnements. Quelle fonctionnalité permet une gestion centralisée des politiques ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Configuration manuelle par pare-feu"
+        },
+        {
+          "key": "B",
+          "label": "Azure Firewall Manager avec des politiques hiérarchiques"
+        },
+        {
+          "key": "C",
+          "label": "Aucune gestion centralisée n’est disponible"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Azure Firewall Manager avec des politiques hiérarchiques",
+      "rationaleHtml": "",
+      "extraHtml": "Azure Firewall Manager offre une gestion centralisée avec des politiques hiérarchiques héritant des politiques de base tout en permettant une personnalisation régionale spécifique. La configuration manuelle par pare-feu ne s’adapte pas. Gestionnaire de pare-feu spécifiquement conçu pour la gouvernance multi-pare-feu.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/firewall-manager/overview\">Azure Firewall Manager</a>"
+    },
+    {
+      "id": "az700-58117b477a84",
+      "examSlug": "az700",
+      "domain": "NetworkSecurity",
+      "topic": "ApplicationRules",
+      "tags": [
+        "AZ-700",
+        "NetworkSecurity",
+        "ApplicationRules"
+      ],
+      "promptHtml": "Azure Firewall nécessite un filtrage URL basé sur FQDN pour le trafic HTTPS sortant au lieu d’un filtrage basé sur IP. Quel type de règle Azure Firewall permet le filtrage basé sur FQDN ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Règles réseau avec uniquement des adresses IP"
+        },
+        {
+          "key": "B",
+          "label": "Règles d’application avec filtrage FQDN et inspection TLS"
+        },
+        {
+          "key": "C",
+          "label": "Filtrage FQDN non pris en charge"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Règles d’application avec filtrage FQDN et inspection TLS",
+      "rationaleHtml": "",
+      "extraHtml": "Les règles d’application prennent en charge le filtrage FQDN avec une inspection TLS pour le trafic HTTPS, en gérant les IP dynamiques derrière les noms de domaine. Les règles réseau prennent en charge IP/port mais pas les FQDN. Le filtrage FQDN est crucial pour les services cloud en cas de changement d’IP.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/firewall/features#application-fqdn-filtering-rules\">filtrage FQDN Azure Firewall</a>"
+    },
+    {
+      "id": "az700-1c630e800431",
+      "examSlug": "az700",
+      "domain": "NetworkSecurity",
+      "topic": "FirewallPremium",
+      "tags": [
+        "AZ-700",
+        "NetworkSecurity",
+        "FirewallPremium"
+      ],
+      "promptHtml": "Azure Firewall protège les VNets en spoke dans la topologie à rayons hub. Quel SKU Azure Firewall offre des capacités de détection et de prévention des intrusions (IDPS) ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Firewall Basic SKU"
+        },
+        {
+          "key": "B",
+          "label": "Azure Firewall Premium avec IDPS"
+        },
+        {
+          "key": "C",
+          "label": "Pare-feu standard avec IDPS"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Azure Firewall Premium avec IDPS",
+      "rationaleHtml": "",
+      "extraHtml": "Azure Firewall Premium offre une protection avancée contre les menaces incluant IDPS, l’inspection TLS, le filtrage d’URL et les catégories web. Le pare-feu standard manque de fonctionnalités de sécurité avancées. SKU premium nécessaire pour une protection complète contre les risques.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/firewall/premium-features\">Azure Firewall Premium</a>"
+    },
+    {
+      "id": "az700-3841a4c39dbd",
+      "examSlug": "az700",
+      "domain": "NetworkSecurity",
+      "topic": "SecureHub",
+      "tags": [
+        "AZ-700",
+        "NetworkSecurity",
+        "SecureHub"
+      ],
+      "promptHtml": "Le hub WAN virtuel nécessite Azure Firewall pour la fonctionnalité sécurisée du hub. Quel modèle de déploiement intègre Azure Firewall avec Virtual WAN hub ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "VNet séparé avec pare-feu sans intégration de hub"
+        },
+        {
+          "key": "B",
+          "label": "Déploie Azure Firewall dans un hub WAN virtuel en créant un hub sécurisé"
+        },
+        {
+          "key": "C",
+          "label": "Le pare-feu ne peut pas s’intégrer au WAN virtuel"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Déploie Azure Firewall dans un hub WAN virtuel en créant un hub sécurisé",
+      "rationaleHtml": "",
+      "extraHtml": "Azure Firewall se déploie directement dans un hub WAN virtuel, créant un hub sécurisé avec une politique de sécurité centralisée pour toutes les ressources connectées au hub. Un VNet séparé bat l’architecture centralisée de Virtual WAN. Le pare-feu s’intègre au WAN virtuel fournissant des services de sécurité.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/firewall-manager/secured-virtual-hub\">Hub virtuel sécurisé</a>"
+    },
+    {
+      "id": "az700-68eab187449e",
+      "examSlug": "az700",
+      "domain": "NetworkSecurity",
+      "topic": "WAFTuning",
+      "tags": [
+        "AZ-700",
+        "NetworkSecurity",
+        "WAFTuning"
+      ],
+      "promptHtml": "Le pare-feu Web Application sur la passerelle d’applications montre des faux positifs bloquant le trafic légitime. Quelle configuration WAF permet d’ajuster les règles sans désactiver complètement le WAF ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Désactivez le WAF pour tout le trafic"
+        },
+        {
+          "key": "B",
+          "label": "Listes d’exclusion WAF et règles personnalisées pour affiner la détection"
+        },
+        {
+          "key": "C",
+          "label": "Les règles WAF ne peuvent pas être ajustées"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Listes d’exclusion WAF et règles personnalisées pour affiner la détection",
+      "rationaleHtml": "",
+      "extraHtml": "WAF prend en charge les listes d’exclusion supprimant des attributs spécifiques de requête de l’inspection et des règles personnalisées qui prennent le dessus sur le comportement du jeu de règles gérées, réduisant ainsi les faux positifs tout en maintenant la protection. Désactiver le WAF enlève la sécurité. WAF offre des capacités de réglage étendues.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/web-application-firewall/ag/application-gateway-waf-configuration\">Réglage WAF</a>"
+    },
+    {
+      "id": "az700-dd0010c6e89a",
+      "examSlug": "az700",
+      "domain": "NetworkSecurity",
+      "topic": "WAFBotProtection",
+      "tags": [
+        "AZ-700",
+        "NetworkSecurity",
+        "WAFBotProtection"
+      ],
+      "promptHtml": "Le pare-feu Azure Front Door Web Application nécessite une protection contre les bots et une limitation de débit par IP client. Quelle capacité WAF offre ces protections avancées ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Règles WAF standard gérées uniquement"
+        },
+        {
+          "key": "B",
+          "label": "Règles personnalisées WAF avec limitation de taux et ensemble de règles gestionnaire de bots"
+        },
+        {
+          "key": "C",
+          "label": "La protection contre les bots non disponible"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Règles personnalisées WAF avec limitation de taux et ensemble de règles gestionnaire de bots",
+      "rationaleHtml": "",
+      "extraHtml": "Les règles personnalisées WAF permettent la limitation de taux par IP client et les ensembles de règles du gestionnaire de bots assurent la détection et l’atténuation des bots. Les règles gérées standard offrent une protection OWASP. Le WAF de la porte d’entrée offre des capacités de protection avancées.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/web-application-firewall/afds/waf-front-door-custom-rules\">règles personnalisées WAF</a>"
+    },
+    {
+      "id": "az700-d111798d34f0",
+      "examSlug": "az700",
+      "domain": "NetworkSecurity",
+      "topic": "WAFPolicy",
+      "tags": [
+        "AZ-700",
+        "NetworkSecurity",
+        "WAFPolicy"
+      ],
+      "promptHtml": "Plusieurs passerelles d’application entre régions nécessitent une politique WAF cohérente. Quelle approche de déploiement des WAF permet la cohérence des politiques ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Configuration manuelle de la politique par passerelle"
+        },
+        {
+          "key": "B",
+          "label": "Ressource de politique WAF associée à plusieurs passerelles d’application"
+        },
+        {
+          "key": "C",
+          "label": "Aucun mécanisme de partage de politique"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Ressource de politique WAF associée à plusieurs passerelles d’application",
+      "rationaleHtml": "",
+      "extraHtml": "La politique WAF est autonome, associable à une ressource avec plusieurs passerelles d’application garantissant une protection cohérente entre les déploiements. La configuration manuelle par passerelle crée une dérive de politique. Les politiques WAF assurent une gestion centralisée.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/web-application-firewall/ag/policy-overview\">politique WAF</a>"
+    },
+    {
+      "id": "az700-6a654dbc36b1",
+      "examSlug": "az700",
+      "domain": "NetworkSecurity",
+      "topic": "FlowLogStorage",
+      "tags": [
+        "AZ-700",
+        "NetworkSecurity",
+        "FlowLogStorage"
+      ],
+      "promptHtml": "Journaux de flux NSG requis pour la criminalistique réseau et l’analyse de sécurité. Où les données de journal de flux NSG sont-elles stockées et combien de temps sont-elles conservées ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Journaux de flux stockés uniquement dans NSG sans stockage externe"
+        },
+        {
+          "key": "B",
+          "label": "Journaux de flux stockés dans un compte Azure Storage avec rétention configurable"
+        },
+        {
+          "key": "C",
+          "label": "Aucun stockage ou rétention de journal de débit"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Journaux de flux stockés dans un compte Azure Storage avec rétention configurable",
+      "rationaleHtml": "",
+      "extraHtml": "Les journaux de flux NSG sont stockés dans un compte Azure Storage avec une période de rétention configurée (1 à 365 jours) pour une analyse à long terme. Les journaux ne sont pas stockés dans le NSG lui-même. Configuration de stockage et de rétention requise pour l’activation du journal de flux.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/network-watcher/nsg-flow-logs-overview\">Journaux de flux NSG</a>"
+    },
+    {
+      "id": "az700-690c3e3d9b43",
+      "examSlug": "az700",
+      "domain": "NetworkSecurity",
+      "topic": "FirewallSNAT",
+      "tags": [
+        "AZ-700",
+        "NetworkSecurity",
+        "FirewallSNAT"
+      ],
+      "promptHtml": "Azure Firewall traite le trafic sortant de 10.0.0.0/16 vers Internet via SNAT. Les services de destination bloquent l’IP publique d’Azure Firewall. Quelle configuration de pare-feu fournit des IP SNAT prévisibles pour l’inscription autorisée ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Le pare-feu utilise des IP Azure aléatoires"
+        },
+        {
+          "key": "B",
+          "label": "Configuration explicite de l’IP SNAT sortante avec préfixe IP publique"
+        },
+        {
+          "key": "C",
+          "label": "SNAT IP ne peut pas être contrôlée"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Configuration explicite de l’IP SNAT sortante avec préfixe IP publique",
+      "rationaleHtml": "",
+      "extraHtml": "Azure Firewall prend en charge la configuration explicite des IP SNAT utilisant le préfixe IP public, fournissant des adresses IP sortantes prévisibles pour les listes de destination. Par défaut utilise les IP de pare-feu disponibles. Le préfixe IP public permet la gestion de la plage IP.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/firewall/snat-private-range\">Azure Firewall SNAT</a>"
+    },
+    {
+      "id": "az700-a0d2beef18be",
+      "examSlug": "az700",
+      "domain": "NetworkSecurity",
+      "topic": "CRSCustomization",
+      "tags": [
+        "AZ-700",
+        "NetworkSecurity",
+        "CRSCustomization"
+      ],
+      "promptHtml": "WAF sur Application Gateway nécessite un ensemble de règles CRS 3.2 avec des règles spécifiques désactivées, ce qui cause des faux positifs. Quelle configuration WAF prend en charge la personnalisation des jeux de règles ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Les ensembles de règles gérés ne peuvent pas être personnalisés"
+        },
+        {
+          "key": "B",
+          "label": "Ensemble de règles avec incapacité individuelle et exclusions"
+        },
+        {
+          "key": "C",
+          "label": "Seulement des règles personnalisées, pas de règles gérées"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Ensemble de règles avec incapacité individuelle et exclusions",
+      "rationaleHtml": "",
+      "extraHtml": "Les ensembles de règles gérés prennent en charge la désactivation par règle et les exclusions, permettant un ajustement fin tout en maintenant une protection globale. Règles managées personnalisables. Un mélange de règles gérées et personnalisées offre une protection équilibrée.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/web-application-firewall/ag/application-gateway-crs-rulegroups-rules\">Personnalisation du CRS WAF</a>"
+    },
+    {
+      "id": "az700-62144a402e6c",
+      "examSlug": "az700",
+      "domain": "NetworkSecurity",
+      "topic": "ThreatIntel",
+      "tags": [
+        "AZ-700",
+        "NetworkSecurity",
+        "ThreatIntel"
+      ],
+      "promptHtml": "Les alertes de renseignement sur les menaces du pare-feu Azure montrent des adresses IP malveillantes à haute confiance, mais le pare-feu est configuré en mode alerte uniquement. Quel changement permet au pare-feu de bloquer les menaces identifiées par le renseignement ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Mode alerte uniquement, aucun blocage disponible"
+        },
+        {
+          "key": "B",
+          "label": "Activez le renseignement sur les menaces en mode Alerte et Refus"
+        },
+        {
+          "key": "C",
+          "label": "Désactiver le renseignement sur les menaces"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Activez le renseignement sur les menaces en mode Alerte et Refus",
+      "rationaleHtml": "",
+      "extraHtml": "Le renseignement sur les menaces prend en charge les modes Alerte uniquement (journalisation) ou Alerte et Refus (journalisation + blocage). Le mode alerte offre une visibilité sans application de la loi. Le mode Refus bloque les IP/FQDN malveillants basés sur le renseignement de menace de Microsoft.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/firewall/threat-intel\">Renseignement sur les menaces sur les pare-feux</a>"
+    },
+    {
+      "id": "az700-87e5aace9a36",
+      "examSlug": "az700",
+      "domain": "CoreNetworking",
+      "topic": "GlobalNetwork",
+      "tags": [
+        "AZ-700",
+        "CoreNetworking",
+        "GlobalNetwork"
+      ],
+      "promptHtml": "Le trafic réseau entre les régions Azure doit rester sur la dorsale de Microsoft sans passer par Internet public. Quelle fonctionnalité réseau garantit que le trafic reste sur le réseau Microsoft ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Itinéraire public internet entre régions"
+        },
+        {
+          "key": "B",
+          "label": "Azure Global Network avec ExpressRoute Global Reach ou VNet peering"
+        },
+        {
+          "key": "C",
+          "label": "Aucune connectivité interrégionale privée"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Azure Global Network avec ExpressRoute Global Reach ou VNet peering",
+      "rationaleHtml": "",
+      "extraHtml": "Le réseau dorsale mondial Azure transporte le trafic VNet-à-VNet entre les régions sans exposition publique à Internet. ExpressRoute Global Reach étend la connectivité privée. Le trafic interrégional utilise automatiquement le réseau Microsoft.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/networking/microsoft-global-network\">Azure Global Network</a>"
+    },
+    {
+      "id": "az700-1a4c75eaaa51",
+      "examSlug": "az700",
+      "domain": "CoreNetworking",
+      "topic": "CustomDNS",
+      "tags": [
+        "AZ-700",
+        "CoreNetworking",
+        "CustomDNS"
+      ],
+      "promptHtml": "Un réseau visuel utilise des serveurs DNS personnalisés (10.0.1.4, 10.0.1.5). Le rapport des VMs ne peut pas résoudre les noms fournis par Azure comme Azure Storage. Quelle configuration DNS résout les services Azure lorsqu’elle utilise un DNS personnalisé ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Remplacer le DNS personnalisé par le DNS Azure uniquement"
+        },
+        {
+          "key": "B",
+          "label": "DNS personnalisé transférer les requêtes non résolues vers Azure DNS (168.63.129.16)"
+        },
+        {
+          "key": "C",
+          "label": "Les noms Azure ne peuvent pas être résolus avec un DNS personnalisé"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "DNS personnalisé transférer les requêtes non résolues vers Azure DNS (168.63.129.16)",
+      "rationaleHtml": "",
+      "extraHtml": "Les serveurs DNS personnalisés transmettent les requêtes des services Azure vers Azure DNS (168.63.129.16), permettant la résolution des noms fournis par Azure tout en maintenant un DNS personnalisé pour les noms d’organisation. Le DNS uniquement Azure perd une résolution personnalisée. La coexistence nécessite une configuration de retransmission.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances#name-resolution-that-uses-your-own-dns-server\">Redirection DNS personnalisée</a>"
+    },
+    {
+      "id": "az700-e9ee7b45ec98",
+      "examSlug": "az700",
+      "domain": "Connectivity",
+      "topic": "ExpressRouteBandwidth",
+      "tags": [
+        "AZ-700",
+        "Connectivity",
+        "ExpressRouteBandwidth"
+      ],
+      "promptHtml": "Le circuit ExpressRoute se connecte à plusieurs VNets via la passerelle ExpressRoute. Un VNet nécessite un débit de trafic limité à 1 Gbps tandis que d’autres nécessitent une bande passante complète du circuit. Comment la bande passante par VNet est-elle contrôlée ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "La bande passante du circuit ExpressRoute se répartit également entre les VNets"
+        },
+        {
+          "key": "B",
+          "label": "Des limites de bande passante par VNet non directement prises en charge ; Architecture de conception avec gestion du trafic"
+        },
+        {
+          "key": "C",
+          "label": "Configuration de limite par VNet disponible"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Des limites de bande passante par VNet non directement prises en charge ; Architecture de conception avec gestion du trafic",
+      "rationaleHtml": "",
+      "extraHtml": "ExpressRoute ne prend pas en charge nativement l’allocation de bande passante par VNet. La conception architecturale utilisant des circuits séparés, la gestion du trafic ou la priorisation au niveau VNet requise pour le contrôle de la bande passante. Bande passante du circuit partagée entre les VNets connectés.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/expressroute/expressroute-about-virtual-network-gateways\">contraintes de passerelle ExpressRoute</a>"
+    },
+    {
+      "id": "az700-53f070a10632",
+      "examSlug": "az700",
+      "domain": "CoreNetworking",
+      "topic": "AddressSpaceOverlap",
+      "tags": [
+        "AZ-700",
+        "CoreNetworking",
+        "AddressSpaceOverlap"
+      ],
+      "promptHtml": "Le réseau virtuel nécessite plusieurs plages d’adresses mais les sous-réseaux apparaissent comme « défaillants » lorsque les plages se chevauchent. Quelle est la limitation de l’espace d’adressage Azure VNet qui cause cela ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Les VNets prennent en charge toute plage qui se chevauche"
+        },
+        {
+          "key": "B",
+          "label": "Les espaces d’adressage VNet ne doivent pas se chevaucher à l’intérieur de VNet ni avec les VNets peered"
+        },
+        {
+          "key": "C",
+          "label": "Seule une plage d’adresses unique autorisée par VNet"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Les espaces d’adressage VNet ne doivent pas se chevaucher à l’intérieur de VNet ni avec les VNets peered",
+      "rationaleHtml": "",
+      "extraHtml": "Les espaces d’adressage VNet et les plages VNet peered ne doivent pas se chevaucher pour éviter les conflits de routage. Plusieurs plages non superposées prises en charge par VNet. Les plages qui se chevauchent provoquent des échecs de déploiement et des problèmes de routage.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/virtual-network/virtual-networks-faq#can-i-add-address-ranges-to-a-vnet-that-has-peerings\">chevauchement des adresses VNet</a>"
+    },
+    {
+      "id": "az700-273350986a4f",
+      "examSlug": "az700",
+      "domain": "ApplicationDelivery",
+      "topic": "SNATExhaustion",
+      "tags": [
+        "AZ-700",
+        "ApplicationDelivery",
+        "SNATExhaustion"
+      ],
+      "promptHtml": "Les machines virtuelles du pool backend de l’Load Balancer montrent une connectivité intermittente malgré le passage des sondes de santé. Les journaux de l’équilibreur de charge montrent l’épuisement des ports SNAT. Quelle configuration empêche l’épuisement des ports SNAT ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Augmenter le nombre de VM sans adresser le SNAT"
+        },
+        {
+          "key": "B",
+          "label": "Ajouter des règles sortantes avec plus d’IP frontend ou implémenter NAT Gateway"
+        },
+        {
+          "key": "C",
+          "label": "L’épuisement SNAT ne peut être évité"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Ajouter des règles sortantes avec plus d’IP frontend ou implémenter NAT Gateway",
+      "rationaleHtml": "",
+      "extraHtml": "L’épuisement des ports SNAT a été résolu en augmentant les ports SNAT disponibles via des IP frontales supplémentaires sur les règles sortantes ou en déchargeant vers une passerelle NAT fournissant 64K ports par IP. Le nombre de VM seul ne traite pas le SNAT. Azure propose des solutions de connectivité sortante évolutives.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/load-balancer/troubleshoot-outbound-connection\">Dépannage de l’épuisement SNAT</a>"
+    }
+  ]
+}

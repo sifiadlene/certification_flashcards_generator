@@ -1,0 +1,2703 @@
+{
+  "exam": {
+    "slug": "az900",
+    "code": "AZ-900",
+    "title": "AZ-900",
+    "sourceFile": "az900_flashcards_2026-04-02.csv",
+    "updatedOn": "2026-04-02",
+    "questionCount": 87,
+    "domains": [
+      "Architecture",
+      "CloudConcepts",
+      "Compute",
+      "Governance",
+      "Identity",
+      "Management",
+      "Networking",
+      "Security",
+      "Storage"
+    ],
+    "topics": [
+      "ARMTemplates",
+      "ActivityLog",
+      "ApplicationGateway",
+      "ApplicationInsights",
+      "Auditing",
+      "Authentication",
+      "AvailabilityZones",
+      "AzureFiles",
+      "CICD",
+      "CloudBenefits",
+      "CloudModels",
+      "ConditionalAccess",
+      "Containers",
+      "CostManagement",
+      "CrossTenant",
+      "DNS",
+      "DataClassification",
+      "DefenderForCloud",
+      "DefenseInDepth",
+      "Deployment",
+      "DomainServices",
+      "ExpressRoute",
+      "ExternalIdentities",
+      "FileSync",
+      "Governance",
+      "HighAvailability",
+      "HybridManagement",
+      "IaC",
+      "LoadBalancer",
+      "LockEnforcement",
+      "ManagementGroups",
+      "Migration",
+      "Monitoring",
+      "MultiCloud",
+      "NetworkSecurity",
+      "Optimization",
+      "Passwordless",
+      "PolicyCompliance",
+      "PolicyEffects",
+      "PricingModels",
+      "PrivateEndpoints",
+      "RBAC",
+      "Redundancy",
+      "RegionPairs",
+      "Regions",
+      "RegulatoryCompliance",
+      "ResourceGroups",
+      "ResourceLocks",
+      "RiskDetection",
+      "Serverless",
+      "ServiceHealth",
+      "ServiceTypes",
+      "SharedResponsibility",
+      "SingleSignOn",
+      "SourceControl",
+      "SpotInstances",
+      "StorageTiers",
+      "Subscriptions",
+      "Tags",
+      "TierSelection",
+      "Tools",
+      "TrafficManager",
+      "VNetPeering",
+      "VirtualDesktop",
+      "VirtualMachines",
+      "VirtualNetworks",
+      "ZRS",
+      "ZeroTrust"
+    ]
+  },
+  "questions": [
+    {
+      "id": "az900-413bf467a922",
+      "examSlug": "az900",
+      "domain": "CloudConcepts",
+      "topic": "PricingModels",
+      "tags": [
+        "AZ-900",
+        "CloudConcepts",
+        "PricingModels"
+      ],
+      "promptHtml": "Votre startup lance une application mobile en s’attendant à des pics de trafic imprévisibles lors des campagnes marketing. La solution doit automatiquement échuler les ressources de calcul et ne facturer que pour l’utilisation réelle. Quel modèle de tarification cloud répond le mieux à cette exigence ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Instances réservées avec engagement de 3 ans"
+        },
+        {
+          "key": "B",
+          "label": "Tarification basée sur la consommation avec auto-scaling"
+        },
+        {
+          "key": "C",
+          "label": "Tarification dédiée aux hôtes avec des coûts mensuels fixes"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Tarification basée sur la consommation avec auto-scaling",
+      "rationaleHtml": "",
+      "extraHtml": "La tarification basée sur la consommation ne facture que les ressources effectivement consommées, idéale pour des charges de travail imprévisibles. Les instances réservées nécessitent des charges de travail prévisibles et constantes pour des économies de coûts. Les hôtes dédiés facturent des coûts fixes indépendamment de leur utilisation, éliminant ainsi la flexibilité des coûts.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/cost-management-billing/understand/understand-usage\">Prix Azure basé sur la consommation</a>"
+    },
+    {
+      "id": "az900-5e28ca3d8221",
+      "examSlug": "az900",
+      "domain": "CloudConcepts",
+      "topic": "CloudModels",
+      "tags": [
+        "AZ-900",
+        "CloudConcepts",
+        "CloudModels"
+      ],
+      "promptHtml": "Une entreprise de services financiers doit conserver les données sensibles des clients dans son centre de données sur site pour la conformité réglementaire, mais souhaite utiliser les services Azure pour l’hébergement et l’analyse d’applications. Quel modèle cloud répond à ces exigences ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Nuage public avec régions Azure sélectionnées par géographie"
+        },
+        {
+          "key": "B",
+          "label": "Cloud hybride avec stockage de données sur site"
+        },
+        {
+          "key": "C",
+          "label": "Nuage privé avec abonnements Azure isolés"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Cloud hybride avec stockage de données sur site",
+      "rationaleHtml": "",
+      "extraHtml": "Le cloud hybride combine l’infrastructure sur site (pour les données régulées) avec les services cloud publics (pour le calcul/l’analytique). Le cloud public seul ne fournit pas de contrôle sur site. Le cloud privé dans Azure stocke toujours les données dans les centres de données Microsoft, pas sur site.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/cloud-adoption-framework/scenarios/hybrid/\">Architecture cloud hybride Azure</a>"
+    },
+    {
+      "id": "az900-349237e52f63",
+      "examSlug": "az900",
+      "domain": "CloudConcepts",
+      "topic": "ServiceTypes",
+      "tags": [
+        "AZ-900",
+        "CloudConcepts",
+        "ServiceTypes"
+      ],
+      "promptHtml": "Votre organisation exécute une application héritée nécessitant un accès direct au niveau du système d’exploitation pour installer des modules noyau personnalisés et des pilotes réseau spécifiques. Quel type de service cloud offre le contrôle nécessaire ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Logiciel en tant que service (SaaS)"
+        },
+        {
+          "key": "B",
+          "label": "Plateforme en tant que service (PaaS)"
+        },
+        {
+          "key": "C",
+          "label": "Infrastructure en tant que service (IaaS)"
+        }
+      ],
+      "correctOption": "C",
+      "correctLabel": "Infrastructure en tant que service (IaaS)",
+      "rationaleHtml": "",
+      "extraHtml": "L’IaaS offre un contrôle complet au niveau du système d’exploitation, permettant l’installation de modules du noyau et la configuration personnalisée des pilotes réseau. Le PaaS abstrait la couche du système d’exploitation, limitant la personnalisation. Le SaaS ne fournit que l’accès aux applications sans contrôle d’infrastructure.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/cloud-adoption-framework/ready/considerations/fundamental-concepts\">Comparaison des modèles de services Azure</a>"
+    },
+    {
+      "id": "az900-32175d2b2b1c",
+      "examSlug": "az900",
+      "domain": "CloudConcepts",
+      "topic": "CloudBenefits",
+      "tags": [
+        "AZ-900",
+        "CloudConcepts",
+        "CloudBenefits"
+      ],
+      "promptHtml": "Une entreprise de vente au détail connaît une augmentation de 300 % du trafic lors des soldes du Black Friday. Leur application doit automatiquement provisionner des serveurs supplémentaires pendant les heures de pointe et les dédistribuer ensuite. Quel avantage cloud répond à cette exigence ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Haute disponibilité grâce à des centres de données redondants"
+        },
+        {
+          "key": "B",
+          "label": "Évolutivité avec allocation élastique des ressources"
+        },
+        {
+          "key": "C",
+          "label": "Sécurité par isolement réseau"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Évolutivité avec allocation élastique des ressources",
+      "rationaleHtml": "",
+      "extraHtml": "La scalabilité permet une expansion automatique des ressources lors des pics de demande et une contraction lors d’une faible utilisation, optimisant ainsi les coûts. Une haute disponibilité garantit un temps de disponibilité mais ne répond pas aux besoins de capacité dynamique. La sécurité par l’isolement n’a pas de lien avec la mise à l’échelle basée sur le trafic.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/architecture/framework/scalability/overview\">Azure scalability patterns</a>"
+    },
+    {
+      "id": "az900-7eca08b75d2f",
+      "examSlug": "az900",
+      "domain": "CloudConcepts",
+      "topic": "SharedResponsibility",
+      "tags": [
+        "AZ-900",
+        "CloudConcepts",
+        "SharedResponsibility"
+      ],
+      "promptHtml": "Dans le cadre du modèle de responsabilité partagée, votre entreprise déploie une application web via Azure App Service (PaaS). Qui est responsable des correctifs du système d’exploitation sous-jacent ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Le client est entièrement responsable"
+        },
+        {
+          "key": "B",
+          "label": "Microsoft est entièrement responsable"
+        },
+        {
+          "key": "C",
+          "label": "Responsabilité partagée entre le client et Microsoft"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Microsoft est entièrement responsable",
+      "rationaleHtml": "",
+      "extraHtml": "Dans les modèles PaaS comme App Service, Microsoft gère les correctifs du système d’exploitation, l’infrastructure et les mises à jour de la plateforme. Les clients gèrent le code applicatif, les données et les contrôles d’accès. En IaaS, le patching du système d’exploitation devient la responsabilité du client.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/security/fundamentals/shared-responsibility\">modèle de responsabilité partagée Azure</a>"
+    },
+    {
+      "id": "az900-04861c9aa229",
+      "examSlug": "az900",
+      "domain": "CloudConcepts",
+      "topic": "CloudModels",
+      "tags": [
+        "AZ-900",
+        "CloudConcepts",
+        "CloudModels"
+      ],
+      "promptHtml": "Un prestataire de soins de santé doit s’assurer que les données des patients restent dans des limites géographiques spécifiques en raison des exigences du RGPD. Quel composant architectural Azure répond aux exigences de résidence des données ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Zones de disponibilité au sein d’une même région"
+        },
+        {
+          "key": "B",
+          "label": "Régions Azure spécifiques avec garanties de résidence des données"
+        },
+        {
+          "key": "C",
+          "label": "Configuration des sous-réseaux Azure Virtual Network"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Régions Azure spécifiques avec garanties de résidence des données",
+      "rationaleHtml": "",
+      "extraHtml": "Les régions Azure offrent des garanties de résidence des données, garantissant que les données restent dans les limites géographiques pour la conformité. Les zones de disponibilité s’étendent dans une seule région mais ne contrôlent pas le placement géographique des données. Les sous-réseaux VNet contrôlent la segmentation du réseau, pas la résidence des données.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/compliance/offerings/\">Azure compliance et résidence des données</a>"
+    },
+    {
+      "id": "az900-3112eaa3398e",
+      "examSlug": "az900",
+      "domain": "CloudConcepts",
+      "topic": "PricingModels",
+      "tags": [
+        "AZ-900",
+        "CloudConcepts",
+        "PricingModels"
+      ],
+      "promptHtml": "Votre organisation souhaite éliminer les coûts initiaux d’infrastructure et passer du CapEx à l’OpEx. Quelle caractéristique cloud permet ce changement de modèle financier ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Modèle de tarification basé sur la consommation"
+        },
+        {
+          "key": "B",
+          "label": "Haute disponibilité avec garanties SLA"
+        },
+        {
+          "key": "C",
+          "label": "Répartition géographique entre les régions"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Modèle de tarification basé sur la consommation",
+      "rationaleHtml": "",
+      "extraHtml": "La tarification basée sur la consommation élimine les dépenses d’investissement initiales, convertissant les coûts d’infrastructure en dépenses opérationnelles payées au fur et à mesure de l’utilisation des ressources. La haute disponibilité concerne la disponibilité des temps, pas les modèles financiers. La répartition géographique concerne la résilience, pas la structure des coûts.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/cost-management-billing/manage/understand-ea-billing\">Azure Cost Management Fundamentals</a>"
+    },
+    {
+      "id": "az900-b48361ebe39f",
+      "examSlug": "az900",
+      "domain": "CloudConcepts",
+      "topic": "CloudModels",
+      "tags": [
+        "AZ-900",
+        "CloudConcepts",
+        "CloudModels"
+      ],
+      "promptHtml": "Une agence gouvernementale exige un contrôle total sur le matériel, la couche de virtualisation et l’infrastructure réseau lors de l’utilisation du cloud computing. Quel modèle cloud répond à ces exigences de souveraineté ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Cloud public avec chiffrement activé"
+        },
+        {
+          "key": "B",
+          "label": "Cloud privé avec infrastructure dédiée"
+        },
+        {
+          "key": "C",
+          "label": "Cloud communautaire partagé avec d’autres agences"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Cloud privé avec infrastructure dédiée",
+      "rationaleHtml": "",
+      "extraHtml": "Le cloud privé offre une infrastructure dédiée avec un contrôle organisationnel complet sur le matériel, la virtualisation et le réseau. Le cloud public partage l’infrastructure avec d’autres locataires. Le cloud communautaire est partagé entre des organisations spécifiques, réduisant ainsi le contrôle individuel.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/cloud-adoption-framework/strategy/cloud-models\">Modèles de déploiement cloud</a>"
+    },
+    {
+      "id": "az900-2d0817a2507f",
+      "examSlug": "az900",
+      "domain": "CloudConcepts",
+      "topic": "PricingModels",
+      "tags": [
+        "AZ-900",
+        "CloudConcepts",
+        "PricingModels"
+      ],
+      "promptHtml": "Une plateforme de commerce électronique doit ajuster automatiquement sa capacité de calcul en fonction de l’activité en temps réel du panier d’achats, les coûts étant directement liés à l’utilisation réelle des ressources. Quelle caractéristique de tarification cloud offre cette flexibilité ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Capacité réservée avec réductions de remboursement anticipé"
+        },
+        {
+          "key": "B",
+          "label": "Facturation pay-as-you-go basée sur la consommation"
+        },
+        {
+          "key": "C",
+          "label": "Tarification au comptant des instances avec disponibilité variable"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Facturation pay-as-you-go basée sur la consommation",
+      "rationaleHtml": "",
+      "extraHtml": "La facturation de consommation pay-as-you-go ne facture que pour les ressources activement utilisées, alignant ainsi les coûts sur la demande réelle. La capacité réservée nécessite un engagement immédiat. Les instances ponctuelles offrent des réductions mais peuvent être interrompues, inadaptées au commerce électronique de production.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/architecture/framework/cost/design-price\">Azure pricing models</a>"
+    },
+    {
+      "id": "az900-9c52f8b1049c",
+      "examSlug": "az900",
+      "domain": "Architecture",
+      "topic": "AvailabilityZones",
+      "tags": [
+        "AZ-900",
+        "Architecture",
+        "AvailabilityZones"
+      ],
+      "promptHtml": "Votre application ne nécessite aucun temps d’arrêt pendant la maintenance du centre de données Azure. Quel composant architectural assure l’isolation des failles au niveau de l’infrastructure au sein d’une région ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Zones de disponibilité avec déploiement redondant de zone"
+        },
+        {
+          "key": "B",
+          "label": "Paires de régions pour la reprise après sinistre"
+        },
+        {
+          "key": "C",
+          "label": "Groupes de ressources pour l’organisation logique"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Zones de disponibilité avec déploiement redondant de zone",
+      "rationaleHtml": "",
+      "extraHtml": "Les zones de disponibilité offrent des centres de données physiquement séparés dans une région avec une alimentation indépendante, un refroidissement et un réseau indépendants, permettant un temps d’arrêt zéro pendant la maintenance. Les paires de régions sont destinées à la reprise après sinistre entre régions. Les groupes de ressources sont des conteneurs logiques sans isolation des défauts.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/reliability/availability-zones-overview\">Azure availability zones</a>"
+    },
+    {
+      "id": "az900-16bf0ffa1e69",
+      "examSlug": "az900",
+      "domain": "Architecture",
+      "topic": "RegionPairs",
+      "tags": [
+        "AZ-900",
+        "Architecture",
+        "RegionPairs"
+      ],
+      "promptHtml": "Une demande financière exige un basculement automatique vers une région secondaire si la région principale devient indisponible. Quelle fonctionnalité architecturale Azure offre une géoredondance pour les défaillances régionales ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Ensembles de disponibilité au sein d’un centre de données"
+        },
+        {
+          "key": "B",
+          "label": "Paires de régions Azure avec réplication"
+        },
+        {
+          "key": "C",
+          "label": "Groupes de gestion pour organiser les abonnements"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Paires de régions Azure avec réplication",
+      "rationaleHtml": "",
+      "extraHtml": "Les paires de régions fournissent une redondance régionale avec la réplication des données vers une région secondaire pour la reprise après sinistre. Les ensembles de disponibilité protègent contre les pannes au niveau du centre de données dans une région. Les groupes de gestion organisent les abonnements mais ne fournissent pas de redondances.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/reliability/cross-region-replication-azure\">Azure region pairs</a>"
+    },
+    {
+      "id": "az900-d62f34274082",
+      "examSlug": "az900",
+      "domain": "Architecture",
+      "topic": "Subscriptions",
+      "tags": [
+        "AZ-900",
+        "Architecture",
+        "Subscriptions"
+      ],
+      "promptHtml": "Votre organisation dispose de plusieurs départements nécessitant une facturation isolée, des contrôles d’accès séparés et des quotas de ressources indépendants. Quel composant organisationnel Azure fournit cette limite logique ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Groupes de ressources au sein d’un même abonnement"
+        },
+        {
+          "key": "B",
+          "label": "Abonnements Azure séparés par département"
+        },
+        {
+          "key": "C",
+          "label": "Réseaux virtuels avec groupes de sécurité réseau"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Abonnements Azure séparés par département",
+      "rationaleHtml": "",
+      "extraHtml": "Les abonnements fournissent des limites de facturation, des contrôles d’accès indépendants et des quotas de ressources séparés. Les groupes de ressources organisent les ressources au sein d’un abonnement mais partagent la facturation et les quotas. Les VNets fournissent une isolation réseau, pas des limites de facturation ou de contrôle d’accès.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/cloud-adoption-framework/ready/azure-setup-guide/organize-resources\">Azure subscription organization</a>"
+    },
+    {
+      "id": "az900-d88fbb32f18c",
+      "examSlug": "az900",
+      "domain": "Architecture",
+      "topic": "ManagementGroups",
+      "tags": [
+        "AZ-900",
+        "Architecture",
+        "ManagementGroups"
+      ],
+      "promptHtml": "Une entreprise mondiale comptant 50 unités métier a besoin d’une application centralisée des politiques pour les normes de sécurité tout en déléguant la gestion des coûts à chaque unité. Quel composant Azure permet cette gouvernance hiérarchique ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Groupes de gestion avec des politiques héritées"
+        },
+        {
+          "key": "B",
+          "label": "Groupes de sécurité réseau avec règles centralisées"
+        },
+        {
+          "key": "C",
+          "label": "Verrouillages de ressources empêchant les modifications"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Groupes de gestion avec des politiques héritées",
+      "rationaleHtml": "",
+      "extraHtml": "Les groupes de gestion assurent une organisation hiérarchique des abonnements avec héritage de politiques, permettant une gouvernance centralisée tout en permettant la délégation. Les NSG contrôlent le trafic réseau, pas la gouvernance organisationnelle. Les verrouillages de ressources empêchent les changements mais ne fournissent pas d’héritage hiérarchique des politiques.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/governance/management-groups/overview\">Azure Management groups</a>"
+    },
+    {
+      "id": "az900-464702a5e7c6",
+      "examSlug": "az900",
+      "domain": "Compute",
+      "topic": "VirtualMachines",
+      "tags": [
+        "AZ-900",
+        "Compute",
+        "VirtualMachines"
+      ],
+      "promptHtml": "Votre application web doit traiter les demandes clients avec des temps de réponse garantis lors des pics de trafic, passant automatiquement de 2 à 50 instances. Quel service de calcul Azure offre une mise à l’échelle automatique sans gestion de VM ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Virtual Machines avec mise à l’échelle manuelle"
+        },
+        {
+          "key": "B",
+          "label": "Azure Virtual Machine Scale Sets avec règles autoscale"
+        },
+        {
+          "key": "C",
+          "label": "Azure Container Instances avec répliques fixes"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Azure Virtual Machine Scale Sets avec règles autoscale",
+      "rationaleHtml": "",
+      "extraHtml": "Les ensembles d’échelisation de machines virtuelles évoluent automatiquement en fonction des métriques tout en abstraquant la charge de gestion des machines virtuelles. Les VM standard nécessitent une mise à l’échelle manuelle. Les instances de conteneurs ne fournissent pas d’auto-scaling intégré avec des règles basées sur des métriques comme VMSS.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/virtual-machine-scale-sets/overview\">Aperçu Azure VMSS</a>"
+    },
+    {
+      "id": "az900-64456f4e461f",
+      "examSlug": "az900",
+      "domain": "Compute",
+      "topic": "Serverless",
+      "tags": [
+        "AZ-900",
+        "Compute",
+        "Serverless"
+      ],
+      "promptHtml": "Une équipe de développement doit exécuter du code piloté par des événements qui ne s’exécute que lorsque des blobs de stockage sont téléchargés, sans coût pendant les périodes d’inactivité. Quel service de calcul correspond à cette exigence serverless ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Virtual Machines avec démarrage/arrêt programmé"
+        },
+        {
+          "key": "B",
+          "label": "Azure Functions avec plan de consommation"
+        },
+        {
+          "key": "C",
+          "label": "Azure Kubernetes Service with node autoscaling"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Azure Functions avec plan de consommation",
+      "rationaleHtml": "",
+      "extraHtml": "Le plan de consommation Azure Functions ne facture que pendant l’exécution, avec une mise à l’échelle automatique et aucun coût en temps inactif. Les machines virtuelles engendrent des coûts même lorsqu’elles sont arrêtées (frais de stockage). AKS nécessite de faire fonctionner des nœuds avec des coûts associés même en cas de faible activité.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/azure-functions/consumption-plan\">Plan de consommation Azure Functions</a>"
+    },
+    {
+      "id": "az900-b38828069155",
+      "examSlug": "az900",
+      "domain": "Compute",
+      "topic": "VirtualDesktop",
+      "tags": [
+        "AZ-900",
+        "Compute",
+        "VirtualDesktop"
+      ],
+      "promptHtml": "Votre organisation doit fournir à 500 employés à distance des postes de bureau Windows 11 accessibles depuis n’importe quel appareil, avec des contrôles centralisés de gestion et de sécurité. Quel service Azure offre cette expérience de bureau virtualisé ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Virtual Machines avec accès RDP par utilisateur"
+        },
+        {
+          "key": "B",
+          "label": "Azure Virtual Desktop avec Windows 11 multi-session"
+        },
+        {
+          "key": "C",
+          "label": "Azure App Service pour l’hébergement d’applications de bureau"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Azure Virtual Desktop avec Windows 11 multi-session",
+      "rationaleHtml": "",
+      "extraHtml": "Azure Virtual Desktop propose des postes Windows 11 multi-sessions avec une gestion centralisée, optimisée pour l’accès à distance. Les VM individuelles par utilisateur sont prohibitives. App Service héberge des applications web, pas des bureaux Windows complets.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/virtual-desktop/overview\">Azure Virtual Desktop</a>"
+    },
+    {
+      "id": "az900-0f76052d322f",
+      "examSlug": "az900",
+      "domain": "Networking",
+      "topic": "VirtualNetworks",
+      "tags": [
+        "AZ-900",
+        "Networking",
+        "VirtualNetworks"
+      ],
+      "promptHtml": "Deux réseaux virtuels Azure situés dans des régions différentes nécessitent une connectivité privée sans traverser l’internet public, avec une latence minimale. Quelle fonctionnalité réseau permet cette connexion privée ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Peering réseau virtuel entre régions"
+        },
+        {
+          "key": "B",
+          "label": "Adresses IP publiques avec client VPN"
+        },
+        {
+          "key": "C",
+          "label": "ExpressRoute vers les locaux puis retour vers Azure"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Peering réseau virtuel entre régions",
+      "rationaleHtml": "",
+      "extraHtml": "Le peering VNet offre une connectivité privée entre réseaux virtuels utilisant un réseau dorsal Azure avec une faible latence. Les IP publiques acheminent le trafic via Internet. ExpressRoute se connecte sur site à Azure, ce qui n’est pas efficace pour la communication VNet-à-VNet.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/virtual-network/virtual-network-peering-overview\">Azure VNet peering</a>"
+    },
+    {
+      "id": "az900-1339e3b563bd",
+      "examSlug": "az900",
+      "domain": "Networking",
+      "topic": "ExpressRoute",
+      "tags": [
+        "AZ-900",
+        "Networking",
+        "ExpressRoute"
+      ],
+      "promptHtml": "Votre centre de données sur site nécessite une connexion dédiée et privée à Azure avec des performances réseau prévisibles et une bande passante de 10 Gbps. Quel service réseau Azure offre cette connectivité privée ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "VPN site-à-site sur internet public"
+        },
+        {
+          "key": "B",
+          "label": "ExpressRoute avec peering privé"
+        },
+        {
+          "key": "C",
+          "label": "VPN point-to-site pour connexions individuelles"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "ExpressRoute avec peering privé",
+      "rationaleHtml": "",
+      "extraHtml": "ExpressRoute offre une connectivité privée dédiée avec des performances prévisibles et une large bande passante élevée. Le VPN site-à-site utilise un internet public avec des performances variables. Le VPN point-to-site est destiné aux connexions individuelles des utilisateurs, pas à la connectivité des centres de données.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/expressroute/expressroute-introduction\">Azure ExpressRoute</a>"
+    },
+    {
+      "id": "az900-0079f4d95580",
+      "examSlug": "az900",
+      "domain": "Networking",
+      "topic": "PrivateEndpoints",
+      "tags": [
+        "AZ-900",
+        "Networking",
+        "PrivateEndpoints"
+      ],
+      "promptHtml": "Un backend d’application web dans Azure doit être accessible uniquement depuis la couche front-end au sein du réseau virtuel, jamais depuis l’internet public. Quel type de terminaison garantit cet accès privé uniquement ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Point de terminaison public avec règles de pare-feu"
+        },
+        {
+          "key": "B",
+          "label": "Point de terminaison privé au sein du VNet"
+        },
+        {
+          "key": "C",
+          "label": "Terminaison de service avec balises de service VNet"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Point de terminaison privé au sein du VNet",
+      "rationaleHtml": "",
+      "extraHtml": "Les points de terminaison privés exposent exclusivement des services au sein d’un VNet utilisant des adresses IP privées, éliminant ainsi l’exposition publique à Internet. Les points publics avec des règles de pare-feu exposent toujours les services à Internet. Les terminaux de service sécurisent le trafic mais les services restent sur des adresses IP publiques.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/private-link/private-endpoint-overview\">Azure private endpoints</a>"
+    },
+    {
+      "id": "az900-c9e0ccfbe38c",
+      "examSlug": "az900",
+      "domain": "Storage",
+      "topic": "StorageTiers",
+      "tags": [
+        "AZ-900",
+        "Storage",
+        "StorageTiers"
+      ],
+      "promptHtml": "Votre entreprise stocke 200 To de documents de conformité réglementaire qui doivent être conservés pendant 7 ans mais consultés moins d’une fois par an. Quel niveau Azure Storage minimise les coûts pour ce scénario d’archivage ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Niveau chaud avec performance standard"
+        },
+        {
+          "key": "B",
+          "label": "Niveau cool avec des tarifs à accès peu fréquent"
+        },
+        {
+          "key": "C",
+          "label": "Niveau d’archive avec tarification de rétention à long terme"
+        }
+      ],
+      "correctOption": "C",
+      "correctLabel": "Niveau d’archive avec tarification de rétention à long terme",
+      "rationaleHtml": "",
+      "extraHtml": "Le niveau d’archive offre les coûts de stockage les plus bas pour les données consultées moins de deux fois par an avec une latence de récupération acceptable. Le niveau chaud est destiné aux données fréquemment consultées. Le niveau cool est pour un accès peu fréquent (mensuel), pas pour les besoins annuels d’archives.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/storage/blobs/access-tiers-overview\">niveaux d’accès Azure Storage</a>"
+    },
+    {
+      "id": "az900-685ede3b10b5",
+      "examSlug": "az900",
+      "domain": "Storage",
+      "topic": "Redundancy",
+      "tags": [
+        "AZ-900",
+        "Storage",
+        "Redundancy"
+      ],
+      "promptHtml": "Une application critique nécessite un stockage pouvant automatiquement basculer vers une région secondaire sans aucune perte de données si la région principale tombe en panne. Quelle option de redondance Azure Storage offre cette géo-réplication synchrone ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Stockage localement redondant (LRS) avec trois copies"
+        },
+        {
+          "key": "B",
+          "label": "Stockage géo-redondant (GRS) avec réplication asynchrone"
+        },
+        {
+          "key": "C",
+          "label": "Stockage redonnant par zone géographique (GZRS) avec synchronisation et réplication asynchrone"
+        }
+      ],
+      "correctOption": "C",
+      "correctLabel": "Stockage redonnant par zone géographique (GZRS) avec synchronisation et réplication asynchrone",
+      "rationaleHtml": "",
+      "extraHtml": "GZRS combine la redondance de zone (synchrone dans la région) avec la géo-redondance (asynchrone vers la région secondaire), offrant la plus grande durabilité. LRS ne protège qu’à l’intérieur d’un centre de données. Le GRS offre une géo-redondance mais sans protection au niveau de la zone dans la région principale.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/storage/common/storage-redundancy\">Azure Storage options de redondance</a>"
+    },
+    {
+      "id": "az900-05c6642cb79d",
+      "examSlug": "az900",
+      "domain": "Storage",
+      "topic": "Migration",
+      "tags": [
+        "AZ-900",
+        "Storage",
+        "Migration"
+      ],
+      "promptHtml": "Vous devez migrer 80 To de données archivées de l’emplacement vers Azure Blob Storage, mais la bande passante Internet est limitée à 10 Mbps. Quel service Azure permet le transfert physique de données via un appareil de stockage expédié ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "AzCopy via connexion internet"
+        },
+        {
+          "key": "B",
+          "label": "Azure Data Box pour transfert de données hors ligne"
+        },
+        {
+          "key": "C",
+          "label": "Azure File Sync pour la réplication continue"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Azure Data Box pour transfert de données hors ligne",
+      "rationaleHtml": "",
+      "extraHtml": "Azure Data Box fournit des dispositifs de stockage physique pour le transfert de données hors ligne lorsque la bande passante réseau est insuffisante. AzCopy nécessite de la bande passante réseau. Azure File Sync sert à la synchronisation continue des fichiers, pas à la migration massive initiale de 80 To.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/databox/data-box-overview\">Azure Data Box</a>"
+    },
+    {
+      "id": "az900-86c42530522d",
+      "examSlug": "az900",
+      "domain": "Identity",
+      "topic": "ExternalIdentities",
+      "tags": [
+        "AZ-900",
+        "Identity",
+        "ExternalIdentities"
+      ],
+      "promptHtml": "Votre application authentifie les utilisateurs de plusieurs fournisseurs d’identité externes, notamment Google, Facebook et Active Directory sur site. Quel service d’identité Azure fédére ces identités externes ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Microsoft Entra ID avec identités externes"
+        },
+        {
+          "key": "B",
+          "label": "Microsoft Entra Domain Services avec trusts forestiers"
+        },
+        {
+          "key": "C",
+          "label": "Azure Active Directory B2C pour les identités des consommateurs"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Microsoft Entra ID avec identités externes",
+      "rationaleHtml": "",
+      "extraHtml": "Microsoft Entra ID (anciennement Azure AD) prend en charge les identités externes via la fédération avec des fournisseurs d’identité sociale et d’entreprise. Entra Domain Services fournit des fonctionnalités de jonction de domaine, pas de fédération. Le B2C est axé sur le consommateur, mais Entra ID gère des scénarios d’identité externe plus larges.<br><br>Référence : <a href=\"https://learn.microsoft.com/entra/external-id/external-identities-overview\">Identités externes Azure</a>"
+    },
+    {
+      "id": "az900-4df99f4406b8",
+      "examSlug": "az900",
+      "domain": "Identity",
+      "topic": "Authentication",
+      "tags": [
+        "AZ-900",
+        "Identity",
+        "Authentication"
+      ],
+      "promptHtml": "Les utilisateurs doivent s’authentifier à la fois par mot de passe et avec une vérification de téléphone intelligent avant d’accéder à des données financières sensibles. Quelle fonctionnalité de sécurité Azure applique ce second facteur d’authentification ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Connexion unique (SSO) pour une authentification fluide"
+        },
+        {
+          "key": "B",
+          "label": "Authentification multifacteur (MFA) nécessitant deux facteurs"
+        },
+        {
+          "key": "C",
+          "label": "Politiques d’accès conditionnel basées sur la conformité des appareils"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Authentification multifacteur (MFA) nécessitant deux facteurs",
+      "rationaleHtml": "",
+      "extraHtml": "La MFA nécessite deux méthodes de vérification ou plus (mot de passe + téléphone), renforçant la sécurité de l’authentification. Le SSO apporte de la commodité sans imposer plusieurs facteurs. L’accès conditionnel applique des politiques d’accès mais ne nécessite pas intrinsèquement plusieurs facteurs d’authentification.<br><br>Référence : <a href=\"https://learn.microsoft.com/entra/identity/authentication/concept-mfa-howitworks\">Azure MFA</a>"
+    },
+    {
+      "id": "az900-7ccad69f7ce4",
+      "examSlug": "az900",
+      "domain": "Identity",
+      "topic": "RBAC",
+      "tags": [
+        "AZ-900",
+        "Identity",
+        "RBAC"
+      ],
+      "promptHtml": "L’accès aux bases de données de production devrait être accordé en fonction du rôle du poste plutôt que des affectations individuelles des utilisateurs, simplifiant ainsi la gestion des permissions. Quel mécanisme de contrôle d’accès Azure met en œuvre cette approche basée sur les rôles ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Signatures d’accès partagé (SAS) avec délégation"
+        },
+        {
+          "key": "B",
+          "label": "Contrôle d’accès basé sur les rôles Azure (RBAC) avec attribution de rôles"
+        },
+        {
+          "key": "C",
+          "label": "Groupes de sécurité réseau (NSG) restreignant les adresses IP"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Contrôle d’accès basé sur les rôles Azure (RBAC) avec attribution de rôles",
+      "rationaleHtml": "",
+      "extraHtml": "Azure RBAC attribue les permissions via des rôles (Contributeur, Lecteur, Propriétaire) plutôt que par des subventions individuelles, simplifiant ainsi la gestion. Les jetons SAS offrent un accès spécifique à une ressource, et non basé sur un rôle. Les NSG contrôlent le trafic réseau, pas l’accès basé sur l’identité.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/role-based-access-control/overview\">Azure RBAC</a>"
+    },
+    {
+      "id": "az900-d36a7adcf0f5",
+      "examSlug": "az900",
+      "domain": "Security",
+      "topic": "ZeroTrust",
+      "tags": [
+        "AZ-900",
+        "Security",
+        "ZeroTrust"
+      ],
+      "promptHtml": "Votre politique de sécurité exige de vérifier chaque demande d’accès en fonction de l’identité de l’utilisateur, de l’état de l’appareil et de la localisation avant d’accorder l’accès aux ressources. Quelle approche de sécurité met en œuvre cette vérification continue ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Sécurité basée sur le périmètre avec règles de pare-feu"
+        },
+        {
+          "key": "B",
+          "label": "Architecture zéro confiance avec vérification conditionnelle"
+        },
+        {
+          "key": "C",
+          "label": "Défense en profondeur avec contrôles de sécurité en couches"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Architecture zéro confiance avec vérification conditionnelle",
+      "rationaleHtml": "",
+      "extraHtml": "Zero Trust suppose une violation et vérifie chaque demande d’accès en utilisant l’identité, l’appareil, la localisation et d’autres signaux. La sécurité basée sur le périmètre fait confiance à l’accès interne au réseau. La défense en profondeur fournit des couches mais n’impose pas intrinsèquement une vérification continue.<br><br>Référence : <a href=\"https://learn.microsoft.com/security/zero-trust/zero-trust-overview\">Sécurité zéro confiance</a>"
+    },
+    {
+      "id": "az900-14563232f2a0",
+      "examSlug": "az900",
+      "domain": "Security",
+      "topic": "DefenderForCloud",
+      "tags": [
+        "AZ-900",
+        "Security",
+        "DefenderForCloud"
+      ],
+      "promptHtml": "Vous avez besoin d’une visibilité unifiée entre les ressources Azure, les charges de travail AWS et les serveurs sur site pour les recommandations de sécurité et la détection des menaces. Quel service Azure offre cette gestion de sécurité multi-cloud ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Firewall pour l’inspection du trafic réseau"
+        },
+        {
+          "key": "B",
+          "label": "Microsoft Defender for Cloud pour la gestion de la posture de sécurité cloud"
+        },
+        {
+          "key": "C",
+          "label": "Azure Security Center classic for Azure-only monitoring"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Microsoft Defender for Cloud pour la gestion de la posture de sécurité cloud",
+      "rationaleHtml": "",
+      "extraHtml": "Microsoft Defender for Cloud offre une gestion unifiée de la sécurité sur Azure, AWS, GCP et sur site, avec des recommandations de sécurité et une protection contre les menaces. Azure Firewall est spécifique au réseau. Security Center Classic était uniquement Azure et est maintenant Defender for Cloud.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/defender-for-cloud/defender-for-cloud-introduction\">Microsoft Defender pour le Cloud</a>"
+    },
+    {
+      "id": "az900-54a9e40fa960",
+      "examSlug": "az900",
+      "domain": "Security",
+      "topic": "DefenseInDepth",
+      "tags": [
+        "AZ-900",
+        "Security",
+        "DefenseInDepth"
+      ],
+      "promptHtml": "Votre organisation applique une stratégie de sécurité avec plusieurs couches de protection, notamment des pare-feux réseau, des passerelles d’applications, des contrôles d’identité et du chiffrement. Quel principe de sécurité décrit cette approche à plusieurs niveaux ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Défense en profondeur avec plusieurs couches de sécurité"
+        },
+        {
+          "key": "B",
+          "label": "Zéro confiance avec vérification continue"
+        },
+        {
+          "key": "C",
+          "label": "Privilège minimal avec des droits d’accès minimes"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Défense en profondeur avec plusieurs couches de sécurité",
+      "rationaleHtml": "",
+      "extraHtml": "La défense en profondeur met en place plusieurs couches de sécurité garantissant que si une couche tombe en panne, d’autres assurent la protection. Zero Trust se concentre sur la vérification continue. Le moins de privilèges accorde un accès minimum nécessaire mais n’est pas intrinsèquement complexe.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/security/fundamentals/defense-in-depth\">Défense en profondeur de la sécurité</a>"
+    },
+    {
+      "id": "az900-b442566df4d8",
+      "examSlug": "az900",
+      "domain": "Identity",
+      "topic": "ConditionalAccess",
+      "tags": [
+        "AZ-900",
+        "Identity",
+        "ConditionalAccess"
+      ],
+      "promptHtml": "Une application nécessite un accès conditionnel qui bloque les connexions depuis des appareils non gérés tout en permettant l’accès depuis des appareils gérés par l’entreprise. Quelle fonctionnalité Entra applique ces politiques d’accès basées sur l’appareil ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Microsoft Entra Domain Services avec politiques de groupe"
+        },
+        {
+          "key": "B",
+          "label": "Microsoft Entra Conditional Access avec conformité aux appareils"
+        },
+        {
+          "key": "C",
+          "label": "Azure RBAC avec définitions de rôles personnalisées"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Microsoft Entra Conditional Access avec conformité aux appareils",
+      "rationaleHtml": "",
+      "extraHtml": "Entra Conditional Access applique des politiques basées sur des conditions telles que la conformité des appareils, la localisation et le niveau de risque. Les services de domaine fournissent des services d’annuaire mais pas de politiques d’accès conditionnels. RBAC contrôle les permissions de ressources, pas l’authentification conditionnelle.<br><br>Référence : <a href=\"https://learn.microsoft.com/entra/identity/conditional-access/overview\">Entrée Conditional Access</a>"
+    },
+    {
+      "id": "az900-c949995a52c1",
+      "examSlug": "az900",
+      "domain": "Identity",
+      "topic": "DomainServices",
+      "tags": [
+        "AZ-900",
+        "Identity",
+        "DomainServices"
+      ],
+      "promptHtml": "Une application héritée nécessite la jonction de domaine traditionnelle et la gestion de la politique de groupe dans Azure. Quel service d’identité Azure offre ces fonctionnalités Active Directory Domain Services ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Microsoft Entra ID avec authentification cloud uniquement"
+        },
+        {
+          "key": "B",
+          "label": "Microsoft Entra Domain Services avec contrôleurs de domaine gérés"
+        },
+        {
+          "key": "C",
+          "label": "Azure RBAC avec rôles intégrés"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Microsoft Entra Domain Services avec contrôleurs de domaine gérés",
+      "rationaleHtml": "",
+      "extraHtml": "Entra Domain Services fournit des contrôleurs de domaine gérés prenant en charge la jonction de domaine, LDAP et les politiques de groupe pour les applications héritées. Entra ID est natif cloud, sans les capacités AD traditionnelles. Azure RBAC contrôle l’accès aux ressources, pas les services de domaine.<br><br>Référence : <a href=\"https://learn.microsoft.com/entra/identity/domain-services/overview\">Entra Domain Services</a>"
+    },
+    {
+      "id": "az900-3617440fd0d1",
+      "examSlug": "az900",
+      "domain": "Identity",
+      "topic": "SingleSignOn",
+      "tags": [
+        "AZ-900",
+        "Identity",
+        "SingleSignOn"
+      ],
+      "promptHtml": "Les utilisateurs doivent se connecter une seule fois avec les identifiants de l’entreprise et accéder automatiquement à Office 365, Salesforce et aux applications internes sans avoir à saisir de nouveau les mots de passe. Quelle fonctionnalité d’authentification permet cette expérience fluide ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Authentification multifacteur (MFA) pour une sécurité renforcée"
+        },
+        {
+          "key": "B",
+          "label": "Connexion unique (SSO) pour l’authentification unifiée"
+        },
+        {
+          "key": "C",
+          "label": "Authentification sans mot de passe avec biométrie"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Connexion unique (SSO) pour l’authentification unifiée",
+      "rationaleHtml": "",
+      "extraHtml": "SSO permet aux utilisateurs de s’authentifier une fois et d’accéder à plusieurs applications sans réauthentification. La MFA améliore la sécurité mais nécessite plusieurs facteurs. Le mode sans mot de passe élimine les mots de passe mais ne fournit pas intrinsèquement un SSO inter-applications.<br><br>Référence : <a href=\"https://learn.microsoft.com/entra/identity/enterprise-apps/what-is-single-sign-on\">Azure SSO</a>"
+    },
+    {
+      "id": "az900-7e0ed441d490",
+      "examSlug": "az900",
+      "domain": "Management",
+      "topic": "Monitoring",
+      "tags": [
+        "AZ-900",
+        "Management",
+        "Monitoring"
+      ],
+      "promptHtml": "Votre application subit une utilisation variable du processeur allant de 20 % à 95 % tout au long de la journée. La direction souhaite des recommandations détaillées sur les coûts pour optimiser les dépenses. Quel outil Azure propose des suggestions d’optimisation des coûts ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Monitor pour les métriques de performance"
+        },
+        {
+          "key": "B",
+          "label": "Azure Advisor pour des recommandations de coûts"
+        },
+        {
+          "key": "C",
+          "label": "Azure Cost Management pour l’analyse des dépenses"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Azure Advisor pour des recommandations de coûts",
+      "rationaleHtml": "",
+      "extraHtml": "Azure Advisor fournit des recommandations personnalisées de bonnes pratiques, y compris des suggestions d’optimisation des coûts comme la redimensionnement des VM. Azure Monitor suit les métriques mais ne fournit pas de recommandations. La gestion des coûts analyse les dépenses mais le conseiller fournit des recommandations concrètes.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/advisor/advisor-cost-recommendations\">recommandations de coût pour Azure Advisor</a>"
+    },
+    {
+      "id": "az900-c3929dee8bd4",
+      "examSlug": "az900",
+      "domain": "Management",
+      "topic": "CostManagement",
+      "tags": [
+        "AZ-900",
+        "Management",
+        "CostManagement"
+      ],
+      "promptHtml": "Avant de déployer une nouvelle infrastructure, vous devez estimer les coûts mensuels pour 10 VM, 5 To de stockage et une utilisation de bande passante. Quel outil Azure fournit la prévision des coûts avant le déploiement des ressources ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Cost Management pour analyser les dépenses existantes"
+        },
+        {
+          "key": "B",
+          "label": "Azure Pricing Calculator pour estimer les coûts futurs"
+        },
+        {
+          "key": "C",
+          "label": "Azure Advisor pour des recommandations d’optimisation"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Azure Pricing Calculator pour estimer les coûts futurs",
+      "rationaleHtml": "",
+      "extraHtml": "Azure Pricing Calculator estime les coûts des ressources prévues avant le déploiement. La gestion des coûts analyse les dépenses existantes en ressources. Azure Advisor recommande des optimisations pour les ressources déployées, et non une estimation des coûts pour les déploiements prévus.<br><br>Référence : <a href=\"https://azure.microsoft.com/pricing/calculator/\">Azure Pricing Calculator</a>"
+    },
+    {
+      "id": "az900-1b6d77cfea7c",
+      "examSlug": "az900",
+      "domain": "Management",
+      "topic": "CostManagement",
+      "tags": [
+        "AZ-900",
+        "Management",
+        "CostManagement"
+      ],
+      "promptHtml": "Votre équipe financière doit répartir les dépenses Azure entre les départements pour le reporting des rétrofacturations. Quelle fonctionnalité Azure permet la catégorisation des coûts et le suivi des allocations ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Groupes de ressources pour organiser les ressources connexes"
+        },
+        {
+          "key": "B",
+          "label": "Balises avec les métadonnées des départements pour l’allocation des coûts"
+        },
+        {
+          "key": "C",
+          "label": "Groupes de gestion pour la hiérarchie des abonnements"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Balises avec les métadonnées des départements pour l’allocation des coûts",
+      "rationaleHtml": "",
+      "extraHtml": "Les tags fournissent des métadonnées pour les ressources permettant l’allocation des coûts, la rétrofacturation et le filtrage dans la gestion des coûts. Les groupes de ressources organisent les ressources mais ne fournissent pas de métadonnées d’allocation des coûts. Les groupes de gestion organisent les abonnements mais les tags permettent un suivi détaillé des coûts.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/cost-management-billing/costs/cost-allocation-tags\">allocation des coûts Azure avec tags</a>"
+    },
+    {
+      "id": "az900-ace83acf86d8",
+      "examSlug": "az900",
+      "domain": "Management",
+      "topic": "Governance",
+      "tags": [
+        "AZ-900",
+        "Management",
+        "Governance"
+      ],
+      "promptHtml": "Votre organisation doit prévenir la suppression accidentelle des ressources de production tout en autorisant les mises à jour autorisées des configurations. Quelle fonctionnalité Azure empêche les suppressions involontaires tout en autorisant les modifications ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure RBAC supprimant les permissions de suppression"
+        },
+        {
+          "key": "B",
+          "label": "Verrous de ressources avec le paramètre CanNotDelete"
+        },
+        {
+          "key": "C",
+          "label": "Azure Policy bloque les opérations de suppression"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Verrous de ressources avec le paramètre CanNotDelete",
+      "rationaleHtml": "",
+      "extraHtml": "Les verrous de ressources avec CanNotDelete empêchent la suppression tout en autorisant les mises à jour. Le RBAC : la suppression des permissions de suppression empêche les suppressions mais affecte les utilisateurs autorisés. Azure Policy peut auditer ou refuser, mais les verrous de ressources offrent une protection explicite contre la suppression.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/azure-resource-manager/management/lock-resources\">Azure resource locks</a>"
+    },
+    {
+      "id": "az900-f1ea13355695",
+      "examSlug": "az900",
+      "domain": "Management",
+      "topic": "Governance",
+      "tags": [
+        "AZ-900",
+        "Management",
+        "Governance"
+      ],
+      "promptHtml": "Votre équipe de conformité exige que tous les comptes de stockage Azure utilisent un chiffrement et soient étiquetés avec une étiquette de classification des données. Quel service Azure applique ces normes organisationnelles ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Policy avec définitions intégrées et personnalisées de politique"
+        },
+        {
+          "key": "B",
+          "label": "Azure RBAC avec des rôles en lecture seule"
+        },
+        {
+          "key": "C",
+          "label": "Verrouillages de ressources empêchant les modifications"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Policy avec définitions intégrées et personnalisées de politique",
+      "rationaleHtml": "",
+      "extraHtml": "Azure Policy applique des normes organisationnelles via des définitions de politiques qui auditent ou refusent les ressources non conformes. RBAC contrôle l’accès, pas les normes de conformité. Les verrouillages de ressources empêchent les changements mais n’appliquent pas les exigences de conformité.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/governance/policy/overview\">Azure Policy</a>"
+    },
+    {
+      "id": "az900-2b8068620955",
+      "examSlug": "az900",
+      "domain": "Management",
+      "topic": "Governance",
+      "tags": [
+        "AZ-900",
+        "Management",
+        "Governance"
+      ],
+      "promptHtml": "Votre organisation a besoin d’une gouvernance unifiée des données à travers Azure, des bases de données SQL sur site et des applications SaaS tierces pour la classification et la lignée des données. Quel service Azure fournit cette gouvernance des données multi-sources ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Policy for resource compliance"
+        },
+        {
+          "key": "B",
+          "label": "Microsoft Underview pour la gouvernance des données et le catalogage"
+        },
+        {
+          "key": "C",
+          "label": "Azure Monitor for data observability"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Microsoft Underview pour la gouvernance des données et le catalogage",
+      "rationaleHtml": "",
+      "extraHtml": "Microsoft Purview offre une gouvernance unifiée des données à travers des environnements multi-cloud et sur site, avec la découverte, la classification et la lignée des données. Azure Policy régit les configurations de ressources, pas les données. Azure Monitor suit les métriques, pas la gouvernance des données.<br><br>Référence : <a href=\"https://learn.microsoft.com/purview/purview\">Microsoft Purview</a>"
+    },
+    {
+      "id": "az900-0a71dac1971e",
+      "examSlug": "az900",
+      "domain": "Management",
+      "topic": "Deployment",
+      "tags": [
+        "AZ-900",
+        "Management",
+        "Deployment"
+      ],
+      "promptHtml": "Votre infrastructure nécessite un déploiement cohérent de réseaux virtuels standardisés sur plusieurs abonnements à l’aide de modèles déclaratifs. Quel outil Azure permet les déploiements infrastructure-as-code ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Portal avec création manuelle de ressources"
+        },
+        {
+          "key": "B",
+          "label": "Modèles Azure Resource Manager (ARM) avec définitions JSON"
+        },
+        {
+          "key": "C",
+          "label": "Azure Cloud Shell pour exécuter des commandes CLI"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Modèles Azure Resource Manager (ARM) avec définitions JSON",
+      "rationaleHtml": "",
+      "extraHtml": "Les modèles ARM définissent l’infrastructure comme du code utilisant JSON, permettant des déploiements cohérents et répétables. Azure Portal est manuel, pas infrastructure-as-code. Cloud Shell exécute des commandes mais n’est pas une infrastructure en tant que code déclaratif.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/azure-resource-manager/templates/overview\">Modèles ARM</a>"
+    },
+    {
+      "id": "az900-db15efcb5478",
+      "examSlug": "az900",
+      "domain": "Management",
+      "topic": "Tools",
+      "tags": [
+        "AZ-900",
+        "Management",
+        "Tools"
+      ],
+      "promptHtml": "Vous devez gérer les ressources Azure à l’aide d’outils en ligne de commande depuis un navigateur web sans installer de logiciel localement. Quel service Azure offre cette expérience de shell basée sur un navigateur ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Portal GUI pour la gestion point-and-click"
+        },
+        {
+          "key": "B",
+          "label": "Azure Cloud Shell avec Bash intégré et PowerShell"
+        },
+        {
+          "key": "C",
+          "label": "Azure DevOps pipelines pour déploiements automatisés"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Azure Cloud Shell avec Bash intégré et PowerShell",
+      "rationaleHtml": "",
+      "extraHtml": "Azure Cloud Shell offre un accès en ligne de commande basé sur un navigateur avec Azure CLI et PowerShell préinstallés sans installation locale. Azure Portal est basé sur une interface graphique. Les pipelines DevOps automatisent les déploiements mais ne sont pas des shells interactifs.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/cloud-shell/overview\">Azure Cloud Shell</a>"
+    },
+    {
+      "id": "az900-d4439002db92",
+      "examSlug": "az900",
+      "domain": "Management",
+      "topic": "HybridManagement",
+      "tags": [
+        "AZ-900",
+        "Management",
+        "HybridManagement"
+      ],
+      "promptHtml": "Votre organisation gère des serveurs sur Azure, AWS, VMware sur site et des centres de données physiques. La direction souhaite des capacités de gestion Azure unifiées dans tous les environnements. Quel service Azure étend le plan de contrôle Azure vers des ressources externes ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Monitor for multi-cloud monitoring"
+        },
+        {
+          "key": "B",
+          "label": "Azure Arc pour la gestion unifiée des ressources"
+        },
+        {
+          "key": "C",
+          "label": "Azure Migrate pour la migration de charge de travail"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Azure Arc pour la gestion unifiée des ressources",
+      "rationaleHtml": "",
+      "extraHtml": "Azure Arc étend la gestion et les services Azure à toute infrastructure, y compris les opérations sur site, multi-cloud et edge. Azure Monitor suit les métriques mais n’étend pas les capacités de gestion. Azure Migrate se concentre sur la migration, pas sur la gestion continue.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/azure-arc/overview\">Azure Arc</a>"
+    },
+    {
+      "id": "az900-e128f23e443e",
+      "examSlug": "az900",
+      "domain": "Management",
+      "topic": "IaC",
+      "tags": [
+        "AZ-900",
+        "Management",
+        "IaC"
+      ],
+      "promptHtml": "Les développeurs déploient manuellement les ressources Azure, ce qui provoque des dérives de configuration et des environnements incohérents. La gestion nécessite des déploiements standardisés et reproductibles. Quelle approche répond à cette exigence ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Infrastructure as Code (IaC) avec des modèles déclaratifs"
+        },
+        {
+          "key": "B",
+          "label": "Déploiements manuels avec documentation détaillée"
+        },
+        {
+          "key": "C",
+          "label": "Azure Portal avec configurations de ressources sauvegardées"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Infrastructure as Code (IaC) avec des modèles déclaratifs",
+      "rationaleHtml": "",
+      "extraHtml": "Infrastructure as Code utilise des modèles déclaratifs (ARM, Bicep, Terraform) garantissant des déploiements cohérents, contrôlés par la version et reproductibles. Les déploiements manuels avec documentation permettent toujours la dérive. Les configurations sauvegardées par portail ne sont pas de vraies IaC.<br><br>Référence : <a href=\"https://learn.microsoft.com/devops/deliver/what-is-infrastructure-as-code\">Infrastructure en tant que code</a>"
+    },
+    {
+      "id": "az900-64c19ec77616",
+      "examSlug": "az900",
+      "domain": "Management",
+      "topic": "Monitoring",
+      "tags": [
+        "AZ-900",
+        "Management",
+        "Monitoring"
+      ],
+      "promptHtml": "Votre application rencontre des problèmes de performance intermittents. Vous devez collecter, analyser et visualiser la télémétrie des applications, y compris les taux de requêtes, les taux de défaillance et le suivi des dépendances. Quel service Azure offre cette surveillance des performances des applications ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Service Health pour l’état de la plateforme"
+        },
+        {
+          "key": "B",
+          "label": "Analyses d’application pour la gestion de la performance des applications"
+        },
+        {
+          "key": "C",
+          "label": "Azure Advisor pour des recommandations d’optimisation"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Analyses d’application pour la gestion de la performance des applications",
+      "rationaleHtml": "",
+      "extraHtml": "Application Insights fournit une télémétrie d’application détaillée avec suivi des requêtes, cartographie des dépendances et analyse des défaillances. Service Health rapporte l’état de la plateforme Azure. Le conseiller fournit des recommandations mais pas de collecte de télémétrie en temps réel.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/azure-monitor/app/app-insights-overview\">Application Insights</a>"
+    },
+    {
+      "id": "az900-8c23c483ddfa",
+      "examSlug": "az900",
+      "domain": "Management",
+      "topic": "Monitoring",
+      "tags": [
+        "AZ-900",
+        "Management",
+        "Monitoring"
+      ],
+      "promptHtml": "Vous avez besoin d’alertes en temps réel lorsque le processeur de la machine virtuelle dépasse 90 % pendant 5 minutes, déclenchant automatiquement un e-mail aux opérations. Quel service Azure permet d’activer des alertes basées sur des métriques avec des actions ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Monitor alertes avec groupes d’actions"
+        },
+        {
+          "key": "B",
+          "label": "Azure Service Health pour les notifications d’incidents"
+        },
+        {
+          "key": "C",
+          "label": "Azure Advisor pour des recommandations de performance"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Monitor alertes avec groupes d’actions",
+      "rationaleHtml": "",
+      "extraHtml": "Les alertes Azure Monitor se déclenchent sur des métriques, des journaux ou des activités, avec des groupes d’actions exécutant des notifications ou des réponses automatisées. Service Health rapporte des problèmes de plateforme Azure, pas des métriques de ressources. Le conseiller fournit des recommandations mais pas d’alertes en temps réel.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/azure-monitor/alerts/alerts-overview\">Azure Monitor alerts</a>"
+    },
+    {
+      "id": "az900-338e7abf3d93",
+      "examSlug": "az900",
+      "domain": "Management",
+      "topic": "ServiceHealth",
+      "tags": [
+        "AZ-900",
+        "Management",
+        "ServiceHealth"
+      ],
+      "promptHtml": "Votre direction a besoin d’une visibilité sur la maintenance Azure prévue, les incidents de service et les avis de santé sur tous les abonnements. Quel service Azure fournit ces informations de santé de la plateforme ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Monitor pour les métriques de ressources"
+        },
+        {
+          "key": "B",
+          "label": "Azure Service Health pour l’état de la plateforme et les incidents"
+        },
+        {
+          "key": "C",
+          "label": "Azure Advisor pour des recommandations de bonnes pratiques"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Azure Service Health pour l’état de la plateforme et les incidents",
+      "rationaleHtml": "",
+      "extraHtml": "Azure Service Health fournit des informations personnalisées sur la santé du service, incluant la maintenance planifiée, les incidents et les avertissements. Azure Monitor suit les métriques de ressources, pas la santé de la plateforme. Le conseiller fournit des recommandations, pas des rapports d’incident.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/service-health/service-health-overview\">Azure Service Health</a>"
+    },
+    {
+      "id": "az900-5940c6523686",
+      "examSlug": "az900",
+      "domain": "Management",
+      "topic": "Monitoring",
+      "tags": [
+        "AZ-900",
+        "Management",
+        "Monitoring"
+      ],
+      "promptHtml": "Vous devez interroger et analyser les journaux de 1000 VM pour identifier les anomalies de sécurité en utilisant des requêtes personnalisées. Quel service Azure offre cette capacité d’agrégation de journaux et d’interrogation ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Monitor avec l’espace de travail Log Analytics"
+        },
+        {
+          "key": "B",
+          "label": "Application Insights uniquement pour les journaux d’application"
+        },
+        {
+          "key": "C",
+          "label": "Azure Advisor pour des recommandations de sécurité"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Monitor avec l’espace de travail Log Analytics",
+      "rationaleHtml": "",
+      "extraHtml": "L’espace de travail Log Analytics collecte et interroge les journaux provenant de multiples sources en utilisant le langage de requête Kusto (KQL). Application Insights se concentre sur la télémétrie applicative. Le conseiller fournit des recommandations mais ne regroupe pas ni ne sollicite les journaux.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/azure-monitor/logs/log-analytics-overview\">Azure Log Analytics</a>"
+    },
+    {
+      "id": "az900-e4a68c4124b2",
+      "examSlug": "az900",
+      "domain": "Architecture",
+      "topic": "ResourceGroups",
+      "tags": [
+        "AZ-900",
+        "Architecture",
+        "ResourceGroups"
+      ],
+      "promptHtml": "Une startup déploie toutes les ressources dans un seul groupe de ressources. À mesure que l’application grandit, ils doivent organiser les ressources par cycle de vie, permettant ainsi le déploiement et la suppression séparés des composants frontend et backend. Quel changement architectural répond à ce besoin ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Créer plusieurs groupes de ressources par cycle de vie des composants"
+        },
+        {
+          "key": "B",
+          "label": "Utilisez des balises pour séparer logiquement les ressources"
+        },
+        {
+          "key": "C",
+          "label": "Déploiement des composants dans différentes régions Azure"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Créer plusieurs groupes de ressources par cycle de vie des composants",
+      "rationaleHtml": "",
+      "extraHtml": "Les groupes de ressources définissent les limites du cycle de vie permettant un déploiement, une gestion et une suppression indépendants. Les balises fournissent des métadonnées mais n’affectent pas la gestion du cycle de vie. Différentes régions concernent la disponibilité, pas l’organisation du cycle de vie.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/azure-resource-manager/management/overview\">Azure resource groups</a>"
+    },
+    {
+      "id": "az900-033d3a371728",
+      "examSlug": "az900",
+      "domain": "Architecture",
+      "topic": "ManagementGroups",
+      "tags": [
+        "AZ-900",
+        "Architecture",
+        "ManagementGroups"
+      ],
+      "promptHtml": "Une entreprise ayant 500 abonnements doit appliquer une politique exigeant que toutes les ressources aient un tag propriétaire. La politique doit s’appliquer automatiquement aux nouveaux abonnements. Quelle fonctionnalité Azure offre cette gouvernance de politique héritée ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Policy assignée au niveau du groupe de gestion"
+        },
+        {
+          "key": "B",
+          "label": "Cessions individuelles de police par abonnement"
+        },
+        {
+          "key": "C",
+          "label": "Balises de groupe de ressources avec héritage"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Policy assignée au niveau du groupe de gestion",
+      "rationaleHtml": "",
+      "extraHtml": "Les groupes de gestion permettent l’attribution de politiques qui hérite automatiquement de toutes les abonnements et ressources enfants. Les attributions individuelles d’abonnement nécessitent une configuration manuelle par abonnement. Les balises de ressources ne font pas respecter les politiques.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/governance/management-groups/overview\">Héritage de la politique du groupe de gestion</a>"
+    },
+    {
+      "id": "az900-86ff0ef8d9a0",
+      "examSlug": "az900",
+      "domain": "Architecture",
+      "topic": "Regions",
+      "tags": [
+        "AZ-900",
+        "Architecture",
+        "Regions"
+      ],
+      "promptHtml": "Une application distribuée mondialement sert les utilisateurs en Amérique du Nord, en Europe et en Asie. Chaque région nécessite des déploiements indépendants avec la conformité à la résidence des données. Quel modèle architectural Azure répond à cette exigence multi-régions ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Région unique avec zones de haute disponibilité"
+        },
+        {
+          "key": "B",
+          "label": "Plusieurs régions avec des déploiements séparés par géographie"
+        },
+        {
+          "key": "C",
+          "label": "Paires régionales avec basculement automatique"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Plusieurs régions avec des déploiements séparés par géographie",
+      "rationaleHtml": "",
+      "extraHtml": "Plusieurs régions avec des déploiements indépendants permettent la conformité à la résidence des données géographiques et l’autonomie régionale. Une seule région viole la résidence des données. Les paires de régions fournissent la réduction des données mais ne garantissent pas la résidence des données selon les besoins géographiques.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/architecture/framework/scalability/design-scale\">Architecture multi-région</a>"
+    },
+    {
+      "id": "az900-0641a1828c2f",
+      "examSlug": "az900",
+      "domain": "Architecture",
+      "topic": "ResourceGroups",
+      "tags": [
+        "AZ-900",
+        "Architecture",
+        "ResourceGroups"
+      ],
+      "promptHtml": "Votre application utilise des machines virtuelles Azure, des services d’applications, des bases de données et du stockage. Il faut un regroupement logique qui permette d’appliquer les contrôles d’accès, les politiques et la gestion du cycle de vie à toutes les ressources collectivement. Quel construct Azure offre cette capacité organisationnelle ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Réseaux virtuels pour le regroupement de réseaux"
+        },
+        {
+          "key": "B",
+          "label": "Groupes de ressources pour l’organisation logique des ressources"
+        },
+        {
+          "key": "C",
+          "label": "Ensembles de disponibilité pour le regroupement VM"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Groupes de ressources pour l’organisation logique des ressources",
+      "rationaleHtml": "",
+      "extraHtml": "Les groupes de ressources regroupent logiquement les ressources pour la gestion collective, y compris le RBAC, les politiques et le cycle de vie. Les VNets ne fournissent que l’isolation réseau. Les ensembles de disponibilité regroupent les VM pour une haute disponibilité mais ne fournissent pas une organisation plus large des ressources.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/azure-resource-manager/management/overview#resource-groups\">Azure resource group benefits</a>"
+    },
+    {
+      "id": "az900-c83c6710886d",
+      "examSlug": "az900",
+      "domain": "Compute",
+      "topic": "Containers",
+      "tags": [
+        "AZ-900",
+        "Compute",
+        "Containers"
+      ],
+      "promptHtml": "Une application nécessite d’exécuter des microservices avec des processus isolés, des temps de démarrage rapides et une portabilité entre environnements sans charge complète de VM. Quel type de calcul Azure équilibre l’isolation avec une opération légère ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Virtual Machines avec stack OS complet"
+        },
+        {
+          "key": "B",
+          "label": "Azure Container Instances for containerized microservices"
+        },
+        {
+          "key": "C",
+          "label": "Azure Functions pour l’exécution de code serverless"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Azure Container Instances for containerized microservices",
+      "rationaleHtml": "",
+      "extraHtml": "Les conteneurs offrent une isolation des processus grâce à un démarrage rapide et une portabilité, sans charge complète de VM. Les machines virtuelles incluent une pile complète d’OS avec des temps de démarrage plus longs. Les fonctions sont pilotées par des événements et ne conçoivent pas des microservices de longue durée.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/container-instances/container-instances-overview\">Azure Container Instances</a>"
+    },
+    {
+      "id": "az900-9ee2963828fd",
+      "examSlug": "az900",
+      "domain": "Compute",
+      "topic": "PricingModels",
+      "tags": [
+        "AZ-900",
+        "Compute",
+        "PricingModels"
+      ],
+      "promptHtml": "La charge de travail de votre application fonctionne en continu 24h/24 et 7j/7 avec une utilisation prévisible des ressources. Le budget exige de minimiser les coûts de calcul sur 3 ans. Quel modèle de tarification offre un maximum d’économies sur cette charge de travail stable ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Pay-as-you-go pour une facturation flexible"
+        },
+        {
+          "key": "B",
+          "label": "Instances réservées avec engagement de 3 ans"
+        },
+        {
+          "key": "C",
+          "label": "Instants spot avec la disponibilité des meilleurs efforts"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Instances réservées avec engagement de 3 ans",
+      "rationaleHtml": "",
+      "extraHtml": "Les Instances Réservées offrent jusqu’à 72 % de réduction pour des engagements de 1 à 3 ans sur des charges de travail prévisibles. Le paiement au gré offre de la flexibilité mais des coûts plus élevés. Les Cas Spot offrent des réductions mais peuvent être expulsés, ce qui ne convient pas à des charges de travail continues.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/cost-management-billing/reservations/save-compute-costs-reservations\">Azure Reserved Instances</a>"
+    },
+    {
+      "id": "az900-35f312cecb24",
+      "examSlug": "az900",
+      "domain": "Compute",
+      "topic": "SpotInstances",
+      "tags": [
+        "AZ-900",
+        "Compute",
+        "SpotInstances"
+      ],
+      "promptHtml": "Une charge de travail de traitement par lots fonctionne chaque nuit pendant 4 heures pour traiter des analyses de données. La charge de travail peut tolérer les interruptions et reprendre le traitement. Quel modèle de tarification de calcul minimise les coûts pour ce travail batch tolérant aux pannes ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Instances réservées pour une capacité garantie"
+        },
+        {
+          "key": "B",
+          "label": "Des machines virtuelles spot avec jusqu’à 90 % de réduction"
+        },
+        {
+          "key": "C",
+          "label": "Paiement à l’usage pour un usage flexible"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Des machines virtuelles spot avec jusqu’à 90 % de réduction",
+      "rationaleHtml": "",
+      "extraHtml": "Les machines virtuelles spot offrent jusqu’à 90 % de réduction pour les charges de travail interrompues et tolérantes aux pannes comme le traitement par lots. Les Instances Réservées nécessitent un engagement à long terme. Le paiement à l’usage ne propose pas les économies que les instances ponctuelles offrent pour les charges de travail interrompues.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/virtual-machines/spot-vms\">Azure Spot VMs</a>"
+    },
+    {
+      "id": "az900-f42793ad3b23",
+      "examSlug": "az900",
+      "domain": "Compute",
+      "topic": "HighAvailability",
+      "tags": [
+        "AZ-900",
+        "Compute",
+        "HighAvailability"
+      ],
+      "promptHtml": "Votre application web doit maintenir un SLA de disponibilité de 99,95 %. Une seule VM fournit un SLA de 99,9 %. Quelle architecture de calcul Azure atteint la plus grande exigence de disponibilité ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Une seule VM avec stockage SSD premium"
+        },
+        {
+          "key": "B",
+          "label": "Ensembles de disponibilité avec les machines virtuelles entre les domaines de défaut et de mise à jour"
+        },
+        {
+          "key": "C",
+          "label": "Une seule VM avec sauvegardes automatisées"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Ensembles de disponibilité avec les machines virtuelles entre les domaines de défaut et de mise à jour",
+      "rationaleHtml": "",
+      "extraHtml": "Les ensembles de disponibilité répartissent les machines virtuelles entre les domaines de défaut (alimentation/réseau) et les domaines de mise à jour (maintenance), permettant d’obtenir un SLA composite plus élevé. Les machines virtuelles uniques, quel que soit le stockage ou les sauvegardes, offrent un SLA plus faible que les architectures distribuées.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/virtual-machines/availability-set-overview\">Azure availability sets</a>"
+    },
+    {
+      "id": "az900-5258b82c29ab",
+      "examSlug": "az900",
+      "domain": "Networking",
+      "topic": "ApplicationGateway",
+      "tags": [
+        "AZ-900",
+        "Networking",
+        "ApplicationGateway"
+      ],
+      "promptHtml": "Une application web reçoit 10 000 requêtes par seconde, nécessitant une terminaison automatique HTTPS, une distribution de charge et une protection contre le pare-feu des applications web. Quel service Azure offre ces capacités de couche 7 ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Load Balancer pour l’équilibrage de charge de couche 4"
+        },
+        {
+          "key": "B",
+          "label": "Azure Application Gateway avec décharge WAF et SSL"
+        },
+        {
+          "key": "C",
+          "label": "Azure Traffic Manager for DNS based routing"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Azure Application Gateway avec décharge WAF et SSL",
+      "rationaleHtml": "",
+      "extraHtml": "Application Gateway fournit un équilibrage de charge de couche 7 avec terminaison SSL, WAF et routage basé sur URL. L’équilibreur de charge fonctionne en couche 4 sans SSL/WAF. Traffic Manager propose un routage DNS global sans fonctionnalités de couche 7.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/application-gateway/overview\">Azure Application Gateway</a>"
+    },
+    {
+      "id": "az900-deb56fc36b91",
+      "examSlug": "az900",
+      "domain": "Networking",
+      "topic": "DNS",
+      "tags": [
+        "AZ-900",
+        "Networking",
+        "DNS"
+      ],
+      "promptHtml": "Votre application doit résoudre des noms de domaine personnalisés comme database.internal vers des adresses IP privées au sein de votre réseau virtuel Azure. Quel service Azure fournit cette résolution DNS interne ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Public DNS pour l’hébergement de domaines internet"
+        },
+        {
+          "key": "B",
+          "label": "Azure Private DNS zones pour résolution de noms VNet"
+        },
+        {
+          "key": "C",
+          "label": "Azure Traffic Manager pour le routage global"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Azure Private DNS zones pour résolution de noms VNet",
+      "rationaleHtml": "",
+      "extraHtml": "Azure Private DNS fournit la résolution de noms dans les VNets en utilisant des adresses IP privées. Le DNS public résout les domaines internet. Traffic Manager fournit un routage global du trafic, pas une résolution DNS interne.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/dns/private-dns-overview\">Azure Private DNS</a>"
+    },
+    {
+      "id": "az900-fd6c1b954471",
+      "examSlug": "az900",
+      "domain": "Networking",
+      "topic": "VNetPeering",
+      "tags": [
+        "AZ-900",
+        "Networking",
+        "VNetPeering"
+      ],
+      "promptHtml": "Deux abonnements Azure distincts disposent chacun de réseaux virtuels nécessitant une connectivité privée pour partager les ressources. Les VNets possèdent des espaces d’adressage non superposés. Quelle fonctionnalité réseau permet cette connectivité privée à abonnement croisé ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Passerelle VPN pour connexions chiffrées"
+        },
+        {
+          "key": "B",
+          "label": "Peering de réseau virtuel entre abonnements"
+        },
+        {
+          "key": "C",
+          "label": "ExpressRoute pour une connectivité dédiée"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Peering de réseau virtuel entre abonnements",
+      "rationaleHtml": "",
+      "extraHtml": "Le peering VNet connecte les VNet entre les abonnements en utilisant Azure backbone avec une connectivité privée. VPN Gateway ajoute une surcharge de chiffrement inutile pour Azure-à-Azure. ExpressRoute connecte sur site, pas VNet-à-VNet entre abonnements.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/virtual-network/virtual-network-peering-overview\">Peering VNet cross-subscription</a>"
+    },
+    {
+      "id": "az900-3c78b3029583",
+      "examSlug": "az900",
+      "domain": "Storage",
+      "topic": "TierSelection",
+      "tags": [
+        "AZ-900",
+        "Storage",
+        "TierSelection"
+      ],
+      "promptHtml": "Votre organisation stocke les sauvegardes sous forme de blocs de blocs nécessitant une grande durabilité mais un accès peu fréquent. Minimiser les coûts de stockage est crucial. Quelle combinaison de niveau de stockage et de redondance équilibre coût et durabilité ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Niveau chaud avec LRS pour un coût bas"
+        },
+        {
+          "key": "B",
+          "label": "Niveau cool avec GRS pour un accès peu fréquent avec redondance géographique"
+        },
+        {
+          "key": "C",
+          "label": "Niveau d’archive avec ZRS pour une durabilité maximale"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Niveau cool avec GRS pour un accès peu fréquent avec redondance géographique",
+      "rationaleHtml": "",
+      "extraHtml": "Le Cool Tier avec GRS offre un stockage économique pour un accès peu fréquent avec une redondance géographique pour les sauvegardes. Le Hot Tier est cher pour un accès peu fréquent. Le niveau d’archive a des coûts de récupération élevés et une latence inadaptée aux sauvegardes nécessitant un accès occasionnel.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/storage/blobs/access-tiers-best-practices\">Conseils pour la sélection des niveaux de stockage</a>"
+    },
+    {
+      "id": "az900-0b8a269e5062",
+      "examSlug": "az900",
+      "domain": "Storage",
+      "topic": "ZRS",
+      "tags": [
+        "AZ-900",
+        "Storage",
+        "ZRS"
+      ],
+      "promptHtml": "Une application financière nécessite 99,99 % de disponibilité sans aucune perte de données si un datacenter Azure tombe en panne. Quelle option de redondance de stockage offre une redondance au niveau du centre de données dans une région ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Stockage localement redondant (LRS) au sein d’un seul centre de données"
+        },
+        {
+          "key": "B",
+          "label": "Stockage redondant de zone (ZRS) entre zones de disponibilité"
+        },
+        {
+          "key": "C",
+          "label": "Stockage géo-redondant (GRS) entre différentes régions"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Stockage redondant de zone (ZRS) entre zones de disponibilité",
+      "rationaleHtml": "",
+      "extraHtml": "ZRS se réplique de manière synchrone sur trois zones de disponibilité au sein d’une même région, protégeant contre les défaillances de centres de données sans aucune perte de données. LRS ne protège qu’à l’intérieur d’un centre de données. GRS protège entre les régions mais utilise la réplication asynchrone.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/storage/common/storage-redundancy#zone-redundant-storage\">Azure ZRS</a>"
+    },
+    {
+      "id": "az900-79cf10750318",
+      "examSlug": "az900",
+      "domain": "Storage",
+      "topic": "AzureFiles",
+      "tags": [
+        "AZ-900",
+        "Storage",
+        "AzureFiles"
+      ],
+      "promptHtml": "Votre application a besoin d’un stockage partagé de fichiers accessible depuis plusieurs serveurs Windows via le protocole SMB. Quel service de stockage Azure propose ce système de fichiers partagé ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Blob Storage for object storage"
+        },
+        {
+          "key": "B",
+          "label": "Azure Files avec prise en charge des protocoles SMB"
+        },
+        {
+          "key": "C",
+          "label": "Azure Queue Storage for message queuing"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Azure Files avec prise en charge des protocoles SMB",
+      "rationaleHtml": "",
+      "extraHtml": "Azure Files offre un stockage partagé de fichiers entièrement géré accessible via le protocole SMB. Le stockage en blob est un stockage d’objets sans protocoles de système de fichiers. Le stockage en file d’attente sert à la mise en file d’attente des messages, pas à l’accès aux fichiers partagés.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/storage/files/storage-files-introduction\">Azure Files</a>"
+    },
+    {
+      "id": "az900-1c0f6c4ba6ce",
+      "examSlug": "az900",
+      "domain": "Storage",
+      "topic": "FileSync",
+      "tags": [
+        "AZ-900",
+        "Storage",
+        "FileSync"
+      ],
+      "promptHtml": "Vous devez synchroniser 10 To de fichiers fréquemment consultés des serveurs de fichiers locaux vers Azure Files, en maintenant le cache local pour les performances. Quel service Azure permet cette synchronisation hybride de fichiers ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "AzCopy pour la copie de fichiers à usage unique"
+        },
+        {
+          "key": "B",
+          "label": "Azure File Sync pour une synchronisation continue avec la mise en cache"
+        },
+        {
+          "key": "C",
+          "label": "Azure Data Box for physical data transfer"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Azure File Sync pour une synchronisation continue avec la mise en cache",
+      "rationaleHtml": "",
+      "extraHtml": "Azure File Sync synchronise en continu les fichiers entre les fichiers sur site et Azure Files grâce au tiering cloud pour la mise en cache sur site. AzCopy est destiné à la copie à une seule fois. Data Box est destiné au transfert initial en masse sans synchronisation continue.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/storage/file-sync/file-sync-introduction\">Azure File Sync</a>"
+    },
+    {
+      "id": "az900-ce82216d21b8",
+      "examSlug": "az900",
+      "domain": "Storage",
+      "topic": "NetworkSecurity",
+      "tags": [
+        "AZ-900",
+        "Storage",
+        "NetworkSecurity"
+      ],
+      "promptHtml": "Votre politique de sécurité exige que l’accès aux comptes de stockage soit limité exclusivement à des réseaux virtuels Azure spécifiques, bloquant ainsi l’accès depuis l’internet public. Quelle fonctionnalité de sécurité met en œuvre ce contrôle d’accès basé sur le réseau ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Pare-feu de compte de stockage avec terminaux de service VNet"
+        },
+        {
+          "key": "B",
+          "label": "Signatures d’accès partagées (SAS) avec une expiration temporelle"
+        },
+        {
+          "key": "C",
+          "label": "Clés de compte de stockage avec politique de rotation"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Pare-feu de compte de stockage avec terminaux de service VNet",
+      "rationaleHtml": "",
+      "extraHtml": "Un pare-feu de compte de stockage avec les terminaux de service VNet restreint l’accès à des VNet spécifiques, bloquant ainsi l’accès à Internet public. Les jetons SAS contrôlent la délégation mais ne restreignent pas l’accès au réseau. Les clés de compte fournissent l’authentification mais pas le filtrage réseau.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/storage/common/storage-network-security\">Sécurité des réseaux de stockage</a>"
+    },
+    {
+      "id": "az900-662d715dcd86",
+      "examSlug": "az900",
+      "domain": "Security",
+      "topic": "ConditionalAccess",
+      "tags": [
+        "AZ-900",
+        "Security",
+        "ConditionalAccess"
+      ],
+      "promptHtml": "Les utilisateurs doivent accéder uniquement aux applications web protégées depuis les appareils gérés par l’entreprise inscrits à la gestion des appareils. Quelle configuration d’accès conditionnel applique cette restriction basée sur l’appareil ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Exiger une authentification multifacteur pour tous les utilisateurs"
+        },
+        {
+          "key": "B",
+          "label": "Exiger que l’appareil soit marqué comme conforme"
+        },
+        {
+          "key": "C",
+          "label": "Bloquer l’accès depuis des lieux inconnus"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Exiger que l’appareil soit marqué comme conforme",
+      "rationaleHtml": "",
+      "extraHtml": "La vérification de conformité des dispositifs à accès conditionnel nécessite que les appareils soient enregistrés et conformes aux politiques organisationnelles. La MFA renforce la sécurité mais ne vérifie pas la gestion des appareils. Le blocage de localisation ne vérifie pas la conformité des appareils.<br><br>Référence : <a href=\"https://learn.microsoft.com/entra/identity/conditional-access/concept-conditional-access-conditions#device-platforms\">Accès conditionnel basé sur l’appareil</a>"
+    },
+    {
+      "id": "az900-87cfc887f23d",
+      "examSlug": "az900",
+      "domain": "Management",
+      "topic": "ActivityLog",
+      "tags": [
+        "AZ-900",
+        "Management",
+        "ActivityLog"
+      ],
+      "promptHtml": "Votre organisation exige des journaux d’audit montrant tous les changements d’abonnement Azure, y compris la création de ressources, les suppressions et les modifications de configuration. Quelle fonctionnalité Azure offre ce suivi des changements ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Monitor metrics for performance data"
+        },
+        {
+          "key": "B",
+          "label": "Azure Activity Log pour les modifications au niveau des abonnements"
+        },
+        {
+          "key": "C",
+          "label": "Application Insights pour la télémétrie applicative"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Azure Activity Log pour les modifications au niveau des abonnements",
+      "rationaleHtml": "",
+      "extraHtml": "Azure Activity Log enregistre toutes les opérations sur le plan de contrôle (création, mise à jour, suppression) au niveau de l’abonnement. Surveillez les métriques et suivez la performance. Application Insights suit la télémétrie des applications, pas les modifications d’abonnement.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/azure-monitor/essentials/activity-log\">Azure Activity Log</a>"
+    },
+    {
+      "id": "az900-bc4e831eebfe",
+      "examSlug": "az900",
+      "domain": "Architecture",
+      "topic": "Subscriptions",
+      "tags": [
+        "AZ-900",
+        "Architecture",
+        "Subscriptions"
+      ],
+      "promptHtml": "Les environnements de développement, de mise en scène et de production nécessitent chacun une facturation, des contrôles d’accès et des limites de ressources distincts. Quelle structure organisationnelle Azure offre cette isolation ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Groupes de ressources par environnement au sein d’un seul abonnement"
+        },
+        {
+          "key": "B",
+          "label": "Abonnements séparés par environnement"
+        },
+        {
+          "key": "C",
+          "label": "Tags identifiant les environnements sur toutes les ressources"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Abonnements séparés par environnement",
+      "rationaleHtml": "",
+      "extraHtml": "Les abonnements offrent une isolation de la facturation, des contrôles d’accès séparés et des quotas de ressources indépendants par environnement. Les groupes de ressources au sein des abonnements partagent la facturation et les limites. Les balises fournissent des métadonnées sans isolation.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/cloud-adoption-framework/ready/azure-best-practices/organize-subscriptions\">Schémas d’organisation par abonnement</a>"
+    },
+    {
+      "id": "az900-0f9a762945c3",
+      "examSlug": "az900",
+      "domain": "Management",
+      "topic": "ARMTemplates",
+      "tags": [
+        "AZ-900",
+        "Management",
+        "ARMTemplates"
+      ],
+      "promptHtml": "Votre application couvre les comptes Azure VM, Azure SQL Database, App Services et Storage nécessitant des mises à jour coordonnées. Quelle approche de déploiement Azure permet des mises à jour versionnées de l’infrastructure atomique ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Déploiements manuels Azure Portal"
+        },
+        {
+          "key": "B",
+          "label": "Modèles Azure Resource Manager avec mises à jour versionnées"
+        },
+        {
+          "key": "C",
+          "label": "Azure CLI scripts exécutés séquentiellement"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Modèles Azure Resource Manager avec mises à jour versionnées",
+      "rationaleHtml": "",
+      "extraHtml": "Les modèles ARM définissent une infrastructure permettant de manière déclarative des déploiements atomiques et versionnés avec une capacité de retour en arrière. Les déploiements manuels manquent de contrôle de version. Les scripts CLI sont impératifs et plus difficiles à versionner et à revenir.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/azure-resource-manager/templates/overview#why-choose-arm-templates\">Avantages du modèle ARM</a>"
+    },
+    {
+      "id": "az900-013deb345030",
+      "examSlug": "az900",
+      "domain": "Security",
+      "topic": "Auditing",
+      "tags": [
+        "AZ-900",
+        "Security",
+        "Auditing"
+      ],
+      "promptHtml": "Un audit réglementaire exige de prouver que seul le personnel autorisé a accédé aux bases de données de production pendant une période donnée. Quelle fonctionnalité Azure fournit cette trace d’audit d’accès ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Assignations de rôles Azure RBAC montrant les permissions actuelles"
+        },
+        {
+          "key": "B",
+          "label": "Azure Activity Log avec logs de connexion et d’accès"
+        },
+        {
+          "key": "C",
+          "label": "Logs de flux de groupe de sécurité réseau"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Azure Activity Log avec logs de connexion et d’accès",
+      "rationaleHtml": "",
+      "extraHtml": "Le journal d’activité combiné aux journaux de connexion Entra ID fournit des traces d’audit d’accès complètes. RBAC affiche les affectations actuelles, pas l’historique d’accès. Les journaux de flux NSG suivent le trafic réseau, et non l’accès basé sur l’identité.<br><br>Référence : <a href=\"https://learn.microsoft.com/entra/identity/monitoring-health/concept-sign-ins\">Azure Access audit logs</a>"
+    },
+    {
+      "id": "az900-3b4966e1788a",
+      "examSlug": "az900",
+      "domain": "Management",
+      "topic": "Tags",
+      "tags": [
+        "AZ-900",
+        "Management",
+        "Tags"
+      ],
+      "promptHtml": "Votre organisation déploie des ressources dans 20 régions Azure. Le suivi des coûts par région pour l’optimisation nécessite de catégoriser les ressources. Quelle capacité Azure permet ce suivi des coûts inter-régions ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Groupes de ressources organisant les ressources par région"
+        },
+        {
+          "key": "B",
+          "label": "Balises avec métadonnées régionales pour l’analyse des coûts"
+        },
+        {
+          "key": "C",
+          "label": "Groupes de gestion par région"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Balises avec métadonnées régionales pour l’analyse des coûts",
+      "rationaleHtml": "",
+      "extraHtml": "Les balises permettent une catégorisation flexible des coûts selon toutes les dimensions de la ressource, y compris région, département ou projet. Les groupes de ressources organisent les ressources mais les tags fournissent une analyse transversale des coûts. Les groupes de gestion organisent les abonnements, pas les ressources individuelles.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/cost-management-billing/costs/cost-analysis-common-uses#view-costs-by-tag-values\">Analyse des coûts avec tags</a>"
+    },
+    {
+      "id": "az900-c015373fa643",
+      "examSlug": "az900",
+      "domain": "Management",
+      "topic": "CICD",
+      "tags": [
+        "AZ-900",
+        "Management",
+        "CICD"
+      ],
+      "promptHtml": "Votre application web nécessite un déploiement automatique lorsque le code est validé dans la branche principale, y compris le provisionnement de l’infrastructure et le déploiement d’applications. Quelle capacité Azure permet ce pipeline de déploiement automatisé ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Déploiements manuels via Azure Portal"
+        },
+        {
+          "key": "B",
+          "label": "Azure DevOps Pipelines avec Infrastructure as Code"
+        },
+        {
+          "key": "C",
+          "label": "Scripts Azure Cloud Shell exécutés manuellement"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Azure DevOps Pipelines avec Infrastructure as Code",
+      "rationaleHtml": "",
+      "extraHtml": "Les pipelines DevOps Azure automatisent CI/CD, y compris le provisionnement de l’infrastructure (via ARM/Bicep) et le déploiement d’applications déclenché par le contrôle de version. Les déploiements manuels manquent d’automatisation. Les scripts manuels shell ne fournissent pas d’automatisation CI/CD.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/devops/pipelines/overview\">Azure Pipelines</a>"
+    },
+    {
+      "id": "az900-b5023972bddb",
+      "examSlug": "az900",
+      "domain": "Management",
+      "topic": "Optimization",
+      "tags": [
+        "AZ-900",
+        "Management",
+        "Optimization"
+      ],
+      "promptHtml": "Les charges de travail de production fonctionnent sur des machines virtuelles avec 8 vCPU mais n’utilisent en moyenne que 20 % du processeur. L’optimisation des coûts nécessite d’adapter la taille de la VM à l’utilisation réelle. Quel outil Azure propose des recommandations de redimensionnement ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Monitor affichant les métriques CPU actuelles"
+        },
+        {
+          "key": "B",
+          "label": "Azure Advisor avec recommandations d’optimisation des coûts"
+        },
+        {
+          "key": "C",
+          "label": "Azure Cost Management montrant les tendances des dépenses"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Azure Advisor avec recommandations d’optimisation des coûts",
+      "rationaleHtml": "",
+      "extraHtml": "Azure Advisor analyse l’utilisation des ressources et fournit des recommandations de redressement concrètes, y compris l’optimisation de la taille des machines virtuelles. Le moniteur affiche des indicateurs mais ne fournit pas de recommandations. La gestion des coûts indique les dépenses mais le conseiller fournit des conseils d’optimisation.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/advisor/advisor-cost-recommendations\">Optimisation des coûts par le conseiller</a>"
+    },
+    {
+      "id": "az900-0066d9a57da8",
+      "examSlug": "az900",
+      "domain": "Management",
+      "topic": "ResourceLocks",
+      "tags": [
+        "AZ-900",
+        "Management",
+        "ResourceLocks"
+      ],
+      "promptHtml": "Votre organisation doit empêcher que les machines virtuelles de production soient arrêtées ou supprimées tout en autorisant des modifications de configuration comme la mise à l’échelle ou les mises à jour réseau. Quel type de serrure permet cette protection ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Verrou en lecture seule empêchant toutes les modifications"
+        },
+        {
+          "key": "B",
+          "label": "Verrouillage CanNotDelete empêchant la suppression tout en autorisant les mises à jour"
+        },
+        {
+          "key": "C",
+          "label": "Azure Policy deni opérations de suppression"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Verrouillage CanNotDelete empêchant la suppression tout en autorisant les mises à jour",
+      "rationaleHtml": "",
+      "extraHtml": "Le verrouillage CanNotDelete empêche la suppression et arrête les opérations tout en permettant les mises à jour de configuration. Le mode ReadOnly empêche tous les changements, y compris les mises à jour. La police peut auditer ou refuser mais les serrures offrent une protection explicite.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/azure-resource-manager/management/lock-resources#considerations-before-applying-locks\">Types de verrouillage de ressources</a>"
+    },
+    {
+      "id": "az900-82ff19acd83d",
+      "examSlug": "az900",
+      "domain": "Management",
+      "topic": "ApplicationInsights",
+      "tags": [
+        "AZ-900",
+        "Management",
+        "ApplicationInsights"
+      ],
+      "promptHtml": "Votre application utilise des API tierces avec des limites de débit. Il faut une observabilité dans les taux de réussite des appels API, la latence et les échecs pour optimiser la logique de réessayage. Quelle capacité de surveillance Azure offre ce suivi des dépendances ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Service Health pour l’état de la plateforme"
+        },
+        {
+          "key": "B",
+          "label": "Suivi des dépendances d’Application Insights"
+        },
+        {
+          "key": "C",
+          "label": "Azure Advisor pour des recommandations d’optimisation"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Suivi des dépendances d’Application Insights",
+      "rationaleHtml": "",
+      "extraHtml": "Application Insights suit automatiquement les dépendances, y compris les API, bases de données et services externes, avec des taux de réussite, de la latence et des analyses de défaillance. Service Health rapporte l’état de la plateforme Azure. Le conseiller fournit des recommandations, pas un suivi des dépendances en temps réel.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/azure-monitor/app/asp-net-dependencies\">Suivi des dépendances d’Application Insights</a>"
+    },
+    {
+      "id": "az900-f969644687be",
+      "examSlug": "az900",
+      "domain": "Management",
+      "topic": "Monitoring",
+      "tags": [
+        "AZ-900",
+        "Management",
+        "Monitoring"
+      ],
+      "promptHtml": "Les utilisateurs signalent des ralentissements des applications pendant les heures de pointe. Il faut corréler une forte utilisation du processeur avec une augmentation des taux de requêtes pour identifier les goulots d’étranglement. Quel service Azure agrège ces indicateurs de performance pour analyse ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Activity Log pour les modifications opérationnelles"
+        },
+        {
+          "key": "B",
+          "label": "Azure Monitor avec métriques et corrélation"
+        },
+        {
+          "key": "C",
+          "label": "Azure Service Health pour les notifications d’incidents"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Azure Monitor avec métriques et corrélation",
+      "rationaleHtml": "",
+      "extraHtml": "Azure Monitor collecte des métriques provenant de plusieurs sources, permettant une analyse de corrélation entre le processeur, les requêtes et d’autres dispositifs de télémétrie. Le journal d’activité suit les opérations, pas les indicateurs de performance. Service Health signale les problèmes de plateforme.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/azure-monitor/essentials/data-platform-metrics\">Azure Monitor metrics</a>"
+    },
+    {
+      "id": "az900-22203ea6b3e5",
+      "examSlug": "az900",
+      "domain": "Management",
+      "topic": "LockEnforcement",
+      "tags": [
+        "AZ-900",
+        "Management",
+        "LockEnforcement"
+      ],
+      "promptHtml": "Une base de données de production critique ne doit jamais être supprimée par aucun utilisateur, y compris les administrateurs. Les modifications de configuration sont autorisées. Quel mécanisme de protection Azure applique cette prévention la plus stricte de la suppression ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure RBAC supprimant toutes les permissions de suppression"
+        },
+        {
+          "key": "B",
+          "label": "Verrouillage de ressources défini sur CanNotDelete sur la base de données"
+        },
+        {
+          "key": "C",
+          "label": "Azure Policy auditing suppression attempts"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Verrouillage de ressources défini sur CanNotDelete sur la base de données",
+      "rationaleHtml": "",
+      "extraHtml": "Les verrous de ressources offrent la protection contre la suppression la plus stricte, surpassant même les permissions du propriétaire. Le RBAC peut être modifié par les propriétaires. Azure Policy peut auditer mais les verrous assurent l’application.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/azure-resource-manager/management/lock-resources#who-can-create-or-delete-locks\">Application du verrouillage des ressources</a>"
+    },
+    {
+      "id": "az900-c8f983552404",
+      "examSlug": "az900",
+      "domain": "Management",
+      "topic": "PolicyCompliance",
+      "tags": [
+        "AZ-900",
+        "Management",
+        "PolicyCompliance"
+      ],
+      "promptHtml": "Votre organisation exige que toutes les bases de données Azure SQL utilisent le chiffrement transparent des données et nécessitent un MFA pour l’accès administrateur. L’audit automatisé doit signaler les ressources non conformes. Quel service Azure fournit cet audit de conformité basé sur des politiques ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Monitor pour la collecte de métriques"
+        },
+        {
+          "key": "B",
+          "label": "Azure Policy avec évaluation de conformité"
+        },
+        {
+          "key": "C",
+          "label": "Fonctionnalités classiques d’Azure Security Center"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Azure Policy avec évaluation de conformité",
+      "rationaleHtml": "",
+      "extraHtml": "Azure Policy évalue les ressources par rapport aux définitions de politiques, en fournissant des tableaux de bord de conformité et des rapports d’audit. Le moniteur collecte des indicateurs mais n’évalue pas la conformité. Le Centre de sécurité est désormais Defender for Cloud, axé sur la protection contre les menaces.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/governance/policy/overview#compliance\">Azure Policy compliance</a>"
+    },
+    {
+      "id": "az900-2f8a797b7672",
+      "examSlug": "az900",
+      "domain": "Management",
+      "topic": "CrossTenant",
+      "tags": [
+        "AZ-900",
+        "Management",
+        "CrossTenant"
+      ],
+      "promptHtml": "Votre entreprise acquiert une autre organisation avec son propre locataire Azure. Vous avez besoin d’une gestion unifiée des abonnements entre les deux locataires via des politiques centralisées. Quelle fonctionnalité Azure permet la gestion des abonnements interlocataires ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Lighthouse for delegated resource management"
+        },
+        {
+          "key": "B",
+          "label": "Peering réseau virtuel entre locataires"
+        },
+        {
+          "key": "C",
+          "label": "Azure AD B2B guest access"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Lighthouse for delegated resource management",
+      "rationaleHtml": "",
+      "extraHtml": "Azure Lighthouse permet la gestion des ressources interlocataires avec des politiques centralisées et un RBAC. Le peering VNet connecte les réseaux mais ne fournit pas de gestion par abonnement. L’accès invité B2B accorde l’accès aux utilisateurs mais ne permet pas la gestion au niveau de l’abonnement.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/lighthouse/overview\">Azure Lighthouse</a>"
+    },
+    {
+      "id": "az900-60b0d840a107",
+      "examSlug": "az900",
+      "domain": "Networking",
+      "topic": "LoadBalancer",
+      "tags": [
+        "AZ-900",
+        "Networking",
+        "LoadBalancer"
+      ],
+      "promptHtml": "Votre application web est déployée dans 3 zones de disponibilité. Il vous faut un seul point de terminaison HTTP qui répartit le trafic entre les zones avec des contrôles automatiques de santé. Quel service Azure offre cet équilibrage de charge redondant par zone ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Traffic Manager pour le routage DNS global"
+        },
+        {
+          "key": "B",
+          "label": "Azure Load Balancer with zone-redundant frontend"
+        },
+        {
+          "key": "C",
+          "label": "Azure Front Door pour l’équilibrage de charge global"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Azure Load Balancer with zone-redundant frontend",
+      "rationaleHtml": "",
+      "extraHtml": "Azure Load Balancer avec IP frontend redondante de zone rédistribue le trafic entre les zones de disponibilité d’une région avec des sondes de santé automatiques. Traffic Manager fournit un routage DNS global. Front Door est destiné à l’équilibrage global de la charge en bord.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/load-balancer/load-balancer-standard-availability-zones\">Balanceur de charge redondant de zone</a>"
+    },
+    {
+      "id": "az900-2fc0cda7735b",
+      "examSlug": "az900",
+      "domain": "Management",
+      "topic": "PolicyEffects",
+      "tags": [
+        "AZ-900",
+        "Management",
+        "PolicyEffects"
+      ],
+      "promptHtml": "Votre organisation exige que toutes les machines virtuelles disposent d’une protection anti-malware activée et d’agents de surveillance installés avant leur déploiement. Quel effet de la politique Azure applique cette exigence préventive ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Effet d’audit pour signaler les non-conformités après le déploiement"
+        },
+        {
+          "key": "B",
+          "label": "effet DeployIfNotExists pour ajouter automatiquement les extensions requises"
+        },
+        {
+          "key": "C",
+          "label": "Refuser l’effet pour bloquer totalement la création de VM"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "effet DeployIfNotExists pour ajouter automatiquement les extensions requises",
+      "rationaleHtml": "",
+      "extraHtml": "L’effet de politique DeployIfNotExists déploie automatiquement les configurations requises (comme les agents) en cas de manque, garantissant ainsi la conformité. L’audit ne signale que les non-conformités. Refuse la création mais ne corrige pas automatiquement.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/governance/policy/concepts/effects#deployifnotexists\">Azure Policy DeployIfNotExists</a>"
+    },
+    {
+      "id": "az900-c31ad1b6d15d",
+      "examSlug": "az900",
+      "domain": "Architecture",
+      "topic": "RegionPairs",
+      "tags": [
+        "AZ-900",
+        "Architecture",
+        "RegionPairs"
+      ],
+      "promptHtml": "Un plan de reprise après sinistre exige que les bases de données passent à une région secondaire si la région principale devient indisponible. La région secondaire doit se trouver à moins de 300 miles de la zone primaire. Quelle fonctionnalité Azure offre cette reprise après sinistre en région jumelée ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Zones de disponibilité au sein d’une seule région"
+        },
+        {
+          "key": "B",
+          "label": "Paires de régions Azure avec des relations de basculement prédéfinies"
+        },
+        {
+          "key": "C",
+          "label": "Sélection de régions personnalisées pour la géo-réplication"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Paires de régions Azure avec des relations de basculement prédéfinies",
+      "rationaleHtml": "",
+      "extraHtml": "Les paires de régions Azure sont géographiquement séparées avec une orchestration de récupération prioritaire et des mises à jour séquentielles. Les zones de disponibilité offrent une redondance au niveau du centre de données au sein d’une région. La sélection personnalisée n’apporte pas les avantages gérés par la plateforme des régions jumelées.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/reliability/cross-region-replication-azure#azure-paired-regions\">Azure region pair benefits</a>"
+    },
+    {
+      "id": "az900-838c9af1bfd7",
+      "examSlug": "az900",
+      "domain": "Identity",
+      "topic": "Passwordless",
+      "tags": [
+        "AZ-900",
+        "Identity",
+        "Passwordless"
+      ],
+      "promptHtml": "Votre application nécessite une authentification sans mot de passe utilisant des biométries ou des clés de sécurité matérielles, éliminant ainsi les attaques basées sur un mot de passe. Quelle méthode d’authentification Azure prend en charge cette approche sans mot de passe ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Nom d’utilisateur et mot de passe avec exigences de complexité"
+        },
+        {
+          "key": "B",
+          "label": "Application Microsoft Authenticator avec connexion téléphonique sans mot de passe"
+        },
+        {
+          "key": "C",
+          "label": "Questions de sécurité pour la récupération de compte"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Application Microsoft Authenticator avec connexion téléphonique sans mot de passe",
+      "rationaleHtml": "",
+      "extraHtml": "Microsoft Authenticator prend en compte l’authentification sans mot de passe via biométrie ou code PIN, éliminant ainsi les vulnérabilités des mots de passe. Les mots de passe traditionnels restent vulnérables. Les questions de sécurité offrent une récupération mais ne sont pas une authentification primaire sans mot de passe.<br><br>Référence : <a href=\"https://learn.microsoft.com/entra/identity/authentication/concept-authentication-passwordless\">Authentification Azure sans mot de passe</a>"
+    },
+    {
+      "id": "az900-6b7c210ad4dd",
+      "examSlug": "az900",
+      "domain": "Networking",
+      "topic": "TrafficManager",
+      "tags": [
+        "AZ-900",
+        "Networking",
+        "TrafficManager"
+      ],
+      "promptHtml": "Votre application mondiale sert des utilisateurs dans 30 pays. Chaque utilisateur doit se connecter à la région Azure la plus proche pour des performances optimales. Quel service Azure fournit le routage du trafic géographique vers le point de départ le plus proche ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Load Balancer pour l’équilibrage de charge régional"
+        },
+        {
+          "key": "B",
+          "label": "Azure Traffic Manager avec performance routing"
+        },
+        {
+          "key": "C",
+          "label": "Azure Application Gateway avec routage URL"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Azure Traffic Manager avec performance routing",
+      "rationaleHtml": "",
+      "extraHtml": "Azure Traffic Manager fournit un routage global du trafic basé sur DNS avec des politiques basées sur la performance dirigeant les utilisateurs vers les points de terminaison les plus proches. L’équilibreur de charge fonctionne dans une même région. Application Gateway fournit un routage de couche 7 au sein d’une région.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/traffic-manager/traffic-manager-routing-methods#performance-traffic-routing-method\">Route de performance du gestionnaire de trafic</a>"
+    },
+    {
+      "id": "az900-0beddb3852fc",
+      "examSlug": "az900",
+      "domain": "Governance",
+      "topic": "DataClassification",
+      "tags": [
+        "AZ-900",
+        "Governance",
+        "DataClassification"
+      ],
+      "promptHtml": "Un audit de conformité nécessite de démontrer que des étiquettes de sensibilité sont appliquées à tous les documents financiers dans Azure, avec un suivi de classification entre les comptes de stockage et les bases de données. Quel service Azure fournit cette gouvernance de classification des données ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Policy for resource compliance"
+        },
+        {
+          "key": "B",
+          "label": "Microsoft Purview pour la classification et le catalogage des données"
+        },
+        {
+          "key": "C",
+          "label": "Azure Tags for resource metadata"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Microsoft Purview pour la classification et le catalogage des données",
+      "rationaleHtml": "",
+      "extraHtml": "Microsoft Purview fournit la classification des données avec des étiquettes de sensibilité, la lignée des données et le catalogage à travers les sources de données Azure. Azure Policy régit les configurations de ressources. Les balises fournissent des métadonnées de ressources mais pas de classification des données.<br><br>Référence : <a href=\"https://learn.microsoft.com/purview/concept-best-practices-classification\">Classification des données Purview</a>"
+    },
+    {
+      "id": "az900-89e5664f0d39",
+      "examSlug": "az900",
+      "domain": "Management",
+      "topic": "SourceControl",
+      "tags": [
+        "AZ-900",
+        "Management",
+        "SourceControl"
+      ],
+      "promptHtml": "Votre infrastructure en tant que modèles de code doit être stockée dans le contrôle de versions avec des flux de travail d’approbation avant le déploiement. Quel service Azure propose un contrôle de version basé sur GIT pour les modèles ARM ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Repos with git repositories"
+        },
+        {
+          "key": "B",
+          "label": "Azure Cloud Shell pour le stockage des templates"
+        },
+        {
+          "key": "C",
+          "label": "Bibliothèque de modèles Azure Portal"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Repos with git repositories",
+      "rationaleHtml": "",
+      "extraHtml": "Azure Depo propose un contrôle de version basé sur git avec pull requests, approbations et historique des versions pour les modèles. Cloud Shell sert à l’exécution, pas au contrôle de version. La bibliothèque de modèles de portail ne propose pas de flux de travail de contrôle de version.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/devops/repos/git/overview\">Azure Repos</a>"
+    },
+    {
+      "id": "az900-8eea3239a3be",
+      "examSlug": "az900",
+      "domain": "Governance",
+      "topic": "RegulatoryCompliance",
+      "tags": [
+        "AZ-900",
+        "Governance",
+        "RegulatoryCompliance"
+      ],
+      "promptHtml": "Votre organisation doit s’assurer que toutes les ressources déployées sur Azure respectent les contrôles de sécurité ISO 27001. Quelle capacité Azure valide les configurations de ressources selon les normes de conformité ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Policy avec initiatives intégrées à la conformité réglementaire"
+        },
+        {
+          "key": "B",
+          "label": "Azure Monitor pour les métriques de sécurité"
+        },
+        {
+          "key": "C",
+          "label": "Azure Advisor pour des recommandations de sécurité"
+        }
+      ],
+      "correctOption": "A",
+      "correctLabel": "Azure Policy avec initiatives intégrées à la conformité réglementaire",
+      "rationaleHtml": "",
+      "extraHtml": "Azure Policy inclut des initiatives de conformité intégrées pour les normes réglementaires (ISO 27001, PCI DSS, HIPAA) avec une évaluation automatique de la conformité. Monitor collecte des indicateurs. Le conseiller fournit des recommandations mais pas d’évaluation de conformité.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/governance/policy/samples/iso-27001\">Conformité réglementaire Azure Policy</a>"
+    },
+    {
+      "id": "az900-81107f7e91a1",
+      "examSlug": "az900",
+      "domain": "Storage",
+      "topic": "Redundancy",
+      "tags": [
+        "AZ-900",
+        "Storage",
+        "Redundancy"
+      ],
+      "promptHtml": "Une base de données doit répliquer les données de manière synchrone à travers 3 centres de données d’une même région pour survivre à une seule défaillance de centre de données sans aucune perte de données. Quelle redondance de stockage Azure offre cette réplication synchrone en région ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Stockage localement redondant (LRS) au sein d’un seul centre de données"
+        },
+        {
+          "key": "B",
+          "label": "Stockage redondant de zone (ZRS) entre zones de disponibilité"
+        },
+        {
+          "key": "C",
+          "label": "Stockage géo-redundant (GRS) avec réplication asynchrone"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Stockage redondant de zone (ZRS) entre zones de disponibilité",
+      "rationaleHtml": "",
+      "extraHtml": "ZRS se réplique de manière synchrone à travers trois zones de disponibilité (centres de données) au sein d’une même région, garantissant une perte de données zéro en cas de défaillance du centre de données. LRS se réplique au sein d’un seul centre de données. La GRS se réplique de manière asynchrone entre les régions.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/storage/common/storage-redundancy#zone-redundant-storage\">Réplication synchrone ZRS</a>"
+    },
+    {
+      "id": "az900-7956d4dab975",
+      "examSlug": "az900",
+      "domain": "Management",
+      "topic": "ServiceHealth",
+      "tags": [
+        "AZ-900",
+        "Management",
+        "ServiceHealth"
+      ],
+      "promptHtml": "Votre candidature subit une panne critique. Vous avez besoin d’une notification immédiate de tous les incidents de service Azure affectant vos ressources. Quel service Azure propose cette alerte personnalisée de santé du service ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Monitor alerts pour les métriques de ressources"
+        },
+        {
+          "key": "B",
+          "label": "Azure Service Health avec alertes de santé personnalisées"
+        },
+        {
+          "key": "C",
+          "label": "Azure Advisor pour des recommandations de services"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Azure Service Health avec alertes de santé personnalisées",
+      "rationaleHtml": "",
+      "extraHtml": "Azure Service Health fournit des alertes personnalisées de santé pour les incidents, la maintenance planifiée et les avis de santé affectant vos abonnements. Le moniteur suit les métriques de ressources. Le conseiller fournit des recommandations d’optimisation.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/service-health/alerts-activity-log-service-notifications-portal\">Alertes santé du service</a>"
+    },
+    {
+      "id": "az900-a2c91727d9cb",
+      "examSlug": "az900",
+      "domain": "Management",
+      "topic": "MultiCloud",
+      "tags": [
+        "AZ-900",
+        "Management",
+        "MultiCloud"
+      ],
+      "promptHtml": "Votre organisation utilise exclusivement Azure mais gère les clusters, bases de données et machines virtuelles Kubernetes via AWS et Google Cloud. Vous avez besoin de capacités de gestion Azure unifiées pour tous les fournisseurs cloud. Quel service Azure étend Azure Control Plan aux ressources multi-cloud ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Azure Monitor for multi-cloud observability"
+        },
+        {
+          "key": "B",
+          "label": "Azure Arc pour la gestion multi-cloud"
+        },
+        {
+          "key": "C",
+          "label": "Azure Policy for resource governance"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Azure Arc pour la gestion multi-cloud",
+      "rationaleHtml": "",
+      "extraHtml": "Azure Arc étend les capacités Azure Resource Manager, Policy et Management à des ressources extérieures à Azure, notamment AWS, GCP et on-premises. Le moniteur offre une observabilité. La politique régit les ressources Azure mais Arc permet la politique à travers les clouds.<br><br>Référence : <a href=\"https://learn.microsoft.com/azure/azure-arc/overview\">Azure Arc multi-cloud</a>"
+    },
+    {
+      "id": "az900-875e63b68466",
+      "examSlug": "az900",
+      "domain": "Security",
+      "topic": "RiskDetection",
+      "tags": [
+        "AZ-900",
+        "Security",
+        "RiskDetection"
+      ],
+      "promptHtml": "Une application web doit authentifier les utilisateurs et bloquer immédiatement les tentatives de connexion provenant de serveurs proxy anonymes ou des réseaux Tor. Quelle condition d’accès conditionnel détecte et bloque ces lieux de connexion risqués ?",
+      "options": [
+        {
+          "key": "A",
+          "label": "Emplacements nommés définissant les plages d’IP de confiance"
+        },
+        {
+          "key": "B",
+          "label": "Détection des risques de connexion avec blocage à haut risque"
+        },
+        {
+          "key": "C",
+          "label": "Conformité des dispositifs nécessitant des dispositifs gérés"
+        }
+      ],
+      "correctOption": "B",
+      "correctLabel": "Détection des risques de connexion avec blocage à haut risque",
+      "rationaleHtml": "",
+      "extraHtml": "La détection des risques de connexion identifie des schémas anormaux de connexion, y compris des proxies anonymes et Tor, permettant un blocage automatique. Les emplacements nommés définissent des IP de confiance mais ne détectent pas les proxys. La conformité des appareils vérifie l’état de l’appareil, pas le risque de connexion.<br><br>Référence : <a href=\"https://learn.microsoft.com/entra/id-protection/concept-identity-protection-risks#sign-in-risk\">Détection des risques d’inscription Entra</a>"
+    }
+  ]
+}
