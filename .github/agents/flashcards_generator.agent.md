@@ -36,9 +36,10 @@ Each flashcard must follow this CSV format:
 - Include relevant constraints, requirements, and context
 - Use realistic scenarios that mirror actual exam questions
 - Format: Question text + `<br><br>` + three options separated by `<br>`
+- **STRICT option label format**: Each option MUST start with exactly `A) `, `B) `, or `C) ` (uppercase letter + closing parenthesis + space). Never use `>`, `.`, `:`, `-`, or any other character instead of `)`. Example: `A) Azure Firewall<br>B) Network Security Group<br>C) Application Gateway`
 
 **Back**: A precise, technically accurate answer
-- Single letter (A, B, or C) with the option text
+- Single letter (A, B, or C) with the option text — must match the same `X) text` format used in Front
 - Brief justification explaining why it's correct
 - Reference link to official Microsoft documentation (use format: `<br><br>Reference: <a href="URL">Link text</a>`)
 
@@ -76,6 +77,7 @@ Avoid:
 
 ## Formatting Rules
 
+- **Option labels**: MUST be exactly `A)`, `B)`, `C)` — never `A>`, `B.`, `C:`, `A -`, or any other variant. The build pipeline validates each option against the regex `/^([A-C])\)\s*(.+)$/` and will reject the entire deck if any option deviates
 - Use `<br><br>` for line breaks in Front field (Anki HTML compatibility)
 - Escape quotes in CSV: Use `"` for any quote inside a field
 - Wrap entire field in quotes if it contains commas, quotes, or line breaks
@@ -108,6 +110,7 @@ After generating flashcards, review each against:
 ✓ Scenario includes relevant constraints (performance, cost, compliance, etc.)
 ✓ Extra field adds architectural insight or valuable comparison
 ✓ Tags accurately match content
+✓ **Option Format**: Every option label in Front and Back fields uses exactly `A)`, `B)`, or `C)` — no typos like `B>`, `B.`, `B:`, `A-`
 ✓ No duplicate concepts or overly similar question patterns
 ✓ Question topic exists in the extracted official exam guide domains/skills measured
 ✓ Domain distribution aligns with the planned weighted coverage
@@ -142,6 +145,13 @@ After generating flashcards, review each against:
    - Extra field must contain substantive content (not just whitespace)
    - Tags should follow format: `ExamCode Domain Topic`
 
+5. **Option Label Format (Front & Back)**:
+   - Extract options from the Front field by splitting after the first `<br><br>` then by `<br>`
+   - Each option must match the regex `/^([A-C])\)\s*(.+)$/` — uppercase letter A, B, or C followed by `)` then content
+   - The Back field must also start with `A)`, `B)`, or `C)`
+   - **Common Error**: Using `>` instead of `)` (e.g., `B> some text` instead of `B) some text`)
+   - **Fix**: Replace any non-`)` character after the option letter with `)`
+
 ### Validation Implementation
 
 After generating the CSV, run this validation check:
@@ -174,6 +184,21 @@ def validate_flashcard_csv(filepath):
             # Check for unescaped newlines (if Extra has \n not as part of proper escaping)
             if '\n' in extra and '<br>' not in extra:
                 errors.append(f"Row {i}: Extra field has raw newline without <br> tag")
+            
+            # Check option label format in Front field
+            import re
+            front = row.get('Front', '')
+            if '<br><br>' in front:
+                options_part = front.split('<br><br>', 1)[1]
+                options = [o.strip() for o in options_part.split('<br>') if o.strip()]
+                for opt in options:
+                    if not re.match(r'^([A-C])\)\s*(.+)$', opt, re.DOTALL):
+                        errors.append(f"Row {i}: Option is not in A/B/C format: {opt[:50]}")
+            
+            # Check option label format in Back field
+            back = row.get('Back', '')
+            if back and not re.match(r'^([A-C])\)', back):
+                errors.append(f"Row {i}: Back field must start with A), B), or C)")
     
     return errors
 ```
@@ -194,6 +219,7 @@ def validate_flashcard_csv(filepath):
 - All rows have 4 columns
 - No blank lines within quoted fields
 - All required fields have content
+- Every option label matches `A)`, `B)`, or `C)` exactly (no `>`, `.`, `:`, `-` variants)
 
 ## Coverage Validation Checklist (Pre-Delivery)
 
